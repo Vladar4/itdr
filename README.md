@@ -13,12 +13,12 @@ Dependencies
 ------------
 [TeX Live](https://www.tug.org/texlive/)
 
-###Arch
+### Arch
 `sudo pacman -S texlive-bin texlive-core texlive-fontsextra texlive-latexextra`
 
 Changelog
 ---------
 
-###v0.9.4-beta
+### v0.9.4-beta
 First public beta-release.
 
