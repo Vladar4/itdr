@@ -1,0 +1,60 @@
+\documentclass[10pt,twoside,twocolumn,openany]{book}
+\usepackage{itdr}
+\usepackage[utf8]{inputenc}
+\usepackage{subfiles}
+
+\def \title {Into the Dungeon: Revived} % TITLE variable
+
+% PDF properties
+\hypersetup{
+	pdfinfo={
+		Title={\title},
+		Author={Vladimir Arabadzhi},
+		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+}}
+
+\begin{document}
+\fontfamily{ppl}\selectfont % Set text font
+
+\begin{titlepage}\begin{onecolumn}
+
+% TITLE
+\begin{center}
+	\textBigTitle{\title}\\
+	\hrule\vspace{1em}
+	\textSubTitle{Rules for fantastic adventure games\\playable with paper and pencil and polyhedral dice}\\
+\end{center}
+
+\dimage{cover}{370pt}
+
+\vfill
+
+% FOOTNOTE
+\begin{minipage}{\textwidth}{\begin{center}\footnotesize
+``\title'' by Vladimir Arabadzhi is based on \href{https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk}{``Into the Dungeon: Playtest Edition''} by \href{http://www.bastionland.com/}{Chris McDowall}\\and licensed under the \href{https://creativecommons.org/licenses/by-nc-sa/3.0/}{Creative Commons Attribution - NonCommercial - ShareAlike 3.0 Unported License}.
+
+% VERSION AND YEAR
+~\\
+v0.9.4-beta\\
+2018
+\end{center}
+}\end{minipage}
+
+
+\end{onecolumn} \end{titlepage}
+\clearpage
+
+\subfile{part0}		% Introduction
+\subfile{part1}		% Characters
+\subfile{part2}		% Playing the Game
+\subfile{part3}		% Ruling a Domain
+\subfile{part4}		% Magic
+\subfile{part5}		% Running the Game
+\subfile{part6}		% Treasure and Magic
+\subfile{part7}		% Hazards and Obstacles
+\subfile{part8}		% Monsters
+\subfile{part9}		% Example of Play
+\subfile{part_a}	% Appendix A: Class-ic Edition
+\subfile{part_index}% Index
+
+\end{document}

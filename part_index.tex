@@ -1,0 +1,22 @@
+\documentclass[itdr]{subfiles}
+
+
+\begin{document}
+
+\cleartoleftpage
+
+\fancyhead[LE,RO]{{\textsc{{\nouppercase Spell List}}}}
+\addcontentsline{toc}{chapter}{Spell List}
+
+\idxlayout{columns=3,font=normalsize}
+\printindex[spelllist]
+
+\clearpage
+
+\fancyhead[LE,RO]{{\textsc{{\nouppercase Index}}}}
+\addcontentsline{toc}{chapter}{Index}
+
+\idxlayout{columns=3,font=small}
+\printindex
+
+\end{document}

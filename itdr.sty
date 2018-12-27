@@ -1,0 +1,260 @@
+\ProvidesPackage{itdr}[2018/12/27]
+
+\RequirePackage{graphicx}
+\RequirePackage{lipsum}
+\RequirePackage[super]{nth}
+\RequirePackage{xifthen}
+
+% Reset footnote counter for each new page
+\RequirePackage{perpage} %the perpage package
+\MakePerPage{footnote} %the perpage package command
+
+% Index
+\RequirePackage{imakeidx}
+\makeindex[name=spelllist, title={Spell List}, options=-s itdr]
+\makeindex[options=-s itdr]
+\RequirePackage[columns=3,columnsep=1em,font=small,indentunit=1em,rule=0px]{idxlayout}
+
+% Colors
+\RequirePackage[table,svgnames]{xcolor}
+\colorlet{dColor1}{white}
+\colorlet{dColor2}{LightGrey}
+
+% Fonts
+\RequirePackage{fourier} % special symbols
+\RequirePackage{humanist} % fancy title font
+\RequirePackage[T1]{fontenc}
+\newcommand*{\fancyfont}{\hminfamily}
+
+\newcommand{\textBigTitle}[1]{
+	{\fancyfont\fontsize{30}{24}\bfseries\selectfont #1}
+	\vspace{1em}
+}
+
+\newcommand{\textSubTitle}[1]{
+	{\fancyfont\fontsize{18}{16}\selectfont #1}
+	\vspace{1em}
+}
+
+% Lists
+\RequirePackage{enumitem}
+\renewcommand\labelitemi{\starredbullet}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+% Titles
+\RequirePackage{titlesec}
+\setlength{\parskip}{0.25em} % distance between paragraphs
+
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+
+% chapter
+\titleformat{\chapter}
+	{\normalfont\scshape\LARGE}{\thechapter.\ }{0em}{}
+\titlespacing*{\chapter}{0em}{0em}{0.5em}
+
+% unnumbered chapter
+\newcommand{\chapterx}[1]{
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
+	\fancyhead[LE,RO]{\textsc{{\nouppercase #1}}}
+}
+
+% section
+\titleformat{\section}
+	{\normalfont\scshape\Large}{\thesection}{0em}{}
+	[{\titleline{\color{black}\titlerule[1pt]}}]
+\titlespacing*{\section}{0em}{\parskip}{0.5em}
+
+% subsection
+\titleformat{\subsection}
+	{\normalfont\bfseries\scshape\large}{\thesubsection}{0em}{}
+\titlespacing*{\subsection}{0em}{\parskip}{0em}
+
+% paragraph
+\titleformat{\paragraph}
+	{\normalfont\normalsize\bfseries}{\theparagraph}{0em}{}[]
+\titlespacing*{\paragraph}{0pt}{\parskip}{0em}
+
+% paragraphsection
+\makeatletter
+\def\paragraphsection{\@ifstar\@paragraphsection\@@paragraphsection}
+\def\@paragraphsection#1{\vspace{0.2em}\paragraph*{{\scshape #1}}}
+\def\@@paragraphsection#1{\vspace{0.2em}\paragraph{{\scshape #1}}}
+\makeatother
+
+% subparagraph
+\titleformat{\subparagraph}[runin]
+	{\normalfont\normalsize\bfseries}{\thesubparagraph}{0em}{}[]
+\titlespacing*{\subparagraph}{\parindent}{\parskip}{\wordsep}
+
+% TOC
+\RequirePackage[toc]{multitoc}
+\newcommand{\toc}[1][1]{
+	\fancyhead[LE,RO]{}
+	\begingroup
+	\let\cleardoublepage\relax
+	\let\clearpage\relax
+	\setcounter{tocdepth}{#1}\tableofcontents
+	\endgroup
+	\clearpage
+}
+
+% Clear to left page
+\makeatletter
+\newcommand*{\cleartoleftpage}{
+	\clearpage
+	\if@twoside
+	\ifodd\c@page
+	\hbox{}\thispagestyle{empty}\newpage
+	\if@twocolumn
+	\hbox{}\thispagestyle{empty}\newpage
+	\fi
+	\fi
+	\fi
+}
+\makeatother
+
+% Headers
+\RequirePackage{fancyhdr}
+
+\renewcommand{\headrulewidth}{1pt}
+
+\def \bottomLineVspace {-1.85em}
+
+% call after \toc and \chapterx (kinda hacky)
+\newcommand{\resetHeaders}{
+	\pagestyle{fancy}
+	\fancyhead{}
+	\fancyfoot{}
+	
+	\fancyhead[LE,RO]{
+		{\textsc{{\nouppercase Chapter\ \thechapter:\ \leftmark}}}
+	}
+	\fancyhead[LO,RE]{
+		{\scshape\title}
+	}
+	\fancyfoot[LE]{
+		\thepage
+		\vspace{\bottomLineVspace}
+		\includegraphics[width=\linewidth]{img/bottom_line_even.pdf}
+	}
+	\fancyfoot[RO]{
+		\thepage
+		\vspace{\bottomLineVspace}
+		\includegraphics[width=\linewidth]{img/bottom_line_odd.pdf}
+	}
+	\fancypagestyle{plain}{}
+}
+\resetHeaders
+
+% Do not write the word "chapter"
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+
+% Table header
+\newcommand{\header}[1]{{
+	\noindent
+	\sffamily\bfseries\scshape
+	#1}\\}
+
+% Centered column
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% Table environment
+\RequirePackage{tabularx}
+\newenvironment{dtable}[1][XX]{
+	\vspace{0.25em}
+	\noindent
+	\rowcolors{1}{dColor1}{dColor2} % Alternate colors
+	\tabularx{\linewidth}{#1}
+	}
+	{\endtabularx\vspace{0.5em}\noindent}
+
+% Box environment
+\newenvironment{dbox}
+{	\noindent\vspace{-1.75em}\hspace{-0.025\linewidth}
+	\includegraphics[width=1.05\linewidth]{img/box_top.pdf} }
+{	~\\\noindent\vspace{1em}\hspace{-0.025\linewidth}
+	\includegraphics[width=1.05\linewidth]{img/box_bottom.pdf}
+	\vspace{-2em} }
+
+% \save{ABILITY}
+\newcommand{\save}[1]{#1~Save}
+
+% \saves{ABILITY}
+\newcommand{\saves}[1]{#1~Saves}
+
+% \feat{name}{comment}
+% -	feature
+\newcommand{\feat}[1]{
+	\paragraphsection*{\decosix~#1~\decosix}
+	\index{#1 (Feature)}
+}
+% -	ancestry
+\newcommand{\feata}[1]{
+	\paragraphsection*{\decosix~#1~\decosix}
+	\index{#1 (Feature, ancestry)}
+}
+% -	background
+\newcommand{\featb}[1]{
+	\paragraphsection*{\decosix~#1~\decosix}
+	\index{#1 (Background)}
+}
+
+% \equip{name}{price}
+\newcommand{\equip}[2]{
+	\subparagraph{#1} (#2)\index{#1}
+}
+
+% \weapon{name}{price}{damage}
+\newcommand{\weapon}[3]{
+	\subparagraph{#1} (#2): #3 Damage.
+}
+
+% \armour{name}{price}{value}
+\newcommand{\armour}[3]{
+	\subparagraph{#1} (#2): Armour #3.
+}
+
+% \spell{name} description.
+\newcommand{\spell}[1]{
+	\textbf{#1:}\index[spelllist]{#1}
+}
+
+% \statpar{monster name}
+\newcommand{\statpar}[1]{
+	\vspace{1em}
+	\paragraphsection{#1}
+}
+
+% \class{name}
+\newcommand{\class}[1]{
+	\subsection*{\decosix~#1~\decosix}
+	%\addcontentsline{toc}{subsection}{#1}
+}
+
+% \creed{name}
+\newcommand{\creed}[1]{
+	\subsection*{\decosix~#1~\decosix}
+	\addcontentsline{toc}{subsection}{#1}
+}
+
+% \placeholder{}
+\newcommand{\placeholder}[2][0.985\linewidth]{
+	\noindent\fbox{\rule{#1}{0pt}\rule[-0.5ex]{0pt}{#2}}
+	\vspace{-1em}
+}
+
+% \dimage{filename}
+\newcommand{\dimage}[2]{
+	\IfFileExists{./img/pic/#1.png}{
+		\noindent\includegraphics[width=1.0\linewidth]{img/pic/#1.png}
+	}
+	{ % else
+		\placeholder{#2}
+	}
+}
+
+% Hyperref should be loaded last
+\RequirePackage{hyperref}
