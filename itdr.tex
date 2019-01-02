@@ -16,7 +16,9 @@
 \begin{document}
 \fontfamily{ppl}\selectfont % Set text font
 
-\begin{titlepage}\begin{onecolumn}
+\begin{titlepage}
+\newgeometry{margin=1in}
+\begin{onecolumn}
 
 % TITLE
 \begin{center}
@@ -25,7 +27,7 @@
 	\textSubTitle{Rules for fantastic adventure games\\playable with paper and pencil and polyhedral dice}\\
 \end{center}
 
-\dimage{cover}{370pt}
+\dimage{cover}{468pt}
 
 \vfill
 
@@ -35,13 +37,14 @@
 
 % VERSION AND YEAR
 ~\\
-v0.9.4-beta\\
+v0.9.5-devel\\
 2018
 \end{center}
 }\end{minipage}
 
 
-\end{onecolumn} \end{titlepage}
+\end{onecolumn}\end{titlepage}
+\restoregeometry
 \clearpage
 
 \subfile{part0}		% Introduction
