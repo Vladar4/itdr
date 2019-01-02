@@ -18,6 +18,18 @@ Dependencies
 ### Arch
 `sudo pacman -S texlive-bin texlive-core texlive-fontsextra texlive-latexextra`
 
+
+What is different from "Into the Dungeon: Playtest Edition"?
+------------------------------------------------------------
+
+* Game mechanics are closer to "Into the Odd"
+* Features and backgrounds instead of classes (classes are kept in the appendix as an alternative)
+* Updated and refined magic system
+* Knowledge rolls
+* Wands and rods usage rule
+* Monster conversion guide
+* Spell List and Index
+
 Changelog
 ---------
 
