@@ -7,7 +7,7 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 ### [Latest Release](https://github.com/Vladar4/itdr/releases/latest)
 
-### [Latest PDF](itdr.pdf)
+### [Latest PDF (devel)](https://github.com/Vladar4/itdr/blob/devel/itdr.pdf)
 
 Illustrations will be added in v1.0 release.
 
