@@ -255,6 +255,35 @@
 	{ % else
 		\placeholder{#2}
 	}
+	\vspace{-1em}
+}
+
+% \dimageoverlay{filename}
+% full-page image over the text
+% place after the last text on this page
+\newcommand{\dimageoverlay}[1]{
+	\noindent\begin{picture}(0,375)
+	\IfFileExists{./img/pic/#1.png}{
+		 \put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
+	}
+	{ % else
+		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{542pt}}}
+	}
+	\end{picture}
+}
+
+% \dimagepage{filename}
+% full-page image on a separate page (\thispagestyle{empty}).
+\newcommand{\dimagepage}[1]{
+	\thispagestyle{empty}
+	\noindent\begin{picture}(0,542)
+	\IfFileExists{./img/pic/#1.png}{
+		\put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
+	}
+	{ % else
+		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{542pt}}}
+	}
+	\end{picture}
 }
 
 % Hyperref should be loaded last
