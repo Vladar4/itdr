@@ -18,6 +18,9 @@ Dependencies
 ### Arch
 `sudo pacman -S texlive-bin texlive-core texlive-fontsextra texlive-latexextra`
 
+### Debian
+`sudo apt-get install texlive-latex-base texlive-fonts-extra texlive-latex-extra`
+
 
 What is different from "Into the Dungeon: Playtest Edition"?
 ------------------------------------------------------------
