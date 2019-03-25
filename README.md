@@ -9,7 +9,7 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 ### [Latest PDF (devel)](https://github.com/Vladar4/itdr/blob/devel/itdr.pdf)
 
-Illustrations will be added in v1.0 release.
+![ItD:R cover](cover.jpg)
 
 Dependencies
 ------------
@@ -35,6 +35,9 @@ What is different from "Into the Dungeon: Playtest Edition"?
 
 Changelog
 ---------
+
+### v1.0
+First official release.
 
 ### v0.9.4-beta
 First public beta-release.
