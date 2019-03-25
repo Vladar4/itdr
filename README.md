@@ -5,9 +5,9 @@ Into the Dungeon: Revived
 
 The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk) by [Chris McDowall](http://www.bastionland.com/).
 
-### [Latest Release](https://github.com/Vladar4/itdr/releases/latest)
+### [Home Page](https://vladar4.github.io/itdr)
 
-### [Latest PDF (devel)](https://github.com/Vladar4/itdr/blob/devel/itdr.pdf)
+### [Latest Release](https://github.com/Vladar4/itdr/releases/latest)
 
 ![ItD:R cover](cover.jpg)
 
