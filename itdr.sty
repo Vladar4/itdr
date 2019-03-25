@@ -286,5 +286,16 @@
 	\end{picture}
 }
 
+% fill the page with lines
+\newcommand{\dnotes}[1][2em]{%
+	\thispagestyle{empty}
+	\begingroup\offinterlineskip
+	\hrule height 0pt
+	\vskip-\topskip
+	\leaders\vbox to #1{\vfill\hbox to\hsize{\hrulefill}}\vfill
+	\endgroup
+	\clearpage
+}
+
 % Hyperref should be loaded last
 \RequirePackage{hyperref}
