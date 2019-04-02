@@ -36,6 +36,9 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v1.0.1
+Bugfix release: force PDF 1.4 for the Acrobat compatibility.
+
 ### v1.0
 First official release.
 
