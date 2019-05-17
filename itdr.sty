@@ -3,6 +3,7 @@
 \RequirePackage[inner=1in,outer=1in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{lipsum}
+\RequirePackage{mdframed}
 \RequirePackage[super]{nth}
 \RequirePackage{xfrac} % for the \sfrac fractions
 \RequirePackage{xifthen}
@@ -173,13 +174,39 @@
 	}
 	{\endtabularx\vspace{0.5em}\noindent}
 
-% Box environment
+
+%	Box environment
+
+%	old one
+%\newenvironment{dbox}
+%{	\noindent\vspace{-1.75em}\hspace{-0.025\linewidth}
+%	\includegraphics[width=1.05\linewidth]{img/box_top.pdf} }
+%{	\par\noindent\vspace{1em}\hspace{-0.025\linewidth}
+%	\includegraphics[width=1.05\linewidth]{img/box_bottom.pdf}
+%	\vspace{-2em} }
+
+\mdfsetup{
+	backgroundcolor=dColor2,
+	innerleftmargin=0.5em,
+	innerrightmargin=0.5em,
+	innertopmargin=0em,
+	leftmargin=1em,
+	linewidth=0pt,
+	skipabove=0em,
+	skipbelow=-0.7em,
+}
 \newenvironment{dbox}
-{	\noindent\vspace{-1.75em}\hspace{-0.025\linewidth}
-	\includegraphics[width=1.05\linewidth]{img/box_top.pdf} }
-{	~\\\noindent\vspace{1em}\hspace{-0.025\linewidth}
-	\includegraphics[width=1.05\linewidth]{img/box_bottom.pdf}
-	\vspace{-2em} }
+{	\noindent\vspace{-1.33em}\hspace{-0.024\linewidth}
+	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}
+	\begin{mdframed}
+}
+{
+	\end{mdframed}
+	\noindent\hspace{-0.024\linewidth}
+	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}
+	\vspace{-1.5em}
+}
+
 
 % \save{ABILITY}
 \newcommand{\save}[1]{#1~Save}
