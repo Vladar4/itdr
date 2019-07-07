@@ -1,9 +1,11 @@
-\ProvidesPackage{itdr}[2019/05/20]
+\ProvidesPackage{itdr}[2019/07/07]
 
 \RequirePackage[inner=1in,outer=1in]{geometry}
 \RequirePackage{graphicx}
+\RequirePackage{fp}
 \RequirePackage{lipsum}
 \RequirePackage{mdframed}
+\RequirePackage{multirow}
 \RequirePackage[super]{nth}
 \RequirePackage{xfrac} % for the \sfrac fractions
 \RequirePackage{xifthen}
@@ -75,9 +77,14 @@
 	{\normalfont\bfseries\scshape\large}{\thesubsection}{0em}{}
 \titlespacing*{\subsection}{0em}{\parskip}{0em}
 
+% subsubsection
+\titleformat{\subsubsection}
+	{\normalfont\bfseries\scshape\normalsize}{\thesubsubsection}{0em}{}[]
+\titlespacing*{\subsubsection}{0pt}{\parskip}{0em}
+
 % paragraph
 \titleformat{\paragraph}
-	{\normalfont\normalsize\bfseries}{\theparagraph}{0em}{}[]
+	{\normalfont\bfseries\normalsize}{\theparagraph}{0em}{}[]
 \titlespacing*{\paragraph}{0pt}{\parskip}{0em}
 
 % paragraphsection
@@ -89,7 +96,7 @@
 
 % subparagraph
 \titleformat{\subparagraph}[runin]
-	{\normalfont\normalsize\bfseries}{\thesubparagraph}{0em}{}[]
+	{\normalfont\bfseries\normalsize}{\thesubparagraph}{0em}{}[]
 \titlespacing*{\subparagraph}{\parindent}{\parskip}{\wordsep}
 
 % TOC
@@ -266,7 +273,7 @@
 % \creed{name}
 \newcommand{\creed}[1]{
 	\subsection*{\decosix~#1~\decosix}
-	\addcontentsline{toc}{subsection}{#1}
+	%\addcontentsline{toc}{subsection}{#1}
 }
 
 % \placeholder{}
