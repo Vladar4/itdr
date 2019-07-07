@@ -36,6 +36,10 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v1.2
+***Work in progress***
+
+
 ### v1.1
 * Mystic advancement: Spell Circle is limited by Mystic Level instead of Experience Level
 * Mystic's Tome is required when preparing spells
