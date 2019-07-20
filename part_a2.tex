@@ -1,0 +1,495 @@
+\documentclass[itdr]{subfiles}
+
+\begin{document}
+
+\section{Random Tables and Inspiration}
+
+\subsection{Random Characters}
+\index{Characters}
+
+Random tables for quick character generation.
+
+\paragraph{Abilities}
+
+\begin{dtable}[c|YYYY]
+	\textbf{d20} & \textbf{STR} & \textbf{DEX} & \textbf{WIL} & \textbf{Money} \\
+	1	& 16& 12& 10& 8s \\
+	2	& 10& 12& 16& 8s \\
+	3	& 12& 10& 15& 8s \\
+	4	& 15& 12& 10& 8s \\
+	5	& 10& 14& 12& 8s \\
+	6	& 12& 10& 14& 8s \\
+	7	& 14& 10& 12& 7s \\
+	8	& 12& 15& 10& 6s \\
+	9	& 10& 11& 13& 8s \\
+	10	& 14& 12& 9 & 7s \\
+	11	& 11& 14& 10& 7s \\
+	12	& 8 & 16& 13& 5s \\
+	13	& 11& 13& 9 & 8s \\
+	14	& 9 & 11& 14& 7s \\
+	15	& 13& 11& 9 & 7s \\
+	16	& 11& 9 & 13& 7s \\
+	17	& 13& 9 & 11& 6s \\
+	18	& 9 & 13& 11& 6s \\
+	19	& 13& 9 & 11& 5s \\
+	20	& 9 & 11& 13& 5s \\
+\end{dtable}
+
+\paragraph{Features}
+
+Choose or roll for a Feature roll for HP accordingly.
+
+\begin{dtable}[cX|cX]
+	\textbf{d10} & \textbf{Feature} & \textbf{d10} & \textbf{Feature} \\
+	1 & Assassin	& 6 & Mystic \\
+	2 & Berserker	& 7 & Skilled \\
+	3 & Brawler		& 8 & Swashbuckler \\
+	4 & Commander	& 9 & Tactician \\
+	5 & Healer		& 10& Warrior \\
+\end{dtable}
+
+\subparagraph{Skilled} rolls for an expertise.
+
+\begin{dtable}[cX|cX]
+	\textbf{d8} & \textbf{Expertise} & \textbf{d8} & \textbf{Expertise} \\
+	1 & animal handling	& 5 & drinking \\
+	2 & athletics		& 6 & quickness \\
+	3 & burgling		& 7 & stealth \\
+	4 & cheating		& 8 & negotiation \\
+\end{dtable}
+
+\subparagraph{Mystic} rolls for random Cantrips (d20) and \nth{1} Circle Spells (``Random 36 Spells'' table from Chapter~4: Magic, p.17). Chose one of these spells as a Signature Spell or roll a d6 for a random one.
+
+\paragraph{Background}
+
+Chose or roll for a background and on any additional random table required.
+
+\begin{dtable}[cX|cX]
+	\textbf{d6} & \textbf{Background} & \textbf{d6} & \textbf{Background} \\
+	1 & Criminal	& 4 & Sailor \\
+	2 & Minstrel	& 5 & Scholar \\
+	3 & Noble		& 6 & Soldier \\
+\end{dtable}
+
+\header{Criminal}
+\begin{dtable}[cX|cX]
+	\textbf{d6} & \textbf{Criminal Tool} & \textbf{d6} & \textbf{Criminal Tool} \\
+	1 & blackjack (sap)	& 4 & loaded dice \\
+	2 & crowbar			& 5 & lockpicks \\
+	3 & grappling hook	& 6 & marked cards \\
+\end{dtable}
+
+\header{Minstrel}
+\begin{dtable}[cX]
+	\textbf{d10} & \textbf{Musical Instrument} \\
+	1 & bagpipe, bladder pipe \\
+	2 & drum, tambourine \\
+	3 & flute, ocarina \\
+	4 & jaw harp \\
+	5 & harp, lyre \\
+	6 & crumhorn, shawm \\
+	7 & hurdy-gurdy \\
+	8 & lute, mandolin \\
+	9 & viol, fiddle, rebec \\
+	10& zither, dulcimer \\
+\end{dtable}
+
+\header{Scholar}
+\begin{dtable}[cX]
+	\textbf{d12} & 	\textbf{Study} \\
+	1	& History (archaeology) \\
+	2	& History (culture and religion) \\
+	3	& History (geography and politics) \\
+	4	& Life Science (herbalism) \\
+	5	& Life Science (medicine) \\
+	6	& Life Science (zoology) \\
+	7	& Philology (dead languages) \\
+	8	& Philology (folklore and literature) \\
+	9	& Philology (foreign languages) \\
+	10	& Physical Science (astronomy and physics) \\
+	11	& Physical Science (chemistry) \\
+	12	& Physical Science (geoscience) \\
+\end{dtable}
+
+
+\header{Soldier}
+\begin{dtable}[cXX]
+	\textbf{d6} & \textbf{Rank} & \textbf{Weapon} \\
+	1	& archer & longbow \\
+	2	& cavalry & lance \\
+	3	& musketeer & musket \\
+	4	& officer & pistol \\
+	5	& pikeman & pike \\
+	6	& swordsman & claymore \\
+\end{dtable}
+
+
+\paragraph{Equipment}
+
+Exchange your money for rolls on random equipment tables. Reroll duplicates. Mystics replace light armour with martial melee weapon.
+
+\begin{dtable}[lX]
+	\textbf{Money} & \textbf{Equipment} \\
+	%4s	& simple M, 2$\times$gear, 2s \\
+	5s	& simple M, 2$\times$gear, tool, 2s \\
+	6s	& simple M, simple R, 2$\times$gear, tool, 2s \\
+	7s	& simple M, shield, 1s \\
+	8s	& simple M, simple R, pet, 1s \\
+	%9s	& simple M, shield, 2$\times$gear, tool, 1s \\
+	%10s	& simple M, simple R, pet, 2$\times$gear, tool, 1s \\
+	10s	& simple M, shield, 2$\times$gear, tool, 2s \\
+	%11s	& simple M, shield, pet \\
+	12s	& simple M, military R, 1s \\
+	14s	& simple M, light armour, 2$\times$gear, tool, 1s \\
+	16s	& simple R., light armour, pet \\
+	%18s	& simple M, military R, pet, 2$\times$gear, 1s \\
+	%20s	& military M, shield, 2$\times$gear, tool, 3s \\
+	%22s & military M, simple R, light armour, 1s \\
+\end{dtable}
+
+Additionally you have simple clothes. a backpack, basic camping equipment, torches, and a few days' rations.
+
+\header{Simple Melee Weapons}
+\begin{dtable}[cX|cX]
+	\textbf{d4} & \textbf{Weapon} & \textbf{d4} & \textbf{Weapon} \\
+	1 & pitchfork	& 3 & sledgehammer \\
+	2 & quarterstaff& 4 & splitting maul \\
+\end{dtable}
+
+\header{Martial Melee Weapons}
+\begin{dtable}[cX|cX]
+	\textbf{d8} & \textbf{Weapon} & \textbf{d8} & \textbf{Weapon} \\
+	1 & axe		& 5 & mace \\
+	2 & dagger	& 6 & spear \\
+	3 & halberd	& 7 & sword \\
+	4 & lance	& 8 & war hammer \\
+\end{dtable}
+
+\vfill
+\break
+
+\header{Simple Ranged Weapons}
+\begin{dtable}[cX|cX]
+	\textbf{d6} & \textbf{Weapon} & \textbf{d6} & \textbf{Weapon} \\
+	1 & boomerang	& 4 & sling \\
+	2 & darts		& 5 & throwing daggers \\
+	3 & hunting bow	& 6 & throwing stars \\
+\end{dtable}
+
+\header{Martial Ranged Weapons}
+\begin{dtable}[cX|cX]
+	\textbf{d4} & \textbf{Weapon} & \textbf{d4} & \textbf{Weapon} \\
+	1 & crossbow	& 3 & musket \\
+	2 & longbow		& 4 & pistol \\
+\end{dtable}
+
+\header{Adventuring Gear}
+\begin{dtable}[cX|cX]
+	\textbf{d12} & \textbf{Gear} & \textbf{d12} & \textbf{Gear} \\
+	1 & 10ft rope		& 7 & dice or cards \\
+	2 & bottle			& 8 & flint and steel \\
+	3 & caltrops		& 9	& parchment \\
+	4 & candle			& 10& sack \\
+	5 & chain			& 11& spike \\
+	6 & chalk			& 12& tent \\
+\end{dtable}
+
+\header{Tools}
+\begin{dtable}[cX|cX]
+	\textbf{d20} & \textbf{Tool} & \textbf{d20} & \textbf{Tool} \\
+	1 & animal trap			& 11& hatchet \\
+	2 & collapsible pole	& 12& lockpicks \\
+	3 & chisel and mallet	& 13& padlock \\
+	4 & clamp				& 14& pickaxe \\
+	5 & crowbar				& 15& pliers \\
+	6 & drill				& 16& saw \\
+	7 & file or rasp		& 17& scissors \\
+	8 &	fishing pole		& 18& shovel \\
+	9 & grappling hook		& 19& wrench \\
+	10& hammer				& 20& writing set \\
+\end{dtable}
+
+\header{Pet}
+\begin{dtable}[cX|cX]
+	\textbf{d4} & \textbf{Pet} & \textbf{d4} & \textbf{Pet} \\
+	1 & cat 	& 3 & owl \\
+	2 & mutt	& 4 & parrot \\
+\end{dtable}
+
+
+\vfill
+\break
+
+
+\subsection{Random Magic Items}
+\index{Magic Items}
+
+Roll for a random magic item and it's appearance. Think of it's properties based on what it looks like.
+
+\header{Type}
+\begin{dtable}[cXcl]
+	\textbf{d100} & \textbf{Type} & \textbf{d100} & \textbf{Type} \\
+	1--10	&	container	&	71--73	&	music. instrument	\\
+	11--30	&	expendable	&	74--80	&	light armour	\\
+	31--40	&	garment	&	81--83	&	full armour	\\
+	41--50	&	jewellery	&	84--90	&	shield	\\
+	51--70	&	misc.	&	91--100	&	weapon	\\
+\end{dtable}
+
+\header{Container}
+\begin{dtable}[cXcl]
+	\textbf{d12} & \textbf{Container} & \textbf{d12} & \textbf{Container} \\
+	1 & backpack or haversack	& 7 & jug \\
+	2 & bottle					& 8 & pouch \\
+	3 & box or casket			& 9 & quiver \\
+	4 & decanter				& 10& sack or bag \\
+	5 & drinking horn			& 11& vial \\
+	6 & flask or canteen		& 12& waterskin \\
+\end{dtable}
+
+\header{Expendable}
+\begin{dtable}[clcX]
+	\textbf{d10} & \textbf{Expendable} & \textbf{d10} & \textbf{Expendable} \\
+	1 & bean or seed				& 6 & herb \\
+	2 & candle or torch				& 7 & ink \\
+	3 & chalk						& 8 & oil \\
+	4 & dust						& 9 & ointment \\
+	5 & food (fruit, pastry, etc.)	& 10& potion \\
+\end{dtable}
+
+\header{Garment}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Garment} & \textbf{d20} & \textbf{Garment} \\
+	1	& belt		& 11 & jerkin \\
+	2	& boots		& 12 & mantle \\
+	3	& cloak		& 13 & robe \\
+	4	& coat		& 14 & sandals \\
+	5	& doublet	& 15 & shirt \\
+	6	& dress		& 16 & shoes \\
+	7	& gloves	& 17 & skirt \\
+	8	& hat		& 18 & trousers \\
+	9	& hood		& 19 & tunic \\
+	10	& hose		& 20 & vestments \\
+\end{dtable}
+
+
+\header{Jewellery}
+\begin{dtable}[clcX]
+	\textbf{d20} & \textbf{Jewellery} & \textbf{d20} & \textbf{Jewellery} \\
+	1	& anklet 			& 11 & eyepatch \\
+	2	& belt buckle 		& 12 & gorget \\
+	3	& bracelet 			& 13 & hairpin \\
+	4	& bracer 			& 14 & locket \\
+	5	& brooch 			& 15 & mask \\
+	6	& chain 			& 16 & medallion \\
+	7	& cloak pin 		& 17 & necklace \\
+	8	& crown 			& 18 & pectoral \\
+	9	& diadem or tiara 	& 19 & pendant \\
+	10	& earring 			& 20 & ring \\
+\end{dtable}
+
+
+\header{Miscellaneous}
+\begin{dtable}[cXcl]
+	\textbf{d100} & \textbf{Item} & \textbf{d100} & \textbf{Item} \\
+	1--2	&	amulet or talisman	&	51--52	&	monocle or lens	\\
+	3--4	&	book	&	53--54	&	needle	\\
+	5--6	&	bowl or bucket	&	55--56	&	orb or crystal	\\
+	7--8	&	brazier	&	57--58	&	pickaxe	\\
+	9--10	&	broom	&	59--60	&	pipe	\\
+	11--12	&	brush	&	61--62	&	plate or tray	\\
+	13--14	&	candelabrum	&	63--64	&	prosthesis	\\
+	15--16	&	carpet	&	65--66	&	quill	\\
+	17--18	&	censer	&	67--68	&	rod or sceptre	\\
+	19--20	&	coin	&	69--70	&	rope	\\
+	21--22	&	comb	&	71--72	&	saddle	\\
+	23--24	&	corkscrew	&	73--74	&	sand timer	\\
+	25--26	&	cup, chalice, or goblet	&	75--76	&	scissors	\\
+	27--28	&	deck of cards or dice set	&	77--78	&	shovel	\\
+	29--30	&	fan	&	79--80	&	sickle	\\
+	31--32	&	figurine or idol	&	81--82	&	skull	\\
+	33--34	&	gem or pearl	&	83--84	&	spectacles	\\
+	35--36	&	hammer	&	85--86	&	spike	\\
+	37--38	&	handkerchief	&	87--88	&	spyglass	\\
+	39--40	&	hook	&	89--90	&	staff	\\
+	41--42	&	horseshoe	&	91--92	&	tablecloth	\\
+	43--44	&	lantern	&	93--94	&	tablet	\\
+	45--46	&	lockpick	&	95--96	&	umbrella	\\
+	47--48	&	manacles	&	97--98	&	wand	\\
+	49--50	&	mirror	&	99--100	&	whistle	\\
+\end{dtable}
+
+\header{Musical Instrument}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Instrument} & \textbf{d20} & \textbf{Instrument} \\
+	1	& bagpipe 		& 11 & jaw harp \\
+	2	& bell 			& 12 & lute \\
+	3	& bladder pipe	& 13 & lyre \\
+	4	& crumhorn 		& 14 & mandolin \\
+	5	& drum 			& 15 & ocarina \\
+	6	& dulcimer 		& 16 & rebec \\
+	7	& fiddle 		& 17 & shawm \\
+	8	& flute 		& 18 & tambourine \\
+	9	& harp 			& 19 & viol \\
+	10	& hurdy-gurdy 	& 20 & zither \\
+\end{dtable}
+
+\header{Light Armour and Accessoires}
+\begin{dtable}[cXcX]
+	\textbf{d6} & \textbf{Armour} & \textbf{d6} & \textbf{Armour} \\
+	1 & bracers		& 4 & greaves \\
+	2 & gambeson	& 5 & helmet \\
+	3 & gloves		& 6 & leather armour \\
+\end{dtable}
+
+\header{Full Armour and Accessoires}
+\begin{dtable}[cXcl]
+	\textbf{d10} & \textbf{Armour} & \textbf{d10} & \textbf{Armour} \\
+	1 & bracers		& 6 & mail armour \\
+	2 & cuirass		& 7 & plate armour \\
+	3 & gauntlets	& 8 & sabatons \\
+	4 & greaves		& 9 & scale armour \\
+	5 & helmet		& 10& segmented armour \\
+\end{dtable}
+
+\header{Shield}
+\begin{dtable}[cXcX]
+	\textbf{d6} & \textbf{Shield} & \textbf{d6} & \textbf{Shield} \\
+	1 & buckler			& 4 & pavise \\
+	2 & heater shield	& 5 & round shield \\
+	3 & kite shield		& 6 & square shield \\
+\end{dtable}
+
+\header{Weapon and Ammunition}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Weapon} & \textbf{d20} & \textbf{Weapon} \\
+	1 & arrow		& 11 & lance \\
+	2 & axe			& 12 & longbow \\
+	3 & bolt		& 13 & pistol \\
+	4 & boomerang	& 14 & mace \\
+	5 & bullet		& 15 & musket \\
+	6 & crossbow	& 16 & sling \\
+	7 & dagger		& 17 & spear \\
+	8 & dart		& 18 & sword \\
+	9 & halberd		& 19 & throwing star \\
+	10& hunting bow	& 20 & war hammer \\
+\end{dtable}
+
+\subsubsection{Random Appearance}
+
+\header{Attribute}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Attribute} & \textbf{d20} & \textbf{Attribute} \\
+	1	&	ancient	&	11	&	menacing	\\
+	2	&	bejewelled	&	12	&	ornate	\\
+	3	&	colourful	&	13	&	otherworldly	\\
+	4	&	crude	&	14	&	patterned	\\
+	5	&	dingy	&	15	&	peculiar	\\
+	6	&	exotic	&	16	&	refined	\\
+	7	&	grotesque	&	17	&	rugged	\\
+	8	&	heavy	&	18	&	shiny	\\
+	9	&	intricate	&	19	&	sleek	\\
+	10	&	light or thin	&	20	&	sophisticated	\\
+\end{dtable}
+
+
+\header{Fabric}
+\begin{dtable}[cXcX]
+	\textbf{d8} & \textbf{Fabric} & \textbf{d8} & \textbf{Fabric} \\
+	1 & cotton	& 5 & leather \\
+	2 & felt	& 6 & linen \\
+	3 & fur		& 7 & silk \\
+	4 & hair 	& 8	& wool \\
+\end{dtable}
+
+
+\header{Material}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Material} & \textbf{d20} & \textbf{Material} \\
+	1 & amber	& 11 & iron \\
+	2 & bone	& 12 & ivory \\
+	3 & brass	& 13 & jade \\
+	4 & bronze	& 14 & jet \\
+	5 & ceramic	& 15 & obsidian \\
+	6 & copper	& 16 & pewter \\
+	7 & coral	& 17 & silver \\
+	8 & crystal	& 18 & steel \\
+	9 & glass	& 19 & stone \\
+	10& gold	& 20 & wood \\
+\end{dtable}
+
+\subsubsection{Example Magic Items}
+
+\paragraph{Diadem of Empathy}
+Thin glass diadem allows its wearer to sense true feelings and emotions of others.
+
+\paragraph{Lucky Boomerang}
+This exotic ivory boomerang always finds its target thus negating Impairments from cover and such.
+
+\paragraph{Mask of Disguise}
+Once per day this sleek silver mask allows its user to assume facial appearance of other person.
+
+\vfill
+\break
+
+\subsection{Random Non-Player Characters}
+\index{Non-Player Characters}
+
+\header{Age and Wealth}
+\begin{dtable}[cX|cX]
+	\textbf{d8} & \textbf{Age} & \textbf{d6} & \textbf{Wealth} \\
+	1--2 & young 		& 1--2 & poor \\
+	3--6 & middle-aged	& 3--5 & average \\
+	7--8 & old			& 6	   & wealthy \\
+\end{dtable}
+
+\header{Occupation}
+\begin{dtable}[clcX]
+	\textbf{3d6} & \textbf{Occupation} & \textbf{3d6} & \textbf{Occupation} \\
+	3 & scholar				& 11 & craftsman \\
+	4 & healer				& 12 & servant \\
+	5 & artist				& 13 & merchant \\
+	6 & entertainer			& 14 & soldier, guard \\
+	7 & criminal			& 15 & sailor \\
+	8 & vagabond, beggar	& 16 & scribe, clerk \\
+	9 & hunter, fisherman	& 17 & priest \\
+	10& farmer, peasant		& 18 & noble \\
+\end{dtable}
+
+\header{Personality}
+\begin{dtable}[cXcX]
+	\textbf{d20} & \textbf{Personality} & \textbf{d20} & \textbf{Personality} \\
+	1 & arrogant	& 11 & humble \\
+	2 & curious		& 12 & inattentive \\
+	3 & dimwitted	& 13 & joyful \\
+	4 & dishonest	& 14 & melancholic \\
+	5 & friendly	& 15 & polite \\
+	6 & generous	& 16 & rude \\
+	7 & greedy		& 17 & smart \\
+	8 & gullible	& 18 & tranquil \\
+	9 & honest		& 19 & unfriendly \\
+	10& hot-tempered& 20 & wary \\
+\end{dtable}
+
+Roll twice for notable details, reroll unsuitable.
+
+\header{Notable Detail}
+\begin{dtable}[cXcX]
+	\textbf{3d8} & \textbf{Detail} & \textbf{3d8} & \textbf{Detail} \\
+	3 & hunchback	& 14 & tall \\
+	4 & one eye		& 15 & overweight \\
+	5 & scar		& 16 & moustache \\
+	6 & stutter		& 17 & long hair \\
+	7 & drunkard	& 18 & sideburns \\
+	8 & grey-haired & 19 & red-haired \\
+	9 & bald		& 20 & accent \\
+	10& short hair	& 21 & birthmark \\
+	11& bushy beard & 22 & lazy eye \\
+	12& thin		& 23 & prosthetic leg \\
+	13& short		& 24 & prosthetic arm \\
+\end{dtable}
+
+
+
+
+\end{document}
