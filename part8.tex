@@ -82,10 +82,8 @@ Change visual appearance and behaviour of the existing monster. Changing size, o
 Apply Features from Chapter 1 to non-player-characters and monsters, especially ``bosses''.
 
 \paragraph{Effect on Critical Damage}
+\index{Damage!critical}
 On a failed Critical Damage Save monster's target suffer some additional detrimental effect: illness, poison, ability score loss, or even death. Decide if target could Save against this.
-
-\paragraph{Effect on Maximum Damage}
-When monster inflicts maximum damage, the attack will bear some additional effect: grapple, poison, stun, etc. Decide if target could Save against this.
 
 \paragraph{Pairing}
 One type of monster enhances other type's attacks, provides protection, or some other advantage.
@@ -99,6 +97,10 @@ Instead of its default attack monster can use a special one, be it a spell-like 
 \paragraph{Tactics and Weapons}
 Monsters might use unexpected combat tactic, especially when they fight in groups. If monster uses a weapon, change it to something unusual, or switch melee/ranged type.
 
+\paragraph{Vulnerabilities, Resistances, and Immunities}
+\index{Attacks!enhanced}
+\index{Attacks!impaired}
+Specific attacks against the monster are Enhanced, Impaired, or does not work at all.
 
 \begin{dbox}
 	~\\
@@ -119,7 +121,7 @@ Monster rapidly closes distance to melee range. The target must succeed on a \sa
 Monster have multiple Damage dice (still taking the highest one for a single target). Some monsters can even attack multiple opponents, dividing Damage dice between these attacks.
 
 \paragraph{Grapple}
-If target fails a \save{DEX} it can't move until a successful \save{STR or DEX} on following turns. Monsters can't attack with limbs they currently use for grapple, but strong ones might Damage the grappled target instead.
+If target fails a \save{DEX} it is immobilized until a successful \save{STR or DEX} on following turns. Monsters cannot attack with limbs they currently use for grapple, but strong ones might Damage the grappled target instead.
 
 \paragraph{Indomitable}
 Once per Rest, when taking Critical Damage, monster continues to fight as if it succeeded on this Save.
@@ -128,119 +130,14 @@ Once per Rest, when taking Critical Damage, monster continues to fight as if it 
 The target must succeed on a \save{DEX} or be swallowed whole, suffering Ability Score Loss (usually STR, DEX, or both) each following round. If monster suffers Critical Damage, it must pass an additional \save{STR} or regurgitate all swallowed creatures.
 
 \paragraph{Volatile}
-When monster takes Critical Damage it explodes, dealing Blast damage to everyone nearby.
+When monster suffers Critical Damage it explodes, dealing Blast damage to everyone nearby.
 
 \paragraph{Weakness}
-When monster takes damage from a source of its weakness (even if this damage isn't highest one), monster loses some of its powers, becomes stunned, etc. Usually, such effect last for its next turn.
+When monster takes damage from a source of its weakness (even if this damage is not the highest one on this round), monster loses some of its powers, becomes stunned, etc. Usually, such effect last for its next turn.
 
 \vfill
 \break
 
-\section{Random Inspirations}
-
-\begin{dtable}[cXcX]
-	\textbf{d12} & \textbf{Nature} & \textbf{d12} & \textbf{Nature} \\ 
-	1	&	artificial	&	7	&	magical	\\
-	2	&	colonial	&	8	&	mutated	\\
-	3	&	divine	&	9	&	natural	\\
-	4	&	eldritch	&	10	&	primitive	\\
-	5	&	ethereal	&	11	&	relict	\\
-	6	&	fiendish	&	12	&	undead	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d20} & \textbf{Appearance} & \textbf{d20} & \textbf{Appearance} \\ 
-	1	&	bald	&	11	&	multicoloured	\\
-	2	&	barbed	&	12	&	muscular	\\
-	3	&	bloated	&	13	&	rotting	\\
-	4	&	camouflaged	&	14	&	rusty	\\
-	5	&	diseased	&	15	&	shadowy	\\
-	6	&	furry	&	16	&	shimmering	\\
-	7	&	gaunt	&	17	&	slimy	\\
-	8	&	graceful	&	18	&	spotted	\\
-	9	&	invisible	&	19	&	stinking	\\
-	10	&	luminous	&	20	&	striped	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d20} & \textbf{Trait} & \textbf{d20} & \textbf{Trait} \\ 
-	1	&	acidic	&	11	&	multiplying	\\
-	2	&	acoustic	&	12	&	parasite	\\
-	3	&	adhesive	&	13	&	poisonous	\\
-	4	&	armed	&	14	&	psychic	\\
-	5	&	armoured	&	15	&	shelled	\\
-	6	&	electric	&	16	&	shooting	\\
-	7	&	fire	&	17	&	spewing	\\
-	8	&	giant	&	18	&	swallowing	\\
-	9	&	hypnotic	&	19	&	tiny	\\
-	10	&	ice	&	20	&	vampiric	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d20} & \textbf{Behaviour} & \textbf{d20} & \textbf{Behaviour} \\ 
-	1	&	ambushing	&	11	&	musical	\\
-	2	&	cunning	&	12	&	nocturnal	\\
-	3	&	devouring	&	13	&	peaceful	\\
-	4	&	elusive	&	14	&	raging	\\
-	5	&	friendly	&	15	&	scavenging	\\
-	6	&	gibbering	&	16	&	screaming	\\
-	7	&	grappling	&	17	&	silent	\\
-	8	&	greedy	&	18	&	skittish	\\
-	9	&	insane	&	19	&	swarming	\\
-	10	&	intelligent	&	20	&	whispering	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d20} & \textbf{Locomotion} & \textbf{d20} & \textbf{Locomotion} \\ 
-	1	&	aquatic	&	11	&	jumping	\\
-	2	&	burrowing	&	12	&	rolling	\\
-	3	&	climbing	&	13	&	running	\\
-	4	&	crawling	&	14	&	shambling	\\
-	5	&	fast	&	15	&	slithering	\\
-	6	&	floating	&	16	&	slow	\\
-	7	&	flowing	&	17	&	soaring	\\
-	8	&	flying	&	18	&	subterranean	\\
-	9	&	gliding	&	19	&	teleporting	\\
-	10	&	immobile	&	20	&	walking	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d20} & \textbf{Body} & \textbf{d20} & \textbf{Body} \\ 
-	1	&	armless	&	11	&	one-armed	\\
-	2	&	bodiless	&	12	&	one-legged	\\
-	3	&	four-armed	&	13	&	stone	\\
-	4	&	four-legged	&	14	&	tailed	\\
-	5	&	legless	&	15	&	tentacled	\\
-	6	&	limbless	&	16	&	two-armed	\\
-	7	&	metal	&	17	&	two-headed	\\
-	8	&	multi-armed	&	18	&	two-legged	\\
-	9	&	multi-legged	&	19	&	winged	\\
-	10	&	multi-limbed	&	20	&	wooden	\\
-\end{dtable}
-
-\begin{dtable}[cXcX]
-	\textbf{d12} & \textbf{Head} & \textbf{d12} & \textbf{Head} \\ 
-	1	&	blind	&	7	&	multi-eyed	\\
-	2	&	brainless	&	8	&	multi-headed	\\
-	3	&	deaf	&	9	&	mute	\\
-	4	&	eyeless	&	10	&	one-eyed	\\
-	5	&	headless	&	11	&	trunked	\\
-	6	&	horned	&	12	&	two-headed	\\
-\end{dtable}
-
-\begin{dtable}[cXcl]
-	\textbf{d20} & \textbf{Form} & \textbf{d20} & \textbf{Form} \\ 
-1	&	amorphous	&	11	&	hedgehog, mole, shrew	\\
-2	&	amphibian	&	12	&	humanoid	\\
-3	&	animated	&	13	&	insect, arachnid	\\
-4	&	bat	&	14	&	mollusc, worm	\\
-5	&	bird	&	15	&	plant	\\
-6	&	cat-like	&	16	&	reptile, serpent	\\
-7	&	crustacean, myriapod	&	17	&	rodent, rabbit	\\
-8	&	dog-like	&	18	&	ungulate (hoofed)	\\
-9	&	fish	&	19	&	chimeric*	\\
-10	&	fungi	&	20	&	shape-shifting*	\\
-\end{dtable}
-\em{* Roll two more times.}
+\dimagepage{part9}
 
 \end{document}
