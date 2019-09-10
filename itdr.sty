@@ -169,8 +169,12 @@
 	\normalfont\normalsize\bfseries
 	#1}\\}
 
+% Left-aligned column
+\newcolumntype{L}{X}
 % Centered column
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+% Right-aligned column
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 
 % Table environment
 \RequirePackage{tabularx}
