@@ -22,8 +22,145 @@ If you want player characters to be ordinary people, roll 2d6~+~3 for Ability Sc
 
 To advance such character to Novice chose a Feature, reroll HP (or keep the old one), and roll d20 for each Ability Score. If the roll is higher than the Ability Score, it increases by one to a maximum of 20.
 
+
+\section{Injuries}
+\index{Injuries}
+\index{Damage!critical}
+
+On a failed Critical Damage Save, roll for an injury.
+Effects of an injury could be fixed by Healing.
+
+\begin{dtable}[cL]
+	\textbf{d20} & \textbf{Injury} \\
+	1--4	& \textbf{Bruise.} Nothing serious.\\
+	5--7	& \textbf{Scar.} This will leave a mark.\\
+	8--9	& \textbf{Concussion.} Disadv. on \saves{WIL}.\\
+	10--11	& \textbf{Cracked rib.} Disadv. on \saves{DEX}.\\
+	12--13	& \textbf{Torn muscle.} Disadv. on \saves{STR}.\\
+	14--15	& \textbf{Broken gear.} Order: shield $\rightarrow$ armour $\rightarrow$ weapon. Fixing gear costs half its price.\\
+	16		& \textbf{Fractured skull.} d6 WIL Loss.\\
+	17		& \textbf{Broken ribs.} d6 DEX Loss.\\
+	18		& \textbf{Internal bleeding.} d6 STR Loss.\\
+	19		& \textbf{Broken limb.} Roll for a limb. Second hit to the same limb will result in its loss.\\
+	20		& \textbf{Nearly dead.} Next failed Critical Damage Save will result in death.\\
+\end{dtable}
+
+\begin{dtable}[cL|cL]
+	\textbf{d12} & \textbf{Broken Limb} & \textbf{d12} & \textbf{Broken Limb} \\
+	1--2& left hand	& 7--8	& left foot \\
+	3--4& right hand& 9--10	& right foot \\
+	5	& left arm	& 11	& left leg \\
+	6	& right arm	& 12	& right leg \\
+\end{dtable}
+
+
+\section{Light}
+\index{Light}
+
+Torches, lanterns, and campfires illuminate in a \mbox{30-ft} radius. Big bonfires might cast light twice as far. Candles and such illuminate only in a 10-ft radius and thus are not commonly used by adventurers.
+
+\subparagraph{Torch} lasts for about an hour. When used as a weapon, it deals d4 Fire Damage but might go out.
+
+\subparagraph{Lantern} lasts for about four hours, can be dimmed at any moment, and refilled with lamp oil.
+
+
+\section{Living Expenses}
+\index{Living Expenses}
+\index{Lifestyle|see {Living Expenses}}
+
+\equip{Squalid}{d4s/month}:
+Suffer d4 Ability Score Loss for each Ability Score, your reputation suffers.
+
+\equip{Adequate}{10$\times$d4s/month}:
+Restore d4 Ability Score Loss for each Ability Score.
+
+\equip{Luxury}{d4g/month}:
+Heal any Ability Score Loss and non-magical ailments, your reputation rises.
+
+If you own pets, add half as much for each one.
+
+Halve the expense if you live in your own house.
+
+
 \vfill
 \break
+
+
+\section{Load Capacity}
+
+Characters can lift a maximum amount of load equal to their STR squared (in pounds). Half of this load can be carried without any impediment in speed. Twice as much can be dragged on the ground.
+
+\begin{dtable}[llLl]
+	\textbf{STR} & \textbf{Carry (\sfrac{1}{2}), lb} & \textbf{Lift, lb} & \textbf{Drag ($\times$2), lb} \\
+	1	&	\sfrac{1}{2}		&	1		&	2		\\
+	2	&	2		&	4		&	8		\\
+	3	&	4\sfrac{1}{2}		&	9		&	18		\\
+	4	&	8		&	16		&	32		\\
+	5	&	12\sfrac{1}{2}		&	25		&	50		\\
+	6	&	18		&	36		&	72		\\
+	7	&	24\sfrac{1}{2}		&	49		&	98		\\
+	8	&	32		&	64		&	128		\\
+	9	&	40\sfrac{1}{2}		&	81		&	162		\\
+	10	&	50		&	100		&	200		\\
+	11	&	60\sfrac{1}{2}		&	121		&	242		\\
+	12	&	72		&	144		&	288		\\
+	13	&	84\sfrac{1}{2}		&	169		&	338		\\
+	14	&	98		&	196		&	392		\\
+	15	&	112\sfrac{1}{2}		&	225		&	450		\\
+	16	&	128		&	256		&	512		\\
+	17	&	144\sfrac{1}{2}		&	289		&	578		\\
+	18	&	162		&	324		&	648		\\
+	19	&	180\sfrac{1}{2}		&	361		&	722		\\
+	20	&	200		&	400		&	800		\\
+\end{dtable}
+
+Aside from speed penalty, heavy load reduces HP to 0. The same HP reduction happens when carrying more than three bulky items. Items are considered bulky if they require both hands to carry, for example, two-handed weapons, full armour, etc.
+
+
+\vfill
+\break
+
+
+\section{Madness}
+\index{Madness}
+\index{Sanity|see {Madness}}
+\index{Insanity|see {Madness}}
+
+If your game is heavily focused on a horror aspect, you might want to track characters' sanity.
+
+Each time the character suffers an exposure to a source of supernatural dread, succeed on a \save{WIL} or gain a Madness Level.
+
+A good night's sleep lowers Madness Level by 1.
+
+When Madness Level exceeds character's Experience Level, the character goes insane. Roll for immediate and prolonged effect. Prolonged effects require a Healing Service to get rid of.
+
+\begin{dtable}[cL]
+	\textbf{d20} & \textbf{Immediate Effect} \\
+	1--4 & \textbf{Shudder.} \\
+	5--7 & \textbf{Scream} loudly, making a lot of noise. \\
+	8--10 & \textbf{Flail} around, attacking a random nearby target on your next turn. \\
+	11--13 & \textbf{Panic} and run away. 2-in-6 chance to drop your weapon while doing so. \\
+	14--15 & \textbf{Frenzy.} Spend your turns attacking a random nearby target. After attacking an ally, succeed on a \save{WIL} to recover. \\
+	16--17 & \textbf{Blindness} until Rest. \\
+	18--19 & \textbf{Paralysis} until any incoming Damage, or someone takes an action to shake it off.\\
+	20 & \textbf{Faint}. Need to be tended to by an ally and have a Rest to regain consciousness. \\
+\end{dtable}
+
+\begin{dtable}[cL]
+	\textbf{d20} & \textbf{Prolonged Effect} \\
+	1--4 & \textbf{Nightmares.} \\
+	5--7 & \textbf{Hallucinations.} By Referee discretion. \\
+	8--10 & \textbf{Muteness.} Lose the ability to speak. \\
+	11--13 & \textbf{Phobia.} Attacks against the cause of the phobia are Impaired. \\
+	14--15 & \textbf{Paranoia.} Disadvantage on \saves{WIL}. \\
+	16--17 & \textbf{Dizziness.} Disadvantage on \saves{DEX}. \\
+	18--19 & \textbf{Weakness.} Disadvantage on \saves{STR}. \\
+	20 & \textbf{Stupor.} Cannot take any actions. \\
+\end{dtable}
+
+
+\break
+
 
 \section{Magic}
 \index{Magic}
@@ -33,9 +170,9 @@ To advance such character to Novice chose a Feature, reroll HP (or keep the old 
 
 Improper use of a magical device, spellcasting inside an anti-magic zone, destruction of a magic item, or any other dangerous interaction with magic might lead to a mishap. Succeed on a \save{WIL} or suffer a random consequence.
 
-\begin{dtable}[cX]
+\begin{dtable}[cL]
 	\textbf{d100} & \textbf{Mishap} \\
-	1--4	&	You exude strong smell for a day. (d4) 1:~mint, 2:~garlic, 3:~vinegar, 4:~sulphur.	\\
+	1--4	&	You exude a strong smell for a day. (d4) 1:~mint, 2:~garlic, 3:~vinegar, 4:~sulphur.	\\
 	5--8	&	Your clothes' colour changes randomly.	\\
 	9--12	&	Your clothes grow one size. Gain Disadvantage on \saves{DEX} until this problem is amended.	\\
 	13--16	&	Your eye colour changes randomly.	\\
@@ -43,7 +180,7 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	21--24	&	Your hair colour changes to a random one (new hair grows normal).	\\
 	25--28	&	Your hair falls out.	\\
 	29--32	&	Your hair grows to a yearly amount.	\\
-	33--36	&	Your skin turns a saturated shade of a random colour for d12 months.	\\
+	33--36	&	Your skin acquires a saturated shade of a random colour for d12 months.	\\
 	37--40	&	Your skin is covered in a random growth for d12 months. (d4) 1:~fur, 2:~scales, 3:~feathers, 4:~spines.	\\
 	41--43	&	You disappear for a minute.	\\
 	44--46	&	You are stunned until Rest.	\\
@@ -55,12 +192,12 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	62--64	&	You are mute until Rest.	\\
 	65--67	&	You see invisible things for an hour.	\\
 	68--70	&	You are blinded until Rest.	\\
-	71--72	&	You are obscured by a could of smoke.	\\
+	71--72	&	You are obscured by a cloud of smoke.	\\
 	73--74	&	Your HP drop to 0.	\\
 	75--76	&	Your HP are restored.	\\
 	77--78	&	You double in size for an hour. Gain Advantage on \saves{STR} and increase your weapon Damage dice by one (up to d12).	\\
 \end{dtable}
-\begin{dtable}[cX]
+\begin{dtable}[cL]
 \textbf{d100} & \textbf{Mishap} \\
 	79--80	&	You halve in size for an hour. Gain Disadvantage on \saves{STR} and lower your weapon Damage dice by one (down to d4).	\\
 	81--82	&	Your main weapon shrinks to one-sixteenth its size for an hour.	\\
@@ -69,21 +206,21 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	87--88	&	You grow a tail.	\\
 	89--90	&	You grow horns.	\\
 	91	&	You grow gills.	\\
-	92	&	Your nails grow into sharp talons (bonus d6 unarmed Damage die).	\\
-	93	&	Your teeth fall out.	\\
-	94	&	Your skin becomes very tough. Gain Armour~1 when not wearing any Armour.	\\
+	92	&	Your feet turn into hooves.	\\
+	93	&	Your nails grow into sharp talons (bonus d6 unarmed Damage die).	\\
+	94	&	Your skin becomes very tough. Gain Armour~1 when not wearing any armour.	\\
 	95	&	One of your Ability Scores increases by one (up to 20). (d6) 1--2:~STR, 3--4:~DEX, 5--6:~WIL.	\\
 	96	&	One of your Ability Scores decreases by one (down to 3). (d6) 1--2:~STR, 3--4:~DEX, 5--6:~WIL.	\\
 	97	&	You grow a random body part.	\\
 	98	&	You lose a random body part.	\\
-	99	&	Your clothes burst in flames. Take d6 damage now and d6 at the end of your next turn unless extinguished.	\\
+	99	&	Your clothes burst in flames. Take d6 damage now and d6 at the end of your next turn, unless extinguished.	\\
 	100	&	You are petrified.	\\
 \end{dtable}
 
 \vfill
 
 \header{Random Color}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d12} & \textbf{Color} & \textbf{d12} & \textbf{Color} \\
 	1 & snow white		& 7	& lemon yellow \\
 	2 & ash grey		& 8	& malachite green \\
@@ -93,30 +230,47 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	6 & pumpkin orange	& 12& orchid magenta \\
 \end{dtable}
 
+\vfill
+
 \header{Random Body Part}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Part} & \textbf{d20} & \textbf{Part} \\
-	1--4	& \multicolumn{3}{l}{a body part created by a magic mishap} \\
-	5--7	& finger	& 14--16& foot \\
-	8--10	& hand		& 17--18& lower leg \\
-	11--12	& forearm	& 19	& leg \\
-	13		& arm		& 20	& eye \\
+	1		& teeth	& 11--14 & toe	\\
+	2--5	& finger& 15--17 & foot	\\
+	6--8	& hand	& 18--19 & leg	\\
+	9--10	& arm	& 20	 & eye	\\
 \end{dtable}
+
 
 \break
 
-\subsection{Speed Casting}
-\index{Speed Casting}
 
-Use this option in place of Prepared Spells rule.
+\section{Pets' Experience}
+\index{Pets}
+\index{Experience Levels}
 
-Your focus allows you to cast any Spell you know in a number of combat rounds equal to its Circle~+~1. To speed it up, take 2hp Damage ignoring Armour per round of reduced cast time. This Damage occurs when the spell is cast, and at 0hp it targets WIL instead of STR.
+If you want to allow experience for pets, do it once, when a pet survives three Adventures. Use the same Ability Score and HP increase rules as characters do.
+
+
+\section{Rations}
+\index{Rations}
+
+While seafaring or travelling through inhospitable land it might be important to know the amount and weight of the rations required in your journey.
+
+\begin{dtable}[Llll]
+	\textbf{Consumed daily by} & \textbf{Food} & \multicolumn{2}{l}{\textbf{Water}} \\
+	Humans			& 2~lb	& 4~lb	& (\sfrac{1}{2}~gal) \\
+	Horses and such	& 20~lb	& 40~lb	& (5~gal) \\
+	Elephants		& 200~lb& 400~lb& (50~gal) \\
+\end{dtable}
+
+A day without enough water or a week without enough food results in d4 STR Loss.
 
 
 \section{Resources}
 \index{Resources}
 
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{Amount} & \textbf{Description} & \textbf{Average} & \textbf{Price} \\
 	1 & running out	& 1		& $\times$~1 \\
 	2 & low			& 2		& $\times$~d6 \\
@@ -127,18 +281,49 @@ Your focus allows you to cast any Spell you know in a number of combat rounds eq
 
 Each time you spend a resource (or after combat for ammo), roll a d6. If you roll over the Amount, decrease it by one. On zero the resource is depleted.
 
-If you search some place for the resource, roll a d6. If you roll over the Amount, increase it by one to a maximum of 5.
+If you scavenge for the resource, roll a d6. If you roll over the Amount, increase it by one to a maximum of 5.
 
 When buying resources to increase the Amount by one (up to 5), pay its price multiplied by your current Amount~x~d6.
 
 
-\section{Siege Engines}
+\vfill
+\break
+
+
+\section{Structures and Sieges}
+\index{Sieges}
+
+\subsection{Construction}
+\index{Construction}
+
+\begin{dtable}[lLll]
+	\multicolumn{2}{L}{\textbf{Structure}} & \textbf{Wood} & \textbf{Stone} \\
+	\multicolumn{2}{L}{Bridge}							& 1g	& 5g \\
+	\multicolumn{2}{L}{Building, 1 floor, P=120~ft}		& 1g	& 5g \\
+	\multicolumn{2}{L}{Gatehouse, P=120~ft}				& 10g	& 50g \\
+	\multicolumn{2}{L}{Keep, small, P=160~ft}			& 20g	& 100g \\
+	\multicolumn{2}{L}{Keep, big, P=240~ft}				& ---	& 300g \\
+	\multicolumn{2}{L}{Tower, small, P=80~ft}			& 5g	& 25g \\
+	\multicolumn{2}{L}{Tower, big, P=120~ft}			& 10g	& 50g \\
+	\multicolumn{2}{L}{Wall, 100~ft}					& 5g	& 25g \\
+	\hline
+	Dungeon, 10~ft cube & \multicolumn{3}{L}{1g (earth), 5g (rock)} \\
+	Moat, 100~ft	& \multicolumn{3}{L}{1g (earth), 5g (rock)} \\
+	Road, 1~mile	& \multicolumn{3}{L}{5g, $\times$2 on Rugged terrain} \\
+\end{dtable}
+
+\subparagraph{Construction Crew} (four dozen people lead by a master, paid 50s per week) build 5g of structure cost weekly, 1g for stone construction. Up to 5 crews can work on a single structure simultaneously. Speed and cost might be impacted by external factors.
+
+\subparagraph{Siege Engines} could be installed on gatehouses (1), big towers (1), small keeps (2), and big keeps (4).
+
+
+\subsection{Siege Engines}
 \index{Siege Engines}
 \index{Damage}
 
-Siege engines require a crew of two and a whole turn to reload.
+Require a crew of two and a whole turn to reload.
 
-\begin{dtable}[lclX]
+\begin{dtable}[LlLL]
 	\textbf{Engine} & \textbf{Cost} & \textbf{Damage} & \textbf{Ammo} \\
 	Ballista 	& 1g 	& d12 		& 10s bolt \\
 				& 	 	& d10 		& 5s ball  \\
@@ -148,8 +333,28 @@ Siege engines require a crew of two and a whole turn to reload.
 
 The weight of a siege engine is about 1 ton.
 
+
+\subsection{Structural Damage}
+\index{Damage!structural}
+
+Armour range represents thickness of the material.
+
+Large and bigger objects usually ignore damage from anything but siege engines and such.
+
+\begin{dtable}[lc|lcL]
+	\textbf{Material} & \textbf{Armour} & \textbf{Size} & \textbf{HP} & \textbf{Example} \\
+	ice 	& 2--4	& small	& 2--4	& chest \\
+	wood	& 4--6	& medium& 4--8	& wagon \\
+	stone	& 6--8	& large	& 6--12	& wall \\
+	metal	& 8--10	& huge	& 8--16	& ship \\
+\end{dtable}
+
+For example, a small wooden ship will have \mbox{Armour~5} (wood of medium thickness) and 8 HP.
+
+
 \vfill
 \break
+
 
 \cleartoleftpage
 \section{Travel}
@@ -157,82 +362,93 @@ The weight of a siege engine is about 1 ton.
 
 Travel for 8 hours/day before resting for the night.
 
-\index{Grid}
 \subparagraph{Grid} of \travelunit{1}-mile tiles simplifies distance calculations.
 
-\index{Terrain}
-\index{Speed}
-\begin{dtable}[lXcc]
+\begin{dtable}[lLcc]
 \textbf{Terrain} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} \\
 Clear		& grassland, road, trail 			& \travelunit{5} & 5 \\
 Rugged		& desert, forest, hills, mud, snow	& \travelunit{4} & 4 \\
 Difficult 	& jungle, mountains, river, swamp	& \travelunit{3} & 3 \\
 \end{dtable}
 
-To speed up calculations chose a dominant terrain for each day of travel and apply it to the whole day. 
-
-\subparagraph{Concurrent Activities} like exploring, sneaking, foraging, etc. reduce the speed by \travelunit{2} miles/day.
-
-\index{Encumbrance}
-\subparagraph{Encumbrance} while travelling on foot should be 50lb or less, otherwise halve your travelling speed.
-
-\subparagraph{Going Astray} is a possibility when traversing unfamiliar or heavily obscured terrain, in a dense fog or heavy rain, etc. If you have some additional advantage in navigation, roll a d6, otherwise roll a d4:
-
-\begin{dtable}[cX]
-	\textbf{d6} & \textbf{Outcome} \\
-	1	& \textbf{Lost!} You wander off to an unknown place. \\
-	2	& \textbf{Going in circles.} No travel progress today. \\
-	3	& \textbf{Meandering.} Halved travelled distance. \\
-	4--6& \textbf{On course.} \\
-\end{dtable}	
-
-\index{Food}
-\index{Forage}
-\subparagraph{Food} consumption should be at least 2lb of food and 4lb (roughly \sfrac{1}{2}gal) of water daily, and twice as much water in hot climate (except camels). Horses and such require $\times$10, and elephants $\times$100 as much forage and water. A day without enough water or a week without enough food results in d4 STR Loss.
-
-\index{Forced March}
-\subparagraph{Forced March} doubles the speed. Rest for the next day, or, if using a mount, get a fresh one instead.
+To speed up calculations chose a dominant terrain for each day of travel and apply it to the whole day.
 
 \index{Rest}
 \subparagraph{Rest} for a day for every 6 days travelled. Not resting, or marching more than 8 hours per day results in d4 STR Loss.
 
+\vfill
+
 \index{Large Groups}
-\subparagraph{Large Groups} move at --\travelunit{1} miles/day.
+\begin{dtable}[Lcc]
+	\textbf{Speed Modifier} & \textbf{Miles} & \textbf{Grid} \\
+	
+	\textbf{Concurrent activities}
+	(exploring, sneaking, foraging, etc.) & --\travelunit{2} & --2 \\
+	
+	\textbf{Large groups} & --\travelunit{1} & --1 \\
+	
+	\multicolumn{3}{l}{\textbf{Mounts:}} \\
+	\hspace{0.5em}\labelitemi~Clear terrain & +\travelunit{1} & +1 \\
+	\hspace{0.5em}\parbox{\linewidth}{\vspace{0.1em}
+	\labelitemi~Difficult terrain\\
+	(except for camels in a desert and elephants in a jungle)} & --\travelunit{1} & --1 \\
+	
+	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
+	\hspace{0.5em}\labelitemi~Roads & +\travelunit{1} & +1 \\
+	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{1} & --1 \\
+	\hspace{0.5em}\labelitemi~Difficult terrain & \multicolumn{2}{c}{impassable} \\
+	
+	\hline
+
+	\textbf{Encumbrance} over 50~lb 
+	(on foot) & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
+	
+	\textbf{Forced march} & \multicolumn{2}{c}{$\times$2} \\
+\end{dtable}
+
+\vfill
 
 \index{Mounts}
-\subparagraph{Mounts} get +\travelunit{1} miles/day on Clear terrain, and --\travelunit{1} miles/day on Difficult terrain. Camels don't suffer such penalty in desert, and elephants --- in jungle.
-
 \index{Mule}
 \index{Donkey}
 \index{Horse}
 \index{Camel}
 \index{Elephant}
-\begin{dtable}[Xccl]
+\begin{dtable}[Lccl]
 	\textbf{Mount}  & \textbf{Cargo} & \textbf{Riders} & \textbf{Cost} \\
-	Mule, Donkey	& \sfrac{1}{5}t (400lb)	& 1	& 5s \\
-	Horse, Camel	& \sfrac{1}{4}t (500lb)	& 2 & 1g \\
-	Elephant		& 2t (4000lb)	& 8	& 5g \\
+	Mule, Donkey	& \sfrac{1}{5}~t (400~lb)	& 1	& 5s \\
+	Horse, Camel	& \sfrac{1}{4}~t (500~lb)	& 2 & 1g \\
+	Elephant		& 2~t (4000~lb)	& 8	& 5g \\
 \end{dtable}
 
 \index{Vehicle}
-\subparagraph{Vehicles} get +\travelunit{1} miles/day on roads, --\travelunit{1} on Rugged terrain, and can't pass through Difficult terrain.
-
 \index{Cart}
 \index{Carriage}
 \index{Wagon}
-\begin{dtable}[Xcccl]
-\textbf{Vehicle} & \textbf{Horses} & \textbf{Cargo} & \textbf{Passengers} & \textbf{Cost} \\
-Cart	& 1	& \sfrac{1}{2}t	& 4	& 30s \\
-Carriage& 2 & 1t			& 8	& 60s \\
-Wagon	& 4	& 2t			& 16& 1g \\
+\begin{dtable}[Lcccl]
+	\textbf{Vehicle} & \textbf{Horses} & \textbf{Cargo} & \textbf{Passengers} & \textbf{Cost} \\
+	Cart	& 1	& \sfrac{1}{2}~t& 4	& 30s \\
+	Carriage& 2 & 1~t			& 8	& 60s \\
+	Wagon	& 4	& 2~t			& 16& 1g \\
 \end{dtable}
 
-
-\index{Cargo}
-\index{Riders}
-\index{Passengers}
 \subparagraph{Passengers} occupy \sfrac{1}{8}t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
 
+
+\break
+
+
+\subparagraph{Going Astray} is a possibility when traversing unfamiliar or heavily obscured terrain, in a dense fog or heavy rain, etc. If you have some additional advantage in navigation, roll a d6; otherwise, roll a d4:
+
+\begin{dtable}[cL]
+	\textbf{d6} & \textbf{Outcome} \\
+	1	& \textbf{Lost!} You wander off to an unknown place. \\
+	2	& \textbf{Going in circles.} No travel progress today. \\
+	3	& \textbf{Meandering.} Halved travelled distance. \\
+	4--6& \textbf{On course.} \\
+\end{dtable}
+
+\subparagraph{Horizon} is 3 miles away on a flat surface (for an Earth-sized planet), 12 miles at 100~ft height (ship's mast, tower), etc.: $distance \approx \sqrt{1.5 \times elevation}$.
 
 \vfill
 
@@ -252,26 +468,25 @@ Travel for 12 hours/day. With a double crew, you can switch shifts to continue t
 \index{Sailing Ship}
 \index{Longship}
 \index{Galley}
-\begin{dtable}[lYYYYl]
+\begin{dtable}[lCCCCl]
 \textbf{Vehicle} & \textbf{Miles} & \textbf{Grid} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
-Raft (100 ft\textsuperscript{2})& \travelunit{2}&2 & 1& \sfrac{1}{4}t & --- \\
-Rowboat		& \travelunit{3}	& 3	& 1		& 1t	& 50s \\
-Sailboat	& \travelunit{12}	& 12& 1		& 5t	& 15g \\
-Keelboat	& \travelunit{6}	& 6	& 10	& 20t	& 25g \\
-Longship	& \travelunit{18}	& 18& 50	& 10t	& 100g \\
-Sailing ship& \travelunit{18}	& 18& 10	& 100t	& 150g \\
-Galley		& \travelunit{18}	& 18& 100	& 150t	& 200g \\
+Raft (100~ft\textsuperscript{2})& \travelunit{2}&2 & 1& \sfrac{1}{4}~t & --- \\
+Rowboat		& \travelunit{3}	& 3	& 1		& 1~t	& 50s \\
+Sailboat	& \travelunit{12}	& 12& 1		& 5~t	& 15g \\
+Keelboat	& \travelunit{6}	& 6	& 10	& 20~t	& 25g \\
+Longship	& \travelunit{18}	& 18& 50	& 10~t	& 100g \\
+Sailing ship& \travelunit{18}	& 18& 10	& 100~t	& 150g \\
+Galley		& \travelunit{18}	& 18& 100	& 150~t	& 200g \\
 \end{dtable}
 
-Keelboats, Longships and Galleys have both sails and oars, but can't go against the wind under sail.
+Keelboats, longships and galleys have both sails and oars but cannot go against the wind under sail.
 
 \subparagraph{Covered Distance} depends on weather and other conditions. Going upstream reduces covered distance by \travelunit{2} miles/day, and going downstream increases it by the same amount. Makeshift rafts move downstream only, with a speed of the stream.
 
 \index{Fare}
-\subparagraph{Fare} might vary from 1p per person to cross a river or lake, to 1s per person for each 5 miles travelled in a long-distance voyage.
+\subparagraph{Fare} might vary from 1p per person to cross a river or lake to 1s per person for each 5 miles travelled in a long-distance voyage.
 
-\index{Passengers}
-\subparagraph{Accommodated passengers} occupy 1t of cargo space plus \sfrac{1}{10}t (200lb) of cargo space per month of travel for food and water storage.
+\subparagraph{Accommodated Passengers} occupy 1t of cargo space plus \sfrac{1}{10}t (200lb) of cargo space per month of travel for food and water storage.
 
 \index{Siege Engines}
 \subparagraph{Siege Engines} could be mounted on keelboats (1), sailing ships (2), and galleys (3).
@@ -282,38 +497,42 @@ Keelboats, Longships and Galleys have both sails and oars, but can't go against 
 
 \subsection{Weather}
 \index{Weather}
-\index{Wind|see {Weather}}
 
-Keep in mind that different climates might require adjusting the tables.
+Keep in mind that different climates might require adjusting the tables. For example, you might want to use the Sky table with a d8 or d12 roll for dry climates or d12~+~8 for rainy ones.
 
-\header{Temperature}
-\begin{dtable}[cX]
+\vfill
+
+\begin{dtable}[cL]
 	\textbf{d6} & \textbf{Temperature} \\
 	1	& colder than usual \\
 	2--5& normal \\
 	6	& warmer than usual \\
 \end{dtable}
 
-\header{Sky}
-\begin{dtable}[cX|cl]
+\vfill
+
+\begin{dtable}[cL|cl]
 	\textbf{d20} & \textbf{Sky} & \textbf{d20} & \textbf{Sky} \\
 	1--4 & clear	& 13--14 & drizzle or fog \\
 	5--8 & cloudy	& 15--18 & rain or snow \\
 	9--12& overcast & 19--20 & storm or snowstorm \\
 \end{dtable}
 
-\header{Wind Direction}
-\begin{dtable}[cX]
-	\textbf{d8} & \textbf{Direction} \\
+\vfill
+
+\begin{dtable}[cL]
+	\textbf{d8} & \textbf{Wind Direction} \\
 	1--3& adverse \\
 	4--5& side \\
 	6--8& favourable \\
 \end{dtable}
 When following prevailing wind's direction, roll 2d8 and take the higher result; when going against it --- take the lower one.
 
+\vfill
+
 \subparagraph{Wind Force} might affect your sailing speed.
 
-\begin{dtable}[cXcc]
+\begin{dtable}[cLcc]
 	~ & \textbf{Wind} & \multicolumn{2}{c}{\textbf{Sailing Multiplier}} \\
 	\textbf{d20} & \textbf{Force} & \textbf{Adverse or Side} & \textbf{Favourable} \\
 	1--2	& calm		& $\times$0 & $\times$0 \\
@@ -323,10 +542,12 @@ When following prevailing wind's direction, roll 2d8 and take the higher result;
 	19--20	& gale		& $\times$0	& $\times$2 \\
 \end{dtable}
 
+\vfill
+
 Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 
 \header{Gale Damage}
-\begin{dtable}[cX]
+\begin{dtable}[cL]
 	\textbf{d8} & \textbf{Damage} \\
 	1 	& \textbf{Wrecked.} Ship, cargo, and \sfrac{1}{2} crew is lost. \\
 	2 	& \textbf{Broken mast.} No sailing speed. \\
@@ -336,8 +557,10 @@ Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 	7--8& \textbf{All is fine.} \\
 \end{dtable}
 
+
 \vfill
 \break
+
 
 \subsection{Aerial Travel}
 \index{Travel!aerial}
@@ -345,34 +568,37 @@ Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 
 Flying creatures travel for 8 hours/day before resting for the night. Flying magic items have energy to function for the same daily amount of time.
 
-\begin{dtable}[Xlccc]
+\begin{dtable}[Llccc]
 	\textbf{Mount} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} & \textbf{Riders} \\
-	Small				& pixie		& 40  & 8  &---\\
-	Medium 				& harpy		& 40  & 8  & 1 \\
-	Large				& griffon	& 80  & 16 & 2 \\
-	Large, fast			& pegasus	& 120 & 24 & 2 \\
-	Huge				& dragon	& 80  & 16 & 8 \\
-	Magic \mbox{device}	& broom		& 80  & 16 & 1 \\
-	Magic \mbox{vehicle}& carpet	& 40  & 8  & 8 \\
+	Small				& pixie		& \travelunit{8}  & 8  &---\\
+	Medium 				& harpy		& \travelunit{8}  & 8  & 1 \\
+	Large				& griffon	& \travelunit{16} & 16 & 2 \\
+	Large, fast			& pegasus	& \travelunit{24} & 24 & 2 \\
+	Huge				& dragon	& \travelunit{16} & 16 & 8 \\
+	Magic \mbox{device}	& broom		& \travelunit{16} & 16 & 2 \\
+	Magic \mbox{vehicle}& carpet	& \travelunit{8}  & 8  & 8 \\
 \end{dtable}
 
-Full speed is only possible with \sfrac{1}{2}~of riders or less. Otherwise the speed is halved.
+Full speed is only possible with \sfrac{1}{2}~of riders or less. Otherwise, the speed is halved.
+
+\vfill
 
 \index{Vehicle!aerial}
-\subparagraph{Aerial vehicles} travel for 12 hours/day. Double crew allows to continue travelling at night.
+\subparagraph{Aerial Vehicles} travel for 12 hours/day. Double crew allows to continue travelling at night.
 
 \index{Balloon}
 \index{Airship}
 \begin{dtable}[lccccl]
 	\textbf{Vehicle} & \textbf{Miles} & \textbf{Grid} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
-	Balloon	& 40 & 8 & 1 & 1t & 25g \\
-	Airship	& 40 & 8 & 10& 10t& 200g \\
+	Balloon	& 40 & 8 & 1 & 1~t & 25g \\
+	Airship	& 40 & 8 & 10& 10~t& 200g \\
 \end{dtable}
 
-Balloons and airships are affected by the winds in a same manner as sailing ships.
+Balloons and airships are affected by winds in the same manner as sailing ships.
 
 \subparagraph{Balloons} always follow the wind direction. Each 3 hours of travel you may change altitude to catch a preferable wind (roll for a new wind direction).
 
+\vfill
 
 \begin{dbox}
 	\index{Units of Measure}
