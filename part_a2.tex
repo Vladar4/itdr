@@ -11,7 +11,7 @@ Random tables for quick character generation.
 
 \paragraph{Abilities}
 
-\begin{dtable}[c|YYYY]
+\begin{dtable}[c|CCCC]
 	\textbf{d20} & \textbf{STR} & \textbf{DEX} & \textbf{WIL} & \textbf{Money} \\
 	1	& 16& 12& 10& 8s \\
 	2	& 10& 12& 16& 8s \\
@@ -39,7 +39,7 @@ Random tables for quick character generation.
 
 Choose or roll for a Feature roll for HP accordingly.
 
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d10} & \textbf{Feature} & \textbf{d10} & \textbf{Feature} \\
 	1 & Assassin	& 6 & Mystic \\
 	2 & Berserker	& 7 & Skilled \\
@@ -50,7 +50,7 @@ Choose or roll for a Feature roll for HP accordingly.
 
 \subparagraph{Skilled} rolls for an expertise.
 
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d8} & \textbf{Expertise} & \textbf{d8} & \textbf{Expertise} \\
 	1 & animal handling	& 5 & drinking \\
 	2 & athletics		& 6 & quickness \\
@@ -58,13 +58,18 @@ Choose or roll for a Feature roll for HP accordingly.
 	4 & cheating		& 8 & negotiation \\
 \end{dtable}
 
+
+\vfill
+\break
+
+
 \subparagraph{Mystic} rolls for random Cantrips (d20) and \nth{1} Circle Spells (``Random 36 Spells'' table from Chapter~4: Magic, p.17). Chose one of these spells as a Signature Spell or roll a d6 for a random one.
 
 \paragraph{Background}
 
 Chose or roll for a background and on any additional random table required.
 
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d6} & \textbf{Background} & \textbf{d6} & \textbf{Background} \\
 	1 & Criminal	& 4 & Sailor \\
 	2 & Minstrel	& 5 & Scholar \\
@@ -72,7 +77,7 @@ Chose or roll for a background and on any additional random table required.
 \end{dtable}
 
 \header{Criminal}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d6} & \textbf{Criminal Tool} & \textbf{d6} & \textbf{Criminal Tool} \\
 	1 & blackjack (sap)	& 4 & loaded dice \\
 	2 & crowbar			& 5 & lockpicks \\
@@ -80,7 +85,7 @@ Chose or roll for a background and on any additional random table required.
 \end{dtable}
 
 \header{Minstrel}
-\begin{dtable}[cX]
+\begin{dtable}[cL]
 	\textbf{d10} & \textbf{Musical Instrument} \\
 	1 & bagpipe, bladder pipe \\
 	2 & drum, tambourine \\
@@ -95,7 +100,7 @@ Chose or roll for a background and on any additional random table required.
 \end{dtable}
 
 \header{Scholar}
-\begin{dtable}[cX]
+\begin{dtable}[cL]
 	\textbf{d12} & 	\textbf{Study} \\
 	1	& History (archaeology) \\
 	2	& History (culture and religion) \\
@@ -113,7 +118,7 @@ Chose or roll for a background and on any additional random table required.
 
 
 \header{Soldier}
-\begin{dtable}[cXX]
+\begin{dtable}[cLL]
 	\textbf{d6} & \textbf{Rank} & \textbf{Weapon} \\
 	1	& archer & longbow \\
 	2	& cavalry & lance \\
@@ -128,7 +133,7 @@ Chose or roll for a background and on any additional random table required.
 
 Exchange your money for rolls on random equipment tables. Reroll duplicates. Mystics replace light armour with martial melee weapon.
 
-\begin{dtable}[lX]
+\begin{dtable}[lL]
 	\textbf{Money} & \textbf{Equipment} \\
 	%4s	& simple M, 2$\times$gear, 2s \\
 	5s	& simple M, 2$\times$gear, tool, 2s \\
@@ -147,17 +152,17 @@ Exchange your money for rolls on random equipment tables. Reroll duplicates. Mys
 	%22s & military M, simple R, light armour, 1s \\
 \end{dtable}
 
-Additionally you have simple clothes. a backpack, basic camping equipment, torches, and a few days' rations.
+Additionally you have simple clothes, a backpack, basic camping equipment, torches, and a few days' rations.
 
 \header{Simple Melee Weapons}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d4} & \textbf{Weapon} & \textbf{d4} & \textbf{Weapon} \\
 	1 & pitchfork	& 3 & sledgehammer \\
 	2 & quarterstaff& 4 & splitting maul \\
 \end{dtable}
 
 \header{Martial Melee Weapons}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d8} & \textbf{Weapon} & \textbf{d8} & \textbf{Weapon} \\
 	1 & axe		& 5 & mace \\
 	2 & dagger	& 6 & spear \\
@@ -165,11 +170,13 @@ Additionally you have simple clothes. a backpack, basic camping equipment, torch
 	4 & lance	& 8 & war hammer \\
 \end{dtable}
 
+
 \vfill
 \break
 
+
 \header{Simple Ranged Weapons}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d6} & \textbf{Weapon} & \textbf{d6} & \textbf{Weapon} \\
 	1 & boomerang	& 4 & sling \\
 	2 & darts		& 5 & throwing daggers \\
@@ -177,16 +184,16 @@ Additionally you have simple clothes. a backpack, basic camping equipment, torch
 \end{dtable}
 
 \header{Martial Ranged Weapons}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d4} & \textbf{Weapon} & \textbf{d4} & \textbf{Weapon} \\
 	1 & crossbow	& 3 & musket \\
 	2 & longbow		& 4 & pistol \\
 \end{dtable}
 
 \header{Adventuring Gear}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d12} & \textbf{Gear} & \textbf{d12} & \textbf{Gear} \\
-	1 & 10ft rope		& 7 & dice or cards \\
+	1 & 10-ft rope		& 7 & dice or cards \\
 	2 & bottle			& 8 & flint and steel \\
 	3 & caltrops		& 9	& parchment \\
 	4 & candle			& 10& sack \\
@@ -195,7 +202,7 @@ Additionally you have simple clothes. a backpack, basic camping equipment, torch
 \end{dtable}
 
 \header{Tools}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d20} & \textbf{Tool} & \textbf{d20} & \textbf{Tool} \\
 	1 & animal trap			& 11& hatchet \\
 	2 & collapsible pole	& 12& lockpicks \\
@@ -210,7 +217,7 @@ Additionally you have simple clothes. a backpack, basic camping equipment, torch
 \end{dtable}
 
 \header{Pet}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d4} & \textbf{Pet} & \textbf{d4} & \textbf{Pet} \\
 	1 & cat 	& 3 & owl \\
 	2 & mutt	& 4 & parrot \\
@@ -224,20 +231,22 @@ Additionally you have simple clothes. a backpack, basic camping equipment, torch
 \subsection{Random Magic Items}
 \index{Magic Items}
 
-Roll for a random magic item and it's appearance. Think of it's properties based on what it looks like.
+Roll for a random magic item and its appearance. Think of its properties based on what it looks like.
 
 \header{Type}
-\begin{dtable}[cXcl]
+\begin{dtable}[cLcl]
 	\textbf{d100} & \textbf{Type} & \textbf{d100} & \textbf{Type} \\
 	1--10	&	container	&	71--73	&	music. instrument	\\
-	11--30	&	expendable	&	74--80	&	light armour	\\
+	11--30	&	consumable	&	74--80	&	light armour	\\
 	31--40	&	garment	&	81--83	&	full armour	\\
 	41--50	&	jewellery	&	84--90	&	shield	\\
 	51--70	&	misc.	&	91--100	&	weapon	\\
 \end{dtable}
 
+\vfill
+
 \header{Container}
-\begin{dtable}[cXcl]
+\begin{dtable}[cLcl]
 	\textbf{d12} & \textbf{Container} & \textbf{d12} & \textbf{Container} \\
 	1 & backpack or haversack	& 7 & jug \\
 	2 & bottle					& 8 & pouch \\
@@ -247,9 +256,9 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	6 & flask or canteen		& 12& waterskin \\
 \end{dtable}
 
-\header{Expendable}
-\begin{dtable}[clcX]
-	\textbf{d10} & \textbf{Expendable} & \textbf{d10} & \textbf{Expendable} \\
+\header{Consumable}
+\begin{dtable}[clcL]
+	\textbf{d10} & \textbf{Consumable} & \textbf{d10} & \textbf{Consumable} \\
 	1 & bean or seed				& 6 & herb \\
 	2 & candle or torch				& 7 & ink \\
 	3 & chalk						& 8 & oil \\
@@ -258,7 +267,7 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 \end{dtable}
 
 \header{Garment}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Garment} & \textbf{d20} & \textbf{Garment} \\
 	1	& belt		& 11 & jerkin \\
 	2	& boots		& 12 & mantle \\
@@ -273,8 +282,12 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 \end{dtable}
 
 
+\break
+
+
+~\\
 \header{Jewellery}
-\begin{dtable}[clcX]
+\begin{dtable}[clcL]
 	\textbf{d20} & \textbf{Jewellery} & \textbf{d20} & \textbf{Jewellery} \\
 	1	& anklet 			& 11 & eyepatch \\
 	2	& belt buckle 		& 12 & gorget \\
@@ -288,9 +301,10 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	10	& earring 			& 20 & ring \\
 \end{dtable}
 
+\vfill
 
 \header{Miscellaneous}
-\begin{dtable}[cXcl]
+\begin{dtable}[cLcl]
 	\textbf{d100} & \textbf{Item} & \textbf{d100} & \textbf{Item} \\
 	1--2	&	amulet or talisman	&	51--52	&	monocle or lens	\\
 	3--4	&	book	&	53--54	&	needle	\\
@@ -299,13 +313,13 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	9--10	&	broom	&	59--60	&	pipe	\\
 	11--12	&	brush	&	61--62	&	plate or tray	\\
 	13--14	&	candelabrum	&	63--64	&	prosthesis	\\
-	15--16	&	carpet	&	65--66	&	quill	\\
-	17--18	&	censer	&	67--68	&	rod or sceptre	\\
-	19--20	&	coin	&	69--70	&	rope	\\
-	21--22	&	comb	&	71--72	&	saddle	\\
-	23--24	&	corkscrew	&	73--74	&	sand timer	\\
-	25--26	&	cup, chalice, or goblet	&	75--76	&	scissors	\\
-	27--28	&	deck of cards or dice set	&	77--78	&	shovel	\\
+	15--16	&	cards or dice	&	65--66	&	quill	\\
+	17--18	&	carpet	&	67--68	&	rod or sceptre	\\
+	19--20	&	censer	&	69--70	&	rope	\\
+	21--22	&	coin	&	71--72	&	saddle	\\
+	23--24	&	comb	&	73--74	&	sand timer	\\
+	25--26	&	corkscrew	&	75--76	&	scissors	\\
+	27--28	&	cup, chalice, or goblet	&	77--78	&	shovel	\\
 	29--30	&	fan	&	79--80	&	sickle	\\
 	31--32	&	figurine or idol	&	81--82	&	skull	\\
 	33--34	&	gem or pearl	&	83--84	&	spectacles	\\
@@ -319,8 +333,12 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	49--50	&	mirror	&	99--100	&	whistle	\\
 \end{dtable}
 
+
+\break
+
+
 \header{Musical Instrument}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Instrument} & \textbf{d20} & \textbf{Instrument} \\
 	1	& bagpipe 		& 11 & jaw harp \\
 	2	& bell 			& 12 & lute \\
@@ -334,16 +352,20 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	10	& hurdy-gurdy 	& 20 & zither \\
 \end{dtable}
 
+\vfill
+
 \header{Light Armour and Accessoires}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d6} & \textbf{Armour} & \textbf{d6} & \textbf{Armour} \\
 	1 & bracers		& 4 & greaves \\
 	2 & gambeson	& 5 & helmet \\
 	3 & gloves		& 6 & leather armour \\
 \end{dtable}
 
+\vfill
+
 \header{Full Armour and Accessoires}
-\begin{dtable}[cXcl]
+\begin{dtable}[cLcl]
 	\textbf{d10} & \textbf{Armour} & \textbf{d10} & \textbf{Armour} \\
 	1 & bracers		& 6 & mail armour \\
 	2 & cuirass		& 7 & plate armour \\
@@ -352,16 +374,20 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	5 & helmet		& 10& segmented armour \\
 \end{dtable}
 
+\vfill
+
 \header{Shield}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d6} & \textbf{Shield} & \textbf{d6} & \textbf{Shield} \\
 	1 & buckler			& 4 & pavise \\
 	2 & heater shield	& 5 & round shield \\
 	3 & kite shield		& 6 & square shield \\
 \end{dtable}
 
+\vfill
+
 \header{Weapon and Ammunition}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Weapon} & \textbf{d20} & \textbf{Weapon} \\
 	1 & arrow		& 11 & lance \\
 	2 & axe			& 12 & longbow \\
@@ -375,10 +401,15 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	10& hunting bow	& 20 & war hammer \\
 \end{dtable}
 
+
+\vfill
+\break
+
+
 \subsubsection{Random Appearance}
 
 \header{Attribute}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Attribute} & \textbf{d20} & \textbf{Attribute} \\
 	1	&	ancient	&	11	&	menacing	\\
 	2	&	bejewelled	&	12	&	ornate	\\
@@ -392,9 +423,8 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	10	&	light or thin	&	20	&	sophisticated	\\
 \end{dtable}
 
-
 \header{Fabric}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d8} & \textbf{Fabric} & \textbf{d8} & \textbf{Fabric} \\
 	1 & cotton	& 5 & leather \\
 	2 & felt	& 6 & linen \\
@@ -402,9 +432,8 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	4 & hair 	& 8	& wool \\
 \end{dtable}
 
-
 \header{Material}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Material} & \textbf{d20} & \textbf{Material} \\
 	1 & amber	& 11 & iron \\
 	2 & bone	& 12 & ivory \\
@@ -418,33 +447,139 @@ Roll for a random magic item and it's appearance. Think of it's properties based
 	10& gold	& 20 & wood \\
 \end{dtable}
 
-\subsubsection{Example Magic Items}
-
-\paragraph{Diadem of Empathy}
-Thin glass diadem allows its wearer to sense true feelings and emotions of others.
-
-\paragraph{Lucky Boomerang}
-This exotic ivory boomerang always finds its target thus negating Impairments from cover and such.
-
-\paragraph{Mask of Disguise}
-Once per day this sleek silver mask allows its user to assume facial appearance of other person.
 
 \vfill
 \break
+
+
+\subsection{Random Monsters}
+\index{Monsters}
+
+\begin{dtable}[cLcL]
+	\textbf{d12} & \textbf{Nature} & \textbf{d12} & \textbf{Nature} \\ 
+	1	&	artificial	&	7	&	magical	\\
+	2	&	colonial	&	8	&	mutated	\\
+	3	&	divine	&	9	&	natural	\\
+	4	&	eldritch	&	10	&	primitive	\\
+	5	&	ethereal	&	11	&	relict	\\
+	6	&	fiendish	&	12	&	undead	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d20} & \textbf{Appearance} & \textbf{d20} & \textbf{Appearance} \\ 
+	1	&	bald	&	11	&	multicoloured	\\
+	2	&	barbed	&	12	&	muscular	\\
+	3	&	bloated	&	13	&	rotting	\\
+	4	&	camouflaged	&	14	&	rusty	\\
+	5	&	diseased	&	15	&	shadowy	\\
+	6	&	furry	&	16	&	shimmering	\\
+	7	&	gaunt	&	17	&	slimy	\\
+	8	&	graceful	&	18	&	spotted	\\
+	9	&	invisible	&	19	&	stinking	\\
+	10	&	luminous	&	20	&	striped	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d20} & \textbf{Trait} & \textbf{d20} & \textbf{Trait} \\ 
+	1	&	acidic	&	11	&	multiplying	\\
+	2	&	acoustic	&	12	&	parasite	\\
+	3	&	adhesive	&	13	&	poisonous	\\
+	4	&	armed	&	14	&	psychic	\\
+	5	&	armoured	&	15	&	shelled	\\
+	6	&	electric	&	16	&	shooting	\\
+	7	&	fire	&	17	&	spewing	\\
+	8	&	giant	&	18	&	swallowing	\\
+	9	&	hypnotic	&	19	&	tiny	\\
+	10	&	ice	&	20	&	vampiric	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d20} & \textbf{Behaviour} & \textbf{d20} & \textbf{Behaviour} \\ 
+	1	&	ambushing	&	11	&	musical	\\
+	2	&	cunning	&	12	&	nocturnal	\\
+	3	&	devouring	&	13	&	peaceful	\\
+	4	&	elusive	&	14	&	raging	\\
+	5	&	friendly	&	15	&	scavenging	\\
+	6	&	gibbering	&	16	&	screaming	\\
+	7	&	grappling	&	17	&	silent	\\
+	8	&	greedy	&	18	&	skittish	\\
+	9	&	insane	&	19	&	swarming	\\
+	10	&	intelligent	&	20	&	whispering	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d20} & \textbf{Locomotion} & \textbf{d20} & \textbf{Locomotion} \\ 
+	1	&	aquatic	&	11	&	jumping	\\
+	2	&	burrowing	&	12	&	rolling	\\
+	3	&	climbing	&	13	&	running	\\
+	4	&	crawling	&	14	&	shambling	\\
+	5	&	fast	&	15	&	slithering	\\
+	6	&	floating	&	16	&	slow	\\
+	7	&	flowing	&	17	&	soaring	\\
+	8	&	flying	&	18	&	subterranean	\\
+	9	&	gliding	&	19	&	teleporting	\\
+	10	&	immobile	&	20	&	walking	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d20} & \textbf{Body} & \textbf{d20} & \textbf{Body} \\ 
+	1	&	armless	&	11	&	one-armed	\\
+	2	&	bodiless	&	12	&	one-legged	\\
+	3	&	four-armed	&	13	&	stone	\\
+	4	&	four-legged	&	14	&	tailed	\\
+	5	&	legless	&	15	&	tentacled	\\
+	6	&	limbless	&	16	&	two-armed	\\
+	7	&	metal	&	17	&	two-headed	\\
+	8	&	multi-armed	&	18	&	two-legged	\\
+	9	&	multi-legged	&	19	&	winged	\\
+	10	&	multi-limbed	&	20	&	wooden	\\
+\end{dtable}
+
+\begin{dtable}[cLcL]
+	\textbf{d12} & \textbf{Head} & \textbf{d12} & \textbf{Head} \\ 
+	1	&	blind	&	7	&	multi-eyed	\\
+	2	&	brainless	&	8	&	multi-headed	\\
+	3	&	deaf	&	9	&	mute	\\
+	4	&	eyeless	&	10	&	one-eyed	\\
+	5	&	headless	&	11	&	trunked	\\
+	6	&	horned	&	12	&	two-headed	\\
+\end{dtable}
+
+\begin{dtable}[cLcl]
+	\textbf{d20} & \textbf{Form} & \textbf{d20} & \textbf{Form} \\ 
+	1	&	amorphous	&	11	&	hedgehog, mole, shrew	\\
+	2	&	amphibian	&	12	&	humanoid	\\
+	3	&	animated	&	13	&	insect, arachnid	\\
+	4	&	bat	&	14	&	mollusc, worm	\\
+	5	&	bird	&	15	&	plant	\\
+	6	&	cat-like	&	16	&	reptile, serpent	\\
+	7	&	crustacean, myriapod	&	17	&	rodent, rabbit	\\
+	8	&	dog-like	&	18	&	ungulate (hoofed)	\\
+	9	&	fish	&	19	&	chimeric*	\\
+	10	&	fungi	&	20	&	shape-shifting*	\\
+\end{dtable}
+{\em* Roll two more times.}
+
+
+\vfill
+\break
+
 
 \subsection{Random Non-Player Characters}
 \index{Non-Player Characters}
 
 \header{Age and Wealth}
-\begin{dtable}[cX|cX]
+\begin{dtable}[cL|cL]
 	\textbf{d8} & \textbf{Age} & \textbf{d6} & \textbf{Wealth} \\
 	1--2 & young 		& 1--2 & poor \\
 	3--6 & middle-aged	& 3--5 & average \\
 	7--8 & old			& 6	   & wealthy \\
 \end{dtable}
 
+\vfill
+
 \header{Occupation}
-\begin{dtable}[clcX]
+\begin{dtable}[clcL]
 	\textbf{3d6} & \textbf{Occupation} & \textbf{3d6} & \textbf{Occupation} \\
 	3 & scholar				& 11 & craftsman \\
 	4 & healer				& 12 & servant \\
@@ -456,8 +591,10 @@ Once per day this sleek silver mask allows its user to assume facial appearance 
 	10& farmer, peasant		& 18 & noble \\
 \end{dtable}
 
+\vfill
+
 \header{Personality}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Personality} & \textbf{d20} & \textbf{Personality} \\
 	1 & arrogant	& 11 & humble \\
 	2 & curious		& 12 & inattentive \\
@@ -471,17 +608,19 @@ Once per day this sleek silver mask allows its user to assume facial appearance 
 	10& hot-tempered& 20 & wary \\
 \end{dtable}
 
+\vfill
+
 Roll twice for notable details, reroll unsuitable.
 
 \header{Notable Detail}
-\begin{dtable}[cXcX]
+\begin{dtable}[cLcL]
 	\textbf{3d8} & \textbf{Detail} & \textbf{3d8} & \textbf{Detail} \\
 	3 & hunchback	& 14 & tall \\
 	4 & one eye		& 15 & overweight \\
 	5 & scar		& 16 & moustache \\
 	6 & stutter		& 17 & long hair \\
 	7 & drunkard	& 18 & sideburns \\
-	8 & grey-haired & 19 & red-haired \\
+	8 & grey hair	& 19 & red hair \\
 	9 & bald		& 20 & accent \\
 	10& short hair	& 21 & birthmark \\
 	11& bushy beard & 22 & lazy eye \\
@@ -490,6 +629,8 @@ Roll twice for notable details, reroll unsuitable.
 \end{dtable}
 
 
+\vfill
+\break
 
 
 \end{document}
