@@ -189,14 +189,6 @@
 
 %	Box environment
 
-%	old one
-%\newenvironment{dbox}
-%{	\noindent\vspace{-1.75em}\hspace{-0.025\linewidth}
-%	\includegraphics[width=1.05\linewidth]{img/box_top.pdf} }
-%{	\par\noindent\vspace{1em}\hspace{-0.025\linewidth}
-%	\includegraphics[width=1.05\linewidth]{img/box_bottom.pdf}
-%	\vspace{-2em} }
-
 \mdfsetup{
 	backgroundcolor=dColor2,
 	innerleftmargin=0.5em,
@@ -208,15 +200,19 @@
 	skipbelow=-0.7em,
 }
 \newenvironment{dbox}
-{	\noindent\vspace{-1.33em}\hspace{-0.024\linewidth}
+{	\noindent\begin{minipage}{\linewidth}
+	\noindent\vspace{-1.33em}\hspace{-0.024\linewidth}
 	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}
 	\begin{mdframed}
+	\vspace{0.3em}
 }
-{
+{	\vspace{-0.2em}
 	\end{mdframed}
+	\vspace{0.4em}
 	\noindent\hspace{-0.024\linewidth}
 	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}
-	\vspace{-1.5em}
+	\end{minipage}
+	\vspace{-0.5em}
 }
 
 
