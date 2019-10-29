@@ -162,10 +162,10 @@ When Madness Level exceeds character's Experience Level, the character goes insa
 \break
 
 
-\section{Magic}
+%\section{Magic}
 \index{Magic}
 
-\subsection{Magic Mishaps}
+\section{Magic Mishaps}
 \index{Magic Mishaps}
 
 Improper use of a magical device, spellcasting inside an anti-magic zone, destruction of a magic item, or any other dangerous interaction with magic might lead to a mishap. Succeed on a \save{WIL} or suffer a random consequence.
@@ -196,10 +196,10 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	73--74	&	Your HP drop to 0.	\\
 	75--76	&	Your HP are restored.	\\
 	77--78	&	You double in size for an hour. Gain Advantage on \saves{STR} and increase your weapon Damage dice by one (up to d12).	\\
+	79--80	&	You halve in size for an hour. Gain Disadvantage on \saves{STR} and lower your weapon Damage dice by one (down to d4).	\\
 \end{dtable}
 \begin{dtable}[cL]
 \textbf{d100} & \textbf{Mishap} \\
-	79--80	&	You halve in size for an hour. Gain Disadvantage on \saves{STR} and lower your weapon Damage dice by one (down to d4).	\\
 	81--82	&	Your main weapon shrinks to one-sixteenth its size for an hour.	\\
 	83--84	&	Your tongue becomes forked.	\\
 	85--86	&	Your canines grow long and sharp.	\\
@@ -502,7 +502,6 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 
 Keep in mind that different climates might require adjusting the tables. For example, you might want to use the Sky table with a d8 or d12 roll for dry climates or d12~+~8 for rainy ones.
 
-\vfill
 
 \begin{dtable}[cL]
 	\textbf{d6} & \textbf{Temperature} \\
@@ -511,7 +510,6 @@ Keep in mind that different climates might require adjusting the tables. For exa
 	6	& warmer than usual \\
 \end{dtable}
 
-\vfill
 
 \begin{dtable}[cL|cl]
 	\textbf{d20} & \textbf{Sky} & \textbf{d20} & \textbf{Sky} \\
@@ -520,7 +518,6 @@ Keep in mind that different climates might require adjusting the tables. For exa
 	9--12& overcast & 19--20 & storm or snowstorm \\
 \end{dtable}
 
-\vfill
 
 \begin{dtable}[cL]
 	\textbf{d8} & \textbf{Wind Direction} \\
@@ -530,7 +527,6 @@ Keep in mind that different climates might require adjusting the tables. For exa
 \end{dtable}
 When following prevailing wind's direction, roll 2d8 and take the higher result; when going against it --- take the lower one.
 
-\vfill
 
 \subparagraph{Wind Force} might affect your sailing speed.
 
@@ -544,13 +540,11 @@ When following prevailing wind's direction, roll 2d8 and take the higher result;
 	19--20	& gale		& $\times$0	& $\times$2 \\
 \end{dtable}
 
-\vfill
 
 Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 
-\header{Gale Damage}
 \begin{dtable}[cL]
-	\textbf{d8} & \textbf{Damage} \\
+	\textbf{d8} & \textbf{Gale Damage} \\
 	1 	& \textbf{Wrecked.} Ship, cargo, and \sfrac{1}{2} crew is lost. \\
 	2 	& \textbf{Broken mast.} No sailing speed. \\
 	3 	& \textbf{Broken half of oars.} \sfrac{1}{2} rowing speed. \\
@@ -560,9 +554,13 @@ Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 \end{dtable}
 
 
-\vfill
+\vspace{0.12em}
+\begin{dbox}
+	\subparagraph{Harsh weather} might impede vision, ranged combat and prohibit Resting before a shelter is found.
+	
+	\subparagraph{Extreme weather} (blizzard, hail, etc.) might even inflict continuous Damage (usually d4/hour).
+\end{dbox}
 \break
-
 
 \subsection{Aerial Travel}
 \index{Travel!aerial}
