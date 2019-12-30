@@ -9,6 +9,8 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 ### [Latest Release](https://github.com/Vladar4/itdr/releases/latest)
 
+### Illustration gallery at [ArtStation](https://vladar.artstation.com/projects/zAmRZQ) and [DeviantArt](https://www.deviantart.com/vladar4/gallery/68893105/into-the-dungeon-revived)
+
 ![ItD:R cover](cover.jpg)
 
 Dependencies
@@ -26,18 +28,135 @@ What is different from "Into the Dungeon: Playtest Edition"?
 ------------------------------------------------------------
 
 * Game mechanics are closer to "Into the Odd"
-* Features and backgrounds instead of classes (classes are kept in the appendix as an alternative)
+* Features and backgrounds instead of classes (classes are kept in the Appendix C as an alternative)
 * Updated and refined magic system
 * Knowledge rolls
 * Wands and rods usage rule
+* Example magic items
+* Example random encounters and obstacles
 * Monster conversion guide
+* Ideas for monster creation and example monster abilities
+* Great amount of additional and alternative rules (Appendix A)
+* Expanded bestiary (Appendix B)
 * Spell List and Index
 
 Changelog
 ---------
 
 ### v1.2
-***Work in progress***
+#### Part 1
+* Berserker: a bonus is limited to melee
+* Commander: a command does not count as action
+* Healer: starts with 5s worth of healing supplies
+* Skilled: grants a pair of expertises instead of one
+* A note on Shields requiring one hand to use
+* Adventuring Gear list update
+* Stats for a mule and horse
+#### Part 2
+* An item swap option for the Taking your Turn rule
+* Ganging Up bonus is limited up to +5
+* Mounted bonus is limited to melee and unmounted opponents
+* Morale rule exemption for mindless or fearless opponents
+* An optional slower experience progression rule
+#### Part 3
+* An expanded note on walls and sieges
+#### Part 4
+* A note on Cantrips and ongoing effects
+* Better explanation of damage from casting spells
+* A note on Scrolls
+* Cantrips:
+  * Guided Strike: gives a bonus weapon Damage die instead of Enhancing
+  * Light: removed an option to cast onto a creature; now requires the caster to hold the target object
+  * Resistance: now Persistent
+* 1st Circle:
+  * Burning Hands: does not ignore Armour but deals d6 Damage
+  * Identify: added a note on hidden properties, curses, etc.
+  * Mount: added a Damage effect
+  * Silent image: is motionless
+  * Unseen Servant: changed STR from 3 to 5
+* 2nd Circle:
+  * Continual Flame: added a note on casting on objects
+  * Fog Cloud: added a note on ranged attacks Impairment
+  * Gust of Wind: specified range
+  * Levitate: added an aftereffect and note on heavy targets
+  * Misdirection: now Persistent
+  * Phantom Trap: now Persistent
+  * Resist Energy: renamed to Resist Element
+  * Rope Trick: clarified description
+  * See Invisibility: specified range
+* 3rd Circle:
+  * Arcane Sight: improved description and effect
+  * Gaseous Form: the target is a willing creature
+  * Major Illusion: a note on disguise
+  * Magic Circle: now Persitent; affects a certain type of unnatural beings
+  * Sepia Snake Sigil: specified symbol size
+  * Shrink Item: a note on weight
+  * Sleet Storm: specified range
+* 4th Circle:
+  * Fire Trap: now Persistent
+  * Ice Storm: replaced by a Chain Lightning spell
+  * Minor Creation: now Persistent
+  * Phantasmal Killer: attacks once before disappearing
+  * Polymorph: specified permanence of the effect
+  * Solid Fog: specified range
+  * Symbol of Pain: specified symbol size
+* 5th Circle:
+  * Baleful Polymorth: specified permanence of the effect
+  * Blight: now affects d12 targets
+  * Cloudkill: specified size, speed, and living targets
+  * Major Creation: now Persistent
+  * Symbol of Sleep: specified size; now grants a WIL Save
+* Minor phrasing fixes
+#### Part 5
+* A note on Damage dice
+* A note on poison targets
+#### Part 6
+* 20 example magic items
+#### Part 7
+* Example Random Encounters tables
+* Example Obstacles
+#### Part 8
+* Ideas for Monster Creation
+* Example Monster Abilities
+#### Appendix A renamed to C
+#### new Appendix A:
+* Characters:
+  * Epic Characters
+  * Mundane Characters
+* Gods, Religion, and Disciples
+* Injuries
+* Light
+* Living Expenses
+* Load Capacity
+* Madness
+* Magic Mishaps
+* Manufacture of Magic Equipment
+* Pets' Experience
+* Rations
+* Resources
+* Structures and Sieges:
+  * Construction
+  * Siege Engines
+  * Structural Damage
+* Travel
+* Random Tables and Inspiration:
+  * Random Characters
+  * Random Magic Items
+  * Random Monsters
+  * Random Non-Player Characters
+#### Example Monsters moved to Appendix B
+#### new Appendix B:
+* New monsters:
+  * Hellhound
+  * Imp
+  * Manticore
+  * Mummy
+  * Ogre
+  * Troll
+  * Yeti
+* Mundane Beasts section with 10 beasts
+#### Spell List
+* Added spell circle info
 
 
 ### v1.1
