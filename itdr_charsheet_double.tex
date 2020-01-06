@@ -1,0 +1,33 @@
+% Use make_charsheets.sh script instead to build both a4 and letter variants
+%\documentclass[a4rpaper]{article}
+\usepackage{geometry}
+\usepackage[calc]{picture}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{hyperref}
+	
+\def \title {Into the Dungeon: Revived} % TITLE variable
+\def \author {Vladimir Arabadzhi} % AUTHOR variable
+
+% PDF properties
+\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
+\hypersetup{
+	pdfinfo={
+		Title={{\title} - Character Sheet},
+		Author={\author},
+		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+}}
+
+\begin{document}
+
+\includepdf
+[
+pages={1,1,2,2},
+nup=1x2,
+landscape,
+frame=false,
+%picturecommand={\put(0,.5\paperheight){\line(1,0){\paperwidth}}}
+picturecommand={\put(0,.5\paperheight){\tikz{\draw[loosely dotted]{(0,0) -- (\paperwidth,0)}}}}
+]{itdr_charsheet.pdf}
+
+\end{document}

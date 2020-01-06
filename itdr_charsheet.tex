@@ -1,0 +1,97 @@
+\documentclass[10pt,twoside,openany]{book}
+\usepackage{itdr}
+\usepackage[utf8]{inputenc}
+\usepackage{forloop}
+\usepackage{amssymb}
+
+\def \title {Into the Dungeon: Revived} % TITLE variable
+\def \author {Vladimir Arabadzhi} % AUTHOR variable
+
+% PDF properties
+\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
+\hypersetup{
+	pdfinfo={
+		Title={{\title} - Character Sheet},
+		Author={\author},
+		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+}}
+
+\newcommand{\thinrule}[1]{\rule{#1}{\arrayrulewidth}}
+%\newcommand{\thinrule}[1]{\hbox to #1{\leaders\hbox to 7.5pt{\hss . \hss}\hfil}}
+\newcommand{\thinbox}[2][0.75em]{\fbox{\rule{#2}{0pt}\rule[#1]{0pt}{0in}}}
+\newcommand{\itemrule}{\hrulefill}
+%\newcommand{\itemrule}{\dotfill}
+\newcommand{\tablewidth}{\linewidth+0.37em}
+\newcommand{\negspace}[1][0px]{\hspace{-0.48em}\hspace{#1}}
+%\newcommand{\negspace}{\hspace{-0.5em}
+\newcommand{\smartslash}{$/$\hspace{-0.2em}}
+\newcommand{\slashspace}{\negspace\thinrule{1.55em}\smartslash\itemrule}
+%\newcommand{\slashspace}{\negspace\thinbox{0.75em}~\thinrule{3em}}
+%\newcommand{\slashspace}{\negspace\thinrule{1.5em}\hspace{-0.25em}$/$~\thinrule{2.5em}}
+\newcommand{\centered}[1]{\begin{center}#1\end{center}\vspace{-0.5em}}
+\newcounter{loopcounter}
+\newcommand{\dup}[2][1]{\forloop{loopcounter}{0}{\value{loopcounter}<#1}{#2}}
+
+\begin{document}
+\thispagestyle{empty}
+\fancyfont\fontsize{18}{16}\selectfont % Set text font
+\newgeometry{margin=1in,bottom=0.75in}
+\def\arraystretch{1.5}
+
+\begin{center}
+	\hspace{0.3em}\textBigTitle{\title}\\
+	\vspace{-0.5em}
+	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{0.5em}
+\end{center}
+
+\noindent\hspace{0.4em}Character Sheet~\itemrule
+
+\vspace{0.5em}
+
+\noindent
+\begin{tabularx}{\tablewidth}{llLrL}
+~ & \multicolumn{4}{l}{Adventures Survived~\thinrule{9.725em}} \\
+~ & STR & \slashspace & HP & \slashspace \\
+~ & DEX & \slashspace & Armour & \slashspace \\
+\multirow{-4}{*}{\thinbox[1.44in]{1.44in}}\hspace{-0.1em} &
+	WIL & \slashspace & Money & \negspace\itemrule \\
+\end{tabularx}%\vspace{0.5em}
+
+\centered{Background and Features}
+
+\noindent
+\begin{tabularx}{\tablewidth}{CC}
+\dup[3]{\itemrule & \itemrule \\}
+\end{tabularx}\vspace{-2em}
+
+\centered{Equipment and Notes}
+
+\noindent
+\begin{tabularx}{\tablewidth}{CC}
+\dup[14]{\itemrule & \itemrule \\}
+\end{tabularx}
+
+\break
+
+
+% SECOND PAGE
+
+
+\thispagestyle{empty}
+\centered{Cantrips}
+\noindent
+\begin{tabularx}{\tablewidth}{CC}
+\dup[3]{\itemrule & \itemrule \\}
+\end{tabularx}\vspace{-2em}
+
+\centered{Spells}
+\vspace{-1.5em}
+{\large\hfill Signature --- S\hspace{0.4em}~\\Circle\hfill Prepared --- P\hspace{0.4em}}
+
+\noindent
+\begin{tabularx}{\tablewidth}{CC}
+%\dup[23]{$\bigcirc\itemrule\Box$ & $\bigcirc\itemrule\Box$ & $\bigcirc\itemrule\Box$ \\}
+\dup[22]{\textbigcircle\itemrule\hspace{0.1em}\thinbox[0.65em]{0.65em} & \textbigcircle\itemrule\hspace{0.1em}\thinbox[0.65em]{0.65em} \\}
+\end{tabularx}
+
+\end{document}

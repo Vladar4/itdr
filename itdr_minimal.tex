@@ -1,0 +1,62 @@
+\documentclass[10pt,twoside,twocolumn,openany]{book}
+\usepackage{itdr}
+\usepackage[utf8]{inputenc}
+\usepackage{subfiles}
+
+\def \title {Into the Dungeon: Revived} % TITLE variable
+\def \author {Vladimir Arabadzhi} % AUTHOR variable
+
+% PDF properties
+\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
+\hypersetup{
+	pdfinfo={
+		Title={{\title} Minimal},
+		Author={\author},
+		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+}}
+
+\begin{document}
+\fontfamily{ppl}\selectfont % Set text font
+
+\begin{titlepage}
+\newgeometry{margin=1in}
+\begin{onecolumn}
+
+% TITLE
+\begin{center}
+	\textBigTitle{\title}\\
+	\hrule\vspace{1em}
+	\textSubTitle{Rules for fantastic adventure games\\playable with paper and pencil and polyhedral dice}\\
+\end{center}
+
+\vspace{-1.5em}
+
+\dimage{cover}{468pt}
+
+% FOOTNOTE
+\noindent\begin{minipage}{\textwidth}{\begin{center}\footnotesize
+\href{https://vladar4.github.io/itdr/}{``\title''} by \author{} is based on \href{https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk}{``Into the Dungeon: Playtest Edition''} by \href{http://www.bastionland.com/}{Chris McDowall}\\and licensed under the \href{https://creativecommons.org/licenses/by-nc-sa/3.0/}{Creative Commons Attribution - NonCommercial - ShareAlike 3.0 Unported License}.
+
+% VERSION AND YEAR
+~\\
+v1.2.1-minimal-devel\\
+2019
+\end{center}
+}\end{minipage}
+
+\vfill
+
+\end{onecolumn}\end{titlepage}
+\restoregeometry
+\clearpage
+
+\subfile{part1}		% Characters
+\subfile{part2}		% Playing the Game
+\subfile{part3}		% Ruling a Domain
+\subfile{part4}		% Magic
+%\addtocontents{toc}{\break}
+%\subfile{part_a1}	% Appendix A: Additional and Alternative Rules
+%\subfile{part_index}% Index
+%\subfile{part_notes}% Notes
+
+\end{document}
