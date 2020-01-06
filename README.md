@@ -15,6 +15,8 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 PDFs
 ----
+| PDF file | Description |
+|---|---|
 | itdr.pdf   | current version of the book |
 | itdr_light\*.pdf | light edition (28 pages): parts_1-4, part_a1, part_index, part_notes |
 | itdr_minimal\*.pdf | minimal edition (16 pages): parts_1-4 only |
@@ -25,6 +27,8 @@ PDFs
 
 Scripts
 -------
+| Script | Description |
+|---|---|
 | cleanup.sh | clean auxiliary files |
 | make_all.sh | Update ALL PDFs in the repository |
 | make_booklet.sh [-r] [FILE]... | make specified booklets, "-r" key to rotate odd pages upside down |
