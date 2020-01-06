@@ -13,6 +13,24 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 ![ItD:R cover](cover.jpg)
 
+PDFs
+----
+| itdr.pdf   | current version of the book |
+| itdr_light\*.pdf | light edition (28 pages): parts_1-4, part_a1, part_index, part_notes |
+| itdr_minimal\*.pdf | minimal edition (16 pages): parts_1-4 only |
+| \*_booklet.pdf   | booklets for printing   |
+| \*_booklet_r.pdf | booklets for printing with odd pages rotated upside down |
+| itdr_charsheet.pdf | character sheet |
+| itdr_charsheet_double\*.pdf | double charsheet for printing |
+
+Scripts
+-------
+| cleanup.sh | clean auxiliary files |
+| make_all.sh | Update ALL PDFs in the repository |
+| make_booklet.sh [-r] [FILE]... | make specified booklets, "-r" key to rotate odd pages upside down |
+| make_booklets.sh | make all booklets (default, light, and minimal) including ones with upside down odd pages (with suffix "_r") |
+| make_charsheets.sh | make all charsheet versions |
+
 Dependencies
 ------------
 [TeX Live](https://www.tug.org/texlive/)
@@ -42,6 +60,9 @@ What is different from "Into the Dungeon: Playtest Edition"?
 
 Changelog
 ---------
+
+### v1.2.1
+* *(WIP)*
 
 ### v1.2
 #### Part 1
