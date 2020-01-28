@@ -22,12 +22,19 @@
 
 \includepdf
 [
-pages={1,1,2,2},
+pages={1,1},
 nup=1x2,
 landscape,
 frame=false,
-%picturecommand={\put(0,.5\paperheight){\line(1,0){\paperwidth}}}
-picturecommand={\put(0,.5\paperheight){\tikz{\draw[loosely dotted]{(0,0) -- (\paperwidth,0)}}}}
+picturecommand={\put(0,.5026\paperheight){\tikz{\draw[loosely dotted]{(0,0) -- (\paperwidth,0)}}}}
+]{itdr_charsheet.pdf}
+
+\includepdf
+[
+pages={2,2},
+nup=1x2,
+landscape,
+frame=false,
 ]{itdr_charsheet.pdf}
 
 \end{document}

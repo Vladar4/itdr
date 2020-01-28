@@ -1,8 +1,9 @@
 \documentclass[10pt,twoside,openany]{book}
 \usepackage{itdr}
 \usepackage[utf8]{inputenc}
-\usepackage{forloop}
 \usepackage{amssymb}
+\usepackage{forloop}
+\usepackage{tikz}
 
 \def \title {Into the Dungeon: Revived} % TITLE variable
 \def \author {Vladimir Arabadzhi} % AUTHOR variable
@@ -16,18 +17,30 @@
 		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
 }}
 
-\newcommand{\thinrule}[1]{\rule{#1}{\arrayrulewidth}}
-%\newcommand{\thinrule}[1]{\hbox to #1{\leaders\hbox to 7.5pt{\hss . \hss}\hfil}}
+\ifcsname ifplain\endcsname\else
+\expandafter\let\csname ifplain\expandafter\endcsname
+\csname iffalse\endcsname
+\fi
+\newboolean{image} % Image overlay switch (xifthen package)
+\ifplain
+\setboolean{image}{false}
+\else
+\setboolean{image}{true}
+\fi
+% to disable image overlay call pdflatex with
+% "\let\ifplain\iftrue\input{itdr_charsheet}"
+
+\newcommand{\itemrule}[1]{\rule{#1}{\arrayrulewidth}}
+\newcommand{\itemrulefill}{\hrulefill}
+% dotted lines
+%\renewcommand{\itemrule}[1]{\makebox[#1]{\dotfill}}
+%\renewcommand{\itemrulefill}{\dotfill}
+
 \newcommand{\thinbox}[2][0.75em]{\fbox{\rule{#2}{0pt}\rule[#1]{0pt}{0in}}}
-\newcommand{\itemrule}{\hrulefill}
-%\newcommand{\itemrule}{\dotfill}
 \newcommand{\tablewidth}{\linewidth+0.37em}
 \newcommand{\negspace}[1][0px]{\hspace{-0.48em}\hspace{#1}}
-%\newcommand{\negspace}{\hspace{-0.5em}
 \newcommand{\smartslash}{$/$\hspace{-0.2em}}
-\newcommand{\slashspace}{\negspace\thinrule{1.55em}\smartslash\itemrule}
-%\newcommand{\slashspace}{\negspace\thinbox{0.75em}~\thinrule{3em}}
-%\newcommand{\slashspace}{\negspace\thinrule{1.5em}\hspace{-0.25em}$/$~\thinrule{2.5em}}
+\newcommand{\slashspace}{\negspace\itemrule{1.55em}\smartslash\itemrulefill}
 \newcommand{\centered}[1]{\begin{center}#1\end{center}\vspace{-0.5em}}
 \newcounter{loopcounter}
 \newcommand{\dup}[2][1]{\forloop{loopcounter}{0}{\value{loopcounter}<#1}{#2}}
@@ -44,32 +57,43 @@
 	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{0.5em}
 \end{center}
 
-\noindent\hspace{0.4em}Character Sheet~\itemrule
+\noindent\hspace{0.4em}Character Sheet~\itemrulefill
 
 \vspace{0.5em}
 
 \noindent
 \begin{tabularx}{\tablewidth}{llLrL}
-~ & \multicolumn{4}{l}{Adventures Survived~\thinrule{9.725em}} \\
+~ & \multicolumn{4}{l}{Adventures Survived~\itemrule{9.725em}} \\
 ~ & STR & \slashspace & HP & \slashspace \\
 ~ & DEX & \slashspace & Armour & \slashspace \\
+\ifthenelse{\boolean{image}}{%
+\multirow{-4}{*}{\hspace{1.532in}}\hspace{-0.1em} &
+WIL & \slashspace & Money & \negspace\itemrulefill \\
+}{%
 \multirow{-4}{*}{\thinbox[1.44in]{1.44in}}\hspace{-0.1em} &
-	WIL & \slashspace & Money & \negspace\itemrule \\
-\end{tabularx}%\vspace{0.5em}
+	WIL & \slashspace & Money & \negspace\itemrulefill \\
+}
+\end{tabularx}
 
 \centered{Background and Features}
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
-\dup[3]{\itemrule & \itemrule \\}
+\dup[3]{\itemrulefill & \itemrulefill \\}
 \end{tabularx}\vspace{-2em}
 
 \centered{Equipment and Notes}
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
-\dup[14]{\itemrule & \itemrule \\}
+\dup[14]{\itemrulefill & \itemrulefill \\}
 \end{tabularx}
+
+\ifthenelse{\boolean{image}}{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[xshift=-0.35em,yshift=0.45em,anchor=north west] at (current page.north west){\includegraphics{./img/pic/charsheet_page1.png}};
+	\end{tikzpicture}
+}{}
 
 \break
 
@@ -81,7 +105,7 @@
 \centered{Cantrips}
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
-\dup[3]{\itemrule & \itemrule \\}
+\dup[3]{\itemrulefill & \itemrulefill \\}
 \end{tabularx}\vspace{-2em}
 
 \centered{Spells}
@@ -90,8 +114,13 @@
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
-%\dup[23]{$\bigcirc\itemrule\Box$ & $\bigcirc\itemrule\Box$ & $\bigcirc\itemrule\Box$ \\}
-\dup[22]{\textbigcircle\itemrule\hspace{0.1em}\thinbox[0.65em]{0.65em} & \textbigcircle\itemrule\hspace{0.1em}\thinbox[0.65em]{0.65em} \\}
+\dup[22]{\textbigcircle\itemrulefill\hspace{0.1em}\thinbox[0.65em]{0.65em} & \textbigcircle\itemrulefill\hspace{0.1em}\thinbox[0.65em]{0.65em} \\}
 \end{tabularx}
+
+\ifthenelse{\boolean{image}}{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[xshift=-0.35em,yshift=0.45em,anchor=north west] at (current page.north west){\includegraphics{./img/pic/charsheet_page2.png}};
+	\end{tikzpicture}
+}{}
 
 \end{document}
