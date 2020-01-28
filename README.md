@@ -12,6 +12,10 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 ### Illustration gallery at [ArtStation](https://vladar.artstation.com/projects/zAmRZQ) and [DeviantArt](https://www.deviantart.com/vladar4/gallery/68893105/into-the-dungeon-revived)
 
 ![ItD:R cover](cover.jpg)
+<details>
+  <summary>Character sheets</summary>
+  <img src="charsheets.jpg" title="ItD:R charsheets"/>
+</details>
 
 PDFs
 ----
@@ -23,14 +27,14 @@ PDFs
 | \*_booklet.pdf   | booklets for printing   |
 | \*_booklet_r.pdf | booklets for printing with odd pages rotated upside down |
 | itdr_charsheet.pdf | character sheet |
-| itdr_charsheet_double\*.pdf | double charsheet for printing |
+| itdr_charsheet_double\*.pdf | double character sheets for printing |
 
 Scripts
 -------
 | Script | Description |
 |---|---|
 | cleanup.sh | clean auxiliary files |
-| make_all.sh | Update ALL PDFs in the repository |
+| make_all.sh | update ALL PDFs in the repository |
 | make_booklet.sh [-r] [FILE]... | make specified booklets, "-r" key to rotate odd pages upside down |
 | make_booklets.sh | make all booklets (default, light, and minimal) including ones with upside down odd pages (with suffix "_r") |
 | make_charsheets.sh | make all charsheet versions |
@@ -66,7 +70,19 @@ Changelog
 ---------
 
 ### v1.2.1
-* *(WIP)*
+* light and minimal editions of the book
+* character sheets
+* new building scripts
+#### Part 1
+* fixed and updated Halfling Ancestry Feature
+#### Part 4
+* 2nd Circle:
+  * Owl's Wisdom: now grants Advantage on WIL Saves
+* 3rd Circle:
+  * Displacement: now Persistent
+#### Other
+* Mule and Horse rebalance
+* Miscellaneous rules clarifications
 
 ### v1.2
 #### Part 1
