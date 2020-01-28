@@ -13,12 +13,13 @@ The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.goog
 
 ![ItD:R cover](cover.jpg)
 <details>
-  <summary>Character sheets</summary>
+  <summary>Character sheets preview</summary>
   <img src="charsheets.jpg" title="ItD:R charsheets"/>
 </details>
 
 PDFs
 ----
+All PDFs are located in the "current" directory.
 | PDF file | Description |
 |---|---|
 | itdr.pdf   | current version of the book |
