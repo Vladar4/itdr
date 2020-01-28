@@ -1,5 +1,6 @@
 #!/bin/sh
 # Update base PDFs in the repository
+
 DIR="current"
 LIST="itdr itdr_light itdr_minimal"
 

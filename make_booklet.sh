@@ -2,7 +2,7 @@
 # Make booklets
 # Usage: sh make_booklet.sh [-r] [FILE]...
 # echo -r : rotate odd pages upside down
-#
+
 ROTATE=0 # rotate odd pages upside down
 
 if [ $# -gt 0 ]
