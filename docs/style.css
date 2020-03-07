@@ -26,7 +26,7 @@ article {
     flex-direction: column;
 }
 
-article, footer p {
+article, footer, p, table {
     min-width: 20rem;
     max-width: 40rem;
     width: 100%;
@@ -74,5 +74,13 @@ img {
 p {
     margin-top: 1rem;
     margin-bottom: 0rem;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+td {
+    padding: 5px;
 }
 
