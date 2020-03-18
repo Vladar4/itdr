@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2020/03/08]
+\ProvidesPackage{itdr}[2020/03/18]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.4in,bottom=1.4in]{geometry}
@@ -293,6 +293,22 @@
 		\placeholder{#2}
 	}
 	\vspace{-1em}
+}
+
+% \dimagebottom{filename}
+% full-page image at the bottom of the page
+% place BEFORE anything on the page
+\RequirePackage{stfloats}
+\newcommand{\dimagebottom}[2]{
+	\noindent\begin{figure*}[bp]
+	\centering
+	\IfFileExists{./img/pic/#1.png}{
+		\includegraphics[width=\textwidth]{./img/pic/#1.png}
+	}
+	{ % else
+		\placeholder{#2}
+	}
+	\end{figure*}
 }
 
 % \dimageoverlay{filename}
