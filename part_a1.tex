@@ -240,8 +240,9 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	99	&	Your clothes burst in flames. Take d6 damage now and d6 at the end of your next turn, unless extinguished.	\\
 	100	&	You are petrified.	\\
 \end{dtable}
+
 \vfill
-\header{Random Colour}
+
 \begin{dtable}[cLcL]
 	\textbf{d12} & \textbf{Colour} & \textbf{d12} & \textbf{Colour} \\
 	1 & snow white		& 7	& lemon yellow \\
@@ -251,15 +252,25 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	5 & chestnut brown	& 11& lavender violet \\
 	6 & pumpkin orange	& 12& orchid magenta \\
 \end{dtable}
+
 \vfill
-\header{Random Body Part}
+
+\begin{dtable}[cLcLcL]
+	\textbf{d12} & \textbf{Body Part} & \textbf{d12} & \textbf{Body Part} \\
+	1		& tooth	& 7--9 	 & toe	\\
+	2--4	& finger& 10--11 & foot	\\
+	5--6	& arm	& 12	 & eye	\\
+\end{dtable}
+\begin{comment}
+% pre-1.3 version
 \begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Part} & \textbf{d20} & \textbf{Part} \\
-	1		& teeth	& 11--14 & toe	\\
+	1		& tooth	& 11--14 & toe	\\
 	2--5	& finger& 15--17 & foot	\\
 	6--8	& hand	& 18--19 & leg	\\
 	9--10	& arm	& 20	 & eye	\\
 \end{dtable}
+\end{comment}
 
 \vfill
 
@@ -271,12 +282,11 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 
 Basic magic equipment can be created by a Mystic by spending the required amount of funding and time.
 
-\subparagraph{Focus}: 10s in consumables, 1 day, a suitable item.
+\vspace{-0.5em}\subparagraph{Focus}: 10s in consumables, 1 day, a suitable item.
 
-\subparagraph{Scroll}: 20s $\times$ Circle in consumables, 1 day $\times$ Circle. Successful on X-in-6, \mbox{X = 1 + Mystic Level -- Circle}, consumables are lost either way. (Designing a new spell, if the Referee allows it, costs and takes at least $\times$10 as much and requires some rare ingredients.)
+\vspace{-0.5em}\subparagraph{Scroll}: 20s $\times$ Circle in consumables, 1 day $\times$ Circle. Successful on X-in-6, \mbox{X = 1 + Mystic Level -- Circle}, consumables are lost either way. (Designing a new spell, if the Referee allows it, costs and takes at least $\times$10 as much and requires some rare ingredients.)
 
 \vfill
-\break
 
 \section{Pets' Experience}
 \index{Pets}
@@ -284,7 +294,7 @@ Basic magic equipment can be created by a Mystic by spending the required amount
 
 If you want to allow experience for pets, do it once, when a pet survives three Adventures. Use the same Ability Score and HP increase rules as characters do.
 
-\vfill
+\break
 
 \section{Rations}
 \index{Rations}
@@ -325,7 +335,7 @@ When buying resources to increase the Amount by 1 (up to 5), pay its price multi
 \section{Selling}
 \index{Selling}
 
-A chance to find a buyer for a pricey object is \mbox{X-in-6}, based on a settlement and item's cost. You can repeat the search in the same settlement after d6 months.
+A chance to find a buyer for a pricey object is \mbox{X-in-6} based on a settlement and item's cost. You can repeat the search in the same settlement after d6 months.
 
 \begin{dtable}[llllllL]
 	\textbf{gold:} &	\textbf{10+} & \textbf{100+} & \textbf{1k+} & \textbf{10k+} & \textbf{100k+} & \textbf{1M+} \\
@@ -336,9 +346,10 @@ A chance to find a buyer for a pricey object is \mbox{X-in-6}, based on a settle
 
 After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{1}{4} price. If you roll under your WIL Score by 10 or more, you sell for a full price, otherwise you sell for a \sfrac{1}{2} price.
 
+\subparagraph{Selling Magic Items} will have a high possibility of barter, while search roll and \save{WIL} are rolled at Disadvantage. Price for scrolls is d10s~$\times$~Circle, consumables: d10$\times$10s~$\times$~Circle, wands and rods: d10g~$\times$~Circle, other items --- on a case-by-case \mbox{basis.}
+
 \vfill
 \break
-
 
 \section{Structures and Sieges}
 \index{Structures}
