@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2020/03/19]
+\ProvidesPackage{itdr}[2020/03/30]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.4in,bottom=1.4in]{geometry}
@@ -51,7 +51,7 @@
 
 % Titles
 \RequirePackage{titlesec}
-\setlength{\parskip}{0.25em} % distance between paragraphs
+\setlength{\parskip}{0.2em} % distance between paragraphs
 
 \renewcommand\thesection{}
 \renewcommand\thesubsection{}
@@ -331,8 +331,7 @@
 \newcommand{\dimagepage}[1]{
 	\thispagestyle{empty}
 	\topskip0pt
-	\vspace*{\fill}
-	\noindent\begin{picture}(0,606)
+	\noindent\begin{picture}(0,609)
 	\IfFileExists{./img/pic/#1.png}{
 		\put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
 	}
@@ -340,7 +339,6 @@
 		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}}
 	}
 	\end{picture}
-	\vspace*{\fill}
 }
 
 % fill the page with lines
