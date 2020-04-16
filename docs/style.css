@@ -36,6 +36,7 @@ article, footer, p, table {
 
 h1, h2, h3, h4 {
     color: #111;
+    text-align: center;
 }
 
 hr {
@@ -44,6 +45,14 @@ hr {
 
 .centered {
     text-align: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.strong {
+    font-weight: bold;
 }
 
 a {
