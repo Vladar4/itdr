@@ -5,6 +5,20 @@ Into the Dungeon: Revived
 
 The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk) by [Chris McDowall](http://www.bastionland.com/).
 
+In this book you will find:
+* Easy to learn rules, core ones fit on one page spread
+* Quick character generation
+* Fast combat due to the absence of to-hit rolls
+* Feature-based character levelling
+* Basic domain rules for upper-level games
+* A magic system with easy-to-remember spell effects
+* Simple game mechanics allow the Referee to minimize session preparation time
+* A guide for converting monsters from any D&D system
+* A bunch of additional and alternative rules to mix and match for the perfect gaming experience
+* A couple of random inspiration tables to use fo preparation or even during sessions
+* A small bestiary with different monsters and wild animals
+* An optional class-based character levelling system for the "class-ic" experience
+
 ### [Home Page](https://vladar4.github.io/itdr/)
 
 ### [Latest Release](https://github.com/Vladar4/itdr/releases/latest)
