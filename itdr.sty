@@ -60,6 +60,7 @@
 \titleformat{\chapter}
 	{\normalfont\scshape\LARGE}{\thechapter.\ }{0em}{}
 \titlespacing*{\chapter}{0em}{0em}{0.5em}
+\def\chapterautorefname{Chapter}
 
 % unnumbered chapter
 \newcommand{\chapterx}[1]{
@@ -354,3 +355,6 @@
 
 % Hyperref should be loaded last
 \RequirePackage{hyperref}
+% \fullref{label}
+\newcommand*{\customref}[2]{\hyperref[{#1}]{#2}}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}: \nameref*{#1}}}
