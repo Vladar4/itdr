@@ -152,6 +152,8 @@ Characters can lift a maximum amount of load equal to their STR squared (in poun
 
 Aside from speed penalty, a heavy load reduces HP to 0. The same HP reduction happens when carrying more than three bulky items. Items are considered bulky if they require both hands to carry or otherwise unwieldy, for example, two-handed weapons, full armour, a Mystic's Tome, a pot of black powder, etc.
 
+1~lb equals 100 gold guilders, 1000 silver shillings, or 1000 copper pennies in weight.
+
 \vfill
 \break
 
@@ -391,6 +393,7 @@ After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{
 	Moat, 100~ft	& \multicolumn{3}{L}{1g (earth), 5g (rock)} \\
 	Road, 1~mile	& \multicolumn{3}{L}{5g, $\times$2 on Rugged terrain} \\
 \end{dtable}
+{\em (P --- external perimeter of the building.)}
 
 \subparagraph{Construction Crew} (four dozen people lead by a master, paid 50s per week) build 5g of structure cost weekly, 1g for stone construction. Up to 5 crews can work on a single structure simultaneously. Speed and cost might be impacted by external factors.
 
@@ -412,7 +415,7 @@ Require a crew of two and a whole turn to reload.
 	\rowcolor{dColor2}Cannon & 2g	& d12 Blast & 25s shot \\
 \end{dtable}
 
-The weight of a siege engine is about 1 ton.
+The weight of a siege engine is about 1 ton and it requires a draft animal to transport overland.
 
 \vfill
 
@@ -449,7 +452,7 @@ Travel for 8 hours/day before resting for the night.
 \begin{dtable}[lLcc]
 \textbf{Terrain} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} \\
 Clear		& grassland, road, trail 			& \travelunit{5} & 5 \\
-Rugged		& desert, forest, hills, mud, snow	& \travelunit{4} & 4 \\
+Rugged		& desert, forest, hills, mud, snow, river ford, mountain pass	& \travelunit{4} & 4 \\
 Difficult 	& jungle, mountains, river, swamp	& \travelunit{3} & 3 \\
 \end{dtable}
 
@@ -480,14 +483,15 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 	(except for camels in a desert and elephants in a jungle)} & --\travelunit{1} & --1 \\
 	
 	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
-	\hspace{0.5em}\labelitemi~Roads & +\travelunit{1} & +1 \\
-	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{1} & --1 \\
+	\hspace{0.5em}\labelitemi~Clear terrain except roads & --\travelunit{1} & --1 \\
+	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{2} & --2 \\
 	\hspace{0.5em}\labelitemi~Difficult terrain & \multicolumn{2}{c}{impassable} \\
 	
 	\hline
+	
+	\multicolumn{3}{c}{\textbf{Multipliers} (applied last rounding up)} \\
 
-	\textbf{Encumbrance} over 50~lb 
-	(on foot) & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
+	\textbf{Encumbrance} over 50~lb on foot or vehicle overload & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
 	
 	\textbf{Forced march} & \multicolumn{2}{c}{$\times$2} \\
 \end{dtable}
@@ -540,7 +544,7 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 \subparagraph{Horizon} is 3 miles away on a flat surface (for an Earth-sized planet), 12 miles at 100~ft height (ship's mast, tower), etc.: $distance \approx \sqrt{1.5 \times elevation}$.
 
 \vfill
-\dimage{waterborne}{80pt}
+\dimage{waterborne}{75pt}
 ~\\
 
 \subsection{Waterborne Travel}
@@ -576,7 +580,7 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 \index{Fare}
 \subparagraph{Fare} might vary from 1p per person to cross a river or lake to 1s per person for each 5 miles travelled in a long-distance voyage.
 
-\subparagraph{Passengers} occupy 1~t of cargo space.
+\subparagraph{Passengers} occupy 1~t of cargo space or half as much for short-distance travel.
 
 \subparagraph{Rations} of food and water for one person take up \sfrac{1}{10}~t (200~lb) of cargo space per month of travel.
 
@@ -693,8 +697,6 @@ Balloons and airships are affected by winds in the same manner as sailing ships.
 
 \subparagraph{Balloons} always follow the wind direction. Each 3 hours of travel you may change altitude to catch a preferable wind (roll for a new wind direction).
 
-\vspace{0.25em}
-\dimage{aerial}{80pt}
 \vfill
 
 \begin{dbox}
@@ -722,6 +724,9 @@ Balloons and airships are affected by winds in the same manner as sailing ships.
 	\begin{itemize}
 		\item \textbf{1 ton} is 2000 pounds
 		\item \textbf{1 pound} is 16 ounces
+		\item \textbf{1 pound} is 100 gold guilders
+		\item \textbf{1 pound} is 1000 silver shillings
+		\item \textbf{1 pound} is 1000 copper pennies
 	\end{itemize}
 \end{dbox}
 
