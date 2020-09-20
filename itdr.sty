@@ -1,7 +1,7 @@
-\ProvidesPackage{itdr}[2020/09/07]
+\ProvidesPackage{itdr}[2020/09/20]
 
 \RequirePackage{comment}
-\RequirePackage[inner=1in,outer=1in,top=1.4in,bottom=1.4in]{geometry}
+\RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{fp}
 \RequirePackage{lipsum}
@@ -332,7 +332,7 @@
 \newcommand{\dimagepage}[1]{
 	\thispagestyle{empty}
 	\topskip0pt
-	\noindent\begin{picture}(0,609)
+	\noindent\begin{picture}(0,617)
 	\IfFileExists{./img/pic/#1.png}{
 		\put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
 	}
