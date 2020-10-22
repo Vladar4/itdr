@@ -6,7 +6,7 @@ NAME="itdr_charsheet"
 DOUBLE="${NAME}_double"
 
 # plain charsheets
-pdflatex -interaction=nonstopmode -jobname="$NAME" "\let\ifplain\iftrue\input{itdr_charsheet}"
+pdflatex -interaction=nonstopmode -jobname="$NAME" "\let\ifplain\iftrue\input{${NAME}}"
 cp "$NAME".pdf "${DIR}/${NAME}_plain.pdf"
 # double_a4
 pdflatex -interaction=nonstopmode -output-directory="$DIR" -jobname="${DOUBLE}_plain_a4" "\documentclass[a4paper]{article} \input{${DOUBLE}.tex}"

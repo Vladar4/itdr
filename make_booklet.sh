@@ -9,7 +9,7 @@ if [ $# -gt 0 ]
 then
     while [ $# -gt 0 ]
     do
-        if [ $1 = "-r" ]
+        if [ "$1" = "-r" ]
         then
             ROTATE=1
         else
