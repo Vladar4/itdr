@@ -1,0 +1,72 @@
+\documentclass[10pt,twoside,openany]{book}
+\usepackage{itdr}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{forloop}
+\usepackage{tikz}
+
+\def \title {Into the Dungeon: Revived} % TITLE variable
+\def \author {Vladimir Arabadzhi} % AUTHOR variable
+
+% PDF properties
+\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
+\hypersetup{
+	pdfinfo={
+		Title={{\title} - Time Sheet},
+		Author={\author},
+		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+}}
+
+\ifcsname ifplain\endcsname\else
+\expandafter\let\csname ifplain\expandafter\endcsname
+\csname iffalse\endcsname
+\fi
+\newboolean{image} % Image overlay switch (xifthen package)
+\ifplain
+\setboolean{image}{false}
+\else
+\setboolean{image}{true}
+\fi
+% to disable image overlay call pdflatex with
+% "\let\ifplain\iftrue\input{itdr_charsheet}"
+
+\newcommand{\itemrule}[1]{\rule{#1}{\arrayrulewidth}}
+\newcommand{\itemrulefill}{\hrulefill}
+\newcommand{\timedots}{\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill\hrulefill\hfill$\rfloor$}
+% dotted lines
+%\renewcommand{\itemrule}[1]{\makebox[#1]{\dotfill}}
+%\renewcommand{\itemrulefill}{\dotfill}
+
+\newcommand{\tablewidth}{\linewidth+0.37em}
+\newcounter{loopcounter}
+\newcommand{\dup}[2][1]{\forloop{loopcounter}{0}{\value{loopcounter}<#1}{#2}}
+
+\begin{document}
+\thispagestyle{empty}
+\fancyfont\fontsize{18}{15}\selectfont % Set text font
+\newgeometry{margin=1in,bottom=0.75in}
+\def\arraystretch{1.5}
+
+\begin{center}
+	\hspace{0.3em}\textBigTitle{\title}\\
+	\vspace{-0.5em}
+	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{0.5em}
+\end{center}
+
+\noindent\hspace{0.4em}Time Sheet~\itemrulefill
+
+\vspace{0.15em}
+
+\noindent
+\begin{tabularx}{\tablewidth}{lRRRRRR}
+~ & 10m & 20m & 30m & 40m & 50m & 60m\\
+\dup[24]{\itemrule{1em}h & \multicolumn{6}{l}{\hspace{-0.37em}\includegraphics[width=\tablewidth-2.38em]{img/timeline.pdf}}\\}
+\end{tabularx}
+
+\ifthenelse{\boolean{image}}{%
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[xshift=-0.35em,yshift=0.45em,anchor=north west] at (current page.north west){\includegraphics{./img/pic/timesheet.png}};
+	\end{tikzpicture}
+}{}
+
+\end{document}
