@@ -37,6 +37,7 @@ article, footer, p, table {
 h1, h2, h3, h4 {
     color: #111;
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 hr {
@@ -96,5 +97,9 @@ td {
 ul {
     margin-bottom: 0rem;
     list-style-image: url(starredbullet.svg) ;
+}
+
+li {
+    margin-bottom: 0.5rem;
 }
 
