@@ -96,11 +96,13 @@ Each time you take Mystic Feature, choose a new Signature Spell to cast without 
 \index{Spells!random}
 \index{Random Spells|see {Spells, random}}
 
+\begin{comment}
 ~\\
 \header{Random 30 Spells}
 \begin{dtable}[L]
 d3~$\times$10~+~d10 (treat 10 as 0)
 \end{dtable}
+\end{comment}
 
 ~\\
 \header{Random 36 Spells}
@@ -404,9 +406,11 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{5} Circle}
 \def \spellcircle {5}
 \begin{enumerate}
+	\item \spell{Alter Fate} Target's next roll is changed by d12 but cannot exceed the original die roll range.
 	\item \spell{Baleful Polymorph} \save{STR} or transforms a creature into a harmless animal permanently.
 	\item \spell{Banish} \save{WIL} or a creature returns to its native plane. If a creature is native to the current plane, it disappears for a minute and then returns safely.
 	\item \spell{Blight} Drains life from d12 living targets for d12 Damage each. When targeting plants, roll d12 Damage twice and pick the biggest result.
+	\item \spell{Bloody Gossamer} Fill a large area shaped at your design with a dense web of invisible razor-sharp strings. Anyone trying to move or act within it must pass a \save{DEX} or take d10 Damage and end their turn immediately.
 	\item \spell{Break Enchantment} Frees a single target from enchantments, alterations, curses, and \mbox{petrification}.
 	\item \spell{Cloudkill} You can slowly move this small cloud on the ground, causing d6 STR Loss to all living creatures within it.
 	\item \spell{Cone of Cold} d12 Cold Damage to everyone within a large cone.
@@ -415,13 +419,17 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Disintegrate} d12 Damage ignoring Armour. On a failed Critical Damage Save, a creature is turned to dust. Objects up to the size of an elephant are destroyed completely at 0hp.
 	\item \spell{Dominate Person} \save{WIL} or a humanoid is controlled telepathically. The Save is repeated each time the target is harmed.
 	\item \spell{Feeblemind} \save{WIL} or drop to WIL~0.
+	\item \spell{Hermit's Company} Summon your double. It is incapable of magic, cannot harm or disobey you, and is always in a great mood. Any damage done to one of you is suffered by both. \mbox{Persistent.}
 	\item \spell{Incinerate} Set one target on fire. Deals d12 Fire Damage immediately and at the end of each next turn until a \save{DEX} is passed or any other way to put out the flames is found.
 	\item \spell{Interposing Hand} A hand blocks 5d6hp of Damage from one opponent.
 	\item \spell{Major Creation} Create an item of stone and metal. Persistent.
 	\item \spell{Mass Suggestion} \save{WIL} or creatures are compelled to follow the proclaimed course of action. Saves against suggestions that are harmful to the targets are rolled with Advantage.
 	\item \spell{Mystic's Faithful Hound} A phantom dog can guard or attack and will never leave caster's vicinity. WIL~15, 3d6hp, d8~Bite. Persistent.
 	\item \spell{Mystic's Private Sanctum} Creates an illusion that prevents anyone from viewing or scrying an area. Persistent.
+	\item \spell{Mystic's Saving Grace} When the target takes Damage, you can choose to take it instead, ending this Spell. At 0hp it acts like a Spell casting Damage, targeting your WIL. Persistent.
 	\item \spell{Passwall} Creates a passage through a wooden or stone wall while the Spell lasts.
+	\item \spell{Perfect Weapon} Summon a melee (d10/d12) or ranged (d10) weapon that ignores all supernatural resistances. It disappears after dealing maximal Damage or you casting any spell.
+	\item \spell{Permutation} A willing target suffers \mbox{d4 to d12} Ability Score Loss, and another one restores as much of any Ability Score Loss. The die, \mbox{Abilities}, and targets are chosen by you.
 	\item \spell{Petrify} \save{STR} or the target is permanently transformed into a statue.
 	\item \spell{Planar Binding} Traps extraplanar creatures that fail a \save{WIL} until they perform a task.
 	\item \spell{Planar Gate} Open a gate to another reality that works in both directions.
@@ -429,9 +437,9 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Secret Chest} Hides an expensive chest in the extraplanar space; you retrieve it at will.
 	\item \spell{Symbol of Sleep} Reading this small rune puts the reader who failed a \save{WIL} into magical sleep that lasts as long as this Spell. Persistent.
 	\item \spell{Telekinesis} Moves an object, attacks a creature, or hurls an object or creature. Damage \mbox{depends} on the object's size; thrown creatures take appropriate falling damage.
-	\item \spell{Telepathic Bond} Creates a link that lets allies communicate. All targets must be in your vicinity at the moment of casting to be affected. \mbox{Persistent.}
+	\item \spell{Telepathic Bond} Creates a link that lets allies communicate. All targets must be in your vicinity at the moment of casting. \mbox{Persistent.}
 	\item \spell{Teleport} Instantly transports you to a known location up to 100 miles away.
-	\item \spell{Transmute Earth} Transforms mud to rock or rock to mud.
+	\item \spell{Transmute Earth} Mud to rock or rock to mud.
 	\item \spell{Wall of Force} A large invisible wall is immune to damage. Lasts for d6 minutes.
 	\item \spell{Wall of Stone} Creates a large stone wall (16hp, Armour~8) that can be shaped.
 \end{enumerate}
