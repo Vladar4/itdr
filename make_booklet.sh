@@ -17,9 +17,9 @@ then
             pdfjam "$1" --letterpaper --keepinfo -o "$TMP"
             if [ $ROTATE -gt 0 ]
             then
-                pdfjam --booklet true --landscape --keepinfo "$TMP" -o "${1%.*}"_booklet_r.pdf
+                pdfjam --a4paper --booklet true --landscape --keepinfo "$TMP" -o "${1%.*}"_booklet_r.pdf
             else
-                pdfjam --booklet true --landscape --keepinfo "$TMP" -o "${1%.*}"_booklet.pdf --preamble '\usepackage{everyshi} \makeatletter \EveryShipout{\ifodd\c@page\pdfpageattr{/Rotate 180}\fi} \makeatother'
+                pdfjam --a4paper --booklet true --landscape --keepinfo "$TMP" -o "${1%.*}"_booklet.pdf --preamble '\usepackage{everyshi} \makeatletter \EveryShipout{\ifodd\c@page\pdfpageattr{/Rotate 180}\fi} \makeatother'
             fi
             rm "$TMP"
         fi
