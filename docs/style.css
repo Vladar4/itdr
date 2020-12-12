@@ -26,7 +26,7 @@ article {
     flex-direction: column;
 }
 
-article, footer p {
+article, footer, p, table {
     min-width: 20rem;
     max-width: 40rem;
     width: 100%;
@@ -36,6 +36,8 @@ article, footer p {
 
 h1, h2, h3, h4 {
     color: #111;
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 hr {
@@ -44,6 +46,14 @@ hr {
 
 .centered {
     text-align: center;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.strong {
+    font-weight: bold;
 }
 
 a {
@@ -74,5 +84,22 @@ img {
 p {
     margin-top: 1rem;
     margin-bottom: 0rem;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+ul {
+    margin-bottom: 0rem;
+    list-style-image: url(starredbullet.svg) ;
+}
+
+li {
+    margin-bottom: 0.5rem;
 }
 
