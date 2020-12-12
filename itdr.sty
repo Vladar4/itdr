@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2020/09/20]
+\ProvidesPackage{itdr}[2020/12/12]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -11,6 +11,9 @@
 \RequirePackage{setspace}
 \RequirePackage{xfrac} % for the \sfrac fractions
 \RequirePackage{xifthen}
+
+% travelunit
+\newcommand{\travelunit}[1]{\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
 
 % Reset footnote counter for each new page
 \RequirePackage{perpage} %the perpage package
