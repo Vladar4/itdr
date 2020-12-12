@@ -1,14 +1,14 @@
 \documentclass[itdr]{subfiles}
 
-
-\newcommand{\travelunit}[1]{\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
-
 \begin{document}
 
+\addtocontents{toc}{\protect\newpage}
 \chapterx{Appendix A: Additional and Alternative Rules}
+\label{ch:appendix_a}
 
 ``\title'' is intended as a rules-light game. Keep this in mind when deciding to use any of the rules presented in this appendix.
-
+%\vspace{-0.2em}
+\vfill
 
 \section{Characters}
 \index{Characters}
@@ -24,6 +24,14 @@ To advance such character to Novice, choose a Feature, reroll HP (or keep the ol
 
 \vfill
 
+\section{Contest}
+In an opposed contest when a simple Save would not suffice, both sides roll a Save. If one of the sides succeeds, it wins. If both sides succeed, the lower roll wins. On a tie, the higher Ability Score wins.
+
+If weapons are involved, the attack might be subtracted from the Save or added to opponent's one.
+
+\vfill
+
+\begin{comment}
 \section{Gods, Religion, and Disciples}
 \index{Religion}
 \index{Disciple}
@@ -31,10 +39,21 @@ To advance such character to Novice, choose a Feature, reroll HP (or keep the ol
 
 The nature of divine presence is highly dependent on a specific setting and thus is left to your discretion. Some worlds could be completely devoid of divine influence (though local cults might still have supernatural powers from some other source), while dwellers of other worlds can regularly observe their gods' interventions in the deals of mortals.
 
-\subparagraph{Disciple} Class and its Creeds from the \textbf{Appendix C: Class-ic Edition} could be used as a Feature to represent the most devoted adepts of cryptic cults. Unlike other Features, this one has a prerequisite of the character being a worshipper of the relevant set of teachings. When obtaining a new Experience Level, follow standard rules. Additionally, from Expert onwards, Disciples gain d4 (up to their WIL~/~2, rounded down) Followers (3hp, Simple Weapon) each time they visit a friendly settlement  and are responsible for their food, shelter, equipment, etc.
+\subparagraph{Disciple} Class and its Creeds from the \textbf{\customref{ch:appendix_c}{Appendix C: Class-ic Edition}} could be used as a Feature to represent the most devoted adepts of cryptic cults. Unlike other Features, this one has a prerequisite of the character being a worshipper of the relevant set of teachings. When obtaining a new Experience Level, follow standard rules. Additionally, from Expert onwards, Disciples gain d4 (up to their WIL~/~2, rounded down) Followers (3hp, Simple Weapon) each time they visit a friendly settlement  and are responsible for their food, shelter, equipment, etc.
+\end{comment}
 
 \vfill
-\break
+
+\section{Hardcore Mode}
+To increase the difficulty, use the following rules:
+\begin{itemize}
+	\item Mystics use the \textbf{Random Spell Selection} rule.
+	\item When mystic fail their \save{WIL} from casting a spell at 0hp, they suffer a \textbf{Magic Mishap}.
+	\item Characters that take \textbf{Critical Damage} need an ally to spend their action to treat the wound or will lose d6~STR on each subsequent turn.
+	\item Use the \textbf{Injuries} rule. \textbf{Broken limb} roll results in a lost limb instead. \textbf{Gravely injured} roll \mbox{results} in instant death.
+\end{itemize}
+
+\vfill
 
 \section{Injuries}
 \index{Injuries}
@@ -54,17 +73,8 @@ Effects of an injury could be fixed by Healing.
 	16		& \textbf{Fractured skull.} d6 WIL Loss.\\
 	17		& \textbf{Broken ribs.} d6 DEX Loss.\\
 	18		& \textbf{Internal bleeding.} d6 STR Loss.\\
-	19		& \textbf{Broken limb.} Roll for a limb. Second hit to the same limb will result in its loss.\\
-	20		& \textbf{Nearly dead.} Next failed Critical Damage Save will result in death.\\
-\end{dtable}
-~\\
-
-\begin{dtable}[cL|cL]
-	\textbf{d12} & \textbf{Broken Limb} & \textbf{d12} & \textbf{Broken Limb} \\
-	1--2& left hand	& 7--8	& left foot \\
-	3--4& right hand& 9--10	& right foot \\
-	5	& left arm	& 11	& left leg \\
-	6	& right arm	& 12	& right leg \\
+	19		& \textbf{Broken limb.} Roll for a limb. Second hit to the same limb will result in its loss. (d4) \mbox{1--2:} left/right arm (cannot use it), \mbox{3--4:} left/right leg (cannot run, jump, etc.)\\
+	20		& \textbf{Gravely injured.} Next failed Critical Damage Save will result in death.\\
 \end{dtable}
 
 \vfill
@@ -81,7 +91,6 @@ Mist, smoke, and such reduce the radius in half.
 \subparagraph{Lantern} lasts for about four hours, can be dimmed at any moment, and refilled with lamp oil.
 
 \vfill
-\break
 
 \section{Living Expenses}
 \index{Living Expenses}
@@ -131,9 +140,14 @@ Characters can lift a maximum amount of load equal to their STR squared (in poun
 	20	&	200		&	400		&	800		\\
 \end{dtable}
 
-Aside from speed penalty, a heavy load reduces HP to 0. The same HP reduction happens when carrying more than three bulky items. Items are considered bulky if they require both hands to carry or otherwise unwieldy, for example, two-handed weapons, full armour, a Mystic's Tome, etc.
+1~lb equals 100 gold guilders, 1000 silver shillings, or 1000 copper pennies in weight.
+
+\subsection{Encumbrance}
+\index{Encumbrance}
+Aside from speed penalty, a heavy load reduces HP to 0. The same HP reduction happens when carrying more than three bulky items. Items are considered bulky if they require both hands to carry or otherwise unwieldy, for example, two-handed weapons, armour, a Mystic's Tome, a pot of black powder, etc.
 
 
+\vfill
 \break
 
 
@@ -150,8 +164,6 @@ A good night's sleep lowers Madness Level by 1.
 
 When Madness Level exceeds character's Experience Level, the character goes insane. Roll for immediate and prolonged effect. Prolonged effects require a Healing Service to get rid of.
 
-\vfill
-
 \begin{dtable}[cL]
 	\textbf{d20} & \textbf{Immediate Effect} \\
 	1--4 & \textbf{Shudder.} \\
@@ -163,8 +175,6 @@ When Madness Level exceeds character's Experience Level, the character goes insa
 	18--19 & \textbf{Paralysis} until any incoming Damage, or someone takes an action to shake it off.\\
 	20 & \textbf{Faint}. Need to be tended to by an ally and have a Rest to regain consciousness. \\
 \end{dtable}
-
-\vfill
 
 \begin{dtable}[cL]
 	\textbf{d20} & \textbf{Prolonged Effect} \\
@@ -178,8 +188,6 @@ When Madness Level exceeds character's Experience Level, the character goes insa
 	20 & \textbf{Stupor.} Cannot take any actions. \\
 \end{dtable}
 
-\vfill
-
 \paragraph{Vestigial Effects}
 Some especially shocking experiences might leave a permanent mark on the character's psyche, usually in a light form of some Prolonged Effect, obsession, compulsive behaviour, etc.
 
@@ -189,16 +197,17 @@ Some especially shocking experiences might leave a permanent mark on the charact
 
 
 \section{Magic Mishaps}
+\label{sec:magic_mishaps}
 \index{Magic}
 \index{Magic Mishaps}
 
-Improper use of a magical device, spellcasting inside an anti-magic zone, destruction of a magic item, or any other dangerous interaction with magic might lead to a mishap. Succeed on a \save{WIL} or suffer a random consequence.
+When Mystics fail their \save{WIL} from casting a spell, they suffer a Mishap. Other dangerous interactions with magic (improper use of a magical device, spellcasting inside an anti-magic zone, destruction of a magic item, etc.) might lead to a Mishap as well.
 
 \begin{dtable}[cL]
 	\textbf{d100} & \textbf{Mishap} \\
 	1--4	&	You exude a strong smell for a day. (d4) 1:~mint, 2:~garlic, 3:~vinegar, 4:~sulphur.	\\
 	5--8	&	Your clothes' colour changes randomly.	\\
-	9--12	&	Your clothes grow one size. Gain Disadvantage on \saves{DEX} until this problem is amended.	\\
+	9--12	&	Your clothes grow one size. Gain Disadvantage on \saves{DEX} until amended.	\\
 	13--16	&	Your eye colour changes randomly.	\\
 	17--20	&	Your eyes shed bright light for a day.	\\
 	21--24	&	Your hair colour changes to a random one (new hair grows normal).	\\
@@ -221,12 +230,12 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	75--76	&	Your HP are restored.	\\
 	77--78	&	You double in size for an hour. Gain Advantage on \saves{STR} and increase your weapon Damage dice by one (up to d12).	\\
 	79--80	&	You halve in size for an hour. Gain Disadvantage on \saves{STR} and lower your weapon Damage dice by one (down to d4).	\\
-\end{dtable}
-\begin{dtable}[cL]
-\textbf{d100} & \textbf{Mishap} \\
 	81--82	&	Your main weapon shrinks to one-sixteenth its size for an hour.	\\
 	83--84	&	Your tongue becomes forked.	\\
 	85--86	&	Your canines grow long and sharp.	\\
+\end{dtable}
+\begin{dtable}[cL]
+\textbf{d100} & \textbf{Mishap} \\
 	87--88	&	You grow a tail.	\\
 	89--90	&	You grow horns.	\\
 	91	&	You grow gills.	\\
@@ -240,9 +249,9 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	99	&	Your clothes burst in flames. Take d6 damage now and d6 at the end of your next turn, unless extinguished.	\\
 	100	&	You are petrified.	\\
 \end{dtable}
-~\\
 
-\header{Random Colour}
+\vfill
+
 \begin{dtable}[cLcL]
 	\textbf{d12} & \textbf{Colour} & \textbf{d12} & \textbf{Colour} \\
 	1 & snow white		& 7	& lemon yellow \\
@@ -252,22 +261,30 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 	5 & chestnut brown	& 11& lavender violet \\
 	6 & pumpkin orange	& 12& orchid magenta \\
 \end{dtable}
-~\\
 
-\header{Random Body Part}
+\vfill
+
+\begin{dtable}[cLcLcL]
+	\textbf{d12} & \textbf{Body Part} & \textbf{d12} & \textbf{Body Part} \\
+	1		& tooth	& 7--9 	 & toe	\\
+	2--4	& finger& 10--11 & foot	\\
+	5--6	& arm	& 12	 & eye	\\
+\end{dtable}
+\begin{comment}
+% pre-1.3 version
 \begin{dtable}[cLcL]
 	\textbf{d20} & \textbf{Part} & \textbf{d20} & \textbf{Part} \\
-	1		& teeth	& 11--14 & toe	\\
+	1		& tooth	& 11--14 & toe	\\
 	2--5	& finger& 15--17 & foot	\\
 	6--8	& hand	& 18--19 & leg	\\
 	9--10	& arm	& 20	 & eye	\\
 \end{dtable}
+\end{comment}
 
 \vfill
-\break
-
 
 \section{Manufacture of Magic Equipment}
+\label{sec:manufacture_of_magic_equipment}
 \index{Magic}
 \index{Focus}
 \index{Scrolls}
@@ -275,10 +292,11 @@ Improper use of a magical device, spellcasting inside an anti-magic zone, destru
 
 Basic magic equipment can be created by a Mystic by spending the required amount of funding and time.
 
-\subparagraph{Focus}: 10s in consumables, 1 day, a suitable item.
+\vspace{-0.2em}\subparagraph{Focus}: 10s in consumables, 1 day, a suitable item.
 
-\subparagraph{Scroll}: 20s/Circle in consumables, 1 day/Circle. Successful on X-in-6, \mbox{X = 1 + Mystic Level -- Circle}, consumables are lost either way. (Designing a new spell, if the Referee allows it, costs and takes at least $\times$10 as much and requires some rare ingredients.)
+\vspace{-0.2em}\subparagraph{Scroll}: 20s $\times$ Circle in consumables, 1 day $\times$ Circle. Successful on X-in-6, \mbox{X = 1 + Mystic Level -- Circle}, consumables are lost either way. (Designing a new spell, if the Referee allows it, costs and takes at least $\times$10 as much and requires some rare ingredients.)
 
+\vfill
 
 \section{Pets' Experience}
 \index{Pets}
@@ -286,21 +304,23 @@ Basic magic equipment can be created by a Mystic by spending the required amount
 
 If you want to allow experience for pets, do it once, when a pet survives three Adventures. Use the same Ability Score and HP increase rules as characters do.
 
+\break
 
 \section{Rations}
 \index{Rations}
 
 While seafaring or travelling through inhospitable land it might be important to know the amount and weight of the rations required in your journey.
 
-\begin{dtable}[Llll]
-	\textbf{Consumed daily by} & \textbf{Food} & \multicolumn{2}{l}{\textbf{Water}} \\
-	Humans			& 2~lb	& \sfrac{1}{2}~gal	& (4~lb) \\
-	Horses and such	& 20~lb	& 5~gal	& (40~lb) \\
-	Elephants		& 200~lb& 50~gal& (400~lb) \\
+\begin{dtable}[Lllll]
+	\textbf{Daily ration} & \textbf{Cost} & \textbf{Food} & \multicolumn{2}{l}{\textbf{Water}} \\
+	Human	& 5p	& 2~lb	& \sfrac{1}{2}~gal	& (4~lb) \\
+	Horse	& 1p	& 20~lb	& 5~gal	& (40~lb) \\
+	Elephant& 1s	& 200~lb& 50~gal& (400~lb) \\
 \end{dtable}
 
 A day without enough water or a week without enough food results in d4 STR Loss.
 
+\vfill
 
 \section{Resources}
 \index{Resources}
@@ -318,13 +338,31 @@ Each time you spend a resource (or after combat for ammo), roll a d6. If you rol
 
 If you scavenge for the resource, roll a d6. If you roll over the Amount, increase it by 1 (up to 5).
 
-When buying resources to increase the Amount by 1 (up to 5), pay its price multiplied by your current Amount~x~d6.
+When buying resources to increase the Amount by 1 (up to 5), pay its price multiplied by your current Amount~$\times$~d6.
 
+\vfill
 
+\section{Selling}
+\index{Selling}
+
+A chance to find a buyer for a pricey object is \mbox{X-in-6} based on a settlement and item's cost. You can repeat the search in the same settlement after d6 months.
+
+\begin{dtable}[lLLLLLl]
+	\textbf{gold:} &	\textbf{1+} & \textbf{10+} & \textbf{100+} & \textbf{1k+} & \textbf{10k+} & \textbf{100k+} \\
+	Village	& 2	& 1		& ---	& ---	& ---	& --- \\
+	Town	& 4 & 3		& 2		& 1		& ---	& --- \\
+	City	& 6	& 5		& 4		& 3		& 2		& 1 \\
+\end{dtable}
+
+After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{1}{4} price. If you roll under your WIL Score by 10 or more, you sell for a full price, otherwise you sell for a \sfrac{1}{2} price.
+
+\subparagraph{Selling Magic Items} will have a high possibility of barter, while search roll and \save{WIL} are rolled at Disadvantage. Price for scrolls is d10s~$\times$~Circle, consumables: d10$\times$10s~$\times$~Circle, wands and rods: d10g~$\times$~Circle, other items --- on a case-by-case \mbox{basis.}
+
+\vfill
 \break
 
-
 \section{Structures and Sieges}
+\label{sec:structures_and_sieges}
 \index{Structures}
 \index{Sieges}
 
@@ -348,6 +386,7 @@ When buying resources to increase the Amount by 1 (up to 5), pay its price multi
 	Moat, 100~ft	& \multicolumn{3}{L}{1g (earth), 5g (rock)} \\
 	Road, 1~mile	& \multicolumn{3}{L}{5g, $\times$2 on Rugged terrain} \\
 \end{dtable}
+{\em (P --- external perimeter of the building.)}
 
 \subparagraph{Construction Crew} (four dozen people lead by a master, paid 50s per week) build 5g of structure cost weekly, 1g for stone construction. Up to 5 crews can work on a single structure simultaneously. Speed and cost might be impacted by external factors.
 
@@ -359,7 +398,7 @@ When buying resources to increase the Amount by 1 (up to 5), pay its price multi
 \index{Siege Engines}
 \index{Damage}
 
-Require a crew of two and a whole turn to reload.
+Require a crew of three and a whole turn to reload. A reduced crew will reload in two or three turns.
 
 \begin{dtable}[LlLL]
 	\textbf{Engine} & \textbf{Cost} & \textbf{Damage} & \textbf{Ammo} \\
@@ -369,7 +408,7 @@ Require a crew of two and a whole turn to reload.
 	\rowcolor{dColor2}Cannon & 2g	& d12 Blast & 25s shot \\
 \end{dtable}
 
-The weight of a siege engine is about 1 ton.
+The weight of a siege engine is about 1 ton and it requires a draft animal to transport overland.
 
 \vfill
 
@@ -391,6 +430,7 @@ Large and bigger objects usually ignore damage from anything but siege engines a
 For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thickness).
 
 
+\vfill
 \break
 
 
@@ -405,14 +445,14 @@ Travel for 8 hours/day before resting for the night.
 \begin{dtable}[lLcc]
 \textbf{Terrain} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} \\
 Clear		& grassland, road, trail 			& \travelunit{5} & 5 \\
-Rugged		& desert, forest, hills, mud, snow	& \travelunit{4} & 4 \\
+Rugged		& desert, forest, hills, mud, snow, river ford, mountain pass	& \travelunit{4} & 4 \\
 Difficult 	& jungle, mountains, river, swamp	& \travelunit{3} & 3 \\
 \end{dtable}
 
-To speed up calculations chose a dominant terrain for each day of travel and apply it to the whole day.
+To speed up calculations, choose a dominant \mbox{terrain} for each day of travel and apply it to the whole day.
 
 \index{Rest}
-\subparagraph{Rest} for a day for every 6 days travelled. Not resting, or marching more than 8 hours per day results in d4 STR Loss.
+\subparagraph{Rest} for a day for every 6 days travelled. Not resting, or marching more than 8 hours per day results in d4 STR Loss (if mounted --- for your mounts).
 
 \vfill
 
@@ -431,19 +471,21 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 	
 	\multicolumn{3}{l}{\textbf{Mounts (except mules, donkeys, etc.):}} \\
 	\hspace{0.5em}\labelitemi~Clear terrain & +\travelunit{1} & +1 \\
+	\hspace{0.5em}\labelitemi~Camels in a desert & +\travelunit{1} & +1 \\
 	\hspace{0.5em}\parbox{\linewidth}{\vspace{0.1em}
 	\labelitemi~Difficult terrain\\
-	(except for camels in a desert and elephants in a jungle)} & --\travelunit{1} & --1 \\
+	(except for elephants in a jungle)} & --\travelunit{1} & --1 \\
 	
 	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
-	\hspace{0.5em}\labelitemi~Roads & +\travelunit{1} & +1 \\
-	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{1} & --1 \\
+	\hspace{0.5em}\labelitemi~Clear terrain except roads & --\travelunit{1} & --1 \\
+	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{2} & --2 \\
 	\hspace{0.5em}\labelitemi~Difficult terrain & \multicolumn{2}{c}{impassable} \\
 	
 	\hline
+	
+	\multicolumn{3}{c}{\textbf{Multipliers} (applied last rounding up)} \\
 
-	\textbf{Encumbrance} over 50~lb 
-	(on foot) & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
+	\textbf{Encumbrance} over 50~lb on foot or vehicle overload & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
 	
 	\textbf{Forced march} & \multicolumn{2}{c}{$\times$2} \\
 \end{dtable}
@@ -465,7 +507,7 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 
 \vfill
 
-\index{Vehicle}
+\index{Vehicles}
 \index{Cart}
 \index{Carriage}
 \index{Wagon}
@@ -496,7 +538,7 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 \subparagraph{Horizon} is 3 miles away on a flat surface (for an Earth-sized planet), 12 miles at 100~ft height (ship's mast, tower), etc.: $distance \approx \sqrt{1.5 \times elevation}$.
 
 \vfill
-
+\dimage{waterborne}{75pt}
 
 \subsection{Waterborne Travel}
 \index{Travel!waterborne}
@@ -506,7 +548,7 @@ To speed up calculations chose a dominant terrain for each day of travel and app
 
 Travel for 12 hours/day. With a double crew, you can switch shifts to continue travelling at night.
 
-\index{Vehicle!waterborne}
+\index{Vehicles!waterborne}
 \index{Rowboat}
 \index{Sailboat}
 \index{Keelboat}
@@ -531,7 +573,7 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 \index{Fare}
 \subparagraph{Fare} might vary from 1p per person to cross a river or lake to 1s per person for each 5 miles travelled in a long-distance voyage.
 
-\subparagraph{Passengers} occupy 1~t of cargo space.
+\subparagraph{Passengers} occupy 1~t of cargo space or half as much for short-distance travel.
 
 \subparagraph{Rations} of food and water for one person take up \sfrac{1}{10}~t (200~lb) of cargo space per month of travel.
 
@@ -633,7 +675,7 @@ Flying creatures travel for 8 hours/day before resting for the night. Flying mag
 
 Full speed is only possible with \sfrac{1}{2}~of riders or less. Otherwise, the speed is halved.
 
-\index{Vehicle!aerial}
+\index{Vehicles!aerial}
 \subparagraph{Aerial Vehicles} travel for 12 hours/day. Double crew allows to continue travelling at night.
 
 \index{Balloon}
@@ -659,23 +701,28 @@ Balloons and airships are affected by winds in the same manner as sailing ships.
 	
 	\subparagraph{Distance}
 	\begin{itemize}
-		\item 1 mile is 1760 yards or 5280 feet
-		\item 1 yard is 3 feet or 36 inches
-		\item 1 foot is 12 inches
+		\item \textbf{1 mile} is 1760 yards or 5280 feet
+		\item \textbf{1 yard} is 3 feet or 36 inches
+		\item \textbf{1 foot} is 12 inches
 	\end{itemize}
 	
 	\subparagraph{Volume}
 	\begin{itemize}
-		\item 1 gallon is 4 quarts or 8 pints
-		\item 1 quart is 2 pints or 32 ounces
-		\item 1 pint is 16 ounces
+		\item \textbf{1 gallon} is 4 quarts or 8 pints
+		\item \textbf{1 quart} is 2 pints or 32 ounces
+		\item \textbf{1 pint} is 16 ounces
 	\end{itemize}
 	
 	\subparagraph{Weight}
 	\begin{itemize}
-		\item 1 ton is 2000 pounds
-		\item 1 pound is 16 ounces
+		\item \textbf{1 ton} is 2000 pounds
+		\item \textbf{1 pound} is 16 ounces
+		\item \textbf{1 pound} is 100 gold guilders
+		\item \textbf{1 pound} is 1000 silver shillings
+		\item \textbf{1 pound} is 1000 copper pennies
 	\end{itemize}
 \end{dbox}
+
+\break
 
 \end{document}

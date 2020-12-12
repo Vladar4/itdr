@@ -6,7 +6,7 @@ LIST="itdr itdr_light itdr_minimal"
 
 for FILE in $LIST
 do
-    for i in `seq 3`
+    for i in $(seq 3)
     do
         pdflatex -synctex=1 -interaction=nonstopmode -jobname="$FILE" "$FILE"
     done

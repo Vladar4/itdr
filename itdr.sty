@@ -1,7 +1,7 @@
-\ProvidesPackage{itdr}[2019/12/30]
+\ProvidesPackage{itdr}[2020/12/12]
 
 \RequirePackage{comment}
-\RequirePackage[inner=1in,outer=1in]{geometry}
+\RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
 \RequirePackage{graphicx}
 \RequirePackage{fp}
 \RequirePackage{lipsum}
@@ -11,6 +11,9 @@
 \RequirePackage{setspace}
 \RequirePackage{xfrac} % for the \sfrac fractions
 \RequirePackage{xifthen}
+
+% travelunit
+\newcommand{\travelunit}[1]{\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
 
 % Reset footnote counter for each new page
 \RequirePackage{perpage} %the perpage package
@@ -51,7 +54,7 @@
 
 % Titles
 \RequirePackage{titlesec}
-\setlength{\parskip}{0.25em} % distance between paragraphs
+\setlength{\parskip}{0.2em} % distance between paragraphs
 
 \renewcommand\thesection{}
 \renewcommand\thesubsection{}
@@ -60,6 +63,7 @@
 \titleformat{\chapter}
 	{\normalfont\scshape\LARGE}{\thechapter.\ }{0em}{}
 \titlespacing*{\chapter}{0em}{0em}{0.5em}
+\def\chapterautorefname{Chapter}
 
 % unnumbered chapter
 \newcommand{\chapterx}[1]{
@@ -209,7 +213,7 @@
 }
 {	\vspace{-0.2em}
 	\end{mdframed}
-	\vspace{0.4em}
+	\vspace{0.3em}
 	\noindent\hspace{-0.024\linewidth}
 	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}
 	\end{minipage}
@@ -295,6 +299,23 @@
 	\vspace{-1em}
 }
 
+% \dimagebottom{filename}
+% full-page image at the bottom of the page
+% place BEFORE anything on the page
+\RequirePackage{stfloats}
+\newcommand{\dimagebottom}[2]{
+	\noindent\begin{figure*}[bp]
+	\centering
+	\IfFileExists{./img/pic/#1.png}{
+		\includegraphics[width=\textwidth]{./img/pic/#1.png}
+	}
+	{ % else
+		\placeholder{#2}
+	}
+	\end{figure*}
+	\vspace{-1.9em}
+}
+
 % \dimageoverlay{filename}
 % full-page image over the text
 % place after the last text on this page
@@ -313,12 +334,13 @@
 % full-page image on a separate page (\thispagestyle{empty}).
 \newcommand{\dimagepage}[1]{
 	\thispagestyle{empty}
-	\noindent\begin{picture}(0,542)
+	\topskip0pt
+	\noindent\begin{picture}(0,617)
 	\IfFileExists{./img/pic/#1.png}{
 		\put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
 	}
 	{ % else
-		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{542pt}}}
+		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}}
 	}
 	\end{picture}
 }
@@ -336,3 +358,11 @@
 
 % Hyperref should be loaded last
 \RequirePackage{hyperref}
+\hypersetup{
+	pdfborderstyle={/S/U/W 1}
+	}
+
+% \customref{label}{text}
+\newcommand*{\customref}[2]{\hyperref[{#1}]{#2}}
+% \fullref{label}
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}: \nameref*{#1}}}

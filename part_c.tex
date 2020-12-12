@@ -5,22 +5,21 @@
 \cleartoleftpage
 
 \chapterx{Appendix C: Class-ic Edition}
+\label{ch:appendix_c}
 \index{Classes}
 \index{Class-ic Edition|see {Classes}}
 
 Instead of using Features and Backgrounds, you could use three original ``Into the Dungeon'' classes.
 
-\section{Choosing a Class}
-
+\begin{comment}
 Every character chooses a Class from the following:
 
 \textbf{Warrior}: An adept of martial training.
 
-\textbf{Disciple}: A devoted follower of a set of teachings.
-
 \textbf{Mystic}: A student of runic magic.
 
-~
+\textbf{Disciple}: A devoted follower of a set of teachings.
+\end{comment}
 
 \class{Warrior}
 {\em Warriors are at their best in a combat situation. They hit the hardest, can take the most punishment, and control the battlefield with combat techniques.}
@@ -32,11 +31,25 @@ When rolling for the Hit Points (including your starting roll), roll twice and t
 Gain bonus weapon Damage die.
 
 \paragraph{Manoeuvres}
-When performing an attack, you may add a Manoeuvre to it. The attack is carried out as usual, and the opponent must make a Save to avoid an additional effect described by you.
+When performing an attack, you may add a Manoeuvre to it (push, trip, disarm, grapple for their next turn, etc.) The attack is carried out as usual, and the opponent must make a Save to avoid an additional effect described by you.
 
-Examples include being pushed, tripped, disarmed, grappled for their next turn, etc. A Manoeuvre cannot cause extra damage on its own, but it may make use of an environmental hazard that would cause extra damage to the target. The Referee should be generous in allowing the player to think of interesting and imaginative Manoeuvres for their attacks.
+\paragraph{Advancement}
+At Proven Level, gain a Follower with a Simple Weapon and Shield each time you visit a friendly settlement. At Expert, this is increased to d4, and at Veteran --- to d6. Your Followers all count as Novice Warriors, but cannot gain further Experience Levels. At Expert, you gain an Apprentice.
 
 \vfill
+
+\class{Mystic}
+{\em Mystics study the science of magic. They decode the arcane Runes that give instructions of the precise methods of casting spells.}
+
+\paragraph{Runic}
+You can read and speak Runic. The language is particularly found on ancient scrolls, spell tomes, and magical artefacts.
+
+\paragraph{Spellcasting}
+You have a Mystic's Focus and Tome containing instructions for two Cantrips and six \nth{1} Circle Spells. Choose a Signature Spell (see \textbf{\fullref{ch:magic}}).
+
+\paragraph{Advancement}
+Add a new Cantrip and three Spells (of a Circle equal or lower to your Experience Level) to your Tome. From Expert onwards, take on an Apprentice. Choose a new Signature Spell.
+
 \break
 
 \index{Disciple}
@@ -54,20 +67,20 @@ A Disciple's symbol bestows certain powers as long as they remain blessed.
 \paragraph{Rituals}
 Each Ritual you know can be activated once each day as an action.
 
-\vfill
-
-\class{Mystic}
-{\em Mystics study the science of magic. They decode the arcane Runes that give instructions of the precise methods of casting spells.}
-
-\paragraph{Runic}
-You can read and speak Runic. The language is particularly found on ancient scrolls, spell tomes, and magical artefacts.
-
-\paragraph{Spellcasting}
-You have a Mystic's Focus and Tome containing instructions for two Cantrips and six \nth{1} Circle Spells. Choose a Signature Spell to cast at half its cost.
-
-See \textbf{Chapter~4: Magic} for additional information.
+\paragraph{Advancement}
+Gain the advancement Creed benefit. At Expert Level, gain d4 Followers with Simple Weapons each time you visit a friendly settlement; you may now take on an Apprentice in your Creed.
 
 \vfill
+\dimage{classes}{135pt}
+~\\
+
+\subsection{Followers and Apprentices}
+Followers have average Ability Scores and 3hp, do not have a Class nor advance in Experience Levels.
+
+You can have up to WIL~/~2 (rounded down)\\Followers at a time. You do not need to take all of your Followers on every Adventure, but you are responsible for their food, shelter, equipment, etc.
+
+You can only have one Apprentice at a time, created as a new character of your class.
+
 \break
 
 \section{Creeds}
@@ -104,7 +117,6 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Attack 2~(Proven), 3~(Veteran), or 4~(Master) targets each turn.
 
 \vfill
-\break
 
 \creed{The Dream Painters}
 {\em\begin{itemize}
@@ -121,6 +133,9 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Your illusions can cause Damage up to d6~(Proven), d8~(Veteran), or d10~(Master).
 
 \vfill
+\break
+
+~\vspace{0.75em}
 
 \creed{The Forgotten Watcher}
 {\em\begin{itemize}
@@ -130,14 +145,13 @@ See \textbf{Chapter~4: Magic} for additional information.
 
 \subparagraph{Symbol --- Mark of the Eye}: You can read any language, including Runic. You can cast spells from scrolls and tomes but cannot use a Mystic's Focus.
 
-\subparagraph{Ritual of Secrets}: You immediately cast a single spell that you have seen cast today without needing to read it.
+\subparagraph{Ritual of Secrets}: You immediately cast a spell that you have seen cast today without needing to read it.
 
 \subparagraph{Calling Ritual}: You summon and control a floating glowing eye that you can see through as your own. You may exert yourself for d4 Damage (ignoring Armour, at 0hp Critical Damage is avoided by a \save{WIL}) to have the eye lash out with a bolt of fire for d8 Fire Damage.
 
 \subparagraph{Advancement}: Choose a \nth{1}~(Proven), \nth{2}~(Veteran), or \nth{3}~(Master) Circle Spell to be able to cast as an action.
 
-\vfill
-\break
+\vspace{1em}
 
 \creed{The Grey Mourners}
 {\em\begin{itemize}
@@ -154,6 +168,7 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Control 1~(Proven), 1d6~(Veteran), or 3d6~(Master) undead creatures that fail a \save{WIL}. They do not benefit from Rest or Healing.
 
 \vfill
+\break
 
 \creed{The Iron Judges}
 {\em\begin{itemize}
@@ -167,10 +182,9 @@ See \textbf{Chapter~4: Magic} for additional information.
 
 \subparagraph{Redemption Ritual}: Restore a being that died recently to life as long as they have not broken the Creed leading to their death.
 
-\subparagraph{Advancement}: When you pass your \save{WIL} (granted by your Iron Rod) against a \nth{1}~(Proven), \nth{2}~(Veteran), or \nth{3}~(Master) Circle Spell, reflect it on the caster.
+\subparagraph{Advancement}: When you pass a \save{WIL} (from your Iron Rod) against a \nth{1}~(Proven), \nth{2}~(Veteran), or \nth{3}~(Master) Circle Spell, reflect it on the caster.
 
 \vfill
-\break
 
 \creed{The Old Faith}
 {\em\begin{itemize}
@@ -195,12 +209,12 @@ See \textbf{Chapter~4: Magic} for additional information.
 \end{itemize}}
 
 \subparagraph{Symbol --- Ancestral Totem}: Choose one of the following (or make your own) and gain its aspect:
-\begin{itemize}
+\vspace{-0.3em}\begin{itemize}
 	\item \textbf{Bear} --- +1 Armour;
 	\item \textbf{Stag} --- run twice as fast;
 	\item \textbf{Wolf} --- bonus weapon Damage die.
 \end{itemize}
-
+\vspace{-0.3em}
 \subparagraph{Guiding Ritual}: You automatically succeed on your next Save.
 
 \subparagraph{Raging Ritual}: Until the end of combat, you have advantage on \saves{STR} and can attack two targets per turn. This effect ends if you have not attacked or taken Damage since your last turn.
@@ -208,7 +222,6 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: You have a 1-in-6 (Proven), 2-in-6 (Veteran), or 3-in-6 (Master) chance to repeat your Raging Ritual when you take Damage in combat for the first time.
 
 \vfill
-\break
 
 \creed{The Shadow Stealer}
 {\em\begin{itemize}
@@ -241,7 +254,6 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Your Smite die increases to d6~(Proven), d8~(Veteran), or d10~(Master).
 
 \vfill
-\break
 
 \creed{The Sun King}
 {\em\begin{itemize}
@@ -258,6 +270,8 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Blast unnatural enemies for a bonus d6~(Proven), d8~(Veteran), or d10~(Master) Damage die at range.
 
 \vfill
+\break
+\dimagebottom{creeds}{150pt}
 
 \creed{The Swordmasters}
 {\em\begin{itemize}
@@ -272,8 +286,8 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{War Ritual}: When you kill an opponent in melee next time, your allies' melee attacks are enhanced until your next turn.
 
 \subparagraph{Advancement}: Gain bonus d6~(Proven), d8~(Veteran), or d10~(Master) Damage die on melee attacks.
-\vfill
-\break
+
+\vspace{1em}
 
 \creed{The Third Eye}
 {\em\begin{itemize}
@@ -290,6 +304,7 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: Project a message to someone (Proven), share senses with someone (Veteran), or read someone's surface thoughts (Master).
 
 \vfill
+\break
 
 \creed{The Violet Masks}
 {\em\begin{itemize}
@@ -305,8 +320,7 @@ See \textbf{Chapter~4: Magic} for additional information.
 
 \subparagraph{Advancement}: When you Save against Critical Damage cause your attacker d6~(Proven),~d8 (Veteran), or d10~(Master) Damage.
 
-\vfill
-\break
+\vspace{1em}
 
 \creed{The War Sages}
 {\em\begin{itemize}
@@ -323,8 +337,6 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}: You can use \nth{1}~(Proven), \nth{2}~(Veteran), or \nth{3}~(Master) Circle Spell in your Binding Ritual.
 
 \vfill
-
-\dimage{warsage}{306pt}
 
 \begin{comment}
 
@@ -343,52 +355,5 @@ See \textbf{Chapter~4: Magic} for additional information.
 \subparagraph{Advancement}:
 
 \end{comment}
-
-\break
-
-\section{After the Adventure}
-
-Generally, the goal of an Adventure is to find out about a mysterious environment, destroy a powerful threat, or seek out mysterious treasures.
-
-\subsection{Experience Levels}
-After completing the requirements for the next Experience Level, you may take a break from adventuring to reflect on your experience. Describe what the character has been doing during this time, whether humble or grand. After that, you move to the next Experience Level. You cannot advance more than one Experience Level in a single session of play.
-
-When advancing to a new Experience Level, you gain d6hp and roll d20 for each Ability Score. If the roll is higher than the Ability Score, it increases by one to a maximum of 20. You also gain an additional benefit from your Class.
-
-\paragraph{1. Novice}
-You have chosen a class and are ready to Adventure.
-
-\paragraph{2. Proven}
-You have survived at least one Adventure to a dangerous place, returning to civilisation.
-
-\paragraph{3. Expert}
-You have survived at least three Adventures since reaching Proven Level.
-
-\paragraph{4. Veteran}
-You have survived at least five Adventures since reaching Expert Level. You have an Apprentice at Expert Level or at least five Followers that have survived an adventure since you reached Expert Level.
-
-\paragraph{5. Master}
-
-You have established or seized control of a Domain of at least one hundred people. You are granted a noble title or create your own.
-
-\vfill
-\break
-
-\subsection{Class Benefits}
-
-\paragraph{Warriors}
-At Proven Level, gain a Follower with a Simple Weapon and Shield each time you visit a friendly settlement. At Expert, this is increased to d4, and at Veteran --- to d6. Your Followers all count as Novice Warriors, but cannot gain further Experience Levels. At Expert, you gain an Apprentice.
-
-\paragraph{Disciples}
-Gain the advancement Creed benefit. At Expert Level, gain d4 Followers with Simple Weapons each time you visit a friendly settlement; you may now take on an Apprentice in your Creed.
-
-\paragraph{Mystics} Add a new Cantrip and three Spells (of a Circle equal or lower to your Experience Level) to your Tome. From Expert onwards, take on an Apprentice. Choose a new Signature Spell.
-
-\subsubsection{Followers and Apprentices}
-Followers have average Ability Scores and 3hp, do not have a Class nor advance in Experience Levels.
-
-You can have up to WIL~/~2 (rounded down)\\Followers at a time. You do not need to take all of your Followers on every Adventure, but you are responsible for their food, shelter, equipment, etc.
-
-You can only have one Apprentice at a time, created as a new character of your class.
-
+%\dimage{warsage}{306pt}
 \end{document}

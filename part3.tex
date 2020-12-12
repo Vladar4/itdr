@@ -3,9 +3,12 @@
 \begin{document}
 
 \chapter{Ruling a Domain}
+\label{ch:ruling_a_domain}
 \index{Domains}
 
 Any community of 100 or more people is a Domain. One or more characters may have rulership of a Domain, with the potential to establish a part of the world as their own.
+
+%\vfill
 
 \section{Size Scores and Population}
 \index{Size Score}
@@ -14,32 +17,29 @@ Any community of 100 or more people is a Domain. One or more characters may have
 
 Size Score, or SIZ, is a measure of the populace of your Domain and may reach a maximum of 20.
 
-\begin{dtable}[LrLLr]
-	\textbf{SIZ} & \textbf{Populace} && \textbf{SIZ} & \textbf{Populace} \\
-	1  & 100	&& 11 & 30,000	\\
-	2  & 300	&& 12 & 50,000	\\
-	3  & 600	&& 13 & 75,000	\\
-	4  & 1,000	&& 14 & 100,000\\
-	5  & 3,000	&& 15 & 150,000\\
-	6  & 5,000	&& 16 & 200,000\\
-	7  & 7,500	&& 17 & 300,000\\
-	8  & 10,000	&& 18 & 500,000	\\
-	9  & 15,000	&& 19 & 750,000	\\
-	10 & 20,000	&& 20 & 1,000,000	\\
+\begin{dtable}[Lr|Lr|Lr]
+	\textbf{SIZ} & \textbf{Populace} & \textbf{SIZ} & \textbf{Populace} & \textbf{SIZ} & \textbf{Populace}\\
+	0  & <100   & 7	& 7,500		& 14 & 100,000 \\
+	1  & 100	& 8	& 10,000	& 15 & 150,000 \\
+	2  & 300	& 9	& 15,000	& 16 & 200,000 \\
+	3  & 600	& 10& 20,000	& 17 & 300,000 \\
+	4  & 1,000	& 11& 30,000	& 18 & 500,000 \\
+	5  & 3,000	& 12& 50,000	& 19 & 750,000 \\
+	6  & 5,000	& 13& 75,000	& 20 & 1,000,000 \\
 \end{dtable}
 
-Each month, you must choose a focus for your \mbox{Domain} from the following.
+\index{Domain Focus}
+At the \textbf{start} of each month, choose Domain Focus --- this goal is achieved at the \textbf{end} of the month:
 
-\subparagraph{Taxation:} You gather extra money this month, gaining 1s for each of your populace.
+\begin{itemize}
+	\item \textbf{Taxation:} You gather extra money this month, gaining 1s for each of your populace.
+	\item \textbf{Growth:} Roll d20. If this is higher than your SIZ, then your SIZ is increased by 1.
+	\item \textbf{Conscription:} Recruit an army (see \textbf{Training Soldiers} below). You cannot repeat Conscription until your SIZ increases. Your next Growth roll will have Disadvantage.
+	\item \textbf{Prosperity:} You do not need to roll to see if there is Unrest in your Domain this month.
+\end{itemize}
 
-\subparagraph{Growth:} Roll d20. If this is higher than your SIZ, then your SIZ is increased by 1.
-
-\subparagraph{Prosperity:} You do not need to roll to see if there is Unrest in your Domain this month.
-
-\paragraph{Civil Unrest}
-At the end of the month, roll d20. If this is equal or lower than your SIZ, there is Unrest in your Domain. 10\% of your population revolts and must be quashed or else they seize control of your Domain.
-
-\vfill
+\index{Unrest}
+\subparagraph{Unrest:} At the \textbf{end} of the month, roll d20. If this is equal or lower than your SIZ, there is Unrest in your Domain. 10\% of population revolts and must be quashed or they seize control of your Domain.
 
 \section{Armies and War}
 \index{Combat!mass combat}
@@ -53,15 +53,21 @@ At the end of the month, roll d20. If this is equal or lower than your SIZ, ther
 \index{Large Groups}
 
 \index{Soldiers}
-\subparagraph{Training Soldiers:} 20\% of populace are fit for calling into service as poorly skilled conscripts (3hp). A further 1\% of your population are professional soldiers (STR~12, 5hp, Novice Warrior). All soldiers must be equipped as required.
+\subparagraph{Training Soldiers:} 20\% of populace are fit for calling into service as poorly skilled conscripts (3hp). A further 1\% of your population are professional soldiers (STR~12, 5hp, Novice Warrior). All troops must be equipped as required.
 
-\subparagraph{Large Battles:} When handling large numbers of combatants, they should be massed together as a unit. Units have the same Hit Points as a single combatant, but add 1 damage for how many times to one they outnumber their opponents. E.g., a unit of 200 cavemen fighting 50 spearmen outnumber them \mbox{5-to-1}, gaining 5 bonus damage.
+An army that won a battle against an equal or stronger opponent can be trained further at the rate of 1\% of your population per month.
+
+Conscripts become soldiers (1s/person), and \mbox{soldiers} become champions (10s/person) (STR~14, 10hp, Proven Warrior).
+
+\subparagraph{Large Battles:} When handling large numbers of combatants (usually 10 or more), they should be massed together as a unit. Units have the same Hit Points as a single combatant, but add 1 Damage for as many times to one they outnumber their opponents (or subtract if outnumbered), from --5 to +5. E.g., a unit of 200 cavemen fighting 50 spearmen outnumber them \mbox{4-to-1}, gaining 4 bonus damage.
 
 When units take Critical Damage, their numbers are halved and they must pass a \save{WIL} or break and disband. At STR~0 they are wiped out.
 
-Individual attacks against units are Impaired, unless they cause Blast damage.
+Individual attacks against units are Impaired.
 
-Unit attacks against individuals are Enhanced and cause Blast damage.
+Unit attacks against individuals are Enhanced, have +5 Damage bonus, and cause Blast Damage.
+
+Unit attacks that cause Blast Damage against units have bonus weapon Damage die.
 
 \index{Sieges}
 \index{Walls}
@@ -71,9 +77,8 @@ Unit attacks against individuals are Enhanced and cause Blast damage.
 \index{Siege Engines}
 \subparagraph{Siege Engines:} Cannons and the like cause d12 Blast Damage.
 
-\vspace{-0.2em}
 \begin{dbox}
-	See \textbf{Structures and Sieges} in \textbf{Appendix A} for more details and additional information.
+	See \textbf{\customref{sec:structures_and_sieges}{Structures and Sieges}} in \textbf{\customref{ch:appendix_a}{Appendix A}} for more details and additional information.
 \end{dbox}
 
 \vfill
@@ -89,5 +94,7 @@ Stone walls (8hp, Armour~8), 4 Rock Throwers. 30 Tribal Champions (2-handed axe)
 Ruler: Primarch Elm Vroach, Master Priest.\\
 SIZ 14 (Population 100,000).\\
 Clay walls (7hp, Armour~7), 10 Burning Oil Pourers, 10 Cannons. 5,000 Spearmen (spear, shield), 6,000 Bowmen (bow), 2,000 Halberdiers (halberd, light armour), 2,000 Light Cavalry (horse, spear, bow), 2,000 Nomad Bowmen (light armour, longbow), 800 Greathall Guard (horse, full armour, greatsword).
+
+\vfill
 
 \end{document}

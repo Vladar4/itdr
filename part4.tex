@@ -3,6 +3,7 @@
 \begin{document}
 
 \chapter{Magic}
+\label{ch:magic}
 \index{Magic}
 
 \paragraph{Spells}
@@ -12,20 +13,21 @@
 \index{Tome}
 Written in Runic and found in Tomes and Scrolls. Spells require a few minutes of uninterrupted calm and attention to cast, as well as requiring a set of detailed gestures and incantations. Consequently, Spells are generally impossible to cast in combat.
 
-Mystics can cast any spell of a Circle \textbf{equal or lower} to their Mystic Level.
+Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic Level.
 
 \index{Spells!ongoing effects}
-\subparagraph{Ongoing effects} last until you cast another Spell.
+\subparagraph{Ongoing effects} last until you cast another Spell, though summoned extraplanar beings remain.
 
 \index{Spells!persistent}
 \index{Persistent Spells|see {Spells, persistent}}
-\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same spell again.
+\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again.
 
 \index{Spells!cantrips}
 \index{Cantrips|see {Spells, cantrips}}
-\subparagraph{Cantrips}
-These minor tricks are not true spells, do not interrupt ongoing effects of the previous spell, and require you to use your Focus to cast them.
+\paragraph{Cantrips}
+These minor tricks are not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your Focus to cast them.
 
+\vfill
 \index{Focus}
 \paragraph{Focus}
 Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an action, while performing the proper gestures and incantations.
@@ -36,24 +38,130 @@ It can also be used to \textbf{dispel} the ongoing effect of another Mystic's Sp
 
 A Focus does not work when wearing armour.
 
+\vfill
 \index{Spells!prepared}
 \index{Prepared Spells|see {Spells, prepared}}
 \paragraph{Prepared Spells}
-During the Rest you can use your Tome to prepare a number of spells equal to your Experience Level to cast using your Focus as an action.
+During the Rest you can use your Tome to prepare a number of Spells equal to your Experience Level to cast using your Focus as an action.
 
 Casting a Prepared Spell causes Damage equal to its Spell Circle~$\times$~2 \textbf{to the caster} ignoring Armour. At 0hp, this Damage targets WIL instead of STR: pass a \save{WIL} or fall unconscious for a few minutes.
+\begin{dbox}
+Optionally, this will result in a \textbf{Magic Mishap} as well (see \textbf{\nameref{sec:magic_mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
+\end{dbox}
+
+\vfill
 
 \index{Spells!signature}
 \index{Signature Spells|see {Spells, signature}}
 \paragraph{Signature Spells}
-Each time you take Mystic Feature, choose a new Signature spell to cast without preparation and at half its cost (1hp per Spell Circle).\\
-\begin{dbox}
-	Scrolls of new spells found by Mystics are usually attached to the Tome for the convenience of usage.
-	
-	See \textbf{Manufacture of Magic Equipment} in \mbox{\textbf{Appendix A}} for the additional information on creation of Focuses and Scrolls.
-\end{dbox}
+Each time you take Mystic Feature, choose a new Signature Spell to cast without preparation and at half its cost (1hp per Spell Circle).
+
+\vfill
 \break
-The Referee may provide Mystics with a list of Spells for their Tome or use the examples below. This is far from all the Spells that exist in the world, the vast majority of which are unknown to any single person.
+
+\begin{dbox}
+	Scrolls of new Spells found by Mystics are usually attached to the Tome for the convenience of usage.
+	
+	See \textbf{\nameref{sec:manufacture_of_magic_equipment}} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on creation of Focuses and Scrolls.
+\end{dbox}
+
+\vfill
+\dimage{magic2}{418pt}
+
+\index{Scroll Activation}
+\begin{dbox}
+	\paragraph{Scroll Activation (optional)}
+	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\nameref{sec:magic_mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
+\end{dbox}
+
+\break
+
+\begin{dbox}
+	\index{Spells!distance}
+	\index{Spells!area}
+	\subsection*{Distances/Areas}
+	\begin{itemize}
+		\item \textbf{Short or Close/Small} --- a couple of steps
+		\item \textbf{Medium} --- about 30~ft
+		\item \textbf{Far/Large or Your Vicinity} --- about 60~ft
+	\end{itemize}
+\end{dbox}
+
+\vfill
+
+\begin{dbox}
+\subsection*{Random Spells}
+\phantomsection
+\label{random_spells}
+\index{Spells!random}
+\index{Random Spells|see {Spells, random}}
+
+\begin{comment}
+~\\
+\header{Random 30 Spells}
+\begin{dtable}[L]
+d3~$\times$10~+~d10 (treat 10 as 0)
+\end{dtable}
+\end{comment}
+
+~\\
+\header{Random 36 Spells}
+\begin{dtable}[cC|cC|cC]
+	\textbf{d6,d6} & \textbf{Spell} & \textbf{d6,d6} & \textbf{Spell} & \textbf{d6,d6} & \textbf{Spell} \\
+
+	1,1  & 1  & 3,1 & 13 & 5,1 & 25 \\
+	1,2  & 2  & 3,2 & 14 & 5,2 & 26 \\
+	1,3  & 3  & 3,3 & 15 & 5,3 & 27 \\
+	1,4  & 4  & 3,4 & 16 & 5,4 & 28 \\
+	1,5  & 5  & 3,5 & 17 & 5,5 & 29 \\
+	1,6  & 6  & 3,6 & 18 & 5,6 & 30 \\
+	\hline
+	2,1  & 7  & 4,1 & 19 & 6,1 & 31 \\
+	2,2  & 8  & 4,2 & 20 & 6,2 & 32 \\
+	2,3  & 9  & 4,3 & 21 & 6,3 & 33 \\
+	2,4  & 10 & 4,4 & 22 & 6,4 & 34 \\
+	2,5  & 11 & 4,5 & 23 & 6,5 & 35 \\
+	2,6  & 12 & 4,6 & 24 & 6,6 & 36 \\
+\end{dtable}
+
+~\\
+
+\header{Random 40 Spells}
+\begin{dtable}[L]
+d4~$\times$10~+~d10 (treat 10 as 0)
+\end{dtable}
+
+~\\
+\header{Random 48 Spells}
+\begin{dtable}[cC|cC|cC]
+	\textbf{d6,d8} & \textbf{Spell} & \textbf{d6,d8} & \textbf{Spell} & \textbf{d6,d8} & \textbf{Spell} \\
+
+	1,1  & 1  & 3,1 & 17 & 5,1 & 33 \\
+	1,2  & 2  & 3,2 & 18 & 5,2 & 34 \\
+	1,3  & 3  & 3,3 & 19 & 5,3 & 35 \\
+	1,4  & 4  & 3,4 & 20 & 5,4 & 36 \\
+	1,5  & 5  & 3,5 & 21 & 5,5 & 37 \\
+	1,6  & 6  & 3,6 & 22 & 5,6 & 38 \\
+	1,7  & 7  & 3,7 & 23 & 5,7 & 39 \\
+	1,8  & 8  & 3,8 & 24 & 5,8 & 40 \\
+	\hline
+	2,1  & 9  & 4,1 & 25 & 6,1 & 41 \\
+	2,2  & 10 & 4,2 & 26 & 6,2 & 42 \\
+	2,3  & 11 & 4,3 & 27 & 6,3 & 43 \\
+	2,4  & 12 & 4,4 & 28 & 6,4 & 44 \\
+	2,5  & 13 & 4,5 & 29 & 6,5 & 45 \\
+	2,6  & 14 & 4,6 & 30 & 6,6 & 46 \\
+	2,7  & 15 & 4,7 & 31 & 6,7 & 47 \\
+	2,8  & 16 & 4,8 & 32 & 6,8 & 48 \\
+\end{dtable}
+\end{dbox}
+
+\vfill
+\break
+
+The Referee may provide Mystics with a list of Spells for their Tome or use the examples below. This is far from all Spells that exist in the world, the vast majority of which are unknown to any single person.
+
+\vfill
 
 \section{Cantrips}
 \index{Spells!cantrips}
@@ -62,26 +170,26 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Acid Splash} An orb deals d4 Acid Damage and lightly corrodes wood.
 	\item \spell{Arcane Mark} Inscribes a personal rune (visible or invisible). Persistent.
 	\item \spell{Daze} A humanoid must pass a \save{WIL} or be Stunned on the next turn.
-	\item \spell{Detect Magic} Detects Spells and magic items in your vicinity (blocked by walls, doors, etc.).
+	\item \spell{Detect Magic} Detects Spell effects and magic items in your vicinity (detection is blocked by walls, doors, etc.).
 	\item \spell{Detect Poison} Detects poison in one creature or small object.
-	\item \spell{Disrupt Undead} Deals d4 Damage to one undead, ignoring Armour and resistances.
-	\item \spell{Flare} Sends up a flare that can be seen for some distance. If shot at target, cause d4 Fire Damage.
-	\item \spell{Ghost Sound} Figment sounds.
+	\item \spell{Disrupt Undead} Deals d4 Damage to one \mbox{undead}, ignoring Armour and resistances.
+	\item \spell{Flare} Sends up a flare that can be seen for some distance. If shot at target, deals d4 Fire Damage.
+	\item \spell{Ghost Sound} Throws voice, figment sounds, or whispers a message to someone you can see.
 	\item \spell{Guided Strike} The target gains bonus weapon Damage die on their next attack.
-	\item \spell{Light} A small object that you are holding sheds light as a torch.
-	\item \spell{Mage Hand} 5-pound telekinesis.
-	\item \spell{Mending} Makes minor repairs on an object.
-	\item \spell{Message} Whispered one-way conversation with someone in your vicinity.
-	\item \spell{Open/Close} Opens or closes unlocked objects.
-	\item \spell{Prestidigitation} Performs minor tricks.
+	\item \spell{Jinx} A humanoid's next attack is Impaired.
+	\item \spell{Hide} One small item that could fit in the palm of your hand becomes invisible. Persistent.
+	\item \spell{Light/Douse} A small object that you are holding sheds light as a torch, or one light source no bigger than a torch is extinguished.
+	\item \spell{Magic Hand} 5-pound telekinesis.
+	\item \spell{Mending} Makes minor repairs to an object.
+	\item \spell{Mute} A humanoid that you touch is muted for the next turn.
+	\item \spell{Prestidigitation} Performs minor tricks, creates or conceals one minor sensory effect.
 	\item \spell{Provocation} A creature must pass a \save{WIL} or be provoked to attack you.
 	\item \spell{Ray of Frost} A ray deals d4 Cold Damage.
-	\item \spell{Resistance} A creature ignores normally annoying affects such as sweltering heat, itchy skin diseases, or a sandstorm. Persistent.
+	\item \spell{Resistance} A creature ignores normally annoying effects such as sweltering heat, itchy skin diseases, or a sandstorm. Persistent.
 	\item \spell{Spark} Touch for d4 Electricity Damage ignoring Armour.
-	\item \spell{Ventriloquism} Throws voice.
 \end{enumerate}
 
-\index[spelllist]{Close|see {Open/Close}}
+\index[spelllist]{Douse|see {Light/Douse}}
 
 \vfill
 \break
@@ -94,39 +202,41 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Animate Rope} Makes a rope move at your command.
 	\item \spell{Burning Hands} d6 Fire Damage in a small cone.
 	\item \spell{Cause Fear} \save{WIL} or the target flees.
-	\item \spell{Charm Person} \save{WIL} or one humanoid becomes your friend until their next Rest.
+	\item \spell{Charm Person} \save{WIL} or one humanoid becomes friendly until their next Rest.
 	\item \spell{Chill Touch} \save{STR} or the target suffers d4~STR~Loss.
 	\item \spell{Colour Spray} \save{STR} or the target is Blinded on the next turn.
 	\item \spell{Comprehend Languages} You understand all spoken and written languages.
+	\item \spell{Camouflage} Everyone in a small area around you is difficult to notice and track.
+	\item \spell{Courage} Until Rest, a willing creature is immune to fear but unable to retreat from battle.
 	\item \spell{Detect Secret Doors} Reveals hidden doors in your vicinity.
 	\item \spell{Detect Dead} Reveals corpses and undead beings in your vicinity.
-	\item \spell{Disguise Self} Changes your appearance.
+	\item \spell{Disguise Self} Change your facial appearance.
 	\item \spell{Endure Elements} Everyone adjacent to you can exist comfortably in hot or cold environments.
 	\item \spell{Enlarge/Reduce} A humanoid creature doubles or halves in size gaining Advantage/Disadvantage on \saves{STR} and increasing/decreasing their weapon Damage dice respectively (d4--d12 range). The target could choose to avoid effects with a \save{STR}.
 	\item \spell{Erase} Mundane or magical writing vanishes.
 	\item \spell{Expeditious Retreat} Run twice as fast.
 	\item \spell{Feather Fall} Objects or creatures fall slowly.
 	\item \spell{Floating Disk} Creates 3-ft-diameter horizontal disk that holds 100~lb.
+	\item \spell{Glue} One object gets stuck to another one. When cast on a creature, they need to succeed on a \save{STR} or cannot move.
 	\item \spell{Grease} Makes a small area or one object slippery. \save{DEX} to avoid slipping.
+	\item \spell{Gust of Wind} Blows away or knocks down stuff in a medium cone. A \save{STR} to resist.
 	\item \spell{Hideous Laughter} \save{WIL} or the target laughs and Impairs their attacks until passing the Save at the end of their turn.
 	\item \spell{Hold Portal} Holds a door shut.
 	\item \spell{Hypnotism} Fascinate d6 creatures that fail a \save{WIL}. In combat, their attacks on the next turn are Impaired.
-	\vfill
-	\break
 	\item \spell{Identify} Unveils properties of a magical item. Hidden properties, curses, etc. are not revealed.
 	\item \spell{Jump} A creature can jump twice as far and high.
 	\item \spell{Magic Missile} d4 Damage, goes around corners, ignores Armour.
-	\item \spell{Magic Weapon} Make a weapon Magical (increase Damage die by one (up to d10), ignore all supernatural resistances).
 	\item \spell{Mount} Summons a riding horse. It disappears after taking any Damage.
 	\item \spell{Obscuring Mist} Fog surrounds you. Ranged attacks through it are Impaired.
 	\item \spell{Protection} Ignore the next instance of harm from a specific source.
-	\item \spell{Ray of Enfeeblement} \save{DEX} or all attacks Impaired until Rest.
+	\item \spell{Pyrotechnics} Spread or extinguish fire, turn it into blinding light or choking smoke.
 	\item \spell{Shield} An invisible disc grants +1 Armour and blocks Magic Missiles.
 	\item \spell{Shocking Grasp} d6 Electricity Damage in melee, ignoring Armour.
 	\item \spell{Silent Image} Creates a minor motionless \mbox{illusion} of your design.
 	\item \spell{Sleep} Puts d6 relaxed targets into a slumber and others feel lethargic, decreasing Damage die by one, down to d4.
 	\item \spell{Summon Creature} Calls an unintelligent extraplanar creature up to the size of a small dog. It holds no loyalty to you.
-	\item \spell{True Strike} The target of your next attack must succeed on a \save{DEX}, or the attack ignores HP going directly for the STR score.
+	\item \spell{Swarm} Summons a swarm of bats, rats, or spiders. Harmless, but distracting.
+	\item \spell{True Strike} The target of your next attack must succeed on a \save{DEX}, or the attack ignores HP going directly for the STR Score.
 	\item \spell{Unseen Servant} An invisible force (STR~5, 1hp, cannot attack) obeys your commands.
 \end{enumerate}
 
@@ -139,53 +249,55 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{2} Circle}
 \def \spellcircle {2}
 \begin{enumerate}
-	\item \spell{Acid Arrow} d6 Acid Damage now and a d6~STR loss next round unless washed.
+	\item \spell{Acid Arrow} d6 Acid Damage now and a d4~STR Loss (affected by Armour) at the end of the next round unless washed off.
 	\item \spell{Alter Self} Take on a form of a similar creature.
 	\item \spell{Arcane Lock} Magically locks a portal or chest. Persistent.
+	\item \spell{Arcane Sight} Magical auras in a medium sphere become visible to you, even through walls and other obstacles, revealing the most general information of their nature.
 	\item \spell{Bear's Endurance} A creature gains Armour~2.
 	\item \spell{Blindness} \save{STR} or Blinded until Rest.
 	\item \spell{Blur} Your details cannot be seen. Attacks against you are Impaired.
-	\item \spell{Bull's Strength} Unarmed melee attacks cause d8 Damage, Advantage on \saves{STR}.
-	\item \spell{Cat's Grace} Grants Advantage on \saves{DEX}.
+	\item \spell{Bull's Strength} Grant Unarmed melee d8 Damage and Advantage on \saves{STR}.
+	\item \spell{Cat's Grace} Grant Advantage on \saves{DEX}, Ranged weapon Damage dice increase by one.
 	\item \spell{Command Undead} An undead creature must pass a \save{WIL} or obeys your command.
 	\item \spell{Continual Flame} Makes a permanent, heatless torch. Can be cast on objects. Persistent.
 	\item \spell{Darkness} Creates a medium area of supernatural shadow.
 	\item \spell{Darkvision} See in natural darkness in your vicinity.
-	\item \spell{Deafness} All within a medium area are deafened.
+	\item \spell{Deafness} Everyone in a medium area is deafened.
 	\item \spell{Detect Thoughts} \save{WIL} or else allows \mbox{``listening''} to surface thoughts of the target.
-	\item \spell{False Life} Regain any lost STR, but it vanishes again after a minute or if you cast another spell.
+	\item \spell{False Life} Regain any lost STR, but it vanishes again after a minute or if you cast another Spell.
 	\item \spell{Flaming Sphere} Creates a rolling ball of fire, d8 Fire Damage on a failed \save{DEX}. Each turn you can choose the direction of its movement. After dealing its Damage, it stops for this turn.
 	\item \spell{Fog Cloud} Fog obscures vision over a large area. Ranged attacks through it are Impaired.
-	\item \spell{Gentle Repose} Preserves one corpse for a day.
 	\item \spell{Ghoul Touch} \save{STR} or Stunned until passing a  \save{STR} at the end of their turn, exuding stench that makes those nearby sickened.
-	\item \spell{Glitterdust} \save{DEX} or Enhance attacks at targeted creature. Reveals invisible things.
-	\item \spell{Gust of Wind} Blows away or knocks down stuff in a medium cone. A \save{STR} to resist.
+	\item \spell{Glitterdust} \save{DEX} or Enhance attacks at targeted creature. Reveals invisible target.
 	\item \spell{Heat Metal} Heat one metal object red-hot. Each turn it causes d6 Fire Damage on touch.
-	\item \spell{Heroism} Reroll any one die. Persistent.
+	\item \spell{Heroism} The target can reroll one Damage die or 20 on a Save once before Rest. Persistent.
+	\item \spell{Hex} Bestows a Disadvantage on the next Save.
+
 	\begin{minipage}{\columnwidth}
-	\item \spell{Invisibility} A creature is invisible until it attacks.
+	\item \spell{Invisibility} A creature is unseen until it attacks.
 	\end{minipage}
-	\item \spell{Knock} Opens a locked or magically sealed door.
+
+	\item \spell{Knock} A loud knock opens locks and doors.
 	\item \spell{Levitate} The target moves up and down at your will, floating down safely afterwards. \mbox{A \save{WIL} to levitate targets heavier than you.}
 	\item \spell{Locate Object} Directs toward the object.
-	\item \spell{Magic Mouth} Speaks once when triggered. Persistent.
+	\item \spell{Magic Mouth} Speaks once or each time when triggered. Persistent.
+	\item \spell{Magic Weapon} Make a weapon Magical (increase Damage die by one (up to d10), ignore all supernatural resistances).
 	\item \spell{Minor Illusion} Conjure an image with sound.
 	\item \spell{Mirror Image} Creates d4 decoy duplicates of you. The duplicate disappears when hit.
-	\item \spell{Misdirection} Misleads divinations on one \mbox{target}. Persistent.
-	\item \spell{Owl's Wisdom} Perceive the world with heightened senses. Advantage on \saves{WIL}.
+	\item \spell{Owl's Wisdom} Grant heightened senses of perception and Advantage on \saves{WIL}.
 	\item \spell{Phantom Trap} Makes an item seem trapped. Persistent.
 	\item \spell{Protection from Arrows} A creature is immune to mundane ranged attacks.
-	\item \spell{Pyrotechnics} Turns fire into blinding light or choking smoke.
-	\item \spell{Resist Element} A creature is immune to a specific type of elemental Damage.
-	\item \spell{Rope Trick} A rope leads to extradimensional space accommodating up to eight creatures.
+	\item \spell{Rage} Creature's attacks are Enhanced, but so are attacks against them.
+	\item \spell{Ray of Enfeeblement} \save{DEX} or all attacks Impaired until Rest.
+	\item \spell{Resist Element} A specific type of elemental Damage that one creature takes is Impaired.
+	\item \spell{Rope Trick} A rope leads to extradimensional space accommodating up to six creatures.
 	\item \spell{Scorching Ray} Deals d8 Fire Damage.
-	\item \spell{See Invisibility} Reveals invisible creatures or objects in your vicinity.
-	\item \spell{Shatter} Sonic vibration causes d6 Blast Damage to objects or crystalline creatures, ignoring Armour.
+	\item \spell{Shatter} Sonic vibration causes d6 Blast Damage ignoring Armour to anything adjacent to you. Objects or crystalline creatures take d12 Blast Damage ignoring Armour instead.
 	\item \spell{Silence} No sounds could be produced in a medium area, including Spell casting.
+	\item \spell{Speak with Dead} A corpse answers three questions before crumbling to dust. Answers must be truthful, might be cryptic, and will be based on target's lifetime knowledge.
 	\item \spell{Spectral Hand} Creates a disembodied glowing hand to deliver one of your touch Spells as an action on one of your next turns.
-	\item \spell{Spider Climb} Walk on walls and ceilings.
+	\item \spell{Spider Climb} You walk on walls and ceilings.
 	\item \spell{Summon Beast} Calls an intelligent extraplanar beast. It holds no loyalty to you.
-	\item \spell{Swarm} Summons a swarm of bats, rats, or spiders. Harmless, but distracting.
 	\item \spell{Touch of Idiocy} \save{STR} or lose d4 WIL.
 	\item \spell{Web} Fills a medium area with sticky spiderwebs. \save{STR} or cannot move on this turn.
 	\item \spell{Whispering Wind} Sends a short message within a mile.
@@ -198,11 +310,11 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{3} Circle}
 \def \spellcircle {3}
 \begin{enumerate}
-	\item \spell{Arcane Sight} Magical auras in a medium sphere become visible to you, even through walls and other obstacles, revealing the most general information of their nature.
-	\item \spell{Black Tentacles} Tentacles grapple those who fail a \save{STR or DEX} within a medium area for their next turn.
+	\item \spell{Absorb Element} A creature is immune to a specific type of elemental Damage.
+	\item \spell{Black Tentacles} Tentacles grapple those who fail a \save{STR or DEX} within a medium area, Impairing their attacks until they pass a \save{STR} at the end of one of their turns.
 	\item \spell{Blink} Each turn you have a 50\% chance to vanish and reappear on your next turn, avoiding the next attack against you.
-	\item \spell{Clairaudience/Clairvoyance} Hear or see at a distance.
-	\item \spell{Daylight} A large area of bright light.
+	\item \spell{Clairaudience/Clairvoyance} Hear or see at a distance or through a wall as if you were there.
+	\item \spell{Daylight} A large area of bright light strong enough to overwhelm even magical darkness.
 	\item \spell{Deep Slumber} Puts d6 creatures that fail their \save{WIL} to sleep until the Spell is broken or creatures take Damage.
 	\item \spell{Displacement} Gain Advantage on Critical Damage Saves. Persistent.
 	\item \spell{Dream} Sends a message to anyone sleeping.
@@ -210,32 +322,34 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Fireball} Deal d10 Fire Damage within a medium sphere.
 	\item \spell{Flame Arrows} Ally's missiles deal bonus d6 Fire Damage.
 	\item \spell{Fly} A creature flies.
-	\item \spell{Gaseous Form} A willing creature becomes insubstantial and can fly slowly.
+	\item \spell{Gaseous Form} A willing creature becomes \mbox{insubstantial} and can fly slowly. The target or caster can end the effect at will. Persistent.
 	\item \spell{Halt Undead} Immobilizes all undead in your vicinity who failed their \save{WIL}.
-	\item \spell{Haste/Slow} One creature moves at double or half speed and gains +1 or --1~Armour respectfully.
+	\item \spell{Haste/Slow} One creature moves at double or half speed, gains +1 or --1~Armour, and Advantage/Disadvantage on \saves{DEX} respectively.
 	\item \spell{Hold Person} Stuns one humanoid until passing a \save{STR} at the end of their turn.
 	\item \spell{Illusory Script} Changes one page to hide its real content that only an intended reader can decipher. Persistent.
 	\item \spell{Invisibility Sphere} Makes everyone within a small sphere invisible until they attack.
-	\item \spell{Keen Edge} The next attack with this melee weapon ignores HP and goes directly for the STR score.
+	\item \spell{Keen Edge} The next attack with this melee weapon ignores HP and goes directly for the STR Score.
+	\item \spell{Lightning Bolt} d8 Electricity Damage to all in a line ignoring Armour.
+
 	\vfill
 	\break
-	\item \spell{Lightning Bolt} d8 Electricity Damage to all in a line ignoring Armour.
-	\item \spell{Magic Circle} Prevents a certain type of unnatural beings (extraplanar, undead, etc.) from entering or leaving unless they pass a \save{WIL}. Persistent.
+
+	\item \spell{Magic Circle} Prevents a certain type of unnatural beings (extraplanar, undead, etc.) from entering or leaving unless they pass a \save{WIL}. Fits one creature. Persistent.
 	\item \spell{Major Illusion} Conjure an image with sound, smell, and thermal effects. This also could be used to disguise appearance of one creature.
-	\item \spell{Nondetection} Hides the target from divination, scrying. Persistent.
-	\item \spell{Rage} Creature's attacks are Enhanced, but so are attacks against them.
+	\item \spell{Obfuscate} Hides one target from \mbox{divination} and scrying or misleads such attempts. \mbox{Persistent.}
+	\item \spell{See Invisibility} Reveals invisible creatures and objects in your vicinity.
 	\item \spell{Sepia Snake Sigil} Creates a small text symbol that Stuns reader until a \save{WIL} at the end of their turn. Persistent.
 	\item \spell{Shout} Everyone within a medium cone is deafened for one round and takes d8 Damage.
-	\item \spell{Shrink Item} An object shrinks to one-sixteenth its size and weight.
+	\item \spell{Shrink Item} A non-magical object shrinks to one-sixteenth its size and weight.
 	\item \spell{Sleet Storm} Flames are doused, ranged attacks are Impaired in a large area. A \save{DEX} to avoid slipping.
-	\item \spell{Stinking Cloud} Nauseating vapours, pass a \save{STR} or vomit and gain Disadvantage on the next Save.
-	\item \spell{Suggestion} \save{WIL} or the target is \mbox{compelled} to follow the stated course of action.
+	\item \spell{Stinking Cloud} Nauseating vapours fill a medium area. Anyone inside the cloud must pass a \save{STR} or vomit, gaining Disadvantage on the next Save. The Save is repeated at the start of each turn for those staying in the area.
+	\item \spell{Suggestion} \save{WIL} or the target is \mbox{compelled} to follow the uttered course of action. Saves against suggestions that are harmful to the target are rolled with Advantage.
 	\item \spell{Summon Gate} Calls out to any extraplanar being that wishes to enter our plane. You have no choice which being answers, and it holds no loyalty to you.
 	\item \spell{Tiny Hut} Creates a shelter for ten creatures.
-	\item \spell{Tongues} Speak any language.
+	\item \spell{Tongues} You can speak any language.
 	\item \spell{Vampiric Touch} On a failed \save{STR}, the target loses d6~STR, and you restore all lost HP.
-	\item \spell{Water Breathing} Creatures can breathe underwater.
-	\item \spell{Wind Wall} Deflects arrows, smaller creatures, and gases.
+	\item \spell{Water Breathing} Creatures chosen by you can breathe underwater.
+	\item \spell{Wind Wall} A line of strong wind deflects arrows, smaller creatures, and gases.
 \end{enumerate}
 
 \index[spelllist]{Slow|see {Haste/Slow}}
@@ -247,31 +361,29 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{4} Circle}
 \def \spellcircle {4}
 \begin{enumerate}
-	\item \spell{Animate Dead} Creates up to d4 undead skeletons and zombies from corpses.
-	\item \spell{Arcane Eye} Creates an invisible floating eye you can see through and control.
+	\item \spell{Animate Dead} Creates up to d4 undead skeletons and zombies from corpses. You have \mbox{control} over them while the Spell lasts.
+	\item \spell{Arcane Eye} Creates an invisible floating eye you can see through and control. You can also cast your Cantrips through it.
 	\item \spell{Bestow Curse} The target gains Disadvantage on all Saves until Healed.
+	\item \spell{Cause Panic} Creatures within a large cone must pass a \save{WIL} or flee.
 	\item \spell{Chain Lightning} Strikes d10 targets for d10 Electricity Damage each ignoring Armour.
 	\item \spell{Charm Creature} \save{WIL} or a creature treats you as an ally.
-	\item \spell{Confusion} \save{WIL} or creatures behave oddly. In combat, roll a d4 on their turn, 1: attack their allies, 2--3: do nothing, 4: attack their enemies.
+	\item \spell{Confusion} Creatures in a medium area who failed a \save{WIL} behave oddly. In combat, roll a d4 on their turn, 1: attack their allies, 2--3: do nothing, 4: attack their enemies.
 	\item \spell{Contagion} Infects a creature with a \mbox{horrible} disease, reducing one Ability Score by d6 immediately and each subsequent day until Healed.
 	\item \spell{Create Water} A spring starts spilling water from the ground or wall.
 	\item \spell{Crushing Despair} Everyone in a large area makes a \save{WIL} or their attacks are Impaired.
 	\item \spell{Detect Scrying} Alerts you of the magical eavesdropping.
 	\item \spell{Dimension Door} Teleports you within a medium distance.
-	\item \spell{Dimensional Anchor} Bars extradimensional movement.
-	\item \spell{Fear} Creatures within a large cone must pass a \save{WIL} or flee.
-	\item \spell{Fire Shield} Creatures attacking you in melee take d6 Fire Damage; you are protected from heat and cold.
+	\item \spell{Dimensional Anchor} Bars extradimensional movement in your vicinity.
+	\item \spell{Fire Shield} Creatures attacking you in melee take d6 Fire Damage; you are immune to Fire and Cold Damage.
 	\item \spell{Fire Trap} An opened object deals d12 Fire Damage. Persistent.
 	\item \spell{Globe of Invulnerability} Stops Spells up to the \nth{3} Circle inside a small sphere.
-	\item \spell{Illusory Terrain} Change the visual appearance of one type of terrain, a wall, floor, ceiling, etc.
+	\item \spell{Illusory Terrain} Change the visual appearance of one terrain type, wall, floor, ceiling, etc.
 	\item \spell{Locate Creature} Indicates the direction to a familiar creature.
 	\item \spell{Minor Creation} Creates one small cloth or a wooden object. Persistent.
-	\vfill
-	\break
-	\item \spell{Nightmare} \save{WIL} each night or the target wakes with half its HP and will not recover them until they have a full rest without Nightmares. Persistent.
+	\item \spell{Nightmare} \save{WIL} each night or the target wakes with half its HP and will not recover them until they have a full night's sleep without Nightmares. Persistent.
 	\item \spell{Phantasmal Killer} A fearsome, invincible illusion that only the target can see. Attacks for d10 Damage before disappearing. On Critical Damage the target must succeed on a \save{WIL} or die from terror.
-	\item \spell{Polymorph} Gives one willing creature a new permanent form.
-	\item \spell{Rainbow Pattern} Lights fascinate creatures. In combat, they are Stunned until passing a \save{WIL} at the end of their turn.
+	\item \spell{Polymorph} Gives one willing creature a new permanent form. The target keeps their Ability Scores and HP while gaining abilities and limitations of the new form, except for supernatural powers, resistances, etc. and cannot be polymorphed again for a day. Pass a \save{WIL} to achieve the exact desired appearance, otherwise it will deviate in a random manner.
+	\item \spell{Rainbow Pattern} Lights fascinate creatures that can see you. In combat, they are Stunned until passing a \save{WIL} at the end of their turn. After passing the Save, they are immune to the effect until the Spell is cast again.
 	\item \spell{Remove Curse} Frees a creature from any magical Disadvantages or Impairments.
 	\item \spell{Resilient Sphere} A force globe protects but traps one creature. Pass a \save{DEX} to avoid it.
 	\item \spell{Scrying} Spies on the target from a distance.
@@ -294,123 +406,44 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{5} Circle}
 \def \spellcircle {5}
 \begin{enumerate}
+	\item \spell{Alter Fate} Target's next roll is changed by d12 but cannot exceed the original die roll range.
 	\item \spell{Baleful Polymorph} \save{STR} or transforms a creature into a harmless animal permanently.
 	\item \spell{Banish} \save{WIL} or a creature returns to its native plane. If a creature is native to the current plane, it disappears for a minute and then returns safely.
-	\item \spell{Blight} Drains life from d12 targets for d12 Damage each. When targeting Plants, roll d12 Damage twice and pick the biggest result.
+	\item \spell{Blight} Drains life from d12 living targets for d12 Damage each. When targeting plants, roll d12 Damage twice and pick the biggest result.
+	\item \spell{Bloody Gossamer} Fill a large area shaped at your design with a dense web of invisible razor-sharp strings. Anyone trying to move or act within it must pass a \save{DEX} or take d10 Damage and end their turn immediately.
 	\item \spell{Break Enchantment} Frees a single target from enchantments, alterations, curses, and \mbox{petrification}.
-	\item \spell{Cloudkill} You can slowly move this small cloud on the ground, causing d6 STR loss to all living creatures within it.
+	\item \spell{Cloudkill} You can slowly move this small cloud on the ground, causing d6 STR Loss to all living creatures within it.
 	\item \spell{Cone of Cold} d12 Cold Damage to everyone within a large cone.
 	\item \spell{Contact Other Plane} Lets you ask a question of an extraplanar entity.
 	\item \spell{Control Water} Raise, lower, or part water.
-	\item \spell{Dominate Person} \save{WIL} or a humanoid is controlled telepathically.
-	\item \spell{False Vision} Fools scrying with an illusion.
+	\item \spell{Disintegrate} d12 Damage ignoring Armour. On a failed Critical Damage Save, a creature is turned to dust. Objects up to the size of an elephant are destroyed completely at 0hp.
+	\item \spell{Dominate Person} \save{WIL} or a humanoid is controlled telepathically. The Save is repeated each time the target is harmed.
 	\item \spell{Feeblemind} \save{WIL} or drop to WIL~0.
+	\item \spell{Hermit's Company} Summon your double. It is incapable of magic, cannot harm or disobey you, and is always in a great mood. Any damage done to one of you is suffered by both. \mbox{Persistent.}
 	\item \spell{Incinerate} Set one target on fire. Deals d12 Fire Damage immediately and at the end of each next turn until a \save{DEX} is passed or any other way to put out the flames is found.
 	\item \spell{Interposing Hand} A hand blocks 5d6hp of Damage from one opponent.
-	\item \spell{Mage's Faithful Hound} A phantom dog can guard or attack. WIL~15, 3d6hp, d8~Bite.
-	\item \spell{Mage's Private Sanctum} Prevents anyone from viewing or scrying an area.
 	\item \spell{Major Creation} Create an item of stone and metal. Persistent.
-	\item \spell{Passwall} Creates a passage through a wooden or stone wall.
+	\item \spell{Mass Suggestion} \save{WIL} or creatures are compelled to follow the proclaimed course of action. Saves against suggestions that are harmful to the targets are rolled with Advantage.
+	\item \spell{Mystic's Faithful Hound} A phantom dog can guard or attack and will never leave caster's vicinity. WIL~15, 3d6hp, d8~Bite. Persistent.
+	\item \spell{Mystic's Private Sanctum} Creates an illusion that prevents anyone from viewing or scrying an area. Persistent.
+	\item \spell{Mystic's Saving Grace} When the target takes Damage, you can choose to take it instead, ending this Spell. At 0hp it acts like a Spell casting Damage, targeting your WIL. Persistent.
+	\item \spell{Passwall} Creates a passage through a wooden or stone wall while the Spell lasts.
+	\item \spell{Perfect Weapon} Summon a melee (d10/d12) or ranged (d10) weapon that ignores all supernatural resistances. It disappears after dealing maximal Damage or you casting any spell.
+	\item \spell{Permutation} A willing target suffers \mbox{d4 to d12} Ability Score Loss, and another one restores as much of any Ability Score Loss. The die, \mbox{Abilities}, and targets are chosen by you.
 	\item \spell{Petrify} \save{STR} or the target is permanently transformed into a statue.
 	\item \spell{Planar Binding} Traps extraplanar creatures that fail a \save{WIL} until they perform a task.
 	\item \spell{Planar Gate} Open a gate to another reality that works in both directions.
-	\vfill
-	\break
-	\item \spell{Possession} \save{WIL} or the target has the soul pushed out and the caster possesses their body. Their soul returns when the caster leaves the body, but if the body is slain, the soul departs and the caster's soul returns to their body.
 	\item \spell{Prying Eyes} d6 floating eyes scout for you.
-	\item \spell{Secret Chest} Hides an expensive chest on the Ethereal Plane; you retrieve it at will.
-	\item \spell{Symbol of Sleep} Reading this small rune puts the reader who failed a \save{WIL} into magical sleep that lasts as long as the Spell. Persistent.
-	\item \spell{Telekinesis} Moves an object, attacks a creature, or hurls an object or creature.
-	\item \spell{Telepathic Bond} A link lets allies communicate.
+	\item \spell{Secret Chest} Hides an expensive chest in the extraplanar space; you retrieve it at will.
+	\item \spell{Symbol of Sleep} Reading this small rune puts the reader who failed a \save{WIL} into magical sleep that lasts as long as this Spell. Persistent.
+	\item \spell{Telekinesis} Moves an object, attacks a creature, or hurls an object or creature. Damage \mbox{depends} on the object's size; thrown creatures take appropriate falling damage.
+	\item \spell{Telepathic Bond} Creates a link that lets allies communicate. All targets must be in your vicinity at the moment of casting. \mbox{Persistent.}
 	\item \spell{Teleport} Instantly transports you to a known location up to 100 miles away.
-	\item \spell{Transmute Earth} Transforms mud to rock or rock to mud.
+	\item \spell{Transmute Earth} Mud to rock or rock to mud.
 	\item \spell{Wall of Force} A large invisible wall is immune to damage. Lasts for d6 minutes.
 	\item \spell{Wall of Stone} Creates a large stone wall (16hp, Armour~8) that can be shaped.
 \end{enumerate}
 
 \vfill
 \break
-
-\index{Spells!random}
-\index{Random Spells|see {Spells, random}}
-\header{Random 30 Spells}
-\begin{dtable}[cC|cC|cC]
-	\textbf{d3.d10} & \textbf{Spell} & \textbf{d3.d10} & \textbf{Spell} & \textbf{d3.d10} & \textbf{Spell} \\
-	
-	1.1 & 1  & 2.1 & 11 & 3.1 & 21 \\
-	1.2 & 2  & 2.2 & 12 & 3.2 & 22 \\
-	1.3 & 3  & 2.3 & 13 & 3.3 & 23 \\
-	1.4 & 4  & 2.4 & 14 & 3.4 & 24 \\
-	1.5 & 5  & 2.5 & 15 & 3.5 & 25 \\
-	1.6 & 6  & 2.6 & 16 & 3.6 & 26 \\
-	1.7 & 7  & 2.7 & 17 & 3.7 & 27 \\
-	1.8 & 8  & 2.8 & 18 & 3.8 & 28 \\
-	1.9 & 9  & 2.9 & 19 & 3.9 & 29 \\
-	1.10& 10 & 2.10& 20 & 3.10& 30 \\
-\end{dtable}
-
-\vfill
-
-\header{Random 36 Spells}
-\begin{dtable}[cC|cC|cC]
-	\textbf{d6.d6} & \textbf{Spell} & \textbf{d6.d6} & \textbf{Spell} & \textbf{d6.d6} & \textbf{Spell} \\
-	
-	1.1  & 1  & 3.1 & 13 & 5.1 & 25 \\
-	1.2  & 2  & 3.2 & 14 & 5.2 & 26 \\
-	1.3  & 3  & 3.3 & 15 & 5.3 & 27 \\
-	1.4  & 4  & 3.4 & 16 & 5.4 & 28 \\
-	1.5  & 5  & 3.5 & 17 & 5.5 & 29 \\
-	1.6  & 6  & 3.6 & 18 & 5.6 & 30 \\
-	
-	2.1  & 7  & 4.1 & 19 & 6.1 & 31 \\
-	2.2  & 8  & 4.2 & 20 & 6.2 & 32 \\
-	2.3  & 9  & 4.3 & 21 & 6.3 & 33 \\
-	2.4  & 10 & 4.4 & 22 & 6.4 & 34 \\
-	2.5  & 11 & 4.5 & 23 & 6.5 & 35 \\
-	2.6  & 12 & 4.6 & 24 & 6.6 & 36 \\
-\end{dtable}
-
-\vfill
-
-\header{Random 48 Spells}
-\begin{dtable}[cC|cC|cC]
-	\textbf{d6.d8} & \textbf{Spell} & \textbf{d6.d8} & \textbf{Spell} & \textbf{d6.d8} & \textbf{Spell} \\
-	
-	1.1  & 1  & 3.1 & 17 & 5.1 & 33 \\
-	1.2  & 2  & 3.2 & 18 & 5.2 & 34 \\
-	1.3  & 3  & 3.3 & 19 & 5.3 & 35 \\
-	1.4  & 4  & 3.4 & 20 & 5.4 & 36 \\
-	1.5  & 5  & 3.5 & 21 & 5.5 & 37 \\
-	1.6  & 6  & 3.6 & 22 & 5.6 & 38 \\
-	1.7  & 7  & 3.7 & 23 & 5.7 & 39 \\
-	1.8  & 8  & 3.8 & 24 & 5.8 & 40 \\	
-	
-	2.1  & 9  & 4.1 & 25 & 6.1 & 41 \\
-	2.2  & 10 & 4.2 & 26 & 6.2 & 42 \\
-	2.3  & 11 & 4.3 & 27 & 6.3 & 43 \\
-	2.4  & 12 & 4.4 & 28 & 6.4 & 44 \\
-	2.5  & 13 & 4.5 & 29 & 6.5 & 45 \\
-	2.6  & 14 & 4.6 & 30 & 6.6 & 46 \\
-	2.7  & 15 & 4.7 & 31 & 6.7 & 47 \\
-	2.8  & 16 & 4.8 & 32 & 6.8 & 48 \\
-\end{dtable}
-
-\break
-
-\begin{dbox}
-	\index{Spells!distance}
-	\index{Spells!area}
-	\paragraph{Distances/Areas:}
-	\subparagraph{Short or Close/Small} --- a couple of steps.
-	\subparagraph{Medium} --- about 30~ft.
-	\subparagraph{Far/Large or Your Vicinity} --- about 60~ft.
-\end{dbox}
-
-\vfill
-
-\dimage{magic}{454pt}
-
-\vfill
-\break
-
 \end{document}

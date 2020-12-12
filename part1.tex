@@ -3,6 +3,7 @@
 \begin{document}
 
 \chapter{Characters}
+\label{ch:characters}
 \index{Characters}
 \resetHeaders
 
@@ -10,8 +11,6 @@
 \index{Ability Scores}
 
 Roll a 3d6 for each Ability Score.
-
-\vspace{0.6em}
 
 \index{Strength}
 \index{STR|see {Strength}}
@@ -25,8 +24,6 @@ Roll a 3d6 for each Ability Score.
 \index{WIL|see {Willpower}}
 \textbf{WIL}LPOWER --- calling on divine power, harnessing magic, and self-discipline.
 
-\vspace{0.6em}
-
 \index{Money!starting}
 In addition, roll 3d6 as your Extra Roll. You may then swap any two of your rolls. After this, the Extra Roll is your starting money in Shillings.
 
@@ -39,60 +36,117 @@ Roll d6 for your Hit Points, a measure of how safe they are from taking life-thr
 
 Finally, choose one Feature, a Background, and buy some Equipment.
 
-
 \section{Features}
 \index{Features}
 
 Choose one Feature now, and each time you gain a new Experience Level.
 
+\vfill
 \feat{Assassin}
 Your Enhanced attacks against unaware or helpless opponents bypass HP.
 
-\feat{Berserker} Roll twice for HP and take the better result.\\
-After taking first Damage in combat, increase your melee weapon Damage dice by one and gain Advantage on Saves against Critical Damage till the combat ends.
+\vfill
+\feat{Beastmaster} {\slshape Can be taken multiple times.}\\
+You can control one additional Pet. Your Pets act as a single pack following your command.
 
-\feat{Brawler} Roll twice for HP and take the better result.\\
+\vfill
+\feat{Berserker} Roll twice for HP and take the better result.\\
+After taking first Damage in combat, increase your melee weapon Damage dice by one and gain Advantage on subsequent Saves against Critical Damage till the combat ends.
+
+\vfill
+\feat{Brawler} {\slshape Can be taken multiple times.}\\
+Roll twice for HP and take the better result.\\
 While not wearing any armour, your Armour score is 1. Gain bonus d4 unarmed Damage die.\\
 \textbf{Advancement:} The bonus die is increased by one.
 
+\vfill
 \feat{Commander}
 Once per combat, issue a command to one ally to Enhance their attack this round or to restore d6hp to them. The command does not count as your action.
 
+\break
+
+\feat{Duellist} Roll twice for HP and take the better result.\\
+Once per combat, until it ends, you can concentrate on fighting a single adjacent opponent, Enhancing your melee attacks against them and Impairing their melee attacks against anyone but you. All other \mbox{enemies'} attacks against you are Enhanced.
+
+\vfill
+\index{Healing}
 \feat{Healer}
 Gain 5s worth of healing supplies.
 While resting, spend 5s worth of healing supplies to restore d6 Ability Score Loss to an ally or yourself, or take a 4-in-6 chance to subdue some other ailment.
 
 Healing supplies are available for purchase in most settlements and can be used by Healers only.
 
+\vfill
+\index{Armour}
+\feat{Ironclad} Roll twice for HP and take the better result.\\
+Full Armour does not impose its Disadvantages on you and you can employ the shield while wearing it.
+
+\vfill
 \index{Runic}
 \index{Tome}
 \index{Spells}
 \index{Spells!signature}
+\index{Magic}
 \feat{Mystic} {\slshape Can be taken multiple times.}\\
 You can read Runic and cast Spells.\\
-Gain Mystic's Focus and Tome containing instructions for two Cantrips and six \nth{1} Circle Spells. Choose a Signature Spell (see Chapter~4: Magic).\\
+Gain Mystic's Focus and Tome containing instructions for two Cantrips and six \nth{1} Circle Spells. Choose a Signature Spell (see \textbf{\fullref{ch:magic}}).\\
 \textbf{Advancement:} add a new Cantrip and three Spells (of a Circle equal or lower to your Mystic Level) to your Tome. Choose an additional Signature Spell.
+\begin{dbox}
+	\paragraph{Random Spell Selection (optional)}
+	Roll to select your Cantrips and Spells randomly instead of choosing them manually (see page \pageref{random_spells}).\vspace{-1em}
+\end{dbox}
 
+\vfill
+\feat{Sharpshooter}
+After a ranged attack, gain bonus weapon Damage die with this weapon on the same target until you attack another target or the combat ends.
+
+\vfill
 \feat{Skilled} {\slshape Can be taken multiple times.}\\
 Gain Advantage on Saves related to a pair of certain fields of expertise: animal handling, athletics, burgling, cheating, drinking, negotiation, quickness, stealth, etc. While you are not under pressure, you do not need to make such Save at all.
+
+\break
 
 \feat{Swashbuckler} Roll twice for HP and take the better result.\\
 While attacking, you can hit a second target, rolling your weapon Damage dice without any bonus dice.
 
+\vfill
 \index{Manoeuvres}
 \feat{Tactician} Roll twice for HP and take the better result.\\
 When performing an attack, you may add a Manoeuvre to it (push, trip, disarm, grapple for their next turn, etc.) The attack is carried out as usual, and the opponent must make a Save to avoid an additional effect described by you.
 
+\vfill
+\index{Gifts}
+\feat{Thaumaturge} {\slshape Can be taken multiple times.}\\
+You can spend your action manifesting wondrous power. Choose a Gift. Your Gift Die is d4.
+
+Before you manifest a Gift, roll two Gift Dice and subtract a lower result from a higher one to determine your Power (\textbf{P}). On 0, you fail and cannot manifest any of your Gifts before Rest. Otherwise you need to Rest before manifesting the same Gift again.
+
+\begin{enumerate}
+	\item \textbf{Aegis:} Immediately reduce the Damage you took by \textbf{P}. This counts as your next turn action.
+	\item \textbf{Awakening:} Touch someone who suffered \mbox{Critical} Damage but has not died yet, restoring \textbf{P} HP. They can act on the next turn.
+	\item \textbf{Bond:} One animal serves you unquestioningly for \textbf{P} days. Repeating will end current Bond.
+	\item \textbf{Command:} Utter a single word (approach, halt, flee, etc.) which \textbf{P} creatures that fail their WIL Save must obey on their next turn.
+	\item \textbf{Control:} Control but not create fire, lightning, or water for a minute. If thrown, deals \textbf{P} Damage (Fire, Electricity, or Cold) to a single target.
+	\item \textbf{Credence:} Get truthful answers for \textbf{P/2} (round up) questions from one respondent. You cannot repeat it on the same target for a day.
+	\item \textbf{Harmony:} Until your next Rest, \textbf{P} animals chosen by you would not attack you unprovoked and you can understand them.
+	\item \textbf{Omen:} Foresee the immediate outcome of \textbf{P/2} (round up) actions (good, bad, both, or unclear).
+	\item \textbf{Smite:} Strike with \textbf{P} bonus Damage ignoring Armour and supernatural resistances.
+	\item \textbf{Turn:} \textbf{P} unnatural creatures that fail their WIL Save are repelled unless attacked.
+\end{enumerate}
+
+\textbf{Advancement:} Choose an additional Gift. \mbox{Your Gift die is increased by one.}
+
+\vfill
 \feat{Warrior} {\slshape Can be taken multiple times.}\\
 Roll twice for HP and take the better result.\\
 Gain bonus d4 weapon Damage die.\\
 \textbf{Advancement:} The bonus die is increased by one.
 
+\vfill
 
 \vfill
-\break
-
 \dimage{features}{90pt}
+\vfill
 
 \begin{dbox}
 \subsection*{Creating your own Features}
@@ -112,21 +166,26 @@ The usual Feature benefit could be:
 Try to balance new Features with the existing ones.
 \end{dbox}
 
+\vfill
 \subsection*{Ancestry Features (optional)}
 \index{Features!ancestry}
 \index{Ancestry|see {Features, ancestry}}
 
 If the Referee allows non-human characters (and only during the new character creation), you can choose one of these Features instead.
 
+\vfill
 \feata{Dwarf}
 You are immune to poison and can see in the dark as if it were dim light. You are experienced and comfortable in an underground setting.
 
+\vfill
 \feata{Elf}
 You have advantage on Saves against mind-altering magic (hypnosis, sleep, stun, etc.). You are experienced and comfortable in a wilderness setting.
 
+\vfill
 \feata{Halfling}
 Thanks to your small size you can hide well, squeeze through small passages, and fit in tight spaces. You can also reroll 20 on any Save and use the new result.
 
+\vfill
 \break
 
 
@@ -135,27 +194,42 @@ Thanks to your small size you can hide well, squeeze through small passages, and
 
 Choose your character's previous career and think of a reason why they abandoned it to become an \mbox{adventurer}.
 
+\vfill
 \featb{Criminal}
 Gain your criminal tool of choice (blackjack (sap), crowbar, grappling hook, lockpicks, marked cards or loaded dice, etc.), a dagger, and a contact in the criminal world.
 
+\vfill
+\featb{Hunter}
+Gain a martial ranged weapon suitable for hunting (longbow, simple musket, etc.) and an animal trap. You are good at hunting and tracking.
+
+\vfill
+\featb{Labourer}
+Gain experience in one type of labour (farming, gardening, herding, logging, masonry, mining, etc.), an appropriate simple melee weapon, pair of tools, \mbox{20-ft rope}, and 2d4s of payment from your last job. \mbox{Common} folk treat you as one of them.
+
+\vfill
 \featb{Minstrel}
 Gain a musical instrument. Thanks to your vast repertoire, you know a lot of legends and tales and have a 4-in-6 chance to recall something relevant from them.
 
+\vfill
 \featb{Noble}
 Double your starting money. Your name still carries some weight.
 
+\vfill
 \featb{Sailor}
 Gain a pet: a talking parrot (STR~6, WIL~6, 2hp, d4 Claws), a small monkey (STR~7, WIL~7, 3hp, d4 Bite), etc. You are knowledgeable in seafaring.
 
+\vfill
 \featb{Scholar}
 Gain a writing set, a journal with your notes, and a book about the subject of your specialization.
 
 You have a 4-in-6 chance to know a fact within your area of study and everything related to your specialization (e.g. History (Archaeology)).
 
+\vfill
 \featb{Soldier}
 Gain one martial weapon and a military rank.
 
-~
+\vfill
+\break
 
 \begin{dbox}
 \subsection*{Creating your own Backgrounds}
@@ -164,6 +238,10 @@ You can design your own Background and have it approved by your Referee.
 
 Usually the Background should provide items from character's past life (with a rough value of 10--12 Shillings) and some role-playing benefit.
 \end{dbox}
+
+\vfill
+
+\dimage{backgrounds}{490pt}
 
 \vfill
 \clearpage
@@ -178,22 +256,34 @@ Usually the Background should provide items from character's past life (with a r
 
 Ten \textbf{Pennies} (p) make a \textbf{Shilling} (s), and one-hundred Shillings make a \textbf{Guilder} (g).
 
+\vfill
+
 All characters carry \textbf{standard equipment}, including simple clothes, a backpack, basic camping equipment, torches, and a few days' rations.
+
+\vfill
 
 \index{Attacks!unarmed}
 \textbf{Unarmed attacks} deal d4 Damage.
+
+\vfill
 
 \index{Damage}
 \index{Weapons!one-handed}
 \index{Weapons!two-handed}
 If two dice are listed, the first one is for \textbf{one-handed} weapons, the second one --- \textbf{two-handed}.
 
+\vfill
+
 \index{Weapons!firearms}
 \index{Firearms|see {Weapons, firearms}}
 \textbf{Firearms} make a lot of noise and ignore Armour. Reloading firearms in combat requires a full turn while standing still.
 
+\vfill
+
+\index{Selling}
 You could try to \textbf{sell} an item at half its price.
 
+\vfill
 
 \paragraphsection{Melee Weapons:}
 \index{Weapons!melee}
@@ -204,6 +294,9 @@ You could try to \textbf{sell} an item at half its price.
 
 \weapon{Superior Melee Weapon}{1g}{d8/d10} Elaborate or masterwork weapons.
 
+\weapon{Lance}{10s}{d8} When mounted --- can be used with a shield; on foot --- two-handed only.
+
+\vfill
 
 \paragraphsection{Ranged Weapons:}
 \index{Weapons!ranged}
@@ -214,6 +307,7 @@ You could try to \textbf{sell} an item at half its price.
 
 \weapon{Superior Ranged Weapon}{1g}{d8} Elaborate or heavy bows, crossbows, and guns.
 
+\vfill
 
 \paragraphsection{Armour:}
 \index{Armour}
@@ -225,11 +319,16 @@ You could try to \textbf{sell} an item at half its price.
 
 \equip{Shield}{5s}: +1 Armour, requires one hand to use, has no effect when used with Full Armour.
 
+\break
+
 \index{Items}
 \paragraphsection{Other Items:}
 
+\index{Acid}
+\equip{Acid}{10s per vial}: d4 Acid Damage to one target now and a d4 STR Loss (affected by Armour) at the end of the next round unless washed off.
+
 \index{Fire Oil}
-\equip{Fire Oil}{10s per flask}: Sets an area alight. Everyone inside takes d6 damage now and d6 at the end of their next turn unless extinguished.
+\equip{Fire Oil}{10s per flask}: Sets an area alight. Everyone inside takes d6 Damage now and d6 at the end of their next turn unless extinguished.
 
 \index{Black Powder}
 \equip{Black Powder}{20s per pot}: Ignited with fuse or direct flame. Everyone in the area takes d10 Blast Damage.
@@ -245,15 +344,16 @@ You could try to \textbf{sell} an item at half its price.
 
 \equip{Fancy Items}{10s each}: Board Game, Book, Elaborate Clothes, Lantern, Mirror, Sand Timer, Spyglass.
 
+\vfill
 
 \paragraphsection{Miscellaneous:}
-\index{Vehicle!waterborne}
+\index{Vehicles!waterborne}
 \index{Boats}
 \index{Rowboat}
 \index{Galley}
 \subparagraph{Boats}: Rowboat (50s) to Galley (200g).
 
-\index{Vehicle}
+\index{Vehicles}
 \index{Cart}
 \index{Wagon}
 \subparagraph{Carts}: Cart (30s) to Wagon (1g).
@@ -289,6 +389,8 @@ You could try to \textbf{sell} an item at half its price.
 \index{Hawk}
 \subparagraph{Birds}: Parrot (5s) (STR~6, WIL~6, 2hp, d4 Claws) to Hawk (50s) (STR~8, WIL~8, 5hp, d6 Claws).
 
+\vfill
+
 \index{Hirelings}
 \index{Torch Bearer|see {Hirelings}}
 \index{Guide|see {Hirelings}}
@@ -306,8 +408,8 @@ unless noted)
 	\item Champion (50s): STR~14, 6+d6hp, Armour~2 (full), halberd (d8+d6, 2h), Proven Warrior.
 \end{itemize}
 
-\break
+%\break
 
-\dimagepage{equipment}
+%\dimagepage{equipment2}
 
 \end{document}
