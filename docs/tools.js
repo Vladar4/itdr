@@ -658,167 +658,169 @@ function generateRandomCharacter(swap) {
     var sWeapons = "";
     var sItemsList = [];
 
-    var spareMoney = 0;
-    if(iStats[3] < 5) {
-        spareMoney = 1;
-    }
-    else if(iStats[3] < 7) {
-        spareMoney = randomInt(1, 2);
-    }
-    else if(iStats[3] < 15) {
-        spareMoney = randomInt(1, 3);
-    }
-    else if(iStats[3] < 23) {
-        spareMoney = randomInt(1, 4);
-    }
-    else {
-        spareMoney = randomInt(1, 4) + randomInt(1, 4);
-    }
-    var money = iStats[3] - spareMoney;
-
-    log("Total money is " + iStats[3]);
-    log("Spare money is " + spareMoney);
-    log("Spendable money is " + money);
-
-    function buyMartialMelee() {
-        let item = randomMartialMelee();
-        if(item.includes("lance")) bTwohandedMelee = true; /* special case */
-        sWeapons = addItem(sWeapons, item);
-        money -= 10;
-        bMelee = true;
-        log("Bought " + item);
-    }
-
-    function buyMartialRanged() {
-        let item = randomMartialRanged();
-        sWeapons = addItem(sWeapons, item);
-        money -= 10;
-        bRanged = true;
-        log("Bought " + item);
-    }
-
-    function buyLightArmour() {
-        money -= 10;
-        bLightArmour = true;
-        log("Bought Light Armour");
-    }
-
-    function buyShield() {
-        money -= 5;
-        bShield = true;
-        log("Bought Shield");
-    }
-
-    function buyPet() {
-        let item = randomPet();
-        iPets += 1;
-        sPets = addItem(sPets, item);
-        money -= 5;
-        log("Bought " + item);
-    }
-
-    function buySimpleMelee() {
-        let item = randomSimpleMelee();
-        sWeapons = addItem(sWeapons, item);
-        bTwohandedMelee = true;
-        money -= 1;
-        bMelee = true;
-        log("Bought " + item);
-    }
-
-    function buySimpleRanged() {
-        let item = randomSimpleRanged();
-        sWeapons = addItem(sWeapons, item);
-        money -= 1;
-        bRanged = true;
-        log("Bought " + item);
-    }
-
-    var iGear = 0;
-    var iTool = 0;
-
-    function buyGearOrTool() {
-        var item;
-        if(iGear > iTool) item = randomTool();
-        else if(iTool > iGear) item = randomGear();
-        else item = randomGearOrTool(sItemsList);
-
-        if(item.length > 1) iGear += 1;
-        else iTool += 1;
-
-        sItemsList = sItemsList.concat(item);
-        money -= 1;
-        log("Bought " + item);
-    }
-
-    function spend1() {
-        log("spend1 @ " + money + "s");
-        if(!bMelee) {
-            buySimpleMelee();
+    if(document.getElementById("checkbox_equipment").checked) {
+        var spareMoney = 0;
+        if(iStats[3] < 5) {
+            spareMoney = 1;
+        }
+        else if(iStats[3] < 7) {
+            spareMoney = randomInt(1, 2);
+        }
+        else if(iStats[3] < 15) {
+            spareMoney = randomInt(1, 3);
+        }
+        else if(iStats[3] < 23) {
+            spareMoney = randomInt(1, 4);
         }
         else {
-            if(!bRanged) buySimpleRanged();
-            else buyGearOrTool();
+            spareMoney = randomInt(1, 4) + randomInt(1, 4);
         }
-    }
+        var money = iStats[3] - spareMoney;
 
-    function spend5() {
-        log("spend5 @ " + money + "s");
-        if((maxPets > 1) && (iPets < 1)) {
-            buyPet(); /* for Beastmaster */
-        }
-        else {
-            if(bMelee && !bTwohandedMelee && !bShield) {
-                buyShield();
-            }
-            else {
-                if(!bMelee){
-                    buySimpleMelee();
-                }
-                else {
-                    if(iPets < maxPets) buyPet();
-                    else spend1();
-                }
-            }
-        }
-    }
+        log("Total money is " + iStats[3]);
+        log("Spare money is " + spareMoney);
+        log("Spendable money is " + money);
 
-    function spend10() {
-        log("spend10 @ " + money + "s");
-        if((maxPets > 1) && (iPets < 1)) {
-            buyPet(); /* for Beastmaster */
+        function buyMartialMelee() {
+            let item = randomMartialMelee();
+            if(item.includes("lance")) bTwohandedMelee = true; /* special case */
+            sWeapons = addItem(sWeapons, item);
+            money -= 10;
+            bMelee = true;
+            log("Bought " + item);
         }
-        else {
+
+        function buyMartialRanged() {
+            let item = randomMartialRanged();
+            sWeapons = addItem(sWeapons, item);
+            money -= 10;
+            bRanged = true;
+            log("Bought " + item);
+        }
+
+        function buyLightArmour() {
+            money -= 10;
+            bLightArmour = true;
+            log("Bought Light Armour");
+        }
+
+        function buyShield() {
+            money -= 5;
+            bShield = true;
+            log("Bought Shield");
+        }
+
+        function buyPet() {
+            let item = randomPet();
+            iPets += 1;
+            sPets = addItem(sPets, item);
+            money -= 5;
+            log("Bought " + item);
+        }
+
+        function buySimpleMelee() {
+            let item = randomSimpleMelee();
+            sWeapons = addItem(sWeapons, item);
+            bTwohandedMelee = true;
+            money -= 1;
+            bMelee = true;
+            log("Bought " + item);
+        }
+
+        function buySimpleRanged() {
+            let item = randomSimpleRanged();
+            sWeapons = addItem(sWeapons, item);
+            money -= 1;
+            bRanged = true;
+            log("Bought " + item);
+        }
+
+        var iGear = 0;
+        var iTool = 0;
+
+        function buyGearOrTool() {
+            var item;
+            if(iGear > iTool) item = randomTool();
+            else if(iTool > iGear) item = randomGear();
+            else item = randomGearOrTool(sItemsList);
+
+            if(item.length > 1) iGear += 1;
+            else iTool += 1;
+
+            sItemsList = sItemsList.concat(item);
+            money -= 1;
+            log("Bought " + item);
+        }
+
+        function spend1() {
+            log("spend1 @ " + money + "s");
             if(!bMelee) {
-                buyMartialMelee();
+                buySimpleMelee();
             }
             else {
-                if(bLightArmour || bBrawler || bMystic) {
-                    if(bRanged) spend5();
-                    else randomBool() ? buyMartialRanged() : spend5();
+                if(!bRanged) buySimpleRanged();
+                else buyGearOrTool();
+            }
+        }
+
+        function spend5() {
+            log("spend5 @ " + money + "s");
+            if((maxPets > 1) && (iPets < 1)) {
+                buyPet(); /* for Beastmaster */
+            }
+            else {
+                if(bMelee && !bTwohandedMelee && !bShield) {
+                    buyShield();
                 }
                 else {
-                    if(bRanged) randomBool() ? buyLightArmour() : spend5();
-                    else randomBool() ? buyMartialRanged() : buyLightArmour();
+                    if(!bMelee){
+                        buySimpleMelee();
+                    }
+                    else {
+                        if(iPets < maxPets) buyPet();
+                        else spend1();
+                    }
                 }
             }
         }
-    }
 
-    function boughtEnough() {
-        if(bMelee && bRanged && (iGear >= 1) && (iTool >= 1)) return true;
-        else return false;
-    }
+        function spend10() {
+            log("spend10 @ " + money + "s");
+            if((maxPets > 1) && (iPets < 1)) {
+                buyPet(); /* for Beastmaster */
+            }
+            else {
+                if(!bMelee) {
+                    buyMartialMelee();
+                }
+                else {
+                    if(bLightArmour || bBrawler || bMystic) {
+                        if(bRanged) spend5();
+                        else randomBool() ? buyMartialRanged() : spend5();
+                    }
+                    else {
+                        if(bRanged) randomBool() ? buyLightArmour() : spend5();
+                        else randomBool() ? buyMartialRanged() : buyLightArmour();
+                    }
+                }
+            }
+        }
 
-    sItemsList = sItemsList.concat(sFeatureItems);
-    sItemsList = sItemsList.concat(sBackgroundItems);
+        function boughtEnough() {
+            if(bMelee && bRanged && (iGear >= 1) && (iTool >= 1)) return true;
+            else return false;
+        }
 
-    while((money > 0) && !boughtEnough()) {
-        if(money > 10) spend10();
-        else if (money > 5) spend5();
-        else spend1();
-    }
-    iStats[3] = money + spareMoney;
+        sItemsList = sItemsList.concat(sFeatureItems);
+        sItemsList = sItemsList.concat(sBackgroundItems);
+
+        while((money > 0) && !boughtEnough()) {
+            if(money > 10) spend10();
+            else if (money > 5) spend5();
+            else spend1();
+        }
+        iStats[3] = money + spareMoney;
+    } // random equipment
 
     log("Before filtering:");
     log(sItemsList);
