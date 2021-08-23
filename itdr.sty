@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2021/08/20]
+\ProvidesPackage{itdr}[2021/08/23]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -367,22 +367,23 @@
 
 % \dimagepage{filename}
 % full-page image on a separate page (\thispagestyle{empty}).
-\newcommand{\dimagepage}[1]{%
-	\thispagestyle{empty}
-	\topskip0pt
-	\noindent\begin{picture}(0,617)
+\newcommand{\dimagepage}[1]{{% <- second pair of brackets is intentional
+    \break
+    \thispagestyle{empty}%
+    \topskip0pt
+    \noindent\begin{picture}(0,617)
 	\IfFileExists{./img/pic/#1.png}{%
 		\put(0,0){%
 			\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}%
 		}
 	}
 	{% else
-		\put(0,0){%
+		\put(0,8){%
 			\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}%
 		}
 	}
 	\end{picture}%
-}
+}}
 
 % Clear to left page
 \makeatletter
