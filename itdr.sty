@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2021/08/23]
+\ProvidesPackage{itdr}[2021/08/24]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -58,7 +58,7 @@
 
 % Titles
 \RequirePackage{titlesec}
-\setlength{\parskip}{0.2em}% distance between paragraphs
+\setlength{\parskip}{0.4ex}% distance between paragraphs
 
 \renewcommand\thesection{}
 \renewcommand\thesubsection{}
@@ -66,7 +66,7 @@
 % chapter
 \titleformat{\chapter}
 	{\normalfont\scshape\LARGE}{\thechapter.\ }{0em}{}
-\titlespacing*{\chapter}{0em}{0em}{0.5em}
+\titlespacing*{\chapter}{0em}{0ex}{1ex}
 \def\chapterautorefname{Chapter}
 
 % unnumbered chapter
@@ -80,28 +80,28 @@
 \titleformat{\section}
 	{\normalfont\scshape\Large}{\thesection}{0em}{}
 	[{\titleline{\color{black}\titlerule[1pt]}}]
-\titlespacing*{\section}{0em}{\parskip}{0.5em}
+\titlespacing*{\section}{0em}{\parskip}{1ex}
 
 % subsection
 \titleformat{\subsection}
 	{\normalfont\bfseries\scshape\large}{\thesubsection}{0em}{}
-\titlespacing*{\subsection}{0em}{\parskip}{0em}
+\titlespacing*{\subsection}{0em}{\parskip}{0ex}
 
 % subsubsection
 \titleformat{\subsubsection}
 	{\normalfont\bfseries\scshape\normalsize}{\thesubsubsection}{0em}{}[]
-\titlespacing*{\subsubsection}{0pt}{\parskip}{0em}
+\titlespacing*{\subsubsection}{0em}{\parskip}{0ex}
 
 % paragraph
 \titleformat{\paragraph}
 	{\normalfont\bfseries\normalsize}{\theparagraph}{0em}{}[]
-\titlespacing*{\paragraph}{0pt}{\parskip}{0em}
+\titlespacing*{\paragraph}{0em}{\parskip}{0ex}
 
 % paragraphsection
 \makeatletter
 \def\paragraphsection{\@ifstar\@paragraphsection\@@paragraphsection}
-\def\@paragraphsection#1{\vspace{0.2em}\paragraph*{{\scshape #1}}}
-\def\@@paragraphsection#1{\vspace{0.2em}\paragraph{{\scshape #1}}}
+\def\@paragraphsection#1{\vspace{0.4ex}\paragraph*{{\scshape #1}}}
+\def\@@paragraphsection#1{\vspace{0.4ex}\paragraph{{\scshape #1}}}
 \makeatother
 
 % subparagraph
@@ -134,7 +134,7 @@
 
 \renewcommand{\headrulewidth}{1pt}
 
-\def \bottomLineVspace {-1.85em}
+\def \bottomLineVspace {-3.8ex}
 
 % define fancy page style
 \fancypagestyle{fancy}{%
@@ -195,10 +195,10 @@
 % Table environment
 \RequirePackage{tabularx}
 \newenvironment{dtable}[1][XX]{%
-	\vspace{0.05em}\noindent
+	\vspace{0.1ex}\noindent
 	\rowcolors{1}{dColor1}{dColor2}% Alternate colors
 	\tabularx{\linewidth}{#1}%
-}{\endtabularx\vspace{0.25em}\noindent}
+}{\endtabularx\vspace{0.5ex}\noindent}
 
 %%%%%%%%%
 % BOXES %
@@ -208,25 +208,24 @@
 	backgroundcolor=dColor2,
 	innerleftmargin=0.5em,
 	innerrightmargin=0.5em,
-	innertopmargin=0em,
+	innertopmargin=0ex,
 	leftmargin=1em,
 	linewidth=0pt,
-	skipabove=0em,
-	skipbelow=-0.7em,
+	skipabove=0ex,
+	skipbelow=0ex,
 }
 
 \newenvironment{dbox}{%
-	\noindent\begin{minipage}{\linewidth}
-	\noindent\vspace{-1.33em}\hspace{-0.024\linewidth}
-	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}
-	\begin{mdframed}\vspace{0.3em}%
+	\noindent\begin{minipage}{\linewidth}%
+	\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
+	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}%
+	\begin{mdframed}\vspace{0.5ex}% spacing before the text
 }{ % <- the space here is left intentionally
-	\vspace{-0.2em}%
-	\end{mdframed}
-	\vspace{0.3em}
-	\noindent\hspace{-0.024\linewidth}
-	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}
-	\end{minipage}\vspace{-0.5em}%
+	\vspace{-0.5ex}% spacing after the text
+	\end{mdframed}%
+	\vspace{-3pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
+	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}%
+	\end{minipage}%
 }
 
 %%%%%%%%%%%%%
@@ -278,7 +277,7 @@
 
 % \statpar{monster name}
 \newcommand{\statpar}[1]{%
-	\vspace{0.4em}
+	\vspace{1ex}
 	\paragraphsection{#1}%
 }
 
@@ -299,7 +298,7 @@
 	\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
 
 % fill the page with lines
-\newcommand{\dnotes}[1][2em]{%
+\newcommand{\dnotes}[1][4ex]{%
 	\thispagestyle{empty}%
 	\begingroup\offinterlineskip
 	\hrule height 0pt
@@ -314,43 +313,36 @@
 %%%%%%%%%%
 
 % \placeholder{}
-\newcommand{\placeholder}[2][0.985\linewidth]{%
-	\noindent\fbox{\rule{#1}{0pt}\rule[-0.5ex]{0pt}{#2}}
-	\vspace{-1em}%
+\newcommand{\placeholder}[2][0.9704\linewidth]{%
+	\noindent\fbox{\rule{#1}{0pt}\rule[-0.5ex]{0pt}{#2}}%
+	\vspace{-1ex}
 }
 
 % \dimage{filename}
 \newcommand{\dimage}[2]{%
-	\IfFileExists{./img/pic/#1.png}{
-		\noindent\includegraphics[width=1.0\linewidth]{img/pic/#1.png}%
-	}
-	{ % else
-		\placeholder{#2}%
-	}
-	\vspace{-1em}%
+	\IfFileExists{./img/pic/#1.png}{%
+		\noindent\includegraphics[width=\linewidth]{img/pic/#1.png}%
+	}{\placeholder{#2}}% else
 }
 
 % \dimagebottom{filename}
 % full-page image at the bottom of the page
 % place BEFORE anything on the page
 \RequirePackage{stfloats}
-\newcommand{\dimagebottom}[2]{%
+\newcommand{\dimagebottom}[2]{{% <- second pair of brackets is intentional
 	\noindent\begin{figure*}[bp]
-	\centering
-	\IfFileExists{./img/pic/#1.png}{
+	\centering\IfFileExists{./img/pic/#1.png}{%
 		\includegraphics[width=\textwidth]{./img/pic/#1.png}%
-	}
-	{ % else
-		\placeholder{#2}%
-	}
+	}{\placeholder{#2}}% else
 	\end{figure*}
-	\vspace{-1.9em}%
-}
+	\vspace{-15pt}% fix spacing at the top of the page
+	\break
+}}
 
 % \dimageoverlay{filename}
 % full-page image over the text
 % place after the last text on this page
-\newcommand{\dimageoverlay}[1]{%
+\newcommand{\dimageoverlay}[1]{{% <- second pair of brackets is intentional
 	\noindent\begin{picture}(0,375)
 	\IfFileExists{./img/pic/#1.png}{%
 		 \put(0,0){%
@@ -363,7 +355,7 @@
 		}
 	}
 	\end{picture}
-}
+}}
 
 % \dimagepage{filename}
 % full-page image on a separate page (\thispagestyle{empty}).
