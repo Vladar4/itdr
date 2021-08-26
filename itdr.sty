@@ -200,34 +200,6 @@
 	\tabularx{\linewidth}{#1}%
 }{\endtabularx\vspace{0.5ex}\noindent}
 
-%%%%%%%%%
-% BOXES %
-%%%%%%%%%
-
-\mdfsetup{
-	backgroundcolor=dColor2,
-	innerleftmargin=0.5em,
-	innerrightmargin=0.5em,
-	innertopmargin=0ex,
-	leftmargin=1em,
-	linewidth=0pt,
-	skipabove=0ex,
-	skipbelow=0ex,
-}
-
-\newenvironment{dbox}{%
-	\noindent\begin{minipage}{\linewidth}%
-	\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
-	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}%
-	\begin{mdframed}\vspace{0.5ex}% spacing before the text
-}{ % <- the space here is left intentionally
-	\vspace{-0.5ex}% spacing after the text
-	\end{mdframed}%
-	\vspace{-3pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
-	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}%
-	\end{minipage}%
-}
-
 %%%%%%%%%%%%%
 % TEMPLATES %
 %%%%%%%%%%%%%
@@ -308,21 +280,47 @@
 	\clearpage
 }
 
+%%%%%%%%%
+% BOXES %
+%%%%%%%%%
+
+\mdfsetup{
+	backgroundcolor=dColor2,
+	innerleftmargin=0.5em,
+	innerrightmargin=0.5em,
+	innertopmargin=0ex,
+	leftmargin=1em,
+	linewidth=0pt,
+	skipabove=0ex,
+	skipbelow=0ex,
+}
+
+\newenvironment{dbox}{%
+	\noindent\begin{minipage}{\linewidth}%
+		\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
+		\includegraphics[width=1.031\linewidth]{img/box_top.pdf}%
+		\begin{mdframed}\vspace{0.5ex}% spacing before the text
+		}{ % <- the space here is left intentionally
+			\vspace{-0.5ex}% spacing after the text
+		\end{mdframed}%
+		\vspace{-3pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
+		\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}%
+	\end{minipage}%
+}
+
 %%%%%%%%%%
 % IMAGES %
 %%%%%%%%%%
 
 % \placeholder{filename}{height}
-\newcommand{\placeholder}[3][0.9704\linewidth]{%
-	\noindent\begin{minipage}{\linewidth}%
+\newcommand{\placeholder}[3][\linewidth]{%
+	\noindent\begin{minipage}{#1}%
 		\begin{mdframed}[	align=center,
 							backgroundcolor=white,
 							linecolor=black,
 							linewidth=1pt,
-							frametitle={\strut#2\strut},
-							frametitlealignment=\centering,
 						]%
-			\rule[-0.5ex]{0pt}{#3-2.37\baselineskip}%
+			\parbox[t][#3-7.25pt][t]{#1}{\centering\vfill#2\vfill}%
 		\end{mdframed}%
 	\end{minipage}%
 }
@@ -344,26 +342,8 @@
 		\includegraphics[width=\textwidth]{./img/pic/#1.png}%
 	}{\placeholder{#1}{#2}}% else
 	\end{figure*}
-	\vspace{-15pt}% fix spacing at the top of the page
+	\vspace{-29.5pt}% fix spacing at the top of the page
 	\break
-}}
-
-% \dimageoverlay{filename}
-% full-page image over the text
-% place after the last text on this page
-\newcommand{\dimageoverlay}[1]{{% <- second pair of brackets is intentional
-	\noindent\begin{picture}(0,375)
-	\IfFileExists{./img/pic/#1.png}{%
-		 \put(0,0){%
-		 	\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}%
-	 	}
-	}
-	{% else
-		\put(0,0){%
-			\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{542pt}}%
-		}
-	}
-	\end{picture}
 }}
 
 % \dimagepage{filename}
@@ -379,8 +359,9 @@
 		}
 	}
 	{% else
-		\put(0,8){%
-			\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}%
+		\put(0,315){%
+		%	\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}%
+			\placeholder[\textwidth]{#1}{636pt}%
 		}
 	}
 	\end{picture}%
