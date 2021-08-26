@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2021/08/24]
+\ProvidesPackage{itdr}[2021/08/26]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -312,20 +312,29 @@
 % IMAGES %
 %%%%%%%%%%
 
-% \placeholder{}
-\newcommand{\placeholder}[2][0.9704\linewidth]{%
-	\noindent\fbox{\rule{#1}{0pt}\rule[-0.5ex]{0pt}{#2}}%
-	\vspace{-1ex}
+% \placeholder{filename}{height}
+\newcommand{\placeholder}[3][0.9704\linewidth]{%
+	\noindent\begin{minipage}{\linewidth}%
+		\begin{mdframed}[	align=center,
+							backgroundcolor=white,
+							linecolor=black,
+							linewidth=1pt,
+							frametitle={\strut#2\strut},
+							frametitlealignment=\centering,
+						]%
+			\rule[-0.5ex]{0pt}{#3-2.37\baselineskip}%
+		\end{mdframed}%
+	\end{minipage}%
 }
 
-% \dimage{filename}
+% \dimage{filename}{height}
 \newcommand{\dimage}[2]{%
 	\IfFileExists{./img/pic/#1.png}{%
 		\noindent\includegraphics[width=\linewidth]{img/pic/#1.png}%
-	}{\placeholder{#2}}% else
+	}{\placeholder{#1}{#2}}% else
 }
 
-% \dimagebottom{filename}
+% \dimagebottom{filename}{height}
 % full-page image at the bottom of the page
 % place BEFORE anything on the page
 \RequirePackage{stfloats}
@@ -333,7 +342,7 @@
 	\noindent\begin{figure*}[bp]
 	\centering\IfFileExists{./img/pic/#1.png}{%
 		\includegraphics[width=\textwidth]{./img/pic/#1.png}%
-	}{\placeholder{#2}}% else
+	}{\placeholder{#1}{#2}}% else
 	\end{figure*}
 	\vspace{-15pt}% fix spacing at the top of the page
 	\break
