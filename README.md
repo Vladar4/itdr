@@ -49,15 +49,24 @@ All PDFs are located in the "current" directory.
 | itdr_timesheet.pdf | time-tracking sheet |
 | itdr_timesheet_double\*.pdf | double time-tracking sheets for printing |
 
+Printing
+--------
+* Page setup:
+  * for `*_booklet.pdf`: Two-sided - short edge (flip)
+  * for `*_booklet_r.pdf`: Two-sided - long edge (standard)
+* Page scaling: `none`
+* Auto rotate and center: `yes`
+* Trim printed booklets to about 5.4in x 8in.
+
 Scripts
 -------
-| Script | Description |
-|---|---|
-| cleanup.sh | clean auxiliary files |
-| make_all.sh | update ALL PDFs in the repository |
-| make_booklet.sh [-r] [FILE]... | make specified booklets, "-r" key to rotate odd pages upside down |
-| make_booklets.sh | make all booklets (default, light, and minimal) including ones with upside down odd pages (with suffix "_r") |
-| make_charsheets.sh | make all charsheet versions |
+| Script                         | Description                                                                                                               |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| cleanup.sh                     | clean auxiliary files                                                                                                     |
+| make_all.sh                    | update ALL PDFs in the repository                                                                                         |
+| make_booklet.sh [-r] [FILE]... | make specified booklets, "-r" key to rotate odd pages upside down<br />(see in-script options and comments for more info) |
+| make_booklets.sh               | make all booklets (default, light, and minimal) including ones with upside down odd pages (with suffix "_r")              |
+| make_charsheets.sh             | make all charsheet versions                                                                                               |
 
 Dependencies
 ------------
