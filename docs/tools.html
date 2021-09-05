@@ -34,16 +34,17 @@
             <input type="button" id="btn_RandomCharacter" value="Generate" onclick="generateRandomStats()" />
             <p id="out_RandomStats" class="centered" style="display:none"></p>
             <table class="centered nowrap" id="swap_RandomCharacter" style="display:none" style="table-layout:fixed"><tr>
-                <td><label for="select_feature">Feature:&nbsp;</label><select name="feature" id="select_feature"></select></td>
-                <td><input type="button" id="btn_RandomCharacterKeep" value="Keep rolls" onclick="generateRandomCharacter(0)" /></td>
-                <td><label for="select_background">Background:&nbsp;</label><select name="background" id="select_background"></select></td>
-            </tr><tr><td colspan=3>
-                <input type="button" id="btn_RandomCharacterSD" value="STR &#8644; DEX" onclick="generateRandomCharacter(12)" />
-                <input type="button" id="btn_RandomCharacterSW" value="STR &#8644; WIL" onclick="generateRandomCharacter(13)" />
-                <input type="button" id="btn_RandomCharacterSE" value="STR &#8644; Money" onclick="generateRandomCharacter(14)" />
-                <input type="button" id="btn_RandomCharacterDW" value="DEX &#8644; WIL" onclick="generateRandomCharacter(23)" />
-                <input type="button" id="btn_RandomCharacterDM" value="DEX &#8644; Money" onclick="generateRandomCharacter(24)" />
-                <input type="button" id="btn_RandomCharacterWM" value="WIL &#8644; Money" onclick="generateRandomCharacter(34)" />
+                <td style="width:33%"><label for="select_feature">Feature:</label><br/><select name="feature" id="select_feature"></select></td>
+                <td style="width:33%"><br/><input type="button" id="btn_RandomCharacterKeep" value="Keep rolls" onclick="generateRandomCharacter(0)" /></td>
+                <td style="width:33%"><label for="select_background">Background:</label><br/><select name="background" id="select_background"></select></td>
+            </tr><tr>
+                <td><input type="button" id="btn_RandomCharacterSD" value="STR &#8644; DEX" onclick="generateRandomCharacter(12)" /></td>
+                <td><input type="button" id="btn_RandomCharacterSW" value="STR &#8644; WIL" onclick="generateRandomCharacter(13)" /></td>
+                <td><input type="button" id="btn_RandomCharacterSE" value="STR &#8644; Money" onclick="generateRandomCharacter(14)" /></td>
+            </tr><tr>
+                <td><input type="button" id="btn_RandomCharacterDW" value="DEX &#8644; WIL" onclick="generateRandomCharacter(23)" /></td>
+                <td><input type="button" id="btn_RandomCharacterDM" value="DEX &#8644; Money" onclick="generateRandomCharacter(24)" /></td>
+                <td><input type="button" id="btn_RandomCharacterWM" value="WIL &#8644; Money" onclick="generateRandomCharacter(34)" /></td>
             </td></tr><tr><td colspan=3>
                 <input type="checkbox" id="checkbox_equipment" name="equipment" checked /><label for="checkbox_equipment">Buy random equipment</label>
             </td></tr></table>
