@@ -37,7 +37,7 @@ article {
 article, footer, p, table {
     min-width: 20rem;
     max-width: 45rem;
-    width: 100%;
+    width: 98%;
     margin: 0 auto;
 }
 
@@ -101,6 +101,14 @@ table {
 
 td {
     padding: 5px;
+}
+
+td > input[type=button] {
+    width: 100%;
+}
+
+td > select {
+    width: 100%;
 }
 
 ul {
