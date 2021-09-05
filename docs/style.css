@@ -1,7 +1,15 @@
 /* REFERENCE
 --min-width: 20rem;
---max-width: 40rem;
+--max-width: 45rem;
 */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 body {
     padding-left: 0;
@@ -28,7 +36,7 @@ article {
 
 article, footer, p, table {
     min-width: 20rem;
-    max-width: 40rem;
+    max-width: 45rem;
     width: 100%;
     margin: 0 auto;
 }
@@ -41,6 +49,7 @@ h1, h2, h3, h4 {
 }
 
 hr {
+    color: #333;
     width: 100%;
 }
 
@@ -54,13 +63,6 @@ hr {
 
 .strong {
     font-weight: bold;
-}
-
-.menu {
-    text-align: center;
-    white-space: nowrap;
-    font-weight: bold;
-    table-layout: fixed;
 }
 
 a {
@@ -108,5 +110,100 @@ ul {
 
 li {
     margin-bottom: 0.5rem;
+}
+
+/* NAVIGATION */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.nav > .nav-button {
+    display: none;
+}
+
+.nav-links {
+    display: inline;
+    float: left;
+    font-size: 16px;
+}
+
+.nav-links > a {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}
+
+.nav-links > a:hover {
+    background: #ffecd0;
+}
+
+.nav-current {
+    background: #ffecd0;
+}
+
+.nav > #nav-check {
+    display: none;
+}
+
+@media (max-width:720px) {
+    .nav > .nav-button {
+        display: inline-block;
+        position: absolute;
+        left: 12px;
+        top: 8px;
+    }
+
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .nav > .nav-button > label > span {
+        display: block;
+        width: 24px;
+        height: 10px;
+        border-top: 2px solid #333;
+    }
+
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #f0dcc0;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 64px;
+        left: 0px;
+    }
+
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+
+    .nav-current {
+        border: 0px;
+        background: #ffecd0;
+    }
+
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
 }
 
