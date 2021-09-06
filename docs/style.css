@@ -1,6 +1,8 @@
 /* REFERENCE
 --min-width: 20rem;
 --max-width: 45rem;
+--color: #333;
+--background-color: #f0dcc0;
 */
 
 html {
@@ -32,12 +34,14 @@ main {
 article {
     display: flex;
     flex-direction: column;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 article, footer, p, table {
     min-width: 20rem;
     max-width: 45rem;
-    width: 98%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -133,6 +137,19 @@ li {
     font-weight: bold;
 }
 
+.nav-left img {
+    position: relative;
+    top: 4px;
+    height: 48px;
+}
+
+.nav-right img {
+    position: relative;
+    top: 2px;
+    height: 36px;
+    padding-left: 4px;
+}
+
 .nav > .nav-button {
     display: none;
 }
@@ -146,7 +163,6 @@ li {
 .nav-links > a {
     display: inline-block;
     padding: 10px 10px 10px 10px;
-    text-decoration: none;
 }
 
 .nav-links > a:hover {
@@ -154,7 +170,8 @@ li {
 }
 
 .nav-current {
-    background: #ffecd0;
+    text-decoration: underline #333 2px;
+    text-underline-offset: 1ex;
 }
 
 .nav > #nav-check {
@@ -202,7 +219,8 @@ li {
 
     .nav-current {
         border: 0px;
-        background: #ffecd0;
+        text-decoration: underline #333 2px;
+        text-underline-offset: 1ex;
     }
 
     .nav > #nav-check:not(:checked) ~ .nav-links {
