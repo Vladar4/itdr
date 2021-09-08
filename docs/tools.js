@@ -30,6 +30,26 @@ function d6() {
     return randomInt(1, 6);
 }
 
+function shuffle(array) {
+    for(var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
+    }
+}
+
+function shuffledPick(array, n, start=1) {
+    /* return n shuffled items from the array.
+     * ! starts at index 1 by default ! */
+    var shuffled = new Array(array.length-start);
+    for(i=start; i<array.length; i++) {
+        shuffled[i-start] = i;
+    }
+    shuffle(shuffled);
+    return shuffled.slice(-n);
+}
+
 function stat() {
     return d6() + d6() + d6();
 }
@@ -371,20 +391,10 @@ function generateRandomCharacter(swap) {
             sFeature += " 1";
             bMystic = true;
             sFeatureItems.push("mystic's focus", "mystic's tome");
-            var cantrips = [0, 0];
-            for(i=0; i<2; i++) {
-                do {
-                    cantrips[i] = randomInt(1, high(sCantripList));
-                }
-                while(cantrips[i] in cantrips.slice(0, i));
-            }
-            var spells = [0, 0, 0, 0, 0, 0];
-            for(i=0; i<6; i++) {
-                do {
-                    spells[i] = randomInt(1, high(sSpellList));
-                }
-                while(spells[i] in spells.slice(0, i));
-            }
+            var cantrips = shuffledPick(sCantripList, 2).sort(
+                (function(a, b) {return a - b;}));
+            var spells = shuffledPick(sSpellList, 6).sort(
+                (function(a, b) {return a - b;}));
             sTome = "Mystic's Tome Contents: Cantrips: " +
                 sCantripList[cantrips[0]] + ", " +
                 sCantripList[cantrips[1]]+ ";<br/>1st Circle: " +
