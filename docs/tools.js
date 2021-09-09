@@ -39,8 +39,8 @@ function shuffle(array) {
     }
 }
 
-function shuffledPick(array, n, start=1) {
-    /* return n shuffled items from the array.
+function shuffledIndex(array, n, start=1) {
+    /* return n shuffled item indexes from the array.
      * ! starts at index 1 by default ! */
     var shuffled = new Array(array.length-start);
     for(i=start; i<array.length; i++) {
@@ -391,9 +391,9 @@ function generateRandomCharacter(swap) {
             sFeature += " 1";
             bMystic = true;
             sFeatureItems.push("mystic's focus", "mystic's tome");
-            var cantrips = shuffledPick(sCantripList, 2).sort(
+            var cantrips = shuffledIndex(sCantripList, 2).sort(
                 (function(a, b) {return a - b;}));
-            var spells = shuffledPick(sSpellList, 6).sort(
+            var spells = shuffledIndex(sSpellList, 6).sort(
                 (function(a, b) {return a - b;}));
             sTome = "Mystic's Tome Contents: Cantrips: " +
                 sCantripList[cantrips[0]] + ", " +
@@ -407,23 +407,15 @@ function generateRandomCharacter(swap) {
             break;
 
         case 11: /* Skilled */
-            var skill1 = randomInt(1, high(sSkillList));
-            var skill2 = 0;
-            do {
-                skill2 = randomInt(1, high(sSkillList));
-            }
-            while(skill2 == skill1);
-            sFeature += " (" + sSkillList[skill1] + ", " + sSkillList[skill2] + ")";
+            var skills = shuffledIndex(sSkillList, 2).sort(
+                (function(a, b) {return a - b;}));
+            sFeature += " (" + sSkillList[skills[0]] + ", " + sSkillList[skills[1]] + ")";
             break;
 
         case 14: /* Thaumaturge */
-            let gift1 = randomInt(1, high(sGiftList));
-            var gift2 = 0;
-            do {
-                gift2 = randomInt(1, high(sGiftList));
-            }
-            while(gift2 == gift1);
-            sFeature += " 1 (d4 Gift die, " + sGiftList[gift1] + ", " + sGiftList[gift2] + ")";
+            var gifts = shuffledIndex(sGiftList, 2).sort(
+                (function(a, b) {return a - b;}));
+            sFeature += " 1 (d4 Gift die, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
             break;
 
         case 15: /* Warrior */
