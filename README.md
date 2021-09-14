@@ -11,10 +11,10 @@ In this book you will find:
 * Fast combat thanks to the absence of to-hit rolls
 * Basic domain rules for upper-level games
 * A magic system with easy-to-remember spell effects
-* Simple game mechanics allow the Referee to minimize session preparation time
-* A guide for converting monsters from any D&D system
-* A bunch of additional and alternative rules to mix and match for the perfect gaming experience
-* A couple of random inspiration tables to use for preparation or even during sessions
+* Simple game mechanics that allow to minimize session preparation time
+* A guide for converting monsters from other systems
+* A collection of additional and alternative rules to mix and match for the perfect gaming experience
+* Random inspiration tables to use for preparation or even during sessions
 * A small bestiary with different monsters and wild animals
 
 The ruleset is based on ["Into the Dungeon: Playtest Edition"](https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk) by [Chris McDowall](http://www.bastionland.com/).
