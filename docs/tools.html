@@ -43,6 +43,10 @@
         <p class="centered">
             <h2>Random Character</h2>
             <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <div style="display:none"> <!-- DEBUG TOOLS -->
+                <input type="button" id="btn_debugRNG_d6" value="Debug: RNG d6 (console)" style="width:100%" onclick="debugRNG(d6, 1, 6)" />
+                <input type="button" id="btn_debugRNG_stat" value="Debug: RNG stat (console)" style="width:100%" onclick="debugRNG(stat, 3, 18)" />
+            </div>
             <input type="button" id="btn_RandomCharacter" value="Generate" onclick="generateRandomStats()" />
             <p id="out_RandomStats" class="centered" style="display:none"></p>
             <table class="centered nowrap" id="swap_RandomCharacter" style="display:none" style="table-layout:fixed"><tr>
