@@ -22,7 +22,7 @@ function randomBool() {
 
 function randomInt(min, max) {
     min = Math.ceil(min);
-    max = Math.floor(max);
+    max = Math.floor(max + 1);
     return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -56,6 +56,23 @@ function stat() {
 
 function swapStats(idx1, idx2) {
     [iStats[idx1], iStats[idx2]] = [iStats[idx2], iStats[idx1]];
+}
+
+function debugRNG(func, min, max, n=100000) {
+    var rng = new Array(max-min+1);
+    rng.fill(0);
+    for(i=0; i<n; i++) {
+        let s = func();
+        rng[s-min] += 1;
+    }
+    var checksum = 0;
+    console.clear();
+    for(i=0; i<rng.length; i++) {
+        let percent = rng[i]*100/n;
+        checksum += percent;
+        console.log(i+min, ": ", rng[i], " (", percent, "%)");
+    }
+    console.log("CHECKSUM: ", checksum, "%");
 }
 
 function randomSimpleMelee() {
