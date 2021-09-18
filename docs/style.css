@@ -20,7 +20,7 @@ body {
     margin-right: 0;
     color: #333;
     background-color: #f0dcc0;
-    font: 1em serif;
+    font: 16px 'Cambria', 'Caladea', 'Liberation Serif', 'Georgia', serif;
     overflow-y: scroll;
 }
 
@@ -50,6 +50,27 @@ h1, h2, h3, h4 {
     color: #111;
     text-align: center;
     margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
 }
 
 hr {
@@ -164,7 +185,7 @@ li {
 .nav-links {
     display: inline;
     float: left;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .nav-links > a {
@@ -185,7 +206,19 @@ li {
     display: none;
 }
 
+/* MOBILE */
+
 @media (max-width:720px) {
+    h1 {
+        font-size: 7.5vw;
+    }
+
+    .subtitle {
+        font-size: 4vw;
+    }
+
+    /* NAVIGATION */
+
     .nav > .nav-button {
         display: inline-block;
         position: absolute;
