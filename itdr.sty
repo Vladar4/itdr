@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2021/08/26]
+\ProvidesPackage{itdr}[2021/09/20]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -396,3 +396,19 @@
 \newcommand*{\customref}[2]{\hyperref[{#1}]{#2}}
 % \fullref{label}
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}: \nameref*{#1}}}
+
+% \safenameref{label}{fallback}
+% if label is undefined, fallback is used
+\makeatletter
+\newcommand{\safenameref}[2]{%
+	\@ifundefined{r@#1}{#2}{\nameref{#1}}}
+\makeatother
+
+% \safepageref{before}{label}{after}
+% output: before ?? after
+% where ?? is a page number of the label
+% if label is undefined, nothing is shown
+\makeatletter
+\newcommand{\safepageref}[3]{%
+	\@ifundefined{r@#2}{}{#1\pageref{#2}#3}}
+\makeatother
