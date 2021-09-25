@@ -759,9 +759,30 @@ function generateRandomCharacter(swap) {
 
         function buyGearOrTool() {
             var item;
-            if(iGear > iTool) item = randomTool();
-            else if(iTool > iGear) item = randomGear();
-            else item = randomGearOrTool(sItemsList);
+            repeat:
+            do {
+                if(iGear > iTool) item = randomTool();
+                else if(iTool > iGear) item = randomGear();
+                else item = randomGearOrTool(sItemsList);
+                log(item);
+                /* check for repeats */
+                if(item.constructor === Array) { /* item is an Array */
+                    for(i = 0; i<item.length; i++) {
+                        log("Checking " + item[i]);
+                        if((item[i] != ropeItem) && (sItemsList.indexOf(item[i]) > -1)) {
+                            log("Repeat: " + item[i]);
+                            continue repeat;
+                        }
+                    }
+                } else { /* not an array */
+                    log("Checking " + item);
+                    if(sItemsList.indexOf(item) > -1) {
+                        log("Repeat: " + item);
+                        continue repeat;
+                    }
+                }
+                break; /* break out of the loop if no repeats are found */
+            } while(true);
 
             if(item.length > 1) iGear += 1;
             else iTool += 1;
