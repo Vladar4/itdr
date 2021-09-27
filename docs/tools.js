@@ -26,8 +26,8 @@ function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-function d6() {
-    return randomInt(1, 6);
+function d(x) {
+    return randomInt(1, x);
 }
 
 function shuffle(array) {
@@ -50,8 +50,12 @@ function shuffledIndex(array, n, start=1) {
     return shuffled.slice(-n);
 }
 
+/********************/
+/* RANDOM CHARACTER */
+/********************/
+
 function stat() {
-    return d6() + d6() + d6();
+    return d(6) + d(6) + d(6);
 }
 
 function swapStats(idx1, idx2) {
@@ -77,7 +81,7 @@ function debugRNG(func, min, max, n=100000) {
 
 function randomSimpleMelee() {
     var result = "NONE";
-    switch(randomInt(1, 4)) {
+    switch(d(4)) {
         case 1: result = "pitchfork"; break;
         case 2: result = "quarterstaff"; break;
         case 3: result = "sledgehammer"; break;
@@ -90,7 +94,7 @@ function randomSimpleMelee() {
 
 function randomMartialMelee() {
     var result = "NONE";
-    switch(randomInt(1, 8)) {
+    switch(d(8)) {
         case 1: result = "axe"; break;
         case 2: result = "dagger"; break;
         case 3: result = "halberd"; break;
@@ -108,7 +112,7 @@ function randomMartialMelee() {
 
 function randomSimpleRanged() {
     var result = "NONE";
-    switch(randomInt(1, 6)) {
+    switch(d(6)) {
         case 1: result = "boomerang"; break;
         case 2: result = "darts"; break;
         case 3: result = "hunting bow"; break;
@@ -123,7 +127,7 @@ function randomSimpleRanged() {
 
 function randomMartialRanged() {
     var result = "NONE";
-    switch(randomInt(1, 4)) {
+    switch(d(4)) {
         case 1: result = "crossbow"; break;
         case 2: result = "longbow"; break;
         case 3: result = "musket"; break;
@@ -138,7 +142,7 @@ let ropeItem = "10-ft rope";
 
 function randomGear() {
     var result = "NONE";
-    switch(randomInt(1, 12)) {
+    switch(d(12)) {
         case 1: return ropeItem;
         case 2: return "bottle";
         case 3: return "caltrops";
@@ -157,7 +161,7 @@ function randomGear() {
 
 function randomTool() {
     var result = "NONE";
-    switch(randomInt(1, 20)) {
+    switch(d(20)) {
         case 1: return "animal trap";
         case 2: return "collapsible pole";
         case 3: return "chisel and mallet";
@@ -184,7 +188,7 @@ function randomTool() {
 
 function randomPet() {
     var result = "NONE";
-    switch(randomInt(1, 4)) {
+    switch(d(4)) {
         case 1: return "cat (STR 6, WIL 8, 2hp, d4 Claws)";
         case 2: return "mutt (STR 8, WIL 6, 2hp, d4 Bite)";
         case 3: return "owl (STR 6, WIL 6, 2hp, d4 Claws)";
@@ -376,7 +380,7 @@ function generateRandomCharacter(swap) {
 
     /* FEATURE */
     var iFeature = parseInt(document.getElementById("select_feature").value);
-    if(iFeature == 0) iFeature = randomInt(1, high(sFeatureList));
+    if(iFeature == 0) iFeature = d(high(sFeatureList));
     var sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
     var bBrawler = false; /* for unarmoured defense */
@@ -452,15 +456,15 @@ function generateRandomCharacter(swap) {
         case 12: /* Swashbuckler */
         case 13: /* Tactician */
         case 15: /* Warrior */
-            hp = Math.max(d6(), d6());
+            hp = Math.max(d(6), d(6));
         default:
-            hp = d6();
+            hp = d(6);
             break;
     }
 
     /* BACKGROUND */
     var iBackground = parseInt(document.getElementById("select_background").value);
-    if(iBackground == 0) iBackground = randomInt(1, high(sBackgroundList));
+    if(iBackground == 0) iBackground = d(high(sBackgroundList));
     var sBackground = sBackgroundList[iBackground];
     log("Background " + iBackground + " (" + sBackground + ")");
     var bBackgroundMelee = false;
@@ -473,7 +477,7 @@ function generateRandomCharacter(swap) {
         case 1: /* Criminal */
             sBackgroundWeapons = "dagger (d6/d8)";
             bBackgroundMelee = true;
-            switch(randomInt(1, 6)) {
+            switch(d(6)) {
                 case 1: sBackgroundItems.push("blackjack (sap)"); break;
                 case 2: sBackgroundItems.push("crowbar"); break;
                 case 3: sBackgroundItems.push("grappling hook"); break;
@@ -494,7 +498,7 @@ function generateRandomCharacter(swap) {
         case 3: /* Labourer */
             bBackgroundMelee = true;
             bTwohandedMelee = true;
-            switch(randomInt(1, 6)) {
+            switch(d(6)) {
                 case 1:
                     sBackground = "Farmer";
                     sBackgroundWeapons = "pitchfork (d6, 2h)";
@@ -529,11 +533,11 @@ function generateRandomCharacter(swap) {
             }
             iRope = 20;
             sBackground += " (common folk treat you as one of them)";
-            iStats[3] += randomInt(1,4) + randomInt(1,4); /* extra 2d4s */
+            iStats[3] += d(4) + d(4); /* extra 2d4s */
             break;
 
         case 4: /* Minstrel */
-            switch(randomInt(1, 10)) { /* random instrument */
+            switch(d(10)) { /* random instrument */
                 case 1: sBackgroundItems.push(randomBool() ? "bagpipe" : "bladder pipe"); break;
                 case 2: sBackgroundItems.push(randomBool() ? "drum" : "tambourine"); break;
                 case 3: sBackgroundItems.push(randomBool() ? "flute" : "ocarina"); break;
@@ -543,7 +547,7 @@ function generateRandomCharacter(swap) {
                 case 7: sBackgroundItems.push("hurdy-gurdy"); break;
                 case 8: sBackgroundItems.push(randomBool() ? "lute" : "mandolin"); break;
                 case 9:
-                    switch(randomInt(1, 3)) {
+                    switch(d(3)) {
                         case 1: sBackgroundItems.push("viol"); break;
                         case 2: sBackgroundItems.push("fiddle"); break;
                         case 3: sBackgroundItems.push("rebec"); break;
@@ -572,7 +576,7 @@ function generateRandomCharacter(swap) {
         case 7: /* Scholar */
             var sStudyArea = "";
             var sStudySpecialization = "";
-            switch(randomInt(1, 12)) {
+            switch(d(12)) {
                 case 1:
                     sStudyArea = "History";
                     sStudySpecialization = "archaeology";
@@ -628,7 +632,7 @@ function generateRandomCharacter(swap) {
             break;
 
         case 8: /* Soldier */
-            switch(randomInt(1, 6)) {
+            switch(d(6)) {
                 case 1:
                     sBackground += " (archer)";
                     sBackgroundWeapons = "longbow (d6)";
@@ -683,16 +687,16 @@ function generateRandomCharacter(swap) {
             spareMoney = 1;
         }
         else if(iStats[3] < 7) {
-            spareMoney = randomInt(1, 2);
+            spareMoney = d(2);
         }
         else if(iStats[3] < 15) {
-            spareMoney = randomInt(1, 3);
+            spareMoney = d(3);
         }
         else if(iStats[3] < 23) {
-            spareMoney = randomInt(1, 4);
+            spareMoney = d(4);
         }
         else {
-            spareMoney = randomInt(1, 4) + randomInt(1, 4);
+            spareMoney = d(4) + d(4);
         }
         var money = iStats[3] - spareMoney;
 
@@ -759,9 +763,30 @@ function generateRandomCharacter(swap) {
 
         function buyGearOrTool() {
             var item;
-            if(iGear > iTool) item = randomTool();
-            else if(iTool > iGear) item = randomGear();
-            else item = randomGearOrTool(sItemsList);
+            repeat:
+            do {
+                if(iGear > iTool) item = randomTool();
+                else if(iTool > iGear) item = randomGear();
+                else item = randomGearOrTool(sItemsList);
+                log(item);
+                /* check for repeats */
+                if(item.constructor === Array) { /* item is an Array */
+                    for(i = 0; i<item.length; i++) {
+                        log("Checking " + item[i]);
+                        if((item[i] != ropeItem) && (sItemsList.indexOf(item[i]) > -1)) {
+                            log("Repeat: " + item[i]);
+                            continue repeat;
+                        }
+                    }
+                } else { /* not an array */
+                    log("Checking " + item);
+                    if(sItemsList.indexOf(item) > -1) {
+                        log("Repeat: " + item);
+                        continue repeat;
+                    }
+                }
+                break; /* break out of the loop if no repeats are found */
+            } while(true);
 
             if(item.length > 1) iGear += 1;
             else iTool += 1;
@@ -917,5 +942,248 @@ for(i=1; i<sBackgroundList.length; i++) {
     opt.text = sBackgroundList[i];
     opt.value = i;
     sback.appendChild(opt);
+}
+
+/**************/
+/* RANDOM NPC */
+/**************/
+
+function statNPC() {
+    return d(8) + d(8) + 1;
+}
+
+function randomNPCAge() {
+    switch(d(8)) {
+        case 1:
+        case 2: return "young";
+        case 3:
+        case 4:
+        case 5:
+        case 6: return "middle-aged";
+        case 7:
+        case 8: return "old";
+        default: return "NONE";
+    }
+}
+
+function randomNPCOccupation() {
+    switch(stat()) { /* 3d6 */
+        case 3: return "scholar";
+        case 4: return "healer";
+        case 5: return "artist";
+        case 6: return "entertainer";
+        case 7: return "criminal";
+        case 8: return (randomBool() ? "vagabond" : "beggar");
+        case 9: return (randomBool() ? "hunter" : "fisherman");
+        case 10: return (randomBool() ? "farmer" : "peasant");
+        case 11: return "craftsman";
+        case 12: return "servant";
+        case 13: return "merchant";
+        case 14: return (randomBool() ? "soldier" : "guard");
+        case 15: return "sailor";
+        case 16: return (randomBool() ? "scribe" : "clerk");
+        case 17: return "priest";
+        case 18: return "noble";
+        default: return "NONE";
+    }
+}
+
+function randomNPCPersonality() {
+    switch(d(20)) {
+        case 1:  return "arrogant";
+        case 2:  return "curious";
+        case 3:  return "dimwitted";
+        case 4:  return "dishonest";
+        case 5:  return "friendly";
+        case 6:  return "generous";
+        case 7:  return "greedy";
+        case 8:  return "gullible";
+        case 9:  return "honest";
+        case 10: return "hot-tempered";
+        case 11: return "humble";
+        case 12: return "inattentive";
+        case 13: return "joyful";
+        case 14: return "melancholic";
+        case 15: return "polite";
+        case 16: return "rude";
+        case 17: return "smart";
+        case 18: return "tranquil";
+        case 19: return "unfriendly";
+        case 20: return "wary";
+        default: return "NONE";
+    }
+}
+
+let sNPCDetail = [
+    "NONE", /* 0 */
+    "NONE", /* 1 */
+    "NONE", /* 2 */
+    "hunchback",
+    "one eye",
+    "scar",
+    "stutter",
+    "drunkard",
+    "grey hair",
+    "bald",
+    "short hair",
+    "bushy beard",
+    "thin",
+    "short",
+    "tall",
+    "overweight",
+    "moustache",
+    "long hair",
+    "sideburns",
+    "uncommon hair color*",
+    "accent",
+    "birthmark",
+    "lazy eye",
+    "prosthetic leg",
+    "prosthetic arm"]; /* 22 */
+
+function randomNPCDetail() {
+    return(d(8) + d(8) + d(8)); /* 3d8 */
+}
+
+function anyOf(a, b, arr) {
+    return ((arr.indexOf(a) > -1) && (arr.indexOf(b) > -1));
+}
+
+function compatibleDetails(d1, d2) {
+    if(d1 == d2) return false;
+    if(anyOf(d1, d2, [4, 22])) return false; /* one eye, lazy eye */
+    if(anyOf(d1, d2, [8, 9, 19])) return false;
+        /* grey hair, bald, uncommon hair color* */
+    if(anyOf(d1, d2, [9, 10, 17])) return false; /* bald, short hair, long hair */
+    if(anyOf(d1, d2, [12, 15])) return false; /* thin, overweight */
+    if(anyOf(d1, d2, [13, 14])) return false; /* short, tall */
+    return true;
+}
+
+function randomNPCDetailPrefix(n) {
+    switch(n) {
+        case 3: return "who is a ";     /* "hunchback" */
+        case 4: return "with ";         /* "one eye" */
+        case 5: return "with a ";       /* "scar" */
+        case 6: return "who has a ";    /* "stutter" */
+        case 7: return "who is a ";     /* "drunkard" */
+        case 8: return "with ";         /* "grey hair" */
+        case 9: return "who is ";       /* "bald" */
+        case 10: return "with ";        /* "short hair" */
+        case 11: return "with a ";      /* "bushy beard" */
+        case 12: return "who is ";      /* "thin" */
+        case 13: return "who is ";      /* "short" */
+        case 14: return "who is ";      /* "tall" */
+        case 15: return "who is ";      /* "overweight" */
+        case 16: return "with a ";      /* "moustache" */
+        case 17: return "with ";        /* "long hair" */
+        case 18: return "with ";        /* "sideburns" */
+        case 19: return "with an ";     /* "uncommon hair color*" */
+        case 20: return "with an ";     /* "accent" */
+        case 21: return "with a ";      /* "birthmark" */
+        case 22: return "with a ";       /* "lazy eye" */
+        case 23: return "with a ";      /* "prosthetic leg" */
+        case 24: return "with a ";      /* "prosthetic arm" */
+        default: return "NONE";
+    }
+}
+
+function randomNPCDetails() {
+    var d1, d2;
+    do { /* COMPATIBLE DETAILS */
+        d1 = randomNPCDetail();
+        do { /* REPEATS */
+            d2 = randomNPCDetail();
+            if(d1 == d2 == 4) return "who is blind"; /* "one eye" */
+            if(d1 == d2 == 5) return "covered in scars"; /* "scar" */
+            if(d1 == d2 == 12) return "who looks haggard"; /* "thin" */
+            if(d1 == d2 == 13) return "of a very short stature"; /* "short" */
+            if(d1 == d2 == 14) return "of extremely tall stature"; /* "tall" */
+            if(d1 == d2 == 15) return "who looks obese"; /* "overweight" */
+            if(d1 == d2 == 23) return "with two prosthetic legs"; /* "prosthetic leg" */
+            if(d1 == d2 == 24) return "with two prosthetic arms"; /* "prosthetic arm" */
+            if(((d1 == 23) && d2 == 24) || ((d1 == 24) && (d2 == 23))) return "with a prosthetic arm and leg";
+        } while(d1 == d2); /* END REPEATS */
+    } while(!compatibleDetails(d1, d2)) /* END COMPATIBLE DETAILS */
+
+    /* SPECIAL CASES */
+    if(d2 == 3)  {d2 = d1; d1 = 3;}  /* hunchback */
+    if(d2 == 7)  {d2 = d1; d1 = 7;}  /* drunkard */
+    if(d2 == 9)  {d2 = d1; d1 = 9;}  /* bald */
+    if(d2 == 12) {d2 = d1; d1 = 12;} /* thin */
+    if(d2 == 15) {d2 = d1; d1 = 15;} /* overweight */
+    if(d2 == 13) {d2 = d1; d1 = 13;} /* short */
+    if(d2 == 14) {d2 = d1; d1 = 14;} /* tall */
+    pre1 = randomNPCDetailPrefix(d1);
+    pre2 = randomNPCDetailPrefix(d2);
+    if(anyOf(d1, d2, [6, 20])) {pre1 = "with an "; pre2 = "and a ";}
+    if(
+            (pre1.startsWith("who has")) ||
+            (pre1.startsWith("with"))) {
+        if(pre2.search(" a ") > -1) pre2 = "and a ";
+        else if(pre2.search(" an ") > -1) pre2 = "and an ";
+        else pre2 = "and ";
+    }
+    if([6, 20].indexOf(pre2) < 0) { /* except for: statter, accent */
+        if((pre2 == "who has ") || (pre2 == "with ")) pre2 = "and has ";
+        if((pre2 == "who has a ") || (pre2 == "with a ")) pre2 = "and has a ";
+        if((pre2 == "who has an ") || (pre2 == "with an ")) pre2 = "and has an ";
+    }
+    if(     (pre1.startsWith("who has") && pre2.startsWith("who has")) ||
+            (pre1.startsWith("who is") && pre2.startsWith("who is")))
+            /*(pre1.startsWith("with") == pre2.startsWith("with")))*/ {
+        if(pre2.search(" a ") > -1) pre2 = "and a ";
+        else if(pre2.search(" an ") > -1) pre2 = "and an ";
+        else pre2 = "and ";
+    }
+
+    if(anyOf(d1, d2, [8, 10]))  return "with short grey hair";
+    if(anyOf(d1, d2, [8, 11]))  return "with grey hair and a bushy beard";
+    if(anyOf(d1, d2, [8, 16]))  return "with grey hair and a moustache";
+    if(anyOf(d1, d2, [8, 17]))  return "with long grey hair";
+    if(anyOf(d1, d2, [8, 18]))  return "with grey hair and sideburns";
+
+    if(anyOf(d1, d2, [9, 11]))  return "who is bald and has a bushy beard";
+    if(anyOf(d1, d2, [9, 16]))  return "who is bald and has a moustache";
+    if(anyOf(d1, d2, [9, 18]))  return "who is bald and has sideburns";
+
+    if(anyOf(d1, d2, [11, 16])) return "who has a beard with a moustache";
+    if(anyOf(d1, d2, [11, 18])) return "who has sideburns with a goatee";
+
+    if(anyOf(d1, d2, [10, 11])) return "with short hair and a bushy beard";
+    if(anyOf(d1, d2, [10, 16])) return "with short hair and a moustache";
+    if(anyOf(d1, d2, [10, 18])) return "with short hair and sideburns";
+    if(anyOf(d1, d2, [10, 19])) return "with short hair of uncommon color*";
+
+    if(anyOf(d1, d2, [16, 18])) return "who has sideburns with a moustache";
+
+    if(anyOf(d1, d2, [17, 11])) return "with long hair and a bushy beard";
+    if(anyOf(d1, d2, [17, 16])) return "with long hair and a moustache";
+    if(anyOf(d1, d2, [17, 18])) return "with long hair and sideburns";
+    if(anyOf(d1, d2, [17, 19])) return "with long hair of uncommon color*";
+
+    if(anyOf(d1, d2, [19, 11])) return "with uncommon hair color* and a bushy beard";
+    if(anyOf(d1, d2, [19, 16])) return "with uncommon hair color* and a moustache";
+    if(anyOf(d1, d2, [19, 18])) return "with uncommon hair color* and sideburns";
+    /* END SPECIAL CASES */
+    return pre1 + sNPCDetail[d1] + " " + pre2 + sNPCDetail[d2];
+}
+
+function generateRandomNPC() {
+    let out = document.getElementById('out_RandomNPC');
+    let stats = "STR " + statNPC() + ", DEX " + statNPC() + ", WIL " + statNPC();
+    let hp = d(6) + "hp";
+    var whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
+                randomNPCOccupation() + " " + randomNPCDetails() + ".";
+
+    if(whois.search("color*") > -1) {
+        whois += "<br /><i>* Usually blonde or red, depends on a population.</i>";
+    }
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, stats);
+    out.innerHTML = addItem(out.innerHTML, hp);
+    out.innerHTML = addItem(out.innerHTML, whois);
+    document.getElementById('out_RandomNPC').style.display="";
 }
 
