@@ -1034,7 +1034,7 @@ let sNPCDetail = [
     "moustache",
     "long hair",
     "sideburns",
-    "uncommon hair color*",
+    "rare hair colour*",
     "accent",
     "birthmark",
     "lazy eye",
@@ -1053,7 +1053,7 @@ function compatibleDetails(d1, d2) {
     if(d1 == d2) return false;
     if(anyOf(d1, d2, [4, 22])) return false; /* one eye, lazy eye */
     if(anyOf(d1, d2, [8, 9, 19])) return false;
-        /* grey hair, bald, uncommon hair color* */
+        /* grey hair, bald, rare hair colour* */
     if(anyOf(d1, d2, [9, 10, 17])) return false; /* bald, short hair, long hair */
     if(anyOf(d1, d2, [12, 15])) return false; /* thin, overweight */
     if(anyOf(d1, d2, [13, 14])) return false; /* short, tall */
@@ -1078,7 +1078,7 @@ function randomNPCDetailPrefix(n) {
         case 16: return "with a ";      /* "moustache" */
         case 17: return "with ";        /* "long hair" */
         case 18: return "with ";        /* "sideburns" */
-        case 19: return "with an ";     /* "uncommon hair color*" */
+        case 19: return "with a ";     /* "rare hair colour*" */
         case 20: return "with an ";     /* "accent" */
         case 21: return "with a ";      /* "birthmark" */
         case 22: return "with a ";       /* "lazy eye" */
@@ -1153,18 +1153,18 @@ function randomNPCDetails() {
     if(anyOf(d1, d2, [10, 11])) return "with short hair and a bushy beard";
     if(anyOf(d1, d2, [10, 16])) return "with short hair and a moustache";
     if(anyOf(d1, d2, [10, 18])) return "with short hair and sideburns";
-    if(anyOf(d1, d2, [10, 19])) return "with short hair of uncommon color*";
+    if(anyOf(d1, d2, [10, 19])) return "with short hair of a rare colour*";
 
     if(anyOf(d1, d2, [16, 18])) return "who has sideburns with a moustache";
 
     if(anyOf(d1, d2, [17, 11])) return "with long hair and a bushy beard";
     if(anyOf(d1, d2, [17, 16])) return "with long hair and a moustache";
     if(anyOf(d1, d2, [17, 18])) return "with long hair and sideburns";
-    if(anyOf(d1, d2, [17, 19])) return "with long hair of uncommon color*";
+    if(anyOf(d1, d2, [17, 19])) return "with long hair of a rare colour*";
 
-    if(anyOf(d1, d2, [19, 11])) return "with uncommon hair color* and a bushy beard";
-    if(anyOf(d1, d2, [19, 16])) return "with uncommon hair color* and a moustache";
-    if(anyOf(d1, d2, [19, 18])) return "with uncommon hair color* and sideburns";
+    if(anyOf(d1, d2, [19, 11])) return "with a rare hair colour* and a bushy beard";
+    if(anyOf(d1, d2, [19, 16])) return "with a rare hair colour* and a moustache";
+    if(anyOf(d1, d2, [19, 18])) return "with a rare hair colour* and sideburns";
     /* END SPECIAL CASES */
     return pre1 + sNPCDetail[d1] + " " + pre2 + sNPCDetail[d2];
 }
@@ -1176,7 +1176,7 @@ function generateRandomNPC() {
     var whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
                 randomNPCOccupation() + " " + randomNPCDetails() + ".";
 
-    if(whois.search("color*") > -1) {
+    if(whois.search("colour*") > -1) {
         whois += "<br /><i>* Usually blonde or red, depends on a population.</i>";
     }
 
