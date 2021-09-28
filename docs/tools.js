@@ -1191,9 +1191,202 @@ function generateRandomNPC() {
 /* RANDOM MONSTER */
 /******************/
 
+let sMonsterTable = [
+    ["NONE"],
+    ["NONE", /* Table 1 */
+    "artificial",
+    "colonial",
+    "divine",
+    "eldritch",
+    "ethereal",
+    "fiendish",
+    "magical",
+    "mutated",
+    "natural",
+    "primitive",
+    "relict",
+    "undead"], /* 12 */
+    ["NONE", /* Table 2 */
+    "bald",
+    "barbed",
+    "bloated",
+    "camouflaged",
+    "diseased",
+    "furry",
+    "gaunt",
+    "graceful",
+    "invisible",
+    "luminous",
+    "multicoloured",
+    "muscular",
+    "rotting",
+    "rusty",
+    "shadowy",
+    "shimmering",
+    "slimy",
+    "spotted",
+    "stinking",
+    "striped"], /* 20 */
+    ["NONE", /* Table 3 */
+    "acidic",
+    "acoustic",
+    "adhesive",
+    "armed",
+    "armoured",
+    "electric",
+    "fire",
+    "giant",
+    "hypnotic",
+    "ice",
+    "multiplying",
+    "parasite",
+    "poisonous",
+    "psychic",
+    "shelled",
+    "shooting",
+    "spewing",
+    "swallowing",
+    "tiny",
+    "vampiric"], /* 20 */
+    ["NONE", /* Table 4 */
+    "ambushing",
+    "cunning",
+    "devouring",
+    "elusive",
+    "friendly",
+    "gibbering",
+    "grappling",
+    "greedy",
+    "insane",
+    "intelligent",
+    "musical",
+    "nocturnal",
+    "peaceful",
+    "raging",
+    "scavenging",
+    "screaming",
+    "silent",
+    "skittish",
+    "swarming",
+    "whispering"], /* 20 */
+    ["NONE", /* Table 5 */
+    "aquatic",
+    "burrowing",
+    "climbing",
+    "crawling",
+    "fast",
+    "floating",
+    "flowing",
+    "flying",
+    "gliding",
+    "immobile",
+    "jumping",
+    "rolling",
+    "running",
+    "shambling",
+    "slithering",
+    "slow",
+    "soaring",
+    "subterranean",
+    "teleporting",
+    "walking"], /* 20 */
+    ["NONE", /* Table 6 */
+    "armless",
+    "bodiless",
+    "four-armed",
+    "four-legged",
+    "legless",
+    "limbless",
+    "metal",
+    "multi-armed",
+    "multi-legged",
+    "multi-limbed",
+    "one-armed",
+    "one-legged",
+    "stone",
+    "tailed",
+    "tentacled",
+    "two-armed",
+    "two-headed",
+    "two-legged",
+    "winged",
+    "wooden"], /* 20 */
+    ["NONE", /* Table 7 */
+    "blind",
+    "brainless",
+    "deaf",
+    "eyeless",
+    "headless",
+    "horned",
+    "multi-eyed",
+    "multi-headed",
+    "mute",
+    "one-eyed",
+    "two-headed",
+    ["with trunk", "with tentacles"]], /* 12 */
+    ["NONE", /* Table 8 */
+    "amorphous",
+    "amphibian",
+    "animated",
+    "bat",
+    "bird",
+    "bear-like",
+    "cat-like",
+    ["crustacean", "myriapod"],
+    "dog-like",
+    "fish",
+    "fungi",
+    "hoofed",
+    "humanoid",
+    ["insect", "arachnid"],
+    ["mollusc", "worm"],
+    "plant",
+    ["reptile", "serpent"],
+    ["rodent", "rabbit", "hedgehog", "mole", "shrew"],
+    "chimeric",
+    "shape-shifting"]] /* 20 */
+
 function generateRandomMonster() {
     let out = document.getElementById('out_RandomMonster');
-    let monster = "TODO";
+    var monster = "";
+    var tables = [];
+    for(i=0; i<d(4); i++) {
+        var newtab;
+        do {
+            newtab = d(8);
+        } while(tables.indexOf(newtab) > -1);
+        tables.push(newtab);
+    } /* END FOR LOOP */
+    if(tables.indexOf(8) < 0) tables.push(8); /* Table 8 is always present */
+    if((tables.length < 2) && (tables[0] == 8)); /* Roll once more if you got only Table 8 */
+    tables.sort();
+    for(i=0; i<tables.length; i++) {
+        var tab = sMonsterTable[tables[i]];
+        let idx = d(tab.length-1);
+        let entry = tab[idx];
+        var add = "NONE";
+        if(entry.constructor === Array) add = entry[d(entry.length) - 1];
+        else add = entry;
+        monster += add + " ";
+        if((tables[i] == 8) && (idx > 18)) { /* chimeric or shape-shifting */
+            let a = d(18);
+            var b;
+            do {
+                b = d(18);
+            } while(b == a);
+            entryA = sMonsterTable[8][a];
+            entryB = sMonsterTable[8][b];
+            var addA = "NONE";
+            var addB = "NONE";
+            if(entryA.constructor === Array) addA = entryA[d(entryA.length) - 1];
+            else addA = entryA;
+            if(entryB.constructor === Array) addB = entryB[d(entryB.length) - 1];
+            else addB = entryB;
+            monster += "(" + addA + " / " + addB + ")";
+        }
+    }
+    monster = monster.trim();
+    monster = monster.charAt(0).toUpperCase() + monster.slice(1) + ".";
 
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, monster);
@@ -1262,7 +1455,7 @@ let sWindForce = [
     "breeze",
     "average wind",
     "strong wind",
-    "gale"];
+    "gale"]; /* 5 */
 
 function randomWeatherWindDirection(force) {
     var input;
