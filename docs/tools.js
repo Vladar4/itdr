@@ -1187,3 +1187,723 @@ function generateRandomNPC() {
     document.getElementById('out_RandomNPC').style.display="";
 }
 
+/******************/
+/* RANDOM MONSTER */
+/******************/
+
+let sMonsterTable = [
+    ["NONE"],
+    ["NONE", /* Table 1 */
+    "artificial",
+    "colonial",
+    "divine",
+    "eldritch",
+    "ethereal",
+    "fiendish",
+    "magical",
+    "mutated",
+    "natural",
+    "primitive",
+    "relict",
+    "undead"], /* 12 */
+    ["NONE", /* Table 2 */
+    "bald",
+    "barbed",
+    "bloated",
+    "camouflaged",
+    "diseased",
+    "furry",
+    "gaunt",
+    "graceful",
+    "invisible",
+    "luminous",
+    "multicoloured",
+    "muscular",
+    "rotting",
+    "rusty",
+    "shadowy",
+    "shimmering",
+    "slimy",
+    "spotted",
+    "stinking",
+    "striped"], /* 20 */
+    ["NONE", /* Table 3 */
+    "acidic",
+    "acoustic",
+    "adhesive",
+    "armed",
+    "armoured",
+    "electric",
+    "fire",
+    "giant",
+    "hypnotic",
+    "ice",
+    "multiplying",
+    "parasite",
+    "poisonous",
+    "psychic",
+    "shelled",
+    "shooting",
+    "spewing",
+    "swallowing",
+    "tiny",
+    "vampiric"], /* 20 */
+    ["NONE", /* Table 4 */
+    "ambushing",
+    "cunning",
+    "devouring",
+    "elusive",
+    "friendly",
+    "gibbering",
+    "grappling",
+    "greedy",
+    "insane",
+    "intelligent",
+    "musical",
+    "nocturnal",
+    "peaceful",
+    "raging",
+    "scavenging",
+    "screaming",
+    "silent",
+    "skittish",
+    "swarming",
+    "whispering"], /* 20 */
+    ["NONE", /* Table 5 */
+    "aquatic",
+    "burrowing",
+    "climbing",
+    "crawling",
+    "fast",
+    "floating",
+    "flowing",
+    "flying",
+    "gliding",
+    "immobile",
+    "jumping",
+    "rolling",
+    "running",
+    "shambling",
+    "slithering",
+    "slow",
+    "soaring",
+    "subterranean",
+    "teleporting",
+    "walking"], /* 20 */
+    ["NONE", /* Table 6 */
+    "armless",
+    "bodiless",
+    "four-armed",
+    "four-legged",
+    "legless",
+    "limbless",
+    "metal",
+    "multi-armed",
+    "multi-legged",
+    "multi-limbed",
+    "one-armed",
+    "one-legged",
+    "stone",
+    "tailed",
+    "tentacled",
+    "two-armed",
+    "two-headed",
+    "two-legged",
+    "winged",
+    "wooden"], /* 20 */
+    ["NONE", /* Table 7 */
+    "blind",
+    "brainless",
+    "deaf",
+    "eyeless",
+    "headless",
+    "horned",
+    "multi-eyed",
+    "multi-headed",
+    "mute",
+    "one-eyed",
+    "two-headed",
+    ["with trunk", "with tentacles"]], /* 12 */
+    ["NONE", /* Table 8 */
+    "amorphous",
+    "amphibian",
+    "animated",
+    "bat",
+    "bird",
+    "bear-like",
+    "cat-like",
+    ["crustacean", "myriapod"],
+    "dog-like",
+    "fish",
+    "fungi",
+    "hoofed",
+    "humanoid",
+    ["insect", "arachnid"],
+    ["mollusc", "worm"],
+    "plant",
+    ["reptile", "serpent"],
+    ["rodent", "rabbit", "hedgehog", "mole", "shrew"],
+    "chimeric",
+    "shape-shifting"]] /* 20 */
+
+function generateRandomMonster() {
+    let out = document.getElementById('out_RandomMonster');
+    var monster = "";
+    var tables = [];
+    for(i=0; i<d(4); i++) {
+        var newtab;
+        do {
+            newtab = d(8);
+        } while(tables.indexOf(newtab) > -1);
+        tables.push(newtab);
+    } /* END FOR LOOP */
+    if(tables.indexOf(8) < 0) tables.push(8); /* Table 8 is always present */
+    if((tables.length < 2) && (tables[0] == 8)); /* Roll once more if you got only Table 8 */
+    tables.sort();
+    for(i=0; i<tables.length; i++) {
+        var tab = sMonsterTable[tables[i]];
+        let idx = d(tab.length-1);
+        let entry = tab[idx];
+        var add = "NONE";
+        if(entry.constructor === Array) add = entry[d(entry.length) - 1];
+        else add = entry;
+        monster += add + " ";
+        if((tables[i] == 8) && (idx > 18)) { /* chimeric or shape-shifting */
+            let a = d(18);
+            var b;
+            do {
+                b = d(18);
+            } while(b == a);
+            entryA = sMonsterTable[8][a];
+            entryB = sMonsterTable[8][b];
+            var addA = "NONE";
+            var addB = "NONE";
+            if(entryA.constructor === Array) addA = entryA[d(entryA.length) - 1];
+            else addA = entryA;
+            if(entryB.constructor === Array) addB = entryB[d(entryB.length) - 1];
+            else addB = entryB;
+            monster += "(" + addA + " / " + addB + ")";
+        }
+    }
+    monster = monster.trim();
+    monster = monster.charAt(0).toUpperCase() + monster.slice(1) + ".";
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, monster);
+    document.getElementById('out_RandomMonster').style.display="";
+}
+
+/*********************/
+/* RANDOM MAGIC ITEM */
+/*********************/
+
+/* Appearance data:
+ * 0 - colour
+ * 1 - attribute
+ * 2 - attribute + material
+ * 3 - attribute + colour
+ * 4 - attribute + colour + fabric
+ */
+sMagicItem = [
+    ["NONE"],
+    [   /* 1. CONTAINER */
+        [-1, "NONE"],
+        [4, "backpack", "haversack"],
+        [2, "bottle"],
+        [2, "box", "casket"],
+        [2, "decanter"],
+        [2, "drinking horn"],
+        [2, "flask", "canteen"],
+        [2, "jug"],
+        [4, "pouch"],
+        [4, "quiver"],
+        [4, "sack", "bag"],
+        [2, "vial"],
+        [0, "waterskin"]
+    ],
+    [   /* 2. CONSUMABLE */
+        [-1, "NONE"],
+        [0, "bean", "seed"],
+        [0, "candle", "torch"],
+        [0, "chalk"],
+        [0, "dust", "powder"],
+        [0, "food"],
+        [0, "herb"],
+        [0, "ink"],
+        [0, "oil"],
+        [0, "ointment"],
+        [0, "potion"],
+    ],
+    [   /* 3. GARMENT */
+        [-1, "NONE"],
+        [4, "belt"],
+        [3, "boots"],
+        [4, "cloak"],
+        [4, "coat"],
+        [4, "doublet"],
+        [4, "dress"],
+        [4, "gloves"],
+        [4, "hat"],
+        [4, "hood"],
+        [4, "hose"],
+        [4, "jerkin"],
+        [4, "mantle"],
+        [4, "robe"],
+        [3, "sandals"],
+        [4, "shirt"],
+        [3, "shoes"],
+        [4, "skirt"],
+        [4, "trousers"],
+        [4, "tunic"],
+        [4, "vestments"]
+    ],
+    [   /* 4. JEWELLERY */
+        [-1, "NONE"],
+        [2, "anklet"],
+        [2, "belt buckle"],
+        [2, "bracelet"],
+        [2, "brooch"],
+        [2, "chain"],
+        [2, "cloak pin"],
+        [2, "crown", "coronet"],
+        [2, "diadem", "tiara"],
+        [2, "earring"],
+        [2, "eyepatch"],
+        [2, "gorget"],
+        [2, "hairpin"],
+        [2, "headband"],
+        [2, "locket"],
+        [2, "mask"],
+        [2, "medallion"],
+        [2, "necklace"],
+        [2, "pectoral"],
+        [2, "pendant"],
+        [2, "ring"]
+    ],
+    [   /* 5. MISC. */
+        [-1, "NONE"],
+        [2, "amulet", "talisman"],
+        [3, "book"],
+        [2, "bowl", "bucket"],
+        [2, "brazier"],
+        [3, "broom"],
+        [3, "brush"],
+        [2, "candelabrum"],
+        [3, "cards", "dice"],
+        [4, "carpet"],
+        [2, "censer"],
+        [2, "coin"],
+        [2, "comb"],
+        [2, "corkscrew"],
+        [2, "cup", "chalice", "goblet"],
+        [2, "fan"],
+        [2, "figurine", "idol"],
+        [3, "gem", "pearl"],
+        [2, "hammer"],
+        [4, "handkerchief"],
+        [2, "hook"],
+        [2, "horseshoe"],
+        [2, "lantern"],
+        [2, "lockpick"],
+        [2, "manacles"],
+        [2, "mirror"],
+        [3, "monocle", "lens"],
+        [2, "needle"],
+        [3, "orb", "crystal"],
+        [2, "pickaxe"],
+        [2, "pipe"],
+        [2, "plate", "tray"],
+        [2, "prosthesis"],
+        [2, "quill"],
+        [2, "rod", "sceptre"],
+        [4, "rope"],
+        [4, "saddle"],
+        [2, "sand timer"],
+        [2, "scissors"],
+        [2, "shovel"],
+        [2, "sickle"],
+        [2, "skull"],
+        [2, "spectacles"],
+        [2, "spike"],
+        [2, "spyglass"],
+        [2, "staff"],
+        [4, "tablecloth"],
+        [2, "tablet"],
+        [2, "umbrella"],
+        [2, "wand"],
+        [2, "whistle"]
+    ],
+    [   /* 6. MUSICAL INSTRUMENT */
+        [-1, "NONE"],
+        [3, "bagpipe"],
+        [2, "bell"],
+        [3, "bladder pipe"],
+        [2, "crumhorn"],
+        [3, "drum"],
+        [2, "dulcimer"],
+        [2, "fiddle"],
+        [2, "flute"],
+        [2, "harp"],
+        [2, "hurdy-gurdy"],
+        [2, "jaw harp"],
+        [2, "lute"],
+        [2, "lyre"],
+        [2, "mandolin"],
+        [2, "ocarina"],
+        [2, "rebec"],
+        [2, "shawm"],
+        [3, "tambourine"],
+        [2, "viol"],
+        [2, "zither"]
+    ],
+    [   /* 7. LIGHT ARMOUR */
+        [-1, "NONE"],
+        [3, "bracers"],
+        [3, "gambeson"],
+        [3, "gloves"],
+        [3, "greaves"],
+        [2, "helmet"],
+        [3, "leather armour"]
+    ],
+    [   /* 8. FULL ARMOUR */
+        [-1, "NONE"],
+        [3, "bracers"],
+        [3, "cuirass"],
+        [3, "gauntlets"],
+        [3, "greaves"],
+        [2, "helmet"],
+        [3, "mail armour"],
+        [3, "plate armour"],
+        [3, "sabatons"],
+        [3, "scale armour"],
+        [3, "segmented armour"]
+    ],
+    [   /* 9. SHIELD */
+        [-1, "NONE"],
+        [2, "buckler"],
+        [2, "heater shield"],
+        [2, "kite shield"],
+        [2, "pavise"],
+        [2, "round shield"],
+        [2, "square shield"]
+    ],
+    [   /* 10. WEAPON & AMMO */
+        [-1, "NONE"],
+        [2, "arrow"],
+        [2, "axe"],
+        [2, "bolt"],
+        [2, "boomerang"],
+        [2, "bullet"],
+        [2, "crossbow"],
+        [2, "dagger"],
+        [2, "dart"],
+        [2, "halberd"],
+        [2, "hunting bow"],
+        [2, "lance"],
+        [2, "longbow"],
+        [2, "pistol"],
+        [2, "mace"],
+        [2, "musket"],
+        [4, "sling"],
+        [2, "spear"],
+        [2, "sword"],
+        [2, "throwing star"],
+        [2, "war hammer"]
+    ]];
+
+sItemAttribute = [
+    "NONE",
+    "ancient",
+    "bejewelled",
+    "colourful",
+    "crude",
+    "dingy",
+    "exotic",
+    "grotesque",
+    "heavy",
+    "intricate",
+    ["light", "thin"],
+    "menacing",
+    "ornate",
+    "otherworldly",
+    "patterned",
+    "peculiar",
+    "refined",
+    "rugged",
+    "shiny",
+    "sleek",
+    "sophisticated"]; /* 20 */
+
+sItemColour = [
+    "NONE",
+    "snow white",
+    "ash grey",
+    "jet black",
+    "crimson red",
+    "chestnut brown",
+    "pumpkin orange",
+    "lemon yellow",
+    "malachite green",
+    "sky blue",
+    "ultramarine blue",
+    "lavender violet",
+    "orchid magenta"]; /* 12 */
+
+sItemFabric = [
+    "NONE",
+    "cotton",
+    "felt",
+    "fur",
+    "hair",
+    "leather",
+    "linen",
+    "silk",
+    "wool"]; /* 8 */
+
+sItemMaterial = [
+    "NONE",
+    "amber",
+    ["bone", "chitin"],
+    "brass",
+    "bronze",
+    "ceramic",
+    "copper",
+    "coral",
+    "crystal",
+    "glass",
+    "gold",
+    "iron",
+    ["ivory", "horn"],
+    "jade",
+    "jet",
+    "obsidian",
+    "pewter",
+    "silver",
+    "steel",
+    "stone",
+    "wooden"]; /* 20 */
+
+sItemPeculiarity = [
+    "NONE",
+    "that changes colour when no one is looking",
+    "that is cold to the touch",
+    "that emits barely audible buzzing",
+    "that faintly glows in the dark",
+    "that is heavier than it looks",
+    "that is lighter than it looks",
+    ["that is oily to the touch", "that is slimy to the touch"],
+    "that is semi-transparent",
+    "that smells weirdly but not unpleasantly",
+    "that sometimes appears to be slightly moving",
+    "that vibrates just a little bit from time to time",
+    "that is warm to the touch"]; /* 12 */
+
+function randomMagicItemType() {
+    let roll = d(100);
+    if(roll <= 10) return 1; /* container */
+    else if(roll <= 30) return 2; /* consumable */
+    else if(roll <= 40) return 3; /* garment */
+    else if(roll <= 50) return 4; /* jewellery */
+    else if(roll <= 70) return 5; /* misc. */
+    else if(roll <= 73) return 6; /* musical instrument */
+    else if(roll <= 80) return 7; /* light armour */
+    else if(roll <= 83) return 8; /* full armour */
+    else if(roll <= 90) return 9; /* shield */
+    else return 10; /* weapon & ammo */
+}
+
+function randomArrayItem(table, start = 1) {
+    let item = table[randomInt(start, table.length - 1)];
+    if(item.constructor === Array) {
+        return randomArrayItem(item, 0);
+    }
+    return item;
+}
+
+function generateRandomMagicItem() {
+    let out = document.getElementById('out_RandomMagicItem');
+    let itemType = randomMagicItemType();
+    let table = sMagicItem[itemType];
+    let itemIndex = d(table.length - 1);
+    let itemLine = table[itemIndex];
+    let itemAppearanceCode = itemLine[0];
+    var item = itemLine[1];
+    if(itemLine.length > 2) item = randomArrayItem(itemLine);
+    var itemAppearance = "";
+    var itemColour = "";
+    switch(itemAppearanceCode) {
+        case 0: /* colour */
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        case 1: /* attribute */
+            itemAppearance = randomArrayItem(sItemAttribute) + " ";
+            break;
+        case 2: /* attribute + material */
+            itemAppearance = randomArrayItem(sItemAttribute) + " " +
+                randomArrayItem(sItemMaterial) + " ";
+            break;
+        case 3: /* attribute + colour */
+            itemAppearance = randomArrayItem(sItemAttribute) + " ";
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        case 4: /* attribute + colour + fabric */
+            itemAppearance = randomArrayItem(sItemAttribute) + " " +
+                 randomArrayItem(sItemFabric) + " ";
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        default: itemAppearance = "NONE "; itemColour = " of NONE colour";
+    }
+
+    var itemPeculiarity = "";
+    if(d(6) == 1) {
+        itemPeculiarity = " " + randomArrayItem(sItemPeculiarity);
+    }
+
+    itemString = itemAppearance + item + itemColour + itemPeculiarity + ".";
+    itemString = itemString.charAt(0).toUpperCase() + itemString.slice(1);
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, itemString);
+    document.getElementById('out_RandomMagicItem').style.display="";
+}
+
+/******************/
+/* RANDOM WEATHER */
+/******************/
+
+function randomWeatherTemperature() {
+    switch(d(6)) {
+        case 1: return "cold, ";
+        case 6: return "warm, ";
+        default: return "";
+    }
+}
+
+function randomWeatherSky(type) {
+    var input;
+    switch(type) {
+        case 0: input = d(20); break; /* NORMAL */
+        case 1: input = d(12); break; /* DRY */
+        case 2: input = d(12) + 8; break; /* RAINY */
+        default: return "NONE";
+    }
+    switch(input) {
+        case 1:
+        case 2:
+        case 3:
+        case 4: return "clear";
+        case 5:
+        case 6:
+        case 7:
+        case 8: return "cloudy";
+        case 9:
+        case 10:
+        case 11:
+        case 12: return "overcast";
+        case 13:
+        case 14: return "drizzle or fog";
+        case 15:
+        case 16:
+        case 17:
+        case 18: return "rain or snow";
+        case 19:
+        case 20: return "storm or snowstorm";
+    }
+}
+
+let sWindForce = [
+    "calm",
+    "breeze",
+    "average wind",
+    "strong wind",
+    "gale"]; /* 5 */
+
+function randomWeatherWindDirection(force) {
+    var input;
+    if(document.getElementById("radio_wind_default").checked) input = d(8);
+    else if(document.getElementById("radio_wind_follow").checked) input = Math.max(d(8), d(8));
+    else if(document.getElementById("radio_wind_against").checked) input = Math.min(d(8), d(8));
+    else return "NONE";
+
+    var direction, mul = "NONE";
+    switch(input) {
+        case 1:
+        case 2:
+        case 3:
+            direction = "adverse";
+            switch(force) {
+                case 1: mul = "×⅓"; break;
+                case 2: mul = "×½"; break;
+                case 3: mul = "×⅔"; break;
+                case 4: mul = "×0"; break;
+            }
+            break;
+        case 4:
+        case 5:
+            direction = "side";
+            switch(force) {
+                case 1: mul = "×⅓"; break;
+                case 2: mul = "×½"; break;
+                case 3: mul = "×⅔"; break;
+                case 4: mul = "×0"; break;
+            }
+            break;
+        case 6:
+        case 7:
+        case 8:
+            direction = "favourable";
+            switch(force) {
+                case 1: mul = "×½"; break;
+                case 2: mul = "×1"; break;
+                case 3: mul = "×1½"; break;
+                case 4: mul = "×2"; break;
+            }
+            break;
+        default:
+            direction = "NONE";
+            mul = "NONE";
+    }
+    return direction + " " + sWindForce[force] + " (" + mul + " sailing multiplier)";
+}
+
+function randomWeatherWind(type) {
+    var input;
+    switch(type) {
+        case 0:
+        case 1: input = d(20); break; /* NORMAL or DRY */
+        case 2: input = d(12) + 8; break; /* RAINY */
+    }
+    switch(input) {
+        case 1:
+        case 2: return sWindForce[0];
+        case 3:
+        case 4:
+        case 5:
+        case 6: return randomWeatherWindDirection(1);
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14: return randomWeatherWindDirection(2);
+        case 15:
+        case 16:
+        case 17:
+        case 18: return randomWeatherWindDirection(3);
+        case 19:
+        case 20: return randomWeatherWindDirection(4);
+    }
+}
+
+function generateRandomWeather(type) {
+    let out = document.getElementById('out_RandomWeather');
+    var weather = randomWeatherTemperature() + randomWeatherSky(type) +
+        ", " + randomWeatherWind(type);
+    weather = weather.charAt(0).toUpperCase() + weather.slice(1) + ".";
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, weather);
+    document.getElementById('out_RandomWeather').style.display="";
+}
+

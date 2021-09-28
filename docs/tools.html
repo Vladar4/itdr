@@ -49,7 +49,7 @@
             </div>
             <input type="button" id="btn_RandomCharacter" value="Generate" onclick="generateRandomStats()" />
             <p id="out_RandomStats" class="centered" style="display:none"></p>
-            <table class="centered nowrap" id="swap_RandomCharacter" style="display:none" style="table-layout:fixed"><tr>
+            <table class="centered nowrap" id="swap_RandomCharacter" style="display:none; table-layout:fixed"><tr>
                 <td style="width:33%"><label for="select_feature">Feature:</label><br/><select name="feature" id="select_feature"></select></td>
                 <td style="width:33%"><br/><input type="button" id="btn_RandomCharacterKeep" value="Keep rolls" onclick="generateRandomCharacter(0)" /></td>
                 <td style="width:33%"><label for="select_background">Background:</label><br/><select name="background" id="select_background"></select></td>
@@ -74,6 +74,35 @@
             <p id="out_RandomNPC" style="display:none"></p>
         </p>
 
+        <p class="centered">
+            <h2>Random Monster</h2>
+            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <input type="button" id="btn_RandomMonster" value="Generate" onclick="generateRandomMonster()" />
+            <p id="out_RandomMonster" style="display:none"></p>
+        </p>
+
+        <p class="centered">
+            <h2>Random Magic Item</h2>
+            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <input type="button" id="btn_RandomMagicItem" value="Generate" onclick="generateRandomMagicItem()" />
+            <p id="out_RandomMagicItem" style="display:none"></p>
+        </p>
+
+        <p class="centered">
+            <h2>Random Weather</h2>
+            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <table class="centered nowrap" id="table_randomWeather" style="table-layout:fixed; border-spacing:0px"><tr>
+                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeather" value="Normal Climate" onclick="generateRandomWeather(0)" /></td>
+                <td style="width:33%"><input type="button" id="btn_RandomWeatherDry" value="Dry Climate" onclick="generateRandomWeather(1)" /></td>
+                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Rainy Climate" onclick="generateRandomWeather(2)" /></td>
+            </tr></table>
+            <div>
+                <input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked="checked"/><label for="radio_wind">default</label>
+                <input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">following prevailing winds</label>
+                <input type="radio" id="radio_wind_against" name="radio_wind" value="against"/><label for="radio_wind">against prevailing winds</label>
+            </div>
+            <p id="out_RandomWeather" style="display:none"></p>
+        </p>
 
         <script src="tools.js"></script>
 
