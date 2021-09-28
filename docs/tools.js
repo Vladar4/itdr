@@ -1397,12 +1397,372 @@ function generateRandomMonster() {
 /* RANDOM MAGIC ITEM */
 /*********************/
 
+/* Appearance data:
+ * 0 - colour
+ * 1 - attribute
+ * 2 - attribute + material
+ * 3 - attribute + colour
+ * 4 - attribute + colour + fabric
+ */
+sMagicItem = [
+    ["NONE"],
+    [   /* 1. CONTAINER */
+        [-1, "NONE"],
+        [4, "backpack", "haversack"],
+        [2, "bottle"],
+        [2, "box", "casket"],
+        [2, "decanter"],
+        [2, "drinking horn"],
+        [2, "flask", "canteen"],
+        [2, "jug"],
+        [4, "pouch"],
+        [4, "quiver"],
+        [4, "sack", "bag"],
+        [2, "vial"],
+        [0, "waterskin"]
+    ],
+    [   /* 2. CONSUMABLE */
+        [-1, "NONE"],
+        [0, "bean", "seed"],
+        [0, "candle", "torch"],
+        [0, "chalk"],
+        [0, "dust", "powder"],
+        [0, "food"],
+        [0, "herb"],
+        [0, "ink"],
+        [0, "oil"],
+        [0, "ointment"],
+        [0, "potion"],
+    ],
+    [   /* 3. GARMENT */
+        [-1, "NONE"],
+        [4, "belt"],
+        [3, "boots"],
+        [4, "cloak"],
+        [4, "coat"],
+        [4, "doublet"],
+        [4, "dress"],
+        [4, "gloves"],
+        [4, "hat"],
+        [4, "hood"],
+        [4, "hose"],
+        [4, "jerkin"],
+        [4, "mantle"],
+        [4, "robe"],
+        [3, "sandals"],
+        [4, "shirt"],
+        [3, "shoes"],
+        [4, "skirt"],
+        [4, "trousers"],
+        [4, "tunic"],
+        [4, "vestments"]
+    ],
+    [   /* 4. JEWELLERY */
+        [-1, "NONE"],
+        [2, "anklet"],
+        [2, "belt buckle"],
+        [2, "bracelet"],
+        [2, "brooch"],
+        [2, "chain"],
+        [2, "cloak pin"],
+        [2, "crown", "coronet"],
+        [2, "diadem", "tiara"],
+        [2, "earring"],
+        [2, "eyepatch"],
+        [2, "gorget"],
+        [2, "hairpin"],
+        [2, "headband"],
+        [2, "locket"],
+        [2, "mask"],
+        [2, "medallion"],
+        [2, "necklace"],
+        [2, "pectoral"],
+        [2, "pendant"],
+        [2, "ring"]
+    ],
+    [   /* 5. MISC. */
+        [-1, "NONE"],
+        [2, "amulet", "talisman"],
+        [3, "book"],
+        [2, "bowl", "bucket"],
+        [2, "brazier"],
+        [3, "broom"],
+        [3, "brush"],
+        [2, "candelabrum"],
+        [3, "cards", "dice"],
+        [4, "carpet"],
+        [2, "censer"],
+        [2, "coin"],
+        [2, "comb"],
+        [2, "corkscrew"],
+        [2, "cup", "chalice", "goblet"],
+        [2, "fan"],
+        [2, "figurine", "idol"],
+        [3, "gem", "pearl"],
+        [2, "hammer"],
+        [4, "handkerchief"],
+        [2, "hook"],
+        [2, "horseshoe"],
+        [2, "lantern"],
+        [2, "lockpick"],
+        [2, "manacles"],
+        [2, "mirror"],
+        [3, "monocle", "lens"],
+        [2, "needle"],
+        [3, "orb", "crystal"],
+        [2, "pickaxe"],
+        [2, "pipe"],
+        [2, "plate", "tray"],
+        [2, "prosthesis"],
+        [2, "quill"],
+        [2, "rod", "sceptre"],
+        [4, "rope"],
+        [4, "saddle"],
+        [2, "sand timer"],
+        [2, "scissors"],
+        [2, "shovel"],
+        [2, "sickle"],
+        [2, "skull"],
+        [2, "spectacles"],
+        [2, "spike"],
+        [2, "spyglass"],
+        [2, "staff"],
+        [4, "tablecloth"],
+        [2, "tablet"],
+        [2, "umbrella"],
+        [2, "wand"],
+        [2, "whistle"]
+    ],
+    [   /* 6. MUSICAL INSTRUMENT */
+        [-1, "NONE"],
+        [3, "bagpipe"],
+        [2, "bell"],
+        [3, "bladder pipe"],
+        [2, "crumhorn"],
+        [3, "drum"],
+        [2, "dulcimer"],
+        [2, "fiddle"],
+        [2, "flute"],
+        [2, "harp"],
+        [2, "hurdy-gurdy"],
+        [2, "jaw harp"],
+        [2, "lute"],
+        [2, "lyre"],
+        [2, "mandolin"],
+        [2, "ocarina"],
+        [2, "rebec"],
+        [2, "shawm"],
+        [3, "tambourine"],
+        [2, "viol"],
+        [2, "zither"]
+    ],
+    [   /* 7. LIGHT ARMOUR */
+        [-1, "NONE"],
+        [3, "bracers"],
+        [3, "gambeson"],
+        [3, "gloves"],
+        [3, "greaves"],
+        [2, "helmet"],
+        [3, "leather armour"]
+    ],
+    [   /* 8. FULL ARMOUR */
+        [-1, "NONE"],
+        [3, "bracers"],
+        [3, "cuirass"],
+        [3, "gauntlets"],
+        [3, "greaves"],
+        [2, "helmet"],
+        [3, "mail armour"],
+        [3, "plate armour"],
+        [3, "sabatons"],
+        [3, "scale armour"],
+        [3, "segmented armour"]
+    ],
+    [   /* 9. SHIELD */
+        [-1, "NONE"],
+        [2, "buckler"],
+        [2, "heater shield"],
+        [2, "kite shield"],
+        [2, "pavise"],
+        [2, "round shield"],
+        [2, "square shield"]
+    ],
+    [   /* 10. WEAPON & AMMO */
+        [-1, "NONE"],
+        [2, "arrow"],
+        [2, "axe"],
+        [2, "bolt"],
+        [2, "boomerang"],
+        [2, "bullet"],
+        [2, "crossbow"],
+        [2, "dagger"],
+        [2, "dart"],
+        [2, "halberd"],
+        [2, "hunting bow"],
+        [2, "lance"],
+        [2, "longbow"],
+        [2, "pistol"],
+        [2, "mace"],
+        [2, "musket"],
+        [4, "sling"],
+        [2, "spear"],
+        [2, "sword"],
+        [2, "throwing star"],
+        [2, "war hammer"]
+    ]];
+
+sItemAttribute = [
+    "NONE",
+    "ancient",
+    "bejewelled",
+    "colourful",
+    "crude",
+    "dingy",
+    "exotic",
+    "grotesque",
+    "heavy",
+    "intricate",
+    ["light", "thin"],
+    "menacing",
+    "ornate",
+    "otherworldly",
+    "patterned",
+    "peculiar",
+    "refined",
+    "rugged",
+    "shiny",
+    "sleek",
+    "sophisticated"]; /* 20 */
+
+sItemColour = [
+    "NONE",
+    "snow white",
+    "ash grey",
+    "jet black",
+    "crimson red",
+    "chestnut brown",
+    "pumpkin orange",
+    "lemon yellow",
+    "malachite green",
+    "sky blue",
+    "ultramarine blue",
+    "lavender violet",
+    "orchid magenta"]; /* 12 */
+
+sItemFabric = [
+    "NONE",
+    "cotton",
+    "felt",
+    "fur",
+    "hair",
+    "leather",
+    "linen",
+    "silk",
+    "wool"]; /* 8 */
+
+sItemMaterial = [
+    "NONE",
+    "amber",
+    ["bone", "chitin"],
+    "brass",
+    "bronze",
+    "ceramic",
+    "copper",
+    "coral",
+    "crystal",
+    "glass",
+    "gold",
+    "iron",
+    ["ivory", "horn"],
+    "jade",
+    "jet",
+    "obsidian",
+    "pewter",
+    "silver",
+    "steel",
+    "stone",
+    "wooden"]; /* 20 */
+
+sItemPeculiarity = [
+    "NONE",
+    "that changes colour when no one is looking",
+    "that is cold to the touch",
+    "that emits barely audible buzzing",
+    "that faintly glows in the dark",
+    "that is heavier than it looks",
+    "that is lighter than it looks",
+    ["that is oily to the touch", "that is slimy to the touch"],
+    "that is semi-transparent",
+    "that smells weirdly but not unpleasantly",
+    "that sometimes appears to be slightly moving",
+    "that vibrates just a little bit from time to time",
+    "that is warm to the touch"]; /* 12 */
+
+function randomMagicItemType() {
+    let roll = d(100);
+    if(roll <= 10) return 1; /* container */
+    else if(roll <= 30) return 2; /* consumable */
+    else if(roll <= 40) return 3; /* garment */
+    else if(roll <= 50) return 4; /* jewellery */
+    else if(roll <= 70) return 5; /* misc. */
+    else if(roll <= 73) return 6; /* musical instrument */
+    else if(roll <= 80) return 7; /* light armour */
+    else if(roll <= 83) return 8; /* full armour */
+    else if(roll <= 90) return 9; /* shield */
+    else return 10; /* weapon & ammo */
+}
+
+function randomArrayItem(table, start = 1) {
+    let item = table[randomInt(start, table.length - 1)];
+    if(item.constructor === Array) {
+        return randomArrayItem(item, 0);
+    }
+    return item;
+}
+
 function generateRandomMagicItem() {
     let out = document.getElementById('out_RandomMagicItem');
-    let item = "TODO";
+    let itemType = randomMagicItemType();
+    let table = sMagicItem[itemType];
+    let itemIndex = d(table.length - 1);
+    let itemLine = table[itemIndex];
+    let itemAppearanceCode = itemLine[0];
+    var item = itemLine[1];
+    if(itemLine.length > 2) item = randomArrayItem(itemLine);
+    var itemAppearance = "";
+    var itemColour = "";
+    switch(itemAppearanceCode) {
+        case 0: /* colour */
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        case 1: /* attribute */
+            itemAppearance = randomArrayItem(sItemAttribute) + " ";
+            break;
+        case 2: /* attribute + material */
+            itemAppearance = randomArrayItem(sItemAttribute) + " " +
+                randomArrayItem(sItemMaterial) + " ";
+            break;
+        case 3: /* attribute + colour */
+            itemAppearance = randomArrayItem(sItemAttribute) + " ";
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        case 4: /* attribute + colour + fabric */
+            itemAppearance = randomArrayItem(sItemAttribute) + " " +
+                 randomArrayItem(sItemFabric) + " ";
+            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            break;
+        default: itemAppearance = "NONE "; itemColour = " of NONE colour";
+    }
 
+    var itemPeculiarity = "";
+    if(d(6) == 1) {
+        itemPeculiarity = " " + randomArrayItem(sItemPeculiarity);
+    }
+
+    itemString = itemAppearance + item + itemColour + itemPeculiarity + ".";
+    itemString = itemString.charAt(0).toUpperCase() + itemString.slice(1);
     out.innerHTML = "";
-    out.innerHTML = addItem(out.innerHTML, item);
+    out.innerHTML = addItem(out.innerHTML, itemString);
     document.getElementById('out_RandomMagicItem').style.display="";
 }
 
