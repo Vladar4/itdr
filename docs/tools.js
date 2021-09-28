@@ -1187,3 +1187,170 @@ function generateRandomNPC() {
     document.getElementById('out_RandomNPC').style.display="";
 }
 
+/******************/
+/* RANDOM MONSTER */
+/******************/
+
+function generateRandomMonster() {
+    let out = document.getElementById('out_RandomMonster');
+    let monster = "TODO";
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, monster);
+    document.getElementById('out_RandomMonster').style.display="";
+}
+
+/*********************/
+/* RANDOM MAGIC ITEM */
+/*********************/
+
+function generateRandomMagicItem() {
+    let out = document.getElementById('out_RandomMagicItem');
+    let item = "TODO";
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, item);
+    document.getElementById('out_RandomMagicItem').style.display="";
+}
+
+/******************/
+/* RANDOM WEATHER */
+/******************/
+
+function randomWeatherTemperature() {
+    switch(d(6)) {
+        case 1: return "cold, ";
+        case 6: return "warm, ";
+        default: return "";
+    }
+}
+
+function randomWeatherSky(type) {
+    var input;
+    switch(type) {
+        case 0: input = d(20); break; /* NORMAL */
+        case 1: input = d(12); break; /* DRY */
+        case 2: input = d(12) + 8; break; /* RAINY */
+        default: return "NONE";
+    }
+    switch(input) {
+        case 1:
+        case 2:
+        case 3:
+        case 4: return "clear";
+        case 5:
+        case 6:
+        case 7:
+        case 8: return "cloudy";
+        case 9:
+        case 10:
+        case 11:
+        case 12: return "overcast";
+        case 13:
+        case 14: return "drizzle or fog";
+        case 15:
+        case 16:
+        case 17:
+        case 18: return "rain or snow";
+        case 19:
+        case 20: return "storm or snowstorm";
+    }
+}
+
+let sWindForce = [
+    "calm",
+    "breeze",
+    "average wind",
+    "strong wind",
+    "gale"];
+
+function randomWeatherWindDirection(force) {
+    var input;
+    if(document.getElementById("radio_wind_default").checked) input = d(8);
+    else if(document.getElementById("radio_wind_follow").checked) input = Math.max(d(8), d(8));
+    else if(document.getElementById("radio_wind_against").checked) input = Math.min(d(8), d(8));
+    else return "NONE";
+
+    var direction, mul = "NONE";
+    switch(input) {
+        case 1:
+        case 2:
+        case 3:
+            direction = "adverse";
+            switch(force) {
+                case 1: mul = "×⅓"; break;
+                case 2: mul = "×½"; break;
+                case 3: mul = "×⅔"; break;
+                case 4: mul = "×0"; break;
+            }
+            break;
+        case 4:
+        case 5:
+            direction = "side";
+            switch(force) {
+                case 1: mul = "×⅓"; break;
+                case 2: mul = "×½"; break;
+                case 3: mul = "×⅔"; break;
+                case 4: mul = "×0"; break;
+            }
+            break;
+        case 6:
+        case 7:
+        case 8:
+            direction = "favourable";
+            switch(force) {
+                case 1: mul = "×½"; break;
+                case 2: mul = "×1"; break;
+                case 3: mul = "×1½"; break;
+                case 4: mul = "×2"; break;
+            }
+            break;
+        default:
+            direction = "NONE";
+            mul = "NONE";
+    }
+    return direction + " " + sWindForce[force] + " (" + mul + " sailing multiplier)";
+}
+
+function randomWeatherWind(type) {
+    var input;
+    switch(type) {
+        case 0:
+        case 1: input = d(20); break; /* NORMAL or DRY */
+        case 2: input = d(12) + 8; break; /* RAINY */
+    }
+    switch(input) {
+        case 1:
+        case 2: return sWindForce[0];
+        case 3:
+        case 4:
+        case 5:
+        case 6: return randomWeatherWindDirection(1);
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14: return randomWeatherWindDirection(2);
+        case 15:
+        case 16:
+        case 17:
+        case 18: return randomWeatherWindDirection(3);
+        case 19:
+        case 20: return randomWeatherWindDirection(4);
+    }
+}
+
+function generateRandomWeather(type) {
+    let out = document.getElementById('out_RandomWeather');
+    var weather = randomWeatherTemperature() + randomWeatherSky(type) +
+        ", " + randomWeatherWind(type);
+    weather = weather.charAt(0).toUpperCase() + weather.slice(1) + ".";
+
+    out.innerHTML = "";
+    out.innerHTML = addItem(out.innerHTML, weather);
+    document.getElementById('out_RandomWeather').style.display="";
+}
+
