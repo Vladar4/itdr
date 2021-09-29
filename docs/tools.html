@@ -77,6 +77,14 @@
         <p class="centered">
             <h2>Random Monster</h2>
             <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <div style="margin-top:1em; margin-bottom:0.5em">
+                <div style="display:inline-block; float:left">
+                    <input type="checkbox" id="checkbox_monster_abilities" name="monster_abilities" onclick="toggleMonsterAbilities()" /><label for="checkbox_monster_abilities">Generate Abilities</label>
+                </div>
+                <div id="div_monster_danger" style="display:none; float:right">
+                    <label for="select_monster_danger">Danger level: </label><select name="monster_danger" id="select_monster_danger"></select>
+                </div>
+            </div>
             <input type="button" id="btn_RandomMonster" value="Generate" onclick="generateRandomMonster()" />
             <p id="out_RandomMonster" style="display:none"></p>
         </p>
@@ -91,16 +99,16 @@
         <p class="centered">
             <h2>Random Weather</h2>
             <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
+            <div>
+                <div class="inline-block"><input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked /><label for="radio_wind">default</label></div>
+                <div class="inline-block"><input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">following prevailing winds</label></div>
+                <div class="inline-block"><input type="radio" id="radio_wind_against" name="radio_wind" value="against"/><label for="radio_wind">against prevailing winds</label></div>
+            </div>
             <table class="centered nowrap" id="table_randomWeather" style="table-layout:fixed; border-spacing:0px"><tr>
                 <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeather" value="Normal Climate" onclick="generateRandomWeather(0)" /></td>
                 <td style="width:33%"><input type="button" id="btn_RandomWeatherDry" value="Dry Climate" onclick="generateRandomWeather(1)" /></td>
                 <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Rainy Climate" onclick="generateRandomWeather(2)" /></td>
             </tr></table>
-            <div>
-                <div class="inline-block"><input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked="checked"/><label for="radio_wind">default</label></div>
-                <div class="inline-block"><input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">following prevailing winds</label></div>
-                <div class="inline-block"><input type="radio" id="radio_wind_against" name="radio_wind" value="against"/><label for="radio_wind">against prevailing winds</label></div>
-            </div>
             <p id="out_RandomWeather" style="display:none"></p>
         </p>
 
