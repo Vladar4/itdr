@@ -1323,7 +1323,7 @@ let sMonsterTable = [
     "mute",
     "one-eyed",
     "two-headed",
-    ["with trunk", "with tentacles"]], /* 12 */
+    ["with trunk", "with face tentacles"]], /* 12 */
     ["NONE", /* Table 8 */
     "amorphous",
     "amphibian",
@@ -1344,7 +1344,7 @@ let sMonsterTable = [
     ["reptile", "serpent"],
     ["rodent", "rabbit", "hedgehog", "mole", "shrew"],
     "chimeric",
-    "shape-shifting"]] /* 20 */
+    "shape-shifting"]]; /* 20 */
 
 function generateRandomMonster() {
     let out = document.getElementById('out_RandomMonster');
