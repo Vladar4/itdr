@@ -379,7 +379,7 @@ function generateRandomCharacter(swap) {
     log("STR " + iStats[0] + ", DEX " + iStats[1] + ", WIL " + iStats[2] + ", Money " + iStats[3]);
 
     /* FEATURE */
-    var iFeature = parseInt(document.getElementById("select_feature").value);
+    var iFeature = parseInt(document.getElementById('select_feature').value);
     if(iFeature == 0) iFeature = d(high(sFeatureList));
     var sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
@@ -463,7 +463,7 @@ function generateRandomCharacter(swap) {
     }
 
     /* BACKGROUND */
-    var iBackground = parseInt(document.getElementById("select_background").value);
+    var iBackground = parseInt(document.getElementById('select_background').value);
     if(iBackground == 0) iBackground = d(high(sBackgroundList));
     var sBackground = sBackgroundList[iBackground];
     log("Background " + iBackground + " (" + sBackground + ")");
@@ -681,7 +681,7 @@ function generateRandomCharacter(swap) {
     var sWeapons = "";
     var sItemsList = [];
 
-    if(document.getElementById("checkbox_equipment").checked) {
+    if(document.getElementById('checkbox_equipment').checked) {
         var spareMoney = 0;
         if(iStats[3] < 5) {
             spareMoney = 1;
@@ -919,26 +919,26 @@ function generateRandomCharacter(swap) {
 }
 
 /* populate select_feature */
-let sfeat = document.getElementById("select_feature");
-var opt = document.createElement("option");
+let sfeat = document.getElementById('select_feature');
+var opt = document.createElement('option');
 opt.text = "Random";
 opt.value = 0;
 sfeat.appendChild(opt);
 for(i=1; i<sFeatureList.length; i++) {
-    opt = document.createElement("option");
+    opt = document.createElement('option');
     opt.text = sFeatureList[i];
     opt.value = i;
     sfeat.appendChild(opt);
 }
 
 /* populate select_background */
-let sback = document.getElementById("select_background");
-opt = document.createElement("option");
+let sback = document.getElementById('select_background');
+opt = document.createElement('option');
 opt.text = "Random";
 opt.value = 0;
 sback.appendChild(opt);
 for(i=1; i<sBackgroundList.length; i++) {
-    opt = document.createElement("option");
+    opt = document.createElement('option');
     opt.text = sBackgroundList[i];
     opt.value = i;
     sback.appendChild(opt);
@@ -1177,7 +1177,7 @@ function generateRandomNPC() {
                 randomNPCOccupation() + " " + randomNPCDetails() + ".";
 
     if(whois.search("colour*") > -1) {
-        whois += "<br /><i>* Usually blonde or red, depends on a population.</i>";
+        whois += "<br/><i>* Usually blonde or red, depends on a population.</i>";
     }
 
     out.innerHTML = "";
@@ -1348,6 +1348,30 @@ let sMonsterTable = [
 
 function generateRandomMonster() {
     let out = document.getElementById('out_RandomMonster');
+    var abilities = "";
+    if(document.getElementById('checkbox_monster_abilities').checked) {
+        var danger = parseInt(document.getElementById('select_monster_danger').value);
+        var hp = 0;
+        var stats = [stat(), stat(), stat()];
+        if(danger < 1) danger = d(5); /* random danger level */
+        for(i=1; i<=danger; i++) {
+            hp += d(6);
+            for(j=0; j<stats.length; j++) {
+                if(stats[j] < 20) {
+                    if(d(20) > stats[j]) {
+                        stats[j] += 1;
+                    }
+                }
+            } /* END FOR LOOP J */
+        } /* END FOR LOOP I */
+
+    abilities = "STR " + stats[0] +
+                ", DEX " + stats[1] +
+                ", WIL " + stats[2] +
+                ", " + hp + "hp." +
+                "<br/>";
+    } /* END ABILITIES */
+
     var monster = "";
     var tables = [];
     for(i=0; i<d(4); i++) {
@@ -1387,10 +1411,34 @@ function generateRandomMonster() {
     }
     monster = monster.trim();
     monster = monster.charAt(0).toUpperCase() + monster.slice(1) + ".";
+    monster = abilities + monster;
 
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, monster);
     document.getElementById('out_RandomMonster').style.display="";
+}
+
+function toggleMonsterAbilities() {
+    if(document.getElementById('checkbox_monster_abilities').checked) {
+        document.getElementById('div_monster_danger').style.display="inline-block";
+    }
+    else {
+        document.getElementById('div_monster_danger').style.display="none";
+    }
+}
+
+/* populate select_monster_danger */
+document.getElementById('checkbox_monster_abilities').checked = false;
+let sdanger = document.getElementById('select_monster_danger');
+var opt = document.createElement('option');
+opt.text = "Random";
+opt.value = 0;
+sdanger.appendChild(opt);
+for(i=1; i<=5; i++) {
+    opt = document.createElement('option');
+    opt.text = "" + i + "d6 HP";
+    opt.value = i;
+    sdanger.appendChild(opt);
 }
 
 /*********************/
@@ -1819,9 +1867,9 @@ let sWindForce = [
 
 function randomWeatherWindDirection(force) {
     var input;
-    if(document.getElementById("radio_wind_default").checked) input = d(8);
-    else if(document.getElementById("radio_wind_follow").checked) input = Math.max(d(8), d(8));
-    else if(document.getElementById("radio_wind_against").checked) input = Math.min(d(8), d(8));
+    if(document.getElementById('radio_wind_default').checked) input = d(8);
+    else if(document.getElementById('radio_wind_follow').checked) input = Math.max(d(8), d(8));
+    else if(document.getElementById('radio_wind_against').checked) input = Math.min(d(8), d(8));
     else return "NONE";
 
     var direction, mul = "NONE";
