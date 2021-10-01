@@ -1357,8 +1357,17 @@ function generateRandomMonster() {
         } while(tables.indexOf(newtab) > -1);
         tables.push(newtab);
     } /* END FOR LOOP */
-    if(tables.indexOf(8) < 0) tables.push(8); /* Table 8 is always present */
-    if((tables.length < 2) && (tables[0] == 8)); /* Roll once more if you got only Table 8 */
+    if(tables.indexOf(8) < 0) { /* Table 8 is always present */
+        tables.push(8);
+    }
+    if((tables.length < 2) && (tables[0] == 8)) { /* Roll once more if you got only Table 8 */
+        var newtab;
+        log("!");
+        do {
+            newtab = d(8);
+        } while(newtab == 8);
+        tables.push(newtab);
+    }
     tables.sort();
     for(i=0; i<tables.length; i++) {
         var tab = sMonsterTable[tables[i]];
@@ -1427,6 +1436,12 @@ function generateRandomMonster() {
                 ((armour > 0) ? (", Armour " + armour) : ("")) +
                 ".<br/>";
     } /* END ABILITIES */
+    else { /* remove armour tags */
+        var pos = -1;
+        while(-1 != (pos = monster.search("@"))) { /* search for armour tags */
+            monster = monster.slice(0, pos) + monster.slice(pos+1);
+        }
+    }
 
 
     monster = monster.trim();
