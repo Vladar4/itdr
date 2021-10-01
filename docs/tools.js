@@ -1194,11 +1194,11 @@ function generateRandomNPC() {
 let sMonsterTable = [
     ["NONE"],
     ["NONE", /* Table 1 */
-    "artificial",
+    "artificial@",
     "colonial",
     "divine",
     "eldritch",
-    "ethereal",
+    "ethereal@",
     "fiendish",
     "magical",
     "mutated",
@@ -1232,17 +1232,17 @@ let sMonsterTable = [
     "acoustic",
     "adhesive",
     "armed",
-    "armoured",
+    "armoured@",
     "electric",
     "fire",
-    "giant",
+    "giant@",
     "hypnotic",
-    "ice",
+    "ice@",
     "multiplying",
     "parasite",
     "poisonous",
     "psychic",
-    "shelled",
+    "shelled@",
     "shooting",
     "spewing",
     "swallowing",
@@ -1297,20 +1297,20 @@ let sMonsterTable = [
     "four-legged",
     "legless",
     "limbless",
-    "metal",
+    "metal@",
     "multi-armed",
     "multi-legged",
     "multi-limbed",
     "one-armed",
     "one-legged",
-    "stone",
+    "stone@",
     "tailed",
     "tentacled",
     "two-armed",
     "two-headed",
     "two-legged",
     "winged",
-    "wooden"], /* 20 */
+    "wooden@"], /* 20 */
     ["NONE", /* Table 7 */
     "blind",
     "brainless",
@@ -1348,30 +1348,6 @@ let sMonsterTable = [
 
 function generateRandomMonster() {
     let out = document.getElementById('out_RandomMonster');
-    var abilities = "";
-    if(document.getElementById('checkbox_monster_abilities').checked) {
-        var danger = parseInt(document.getElementById('select_monster_danger').value);
-        var hp = 0;
-        var stats = [stat(), stat(), stat()];
-        if(danger < 1) danger = d(5); /* random danger level */
-        for(i=1; i<=danger; i++) {
-            hp += d(6);
-            for(j=0; j<stats.length; j++) {
-                if(stats[j] < 20) {
-                    if(d(20) > stats[j]) {
-                        stats[j] += 1;
-                    }
-                }
-            } /* END FOR LOOP J */
-        } /* END FOR LOOP I */
-
-    abilities = "STR " + stats[0] +
-                ", DEX " + stats[1] +
-                ", WIL " + stats[2] +
-                ", " + hp + "hp." +
-                "<br/>";
-    } /* END ABILITIES */
-
     var monster = "";
     var tables = [];
     for(i=0; i<d(4); i++) {
@@ -1409,6 +1385,50 @@ function generateRandomMonster() {
             monster += "(" + addA + " / " + addB + ")";
         }
     }
+
+    /* ABILITIES */
+    var abilities = "";
+    if(document.getElementById('checkbox_monster_abilities').checked) {
+
+        /* DANGER */
+        var danger = parseInt(document.getElementById('select_monster_danger').value);
+        var hp = 0;
+        var stats = [stat(), stat(), stat()];
+        if(danger < 1) danger = d(5); /* random danger level */
+        for(i=1; i<=danger; i++) {
+            hp += d(6);
+            for(j=0; j<stats.length; j++) {
+                if(stats[j] < 20) {
+                    if(d(20) > stats[j]) {
+                        stats[j] += 1;
+                    }
+                }
+            } /* END FOR LOOP J */
+        } /* END FOR LOOP I */
+
+        /* ARMOUR */
+        var armour = 0;
+        var pos = -1;
+        while(-1 != (pos = monster.search("@"))) { /* search for armour tags */
+            monster = monster.slice(0, pos) + monster.slice(pos+1);
+            armour += 1;
+        }
+        if(d(6) < danger) { /* more dangerous = more chance of armour */
+            armour += 1;
+        }
+        if(armour > 3) {
+            armour = 3;
+        }
+
+    abilities = "STR " + stats[0] +
+                ", DEX " + stats[1] +
+                ", WIL " + stats[2] +
+                ", " + hp + "hp" +
+                ((armour > 0) ? (", Armour " + armour) : ("")) +
+                ".<br/>";
+    } /* END ABILITIES */
+
+
     monster = monster.trim();
     monster = monster.charAt(0).toUpperCase() + monster.slice(1) + ".";
     monster = abilities + monster;
