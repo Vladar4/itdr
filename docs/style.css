@@ -3,6 +3,8 @@
 --max-width: 40rem;
 --color: #333;
 --background-color: #f0dcc0;
+--hover-color: #ffecd0;
+--active-color: #fffce0;
 */
 
 html {
@@ -115,7 +117,7 @@ a {
 }
 
 a:link {
-    color: mediumslateblue;
+    color: darkslateblue;
 }
 
 a:visited {
@@ -135,6 +137,22 @@ img {
     height: auto;
 }
 
+input[type=button], select {
+    background-color: #f0dcc0;
+    border: 1px solid black;
+    padding: 10px 6px 10px 6px; /* top right bottom left */
+    transition: 0.3s;
+    width: 100%;
+}
+
+input[type=button]:hover {
+    background-color: #ffecd0;
+}
+
+input[type=button]:active {
+    background-color: #fffce0;
+}
+
 p {
     margin-top: 1rem;
     margin-bottom: 0rem;
@@ -146,14 +164,6 @@ table {
 
 td {
     padding: 5px;
-}
-
-td > input[type=button] {
-    width: 100%;
-}
-
-td > select {
-    width: 100%;
 }
 
 ul {
@@ -200,6 +210,7 @@ li {
     float: left;
     font-size: 1rem;
     font-variant: small-caps;
+    transition: 0.3s;
 }
 
 .nav-links > a {
@@ -211,13 +222,65 @@ li {
     background: #ffecd0;
 }
 
+.nav-links > a:active {
+    background: #fffce0;
+}
+
 .nav-current {
-    text-decoration: underline #333 2px;
-    text-underline-offset: 1ex;
+    /*
+     * text-decoration: underline #333 2px;
+     * text-underline-offset: 1ex;
+     */
+    background-color: #ffecd0;
 }
 
 .nav > #nav-check {
     display: none;
+}
+
+/* TABS */
+
+.tab-menu {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.tab-link {
+    background-color: inherit;
+    float: left;
+    color: darkslateblue;
+    font-family: inherit;
+    font-size: 1rem;
+    font-variant: small-caps;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    padding: 10px 6px 10px 6px; /* top right bottom left */
+    transition: 0.3s;
+    width: 100%;
+}
+
+.tab-link:hover {
+    color: slateblue;
+    background-color: #ffecd0;
+}
+
+.tab-link:active {
+    color: mediumpurple;
+    background-color: #fffce0;
+}
+
+.tab-link.active {
+    background-color: #ffecd0;
+}
+
+.tab {
+    display: none;
+    padding: 6px 12px;
+    border: 0px;
 }
 
 /* MOBILE */
