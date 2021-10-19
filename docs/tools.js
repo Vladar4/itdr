@@ -1325,9 +1325,9 @@ let sMonsterTable = [
     "two-headed",
     ["with trunk", "with face tentacles"]], /* 12 */
     ["NONE", /* Table 8 */
-    "amorphous",
+    "amorphous mass",
     "amphibian",
-    "animated",
+    "animated object",
     "bat",
     "bird",
     "bear-like",
@@ -1343,8 +1343,8 @@ let sMonsterTable = [
     "plant",
     ["reptile", "serpent"],
     ["rodent", "rabbit", "hedgehog", "mole", "shrew"],
-    "chimeric",
-    "shape-shifting"]]; /* 20 */
+    "chimera",
+    "shape-shifter"]]; /* 20 */
 
 function generateRandomMonster() {
     let out = document.getElementById('out_RandomMonster');
@@ -1362,13 +1362,13 @@ function generateRandomMonster() {
     }
     if((tables.length < 2) && (tables[0] == 8)) { /* Roll once more if you got only Table 8 */
         var newtab;
-        log("!");
         do {
             newtab = d(8);
         } while(newtab == 8);
         tables.push(newtab);
     }
     tables.sort();
+    var after = "";
     for(i=0; i<tables.length; i++) {
         var tab = sMonsterTable[tables[i]];
         let idx = d(tab.length-1);
@@ -1376,7 +1376,12 @@ function generateRandomMonster() {
         var add = "NONE";
         if(entry.constructor === Array) add = entry[d(entry.length) - 1];
         else add = entry;
-        monster += add + " ";
+        if(add.startsWith(("with"))) { /* entries that start with "with ..." are pushed to the end */
+            after += " " + add;
+        }
+        else {
+            monster += add + " ";
+        }
         if((tables[i] == 8) && (idx > 18)) { /* chimeric or shape-shifting */
             let a = d(18);
             var b;
@@ -1394,6 +1399,7 @@ function generateRandomMonster() {
             monster += "(" + addA + " / " + addB + ")";
         }
     }
+    monster += after;
 
     /* ABILITIES */
     var abilities = "";
