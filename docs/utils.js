@@ -21,3 +21,13 @@ function addItem(s1, s2) {
     return s1 + ", " + s2;
 }
 
+/* DOCUMENT */
+
+function docId(id) {
+    return document.getElementById(id);
+}
+
+function docCreate(nodename) {
+    return document.createElement(nodename);
+}
+

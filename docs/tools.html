@@ -40,9 +40,11 @@
         </nav>
         <div class="hr"></div>
 
+        <noscript><p class="centered" style="color:red">The tools need JavaScript to work properly.</p></noscript>
+
         <p class="centered">
+
             <h2>Random Character</h2>
-            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
             <div style="display:none"> <!-- DEBUG TOOLS -->
                 <input type="button" id="btn_debugRNG_d6" value="Debug: RNG d6 (console)" style="width:100%" onclick="debugRNG(d6, 1, 6)" />
                 <input type="button" id="btn_debugRNG_stat" value="Debug: RNG stat (console)" style="width:100%" onclick="debugRNG(stat, 3, 18)" />
@@ -69,14 +71,12 @@
 
         <p class="centered">
             <h2>Random Non-Player Character</h2>
-            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
             <input type="button" id="btn_RandomNPC" value="Generate" onclick="generateRandomNPC()" />
             <p id="out_RandomNPC" style="display:none"></p>
         </p>
 
         <p class="centered">
             <h2>Random Monster</h2>
-            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
             <div style="margin-top:1em; margin-bottom:0.5em">
                 <div style="display:inline-block; float:left">
                     <input type="checkbox" id="checkbox_monster_abilities" name="monster_abilities" onclick="toggleMonsterAbilities()" /><label for="checkbox_monster_abilities">Generate Abilities</label>
@@ -91,14 +91,12 @@
 
         <p class="centered">
             <h2>Random Magic Item</h2>
-            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
             <input type="button" id="btn_RandomMagicItem" value="Generate" onclick="generateRandomMagicItem()" />
             <p id="out_RandomMagicItem" style="display:none"></p>
         </p>
 
         <p class="centered">
             <h2>Random Weather</h2>
-            <noscript><p class="centered">This tool needs JavaScript to work properly.</p></noscript>
             <div>
                 <div class="inline-block"><input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked /><label for="radio_wind">default</label></div>
                 <div class="inline-block"><input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">following prevailing winds</label></div>
@@ -112,6 +110,8 @@
             <p id="out_RandomWeather" style="display:none"></p>
         </p>
 
+        <script src="utils.js"></script>
+        <script src="random.js"></script>
         <script src="tools.js"></script>
 
         <p class="centered">

@@ -290,22 +290,22 @@ let sBackgroundList = [
     ];
 
 function generateRandomStats() {
-    let out = document.getElementById('out_RandomStats');
+    let out = docId('out_RandomStats');
     iStats = [stat(), stat(), stat(), stat()];
     out.innerHTML =
         "STR " + iStats[0] +
         ", DEX " + iStats[1] +
         ", WIL " + iStats[2] +
         ", Money " + iStats[3];
-    document.getElementById('out_RandomStats').style.display="";
-    document.getElementById('swap_RandomCharacter').style.display="";
-    document.getElementById('out_RandomCharacter').innerHTML="";
+    docId('out_RandomStats').style.display="";
+    docId('swap_RandomCharacter').style.display="";
+    docId('out_RandomCharacter').innerHTML="";
 }
 
 function generateRandomCharacter(swap) {
-    let out = document.getElementById('out_RandomCharacter');
-    document.getElementById('out_RandomStats').style.display="none";
-    document.getElementById('swap_RandomCharacter').style.display="none";
+    let out = docId('out_RandomCharacter');
+    docId('out_RandomStats').style.display="none";
+    docId('swap_RandomCharacter').style.display="none";
 
     switch(swap) {
         case 0: break;
@@ -327,7 +327,7 @@ function generateRandomCharacter(swap) {
     log("STR " + iStats[0] + ", DEX " + iStats[1] + ", WIL " + iStats[2] + ", Money " + iStats[3]);
 
     /* FEATURE */
-    var iFeature = parseInt(document.getElementById('select_feature').value);
+    var iFeature = parseInt(docId('select_feature').value);
     if(iFeature == 0) iFeature = d(high(sFeatureList));
     var sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
@@ -411,7 +411,7 @@ function generateRandomCharacter(swap) {
     }
 
     /* BACKGROUND */
-    var iBackground = parseInt(document.getElementById('select_background').value);
+    var iBackground = parseInt(docId('select_background').value);
     if(iBackground == 0) iBackground = d(high(sBackgroundList));
     var sBackground = sBackgroundList[iBackground];
     log("Background " + iBackground + " (" + sBackground + ")");
@@ -629,7 +629,7 @@ function generateRandomCharacter(swap) {
     var sWeapons = "";
     var sItemsList = [];
 
-    if(document.getElementById('checkbox_equipment').checked) {
+    if(docId('checkbox_equipment').checked) {
         var spareMoney = 0;
         if(iStats[3] < 5) {
             spareMoney = 1;
@@ -863,30 +863,30 @@ function generateRandomCharacter(swap) {
         out.innerHTML += "<br/><br/>" + sTome;
     }
 
-    document.getElementById('out_RandomCharacter').style.display="";
+    docId('out_RandomCharacter').style.display="";
 }
 
 /* populate select_feature */
-let sfeat = document.getElementById('select_feature');
-var opt = document.createElement('option');
+let sfeat = docId('select_feature');
+var opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sfeat.appendChild(opt);
 for(i=1; i<sFeatureList.length; i++) {
-    opt = document.createElement('option');
+    opt = docCreate('option');
     opt.text = sFeatureList[i];
     opt.value = i;
     sfeat.appendChild(opt);
 }
 
 /* populate select_background */
-let sback = document.getElementById('select_background');
-opt = document.createElement('option');
+let sback = docId('select_background');
+opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sback.appendChild(opt);
 for(i=1; i<sBackgroundList.length; i++) {
-    opt = document.createElement('option');
+    opt = docCreate('option');
     opt.text = sBackgroundList[i];
     opt.value = i;
     sback.appendChild(opt);
@@ -1118,7 +1118,7 @@ function randomNPCDetails() {
 }
 
 function generateRandomNPC() {
-    let out = document.getElementById('out_RandomNPC');
+    let out = docId('out_RandomNPC');
     let stats = "STR " + statNPC() + ", DEX " + statNPC() + ", WIL " + statNPC();
     let hp = d(6) + "hp";
     var whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
@@ -1132,7 +1132,7 @@ function generateRandomNPC() {
     out.innerHTML = addItem(out.innerHTML, stats);
     out.innerHTML = addItem(out.innerHTML, hp);
     out.innerHTML = addItem(out.innerHTML, whois);
-    document.getElementById('out_RandomNPC').style.display="";
+    docId('out_RandomNPC').style.display="";
 }
 
 /******************/
@@ -1295,7 +1295,7 @@ let sMonsterTable = [
     "shape-shifter"]]; /* 20 */
 
 function generateRandomMonster() {
-    let out = document.getElementById('out_RandomMonster');
+    let out = docId('out_RandomMonster');
     var monster = "";
     var tables = [];
     for(i=0; i<d(4); i++) {
@@ -1351,10 +1351,10 @@ function generateRandomMonster() {
 
     /* ABILITIES */
     var abilities = "";
-    if(document.getElementById('checkbox_monster_abilities').checked) {
+    if(docId('checkbox_monster_abilities').checked) {
 
         /* DANGER */
-        var danger = parseInt(document.getElementById('select_monster_danger').value);
+        var danger = parseInt(docId('select_monster_danger').value);
         var hp = 0;
         var stats = [stat(), stat(), stat()];
         if(danger < 1) danger = d(5); /* random danger level */
@@ -1404,27 +1404,27 @@ function generateRandomMonster() {
 
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, monster);
-    document.getElementById('out_RandomMonster').style.display="";
+    docId('out_RandomMonster').style.display="";
 }
 
 function toggleMonsterAbilities() {
-    if(document.getElementById('checkbox_monster_abilities').checked) {
-        document.getElementById('div_monster_danger').style.display="inline-block";
+    if(docId('checkbox_monster_abilities').checked) {
+        docId('div_monster_danger').style.display="inline-block";
     }
     else {
-        document.getElementById('div_monster_danger').style.display="none";
+        docId('div_monster_danger').style.display="none";
     }
 }
 
 /* populate select_monster_danger */
-document.getElementById('checkbox_monster_abilities').checked = false;
-let sdanger = document.getElementById('select_monster_danger');
-var opt = document.createElement('option');
+docId('checkbox_monster_abilities').checked = false;
+let sdanger = docId('select_monster_danger');
+var opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sdanger.appendChild(opt);
 for(i=1; i<=5; i++) {
-    opt = document.createElement('option');
+    opt = docCreate('option');
     opt.text = "" + i + "d6 HP";
     opt.value = i;
     sdanger.appendChild(opt);
@@ -1758,7 +1758,7 @@ function randomArrayItem(table, start = 1) {
 }
 
 function generateRandomMagicItem() {
-    let out = document.getElementById('out_RandomMagicItem');
+    let out = docId('out_RandomMagicItem');
     let itemType = randomMagicItemType();
     let table = sMagicItem[itemType];
     let itemIndex = d(table.length - 1);
@@ -1800,7 +1800,7 @@ function generateRandomMagicItem() {
     itemString = itemString.charAt(0).toUpperCase() + itemString.slice(1);
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, itemString);
-    document.getElementById('out_RandomMagicItem').style.display="";
+    docId('out_RandomMagicItem').style.display="";
 }
 
 /******************/
@@ -1856,9 +1856,9 @@ let sWindForce = [
 
 function randomWeatherWindDirection(force) {
     var input;
-    if(document.getElementById('radio_wind_default').checked) input = d(8);
-    else if(document.getElementById('radio_wind_follow').checked) input = Math.max(d(8), d(8));
-    else if(document.getElementById('radio_wind_against').checked) input = Math.min(d(8), d(8));
+    if(docId('radio_wind_default').checked) input = d(8);
+    else if(docId('radio_wind_follow').checked) input = Math.max(d(8), d(8));
+    else if(docId('radio_wind_against').checked) input = Math.min(d(8), d(8));
     else return "NONE";
 
     var direction, mul = "NONE";
@@ -1934,13 +1934,13 @@ function randomWeatherWind(type) {
 }
 
 function generateRandomWeather(type) {
-    let out = document.getElementById('out_RandomWeather');
+    let out = docId('out_RandomWeather');
     var weather = randomWeatherTemperature() + randomWeatherSky(type) +
         ", " + randomWeatherWind(type);
     weather = weather.charAt(0).toUpperCase() + weather.slice(1) + ".";
 
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, weather);
-    document.getElementById('out_RandomWeather').style.display="";
+    docId('out_RandomWeather').style.display="";
 }
 
