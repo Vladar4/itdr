@@ -42,8 +42,15 @@
 
         <noscript><p class="centered" style="color:red">The tools need JavaScript to work properly.</p></noscript>
 
-        <p class="centered">
+        <div class="tab-menu">
+            <button class="tab-link active" onClick="openTab(event, '1')">Creatures</button>
+            <button class="tab-link" onClick="openTab(event, '2')">Misc.</button>
+        </div>
 
+        <!-- TAB 1 -->
+        <div class="tab" id="1" style="display:block">
+
+        <p class="centered">
             <h2>Random Character</h2>
             <div style="display:none"> <!-- DEBUG TOOLS -->
                 <input type="button" id="btn_debugRNG_d6" value="Debug: RNG d6 (console)" style="width:100%" onclick="debugRNG(d6, 1, 6)" />
@@ -78,16 +85,21 @@
         <p class="centered">
             <h2>Random Monster</h2>
             <div style="margin-top:1em; margin-bottom:0.5em">
-                <div style="display:inline-block; float:left">
+                <div style="display:block; float:left">
                     <input type="checkbox" id="checkbox_monster_abilities" name="monster_abilities" onclick="toggleMonsterAbilities()" /><label for="checkbox_monster_abilities">Generate Abilities</label>
                 </div>
                 <div id="div_monster_danger" style="display:none; float:right">
-                    <label for="select_monster_danger">Danger level: </label><select name="monster_danger" id="select_monster_danger"></select>
+                    <label for="select_monster_danger">Danger: </label><select name="monster_danger" id="select_monster_danger" style="padding: 0px; width:8em"></select>
                 </div>
             </div>
             <input type="button" id="btn_RandomMonster" value="Generate" onclick="generateRandomMonster()" />
             <p id="out_RandomMonster" style="display:none"></p>
         </p>
+
+        </div> <!-- tab 1 -->
+
+        <!-- TAB 2 -->
+        <div class="tab" id="2">
 
         <p class="centered">
             <h2>Random Magic Item</h2>
@@ -108,7 +120,9 @@
                 <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Rainy Climate" onclick="generateRandomWeather(2)" /></td>
             </tr></table>
             <p id="out_RandomWeather" style="display:none"></p>
-        </p>
+            <!--</p>-->
+
+        </div> <!-- tab 2 -->
 
         <script src="utils.js"></script>
         <script src="random.js"></script>

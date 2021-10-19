@@ -1409,7 +1409,7 @@ function generateRandomMonster() {
 
 function toggleMonsterAbilities() {
     if(docId('checkbox_monster_abilities').checked) {
-        docId('div_monster_danger').style.display="inline-block";
+        docId('div_monster_danger').style.display="block";
     }
     else {
         docId('div_monster_danger').style.display="none";

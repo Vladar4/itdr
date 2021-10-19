@@ -27,7 +27,28 @@ function docId(id) {
     return document.getElementById(id);
 }
 
+function docClass(classname) {
+    return document.getElementsByClassName(classname);
+}
+
 function docCreate(nodename) {
     return document.createElement(nodename);
+}
+
+/* TABS */
+
+function openTab(ev, id) {
+    let tabs = docClass('tab');
+    for(i=0; i<tabs.length; i++) {
+        tabs[i].style.display = 'none';
+    }
+
+    let links = docClass('tab-link');
+    for(i=0; i<links.length; i++) {
+        links[i].className = links[i].className.replace(' active', '');
+    }
+
+    docId(id).style.display = 'block';
+    ev.currentTarget.className += ' active';
 }
 
