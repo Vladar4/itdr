@@ -1,61 +1,9 @@
-var debug = true; /* Debug mode (print logs) */
-
-function log(msg) {
-    if(debug) console.log(msg);
-}
-
-function addItem(s1, s2) {
-    /* return a new string separated by a comma */
-    if(s1 == "") return s2;
-    if(s2 == "") return s1;
-    return s1 + ", " + s2;
-}
-
-function high(a) {
-    /* return the last index of the array */
-    return (a.length - 1);
-}
-
-function randomBool() {
-    return Math.random() < 0.5;
-}
-
-function randomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max + 1);
-    return Math.floor(Math.random() * (max - min) + min);
-}
-
-function d(x) {
-    return randomInt(1, x);
-}
-
-function shuffle(array) {
-    for(var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
-    }
-}
-
-function shuffledIndex(array, n, start=1) {
-    /* return n shuffled item indexes from the array.
-     * ! starts at index 1 by default ! */
-    var shuffled = new Array(array.length-start);
-    for(i=start; i<array.length; i++) {
-        shuffled[i-start] = i;
-    }
-    shuffle(shuffled);
-    return shuffled.slice(-n);
-}
-
 /********************/
 /* RANDOM CHARACTER */
 /********************/
 
 function stat() {
-    return d(6) + d(6) + d(6);
+    return nd(3, 6);
 }
 
 function swapStats(idx1, idx2) {
@@ -533,7 +481,7 @@ function generateRandomCharacter(swap) {
             }
             iRope = 20;
             sBackground += " (common folk treat you as one of them)";
-            iStats[3] += d(4) + d(4); /* extra 2d4s */
+            iStats[3] += nd(2, 4); /* extra 2d4s */
             break;
 
         case 4: /* Minstrel */
@@ -696,7 +644,7 @@ function generateRandomCharacter(swap) {
             spareMoney = d(4);
         }
         else {
-            spareMoney = d(4) + d(4);
+            spareMoney = nd(2, 4);
         }
         var money = iStats[3] - spareMoney;
 
@@ -949,7 +897,7 @@ for(i=1; i<sBackgroundList.length; i++) {
 /**************/
 
 function statNPC() {
-    return d(8) + d(8) + 1;
+    return nd(2, 8) + 1;
 }
 
 function randomNPCAge() {
@@ -1042,7 +990,7 @@ let sNPCDetail = [
     "prosthetic arm"]; /* 22 */
 
 function randomNPCDetail() {
-    return(d(8) + d(8) + d(8)); /* 3d8 */
+    return(nd(3, 8)); /* 3d8 */
 }
 
 function anyOf(a, b, arr) {
