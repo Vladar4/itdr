@@ -257,8 +257,8 @@ li {
     font-variant: small-caps;
     font-weight: bold;
     border: none;
-    outline: none;
     padding: 10px 6px 10px 6px; /* top right bottom left */
+    margin: 2px;
     transition: 0.3s;
     width: 100%;
 }
@@ -279,7 +279,7 @@ li {
 
 .tab {
     display: none;
-    padding: 6px 12px;
+    padding: 0px;
     border: 0px;
 }
 
@@ -341,8 +341,10 @@ li {
 
     .nav-current {
         border: 0px;
+        /*
         text-decoration: underline #333 2px;
         text-underline-offset: 1ex;
+        */
     }
 
     .nav > #nav-check:not(:checked) ~ .nav-links {

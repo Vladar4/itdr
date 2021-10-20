@@ -17,8 +17,8 @@ function d(x) {
 
 function nd(n, x) {
     /* NdX die roll */
-    var result = 0;
-    for(i=0; i<n; i++) {
+    let result = 0;
+    for(let i=0; i<n; i++) {
         result += d(x);
     }
     return result;
@@ -26,9 +26,9 @@ function nd(n, x) {
 
 function shuffle(array) {
     /* shuffles array in-place randomly */
-    for(var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = array[i];
+    for(let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let tmp = array[i];
         array[i] = array[j];
         array[j] = tmp;
     }
@@ -37,8 +37,8 @@ function shuffle(array) {
 function shuffledIndex(array, n, start=1) {
     /* return n shuffled item indexes from the array.
      * ! starts at index 1 by default ! */
-    var shuffled = new Array(array.length-start);
-    for(i=start; i<array.length; i++) {
+    let shuffled = new Array(array.length-start);
+    for(let i=start; i<array.length; i++) {
         shuffled[i-start] = i;
     }
     shuffle(shuffled);
