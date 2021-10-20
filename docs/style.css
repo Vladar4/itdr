@@ -341,8 +341,10 @@ li {
 
     .nav-current {
         border: 0px;
+        /*
         text-decoration: underline #333 2px;
         text-underline-offset: 1ex;
+        */
     }
 
     .nav > #nav-check:not(:checked) ~ .nav-links {

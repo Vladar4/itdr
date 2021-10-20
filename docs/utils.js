@@ -16,9 +16,9 @@ function high(a) {
 
 function addItem(s1, s2) {
     /* return a new string separated by a comma */
-    if(s1 == "") return s2;
-    if(s2 == "") return s1;
-    return s1 + ", " + s2;
+    if(s1 === "") return s2;
+    if(s2 === "") return s1;
+    return (s1 + ", " + s2);
 }
 
 /* DOCUMENT */
@@ -38,13 +38,13 @@ function docCreate(nodename) {
 /* TABS */
 
 function openTab(ev, id) {
-    let tabs = docClass('tab');
-    for(i=0; i<tabs.length; i++) {
+    const tabs = docClass('tab');
+    for(let i=0; i<tabs.length; i++) {
         tabs[i].style.display = 'none';
     }
 
-    let links = docClass('tab-link');
-    for(i=0; i<links.length; i++) {
+    const links = docClass('tab-link');
+    for(let i=0; i<links.length; i++) {
         links[i].className = links[i].className.replace(' active', '');
     }
 

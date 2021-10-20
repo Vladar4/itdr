@@ -2,6 +2,9 @@
 /* RANDOM CHARACTER */
 /********************/
 
+var opt;
+var iStats;
+
 function stat() {
     return nd(3, 6);
 }
@@ -11,16 +14,16 @@ function swapStats(idx1, idx2) {
 }
 
 function debugRNG(func, min, max, n=100000) {
-    var rng = new Array(max-min+1);
+    let rng = new Array(max-min+1);
     rng.fill(0);
-    for(i=0; i<n; i++) {
-        let s = func();
+    for(let i=0; i<n; i++) {
+        const s = func();
         rng[s-min] += 1;
     }
-    var checksum = 0;
+    let checksum = 0;
     console.clear();
-    for(i=0; i<rng.length; i++) {
-        let percent = rng[i]*100/n;
+    for(let i=0; i<rng.length; i++) {
+        const percent = rng[i]*100/n;
         checksum += percent;
         console.log(i+min, ": ", rng[i], " (", percent, "%)");
     }
@@ -28,7 +31,7 @@ function debugRNG(func, min, max, n=100000) {
 }
 
 function randomSimpleMelee() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(4)) {
         case 1: result = "pitchfork"; break;
         case 2: result = "quarterstaff"; break;
@@ -41,7 +44,7 @@ function randomSimpleMelee() {
 }
 
 function randomMartialMelee() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(8)) {
         case 1: result = "axe"; break;
         case 2: result = "dagger"; break;
@@ -59,7 +62,7 @@ function randomMartialMelee() {
 }
 
 function randomSimpleRanged() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(6)) {
         case 1: result = "boomerang"; break;
         case 2: result = "darts"; break;
@@ -74,7 +77,7 @@ function randomSimpleRanged() {
 }
 
 function randomMartialRanged() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(4)) {
         case 1: result = "crossbow"; break;
         case 2: result = "longbow"; break;
@@ -86,10 +89,10 @@ function randomMartialRanged() {
     return result;
 }
 
-let ropeItem = "10-ft rope";
+const ropeItem = "10-ft rope";
 
 function randomGear() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(12)) {
         case 1: return ropeItem;
         case 2: return "bottle";
@@ -108,7 +111,7 @@ function randomGear() {
 }
 
 function randomTool() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(20)) {
         case 1: return "animal trap";
         case 2: return "collapsible pole";
@@ -135,7 +138,7 @@ function randomTool() {
 }
 
 function randomPet() {
-    var result = "NONE";
+    let result = "NONE";
     switch(d(4)) {
         case 1: return "cat (STR 6, WIL 8, 2hp, d4 Claws)";
         case 2: return "mutt (STR 8, WIL 6, 2hp, d4 Bite)";
@@ -146,10 +149,10 @@ function randomPet() {
 }
 
 function randomGearOrTool(items) {
-    var result = [];
-    var next = "";
+    let result = [];
+    let next = "";
     if(randomBool()) {
-        for(i=0; i<2; i++) {
+        for(let i=0; i<2; i++) {
             do {
                 next = randomGear();
             }
@@ -167,16 +170,14 @@ function randomGearOrTool(items) {
     return result;
 }
 
-var iStats;
-
-let sFeatureList = [
+const sFeatureList = [
     "NONE",
     "Assassin",
     "Beastmaster",
     "Berserker",
     "Brawler",
     "Commander",
-    "Duelist",
+    "Duellist",
     "Healer",
     "Ironclad",
     "Mystic",
@@ -187,7 +188,7 @@ let sFeatureList = [
     "Thaumaturge",
     "Warrior"]; /* 15 */
 
-let sCantripList = [
+const sCantripList = [
     "NONE",
     "acid splash",
     "arcane mark",
@@ -210,7 +211,7 @@ let sCantripList = [
     "resistance",
     "spark"]; /* 20 */
 
-let sSpellList = [
+const sSpellList = [
     "NONE",
     "alarm",
     "animate rope",
@@ -253,7 +254,7 @@ let sSpellList = [
     "true strike",
     "unseen servant"]; /* 40 */
 
-let sSkillList = [
+const sSkillList = [
     "NONE",
     "animal handling",
     "athletics",
@@ -264,7 +265,7 @@ let sSkillList = [
     "stealth",
     "negotiation"]; /* 8 */
 
-let sGiftList = [
+const sGiftList = [
     "NONE",
     "aegis",
     "awakening",
@@ -277,7 +278,7 @@ let sGiftList = [
     "smite",
     "turn"]; /* 10 */
 
-let sBackgroundList = [
+const sBackgroundList = [
     "NONE",
     "Criminal",
     "Hunter",
@@ -290,7 +291,7 @@ let sBackgroundList = [
     ];
 
 function generateRandomStats() {
-    let out = docId('out_RandomStats');
+    const out = docId('out_RandomStats');
     iStats = [stat(), stat(), stat(), stat()];
     out.innerHTML =
         "STR " + iStats[0] +
@@ -303,7 +304,7 @@ function generateRandomStats() {
 }
 
 function generateRandomCharacter(swap) {
-    let out = docId('out_RandomCharacter');
+    const out = docId('out_RandomCharacter');
     docId('out_RandomStats').style.display="none";
     docId('swap_RandomCharacter').style.display="none";
 
@@ -327,17 +328,17 @@ function generateRandomCharacter(swap) {
     log("STR " + iStats[0] + ", DEX " + iStats[1] + ", WIL " + iStats[2] + ", Money " + iStats[3]);
 
     /* FEATURE */
-    var iFeature = parseInt(docId('select_feature').value);
+    let iFeature = parseInt(docId('select_feature').value);
     if(iFeature == 0) iFeature = d(high(sFeatureList));
-    var sFeature = sFeatureList[iFeature];
+    let sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
-    var bBrawler = false; /* for unarmoured defense */
-    var bMystic = false; /* can't use armour */
-    var iPets = 0;
-    var maxPets = 1;
-    var sPets = "";
-    var sFeatureItems = [];
-    var sTome = "";
+    let bBrawler = false; /* for unarmoured defense */
+    let bMystic = false; /* can't use armour */
+    let iPets = 0;
+    let maxPets = 1;
+    let sPets = "";
+    let sFeatureItems = [];
+    let sTome = "";
     switch(iFeature) {
         case 0: /* NONE */
             break;
@@ -360,9 +361,9 @@ function generateRandomCharacter(swap) {
             sFeature += " 1";
             bMystic = true;
             sFeatureItems.push("mystic's focus", "mystic's tome");
-            var cantrips = shuffledIndex(sCantripList, 2).sort(
+            let cantrips = shuffledIndex(sCantripList, 2).sort(
                 (function(a, b) {return a - b;}));
-            var spells = shuffledIndex(sSpellList, 6).sort(
+            let spells = shuffledIndex(sSpellList, 6).sort(
                 (function(a, b) {return a - b;}));
             sTome = "Mystic's Tome Contents: Cantrips: " +
                 sCantripList[cantrips[0]] + ", " +
@@ -376,13 +377,13 @@ function generateRandomCharacter(swap) {
             break;
 
         case 11: /* Skilled */
-            var skills = shuffledIndex(sSkillList, 2).sort(
+            let skills = shuffledIndex(sSkillList, 2).sort(
                 (function(a, b) {return a - b;}));
             sFeature += " (" + sSkillList[skills[0]] + ", " + sSkillList[skills[1]] + ")";
             break;
 
         case 14: /* Thaumaturge */
-            var gifts = shuffledIndex(sGiftList, 2).sort(
+            let gifts = shuffledIndex(sGiftList, 2).sort(
                 (function(a, b) {return a - b;}));
             sFeature += " 1 (d4 Gift die, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
             break;
@@ -395,7 +396,7 @@ function generateRandomCharacter(swap) {
     }
 
     /* HP */
-    var hp = 0;
+    let hp = 0;
     switch(iFeature) {
         case 3: /* Berserker */
         case 4: /* Brawler */
@@ -411,16 +412,16 @@ function generateRandomCharacter(swap) {
     }
 
     /* BACKGROUND */
-    var iBackground = parseInt(docId('select_background').value);
+    let iBackground = parseInt(docId('select_background').value);
     if(iBackground == 0) iBackground = d(high(sBackgroundList));
-    var sBackground = sBackgroundList[iBackground];
+    let sBackground = sBackgroundList[iBackground];
     log("Background " + iBackground + " (" + sBackground + ")");
-    var bBackgroundMelee = false;
-    var bTwohandedMelee = false;
-    var bBackgroundRanged = false;
-    var sBackgroundWeapons = "";
-    var sBackgroundItems = [];
-    var iRope = 0;
+    let bBackgroundMelee = false;
+    let bTwohandedMelee = false;
+    let bBackgroundRanged = false;
+    let sBackgroundWeapons = "";
+    let sBackgroundItems = [];
+    let iRope = 0;
     switch(iBackground) {
         case 1: /* Criminal */
             sBackgroundWeapons = "dagger (d6/d8)";
@@ -522,8 +523,8 @@ function generateRandomCharacter(swap) {
             break;
 
         case 7: /* Scholar */
-            var sStudyArea = "";
-            var sStudySpecialization = "";
+            let sStudyArea = "";
+            let sStudySpecialization = "";
             switch(d(12)) {
                 case 1:
                     sStudyArea = "History";
@@ -622,15 +623,15 @@ function generateRandomCharacter(swap) {
     }
 
     /* ITEMS */
-    var bMelee = bBackgroundMelee;
-    var bRanged = bBackgroundRanged;
-    var bShield = false;
-    var bLightArmour = false;
-    var sWeapons = "";
-    var sItemsList = [];
+    let bMelee = bBackgroundMelee;
+    let bRanged = bBackgroundRanged;
+    let bShield = false;
+    let bLightArmour = false;
+    let sWeapons = "";
+    let sItemsList = [];
 
     if(docId('checkbox_equipment').checked) {
-        var spareMoney = 0;
+        let spareMoney = 0;
         if(iStats[3] < 5) {
             spareMoney = 1;
         }
@@ -646,14 +647,14 @@ function generateRandomCharacter(swap) {
         else {
             spareMoney = nd(2, 4);
         }
-        var money = iStats[3] - spareMoney;
+        let money = iStats[3] - spareMoney;
 
         log("Total money is " + iStats[3]);
         log("Spare money is " + spareMoney);
         log("Spendable money is " + money);
 
         function buyMartialMelee() {
-            let item = randomMartialMelee();
+            const item = randomMartialMelee();
             if(item.includes("lance")) bTwohandedMelee = true; /* special case */
             sWeapons = addItem(sWeapons, item);
             money -= 10;
@@ -662,7 +663,7 @@ function generateRandomCharacter(swap) {
         }
 
         function buyMartialRanged() {
-            let item = randomMartialRanged();
+            const item = randomMartialRanged();
             sWeapons = addItem(sWeapons, item);
             money -= 10;
             bRanged = true;
@@ -682,7 +683,7 @@ function generateRandomCharacter(swap) {
         }
 
         function buyPet() {
-            let item = randomPet();
+            const item = randomPet();
             iPets += 1;
             sPets = addItem(sPets, item);
             money -= 5;
@@ -690,7 +691,7 @@ function generateRandomCharacter(swap) {
         }
 
         function buySimpleMelee() {
-            let item = randomSimpleMelee();
+            const item = randomSimpleMelee();
             sWeapons = addItem(sWeapons, item);
             bTwohandedMelee = true;
             money -= 1;
@@ -699,18 +700,18 @@ function generateRandomCharacter(swap) {
         }
 
         function buySimpleRanged() {
-            let item = randomSimpleRanged();
+            const item = randomSimpleRanged();
             sWeapons = addItem(sWeapons, item);
             money -= 1;
             bRanged = true;
             log("Bought " + item);
         }
 
-        var iGear = 0;
-        var iTool = 0;
+        let iGear = 0;
+        let iTool = 0;
 
         function buyGearOrTool() {
-            var item;
+            let item;
             repeat:
             do {
                 if(iGear > iTool) item = randomTool();
@@ -719,7 +720,7 @@ function generateRandomCharacter(swap) {
                 log(item);
                 /* check for repeats */
                 if(item.constructor === Array) { /* item is an Array */
-                    for(i = 0; i<item.length; i++) {
+                    for(let i=0; i<item.length; i++) {
                         log("Checking " + item[i]);
                         if((item[i] != ropeItem) && (sItemsList.indexOf(item[i]) > -1)) {
                             log("Repeat: " + item[i]);
@@ -761,7 +762,7 @@ function generateRandomCharacter(swap) {
                 buyPet(); /* for Beastmaster */
             }
             else {
-                if(bMelee && !bTwohandedMelee && !bShield) {
+                if(bMelee && !bTwohandedMelee && !bShield && !bMystic) {
                     buyShield();
                 }
                 else {
@@ -808,7 +809,7 @@ function generateRandomCharacter(swap) {
 
         while((money > 0) && !boughtEnough()) {
             if(money > 10) spend10();
-            else if (money > 5) spend5();
+            else if(money > 5) spend5();
             else spend1();
         }
         iStats[3] = money + spareMoney;
@@ -818,7 +819,7 @@ function generateRandomCharacter(swap) {
     log(sItemsList);
 
     /* Rope */
-    var i = sItemsList.length;
+    let i = sItemsList.length;
     while(i--) {
         if(sItemsList[i] == ropeItem) {
             iRope += 10;
@@ -838,7 +839,7 @@ function generateRandomCharacter(swap) {
     sItemsList.push("simple clothes (wearing), basic camping equipment, 6&nbsp;torches, 3&nbsp;days' rations");
 
     /* Armour */
-    var sArmour = "";
+    let sArmour = "";
     if(bLightArmour && bShield) sArmour = "Armour&nbsp;2 (light+shield)";
     else if(bLightArmour) sArmour = "Armour&nbsp;1 (light)";
     else if(bShield) sArmour = "Armour&nbsp;1 (shield)";
@@ -867,12 +868,12 @@ function generateRandomCharacter(swap) {
 }
 
 /* populate select_feature */
-let sfeat = docId('select_feature');
-var opt = docCreate('option');
+const sfeat = docId('select_feature');
+opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sfeat.appendChild(opt);
-for(i=1; i<sFeatureList.length; i++) {
+for(let i=1; i<sFeatureList.length; i++) {
     opt = docCreate('option');
     opt.text = sFeatureList[i];
     opt.value = i;
@@ -880,12 +881,12 @@ for(i=1; i<sFeatureList.length; i++) {
 }
 
 /* populate select_background */
-let sback = docId('select_background');
+const sback = docId('select_background');
 opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sback.appendChild(opt);
-for(i=1; i<sBackgroundList.length; i++) {
+for(let i=1; i<sBackgroundList.length; i++) {
     opt = docCreate('option');
     opt.text = sBackgroundList[i];
     opt.value = i;
@@ -962,7 +963,7 @@ function randomNPCPersonality() {
     }
 }
 
-let sNPCDetail = [
+const sNPCDetail = [
     "NONE", /* 0 */
     "NONE", /* 1 */
     "NONE", /* 2 */
@@ -1037,7 +1038,7 @@ function randomNPCDetailPrefix(n) {
 }
 
 function randomNPCDetails() {
-    var d1, d2;
+    let d1, d2;
     do { /* COMPATIBLE DETAILS */
         d1 = randomNPCDetail();
         do { /* REPEATS */
@@ -1062,8 +1063,8 @@ function randomNPCDetails() {
     if(d2 == 15) {d2 = d1; d1 = 15;} /* overweight */
     if(d2 == 13) {d2 = d1; d1 = 13;} /* short */
     if(d2 == 14) {d2 = d1; d1 = 14;} /* tall */
-    pre1 = randomNPCDetailPrefix(d1);
-    pre2 = randomNPCDetailPrefix(d2);
+    let pre1 = randomNPCDetailPrefix(d1);
+    let pre2 = randomNPCDetailPrefix(d2);
     if(anyOf(d1, d2, [6, 20])) {pre1 = "with an "; pre2 = "and a ";}
     if(
             (pre1.startsWith("who has")) ||
@@ -1118,10 +1119,10 @@ function randomNPCDetails() {
 }
 
 function generateRandomNPC() {
-    let out = docId('out_RandomNPC');
-    let stats = "STR " + statNPC() + ", DEX " + statNPC() + ", WIL " + statNPC();
-    let hp = d(6) + "hp";
-    var whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
+    const out = docId('out_RandomNPC');
+    const stats = "STR " + statNPC() + ", DEX " + statNPC() + ", WIL " + statNPC();
+    const hp = d(6) + "hp";
+    let whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
                 randomNPCOccupation() + " " + randomNPCDetails() + ".";
 
     if(whois.search("colour*") > -1) {
@@ -1139,7 +1140,7 @@ function generateRandomNPC() {
 /* RANDOM MONSTER */
 /******************/
 
-let sMonsterTable = [
+const sMonsterTable = [
     ["NONE"],
     ["NONE", /* Table 1 */
     "artificial@",
@@ -1295,11 +1296,11 @@ let sMonsterTable = [
     "shape-shifter"]]; /* 20 */
 
 function generateRandomMonster() {
-    let out = docId('out_RandomMonster');
-    var monster = "";
-    var tables = [];
-    for(i=0; i<d(4); i++) {
-        var newtab;
+    const out = docId('out_RandomMonster');
+    let monster = "";
+    let tables = [];
+    for(let i=0; i<d(4); i++) {
+        let newtab;
         do {
             newtab = d(8);
         } while(tables.indexOf(newtab) > -1);
@@ -1309,19 +1310,19 @@ function generateRandomMonster() {
         tables.push(8);
     }
     if((tables.length < 2) && (tables[0] == 8)) { /* Roll once more if you got only Table 8 */
-        var newtab;
+        let newtab;
         do {
             newtab = d(8);
         } while(newtab == 8);
         tables.push(newtab);
     }
     tables.sort();
-    var after = "";
-    for(i=0; i<tables.length; i++) {
-        var tab = sMonsterTable[tables[i]];
-        let idx = d(tab.length-1);
-        let entry = tab[idx];
-        var add = "NONE";
+    let after = "";
+    for(let i=0; i<tables.length; i++) {
+        const tab = sMonsterTable[tables[i]];
+        const idx = d(tab.length-1);
+        const entry = tab[idx];
+        let add = "NONE";
         if(entry.constructor === Array) add = entry[d(entry.length) - 1];
         else add = entry;
         if(add.startsWith(("with"))) { /* entries that start with "with ..." are pushed to the end */
@@ -1331,15 +1332,15 @@ function generateRandomMonster() {
             monster += add + " ";
         }
         if((tables[i] == 8) && (idx > 18)) { /* chimeric or shape-shifting */
-            let a = d(18);
-            var b;
+            const a = d(18);
+            let b;
             do {
                 b = d(18);
             } while(b == a);
-            entryA = sMonsterTable[8][a];
-            entryB = sMonsterTable[8][b];
-            var addA = "NONE";
-            var addB = "NONE";
+            const entryA = sMonsterTable[8][a];
+            const entryB = sMonsterTable[8][b];
+            let addA = "NONE";
+            let addB = "NONE";
             if(entryA.constructor === Array) addA = entryA[d(entryA.length) - 1];
             else addA = entryA;
             if(entryB.constructor === Array) addB = entryB[d(entryB.length) - 1];
@@ -1350,17 +1351,17 @@ function generateRandomMonster() {
     monster += after;
 
     /* ABILITIES */
-    var abilities = "";
+    let abilities = "";
     if(docId('checkbox_monster_abilities').checked) {
 
         /* DANGER */
-        var danger = parseInt(docId('select_monster_danger').value);
-        var hp = 0;
-        var stats = [stat(), stat(), stat()];
+        let danger = parseInt(docId('select_monster_danger').value);
+        let hp = 0;
+        let stats = [stat(), stat(), stat()];
         if(danger < 1) danger = d(5); /* random danger level */
-        for(i=1; i<=danger; i++) {
+        for(let i=1; i<=danger; i++) {
             hp += d(6);
-            for(j=0; j<stats.length; j++) {
+            for(let j=0; j<stats.length; j++) {
                 if(stats[j] < 20) {
                     if(d(20) > stats[j]) {
                         stats[j] += 1;
@@ -1370,8 +1371,8 @@ function generateRandomMonster() {
         } /* END FOR LOOP I */
 
         /* ARMOUR */
-        var armour = 0;
-        var pos = -1;
+        let armour = 0;
+        let pos = -1;
         while(-1 != (pos = monster.search("@"))) { /* search for armour tags */
             monster = monster.slice(0, pos) + monster.slice(pos+1);
             armour += 1;
@@ -1391,7 +1392,7 @@ function generateRandomMonster() {
                 ".<br/>";
     } /* END ABILITIES */
     else { /* remove armour tags */
-        var pos = -1;
+        let pos = -1;
         while(-1 != (pos = monster.search("@"))) { /* search for armour tags */
             monster = monster.slice(0, pos) + monster.slice(pos+1);
         }
@@ -1418,12 +1419,12 @@ function toggleMonsterAbilities() {
 
 /* populate select_monster_danger */
 docId('checkbox_monster_abilities').checked = false;
-let sdanger = docId('select_monster_danger');
-var opt = docCreate('option');
+const sdanger = docId('select_monster_danger');
+opt = docCreate('option');
 opt.text = "Random";
 opt.value = 0;
 sdanger.appendChild(opt);
-for(i=1; i<=5; i++) {
+for(let i=1; i<=5; i++) {
     opt = docCreate('option');
     opt.text = "" + i + "d6 HP";
     opt.value = i;
@@ -1441,7 +1442,7 @@ for(i=1; i<=5; i++) {
  * 3 - attribute + colour
  * 4 - attribute + colour + fabric
  */
-sMagicItem = [
+const sMagicItem = [
     ["NONE"],
     [   /* 1. CONTAINER */
         [-1, "NONE"],
@@ -1648,7 +1649,7 @@ sMagicItem = [
         [2, "war hammer"]
     ]];
 
-sItemAttribute = [
+const sItemAttribute = [
     "NONE",
     "ancient",
     "bejewelled",
@@ -1671,7 +1672,7 @@ sItemAttribute = [
     "sleek",
     "sophisticated"]; /* 20 */
 
-sItemColour = [
+const sItemColour = [
     "NONE",
     "snow white",
     "ash grey",
@@ -1686,7 +1687,7 @@ sItemColour = [
     "lavender violet",
     "orchid magenta"]; /* 12 */
 
-sItemFabric = [
+const sItemFabric = [
     "NONE",
     "cotton",
     "felt",
@@ -1697,7 +1698,7 @@ sItemFabric = [
     "silk",
     "wool"]; /* 8 */
 
-sItemMaterial = [
+const sItemMaterial = [
     "NONE",
     "amber",
     ["bone", "chitin"],
@@ -1720,7 +1721,7 @@ sItemMaterial = [
     "stone",
     "wooden"]; /* 20 */
 
-sItemPeculiarity = [
+const sItemPeculiarity = [
     "NONE",
     "that changes colour when no one is looking",
     "that is cold to the touch",
@@ -1736,7 +1737,7 @@ sItemPeculiarity = [
     "that is warm to the touch"]; /* 12 */
 
 function randomMagicItemType() {
-    let roll = d(100);
+    const roll = d(100);
     if(roll <= 10) return 1; /* container */
     else if(roll <= 30) return 2; /* consumable */
     else if(roll <= 40) return 3; /* garment */
@@ -1750,7 +1751,7 @@ function randomMagicItemType() {
 }
 
 function randomArrayItem(table, start = 1) {
-    let item = table[randomInt(start, table.length - 1)];
+    const item = table[randomInt(start, table.length - 1)];
     if(item.constructor === Array) {
         return randomArrayItem(item, 0);
     }
@@ -1758,16 +1759,16 @@ function randomArrayItem(table, start = 1) {
 }
 
 function generateRandomMagicItem() {
-    let out = docId('out_RandomMagicItem');
-    let itemType = randomMagicItemType();
-    let table = sMagicItem[itemType];
-    let itemIndex = d(table.length - 1);
-    let itemLine = table[itemIndex];
-    let itemAppearanceCode = itemLine[0];
-    var item = itemLine[1];
+    const out = docId('out_RandomMagicItem');
+    const itemType = randomMagicItemType();
+    const table = sMagicItem[itemType];
+    const itemIndex = d(table.length - 1);
+    const itemLine = table[itemIndex];
+    const itemAppearanceCode = itemLine[0];
+    let item = itemLine[1];
     if(itemLine.length > 2) item = randomArrayItem(itemLine);
-    var itemAppearance = "";
-    var itemColour = "";
+    let itemAppearance = "";
+    let itemColour = "";
     switch(itemAppearanceCode) {
         case 0: /* colour */
             itemColour = " of " + randomArrayItem(sItemColour) + " colour";
@@ -1791,12 +1792,12 @@ function generateRandomMagicItem() {
         default: itemAppearance = "NONE "; itemColour = " of NONE colour";
     }
 
-    var itemPeculiarity = "";
+    let itemPeculiarity = "";
     if(d(6) == 1) {
         itemPeculiarity = " " + randomArrayItem(sItemPeculiarity);
     }
 
-    itemString = itemAppearance + item + itemColour + itemPeculiarity + ".";
+    let itemString = itemAppearance + item + itemColour + itemPeculiarity + ".";
     itemString = itemString.charAt(0).toUpperCase() + itemString.slice(1);
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, itemString);
@@ -1816,7 +1817,7 @@ function randomWeatherTemperature() {
 }
 
 function randomWeatherSky(type) {
-    var input;
+    let input;
     switch(type) {
         case 0: input = d(20); break; /* NORMAL */
         case 1: input = d(12); break; /* DRY */
@@ -1847,7 +1848,7 @@ function randomWeatherSky(type) {
     }
 }
 
-let sWindForce = [
+const sWindForce = [
     "calm",
     "breeze",
     "average wind",
@@ -1855,13 +1856,13 @@ let sWindForce = [
     "gale"]; /* 5 */
 
 function randomWeatherWindDirection(force) {
-    var input;
+    let input;
     if(docId('radio_wind_default').checked) input = d(8);
     else if(docId('radio_wind_follow').checked) input = Math.max(d(8), d(8));
     else if(docId('radio_wind_against').checked) input = Math.min(d(8), d(8));
     else return "NONE";
 
-    var direction, mul = "NONE";
+    let direction, mul = "NONE";
     switch(input) {
         case 1:
         case 2:
@@ -1903,7 +1904,7 @@ function randomWeatherWindDirection(force) {
 }
 
 function randomWeatherWind(type) {
-    var input;
+    let input;
     switch(type) {
         case 0:
         case 1: input = d(20); break; /* NORMAL or DRY */
@@ -1934,8 +1935,8 @@ function randomWeatherWind(type) {
 }
 
 function generateRandomWeather(type) {
-    let out = docId('out_RandomWeather');
-    var weather = randomWeatherTemperature() + randomWeatherSky(type) +
+    const out = docId('out_RandomWeather');
+    let weather = randomWeatherTemperature() + randomWeatherSky(type) +
         ", " + randomWeatherWind(type);
     weather = weather.charAt(0).toUpperCase() + weather.slice(1) + ".";
 
