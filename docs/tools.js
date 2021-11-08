@@ -1241,25 +1241,25 @@ const sMonsterTable = [
     "walking"], /* 20 */
     ["NONE", /* Table 6 */
     "armless",
+    "asymmetrical",
     "bodiless",
     "four-armed",
     "four-legged",
     "legless",
     "limbless",
-    "metal@",
     "multi-armed",
     "multi-legged",
     "multi-limbed",
     "one-armed",
     "one-legged",
-    "stone@",
+    "radial",
+    "spherical",
     "tailed",
     "tentacled",
     "two-armed",
     "two-headed",
     "two-legged",
-    "winged",
-    "wooden@"], /* 20 */
+    "winged"], /* 20 */
     ["NONE", /* Table 7 */
     "blind",
     "brainless",
@@ -1274,6 +1274,17 @@ const sMonsterTable = [
     "two-headed",
     ["with trunk", "with face tentacles"]], /* 12 */
     ["NONE", /* Table 8 */
+    ["bone@", "chitinous@"],
+    ["clay", "mud", "sludge"],
+    ["cloth", "leather"],
+    ["crystalline@", "gem@"],
+    ["elemental", "gaseous"],
+    "fleshy",
+    "liquid",
+    "metallic@",
+    "stone@",
+    "wooden@"], /* 10 */
+    ["NONE", /* Table 9 */
     "amorphous mass",
     "amphibian",
     "animated object",
@@ -1296,8 +1307,11 @@ const sMonsterTable = [
     "shape-shifter"]]; /* 20 */
 
 function generateRandomMonster() {
+    const idForm = 9; /* Form table index */
     const out = docId('out_RandomMonster');
     let monster = "";
+
+    /* choose random tables */
     let tables = [];
     for(let i=0; i<d(4); i++) {
         let newtab;
@@ -1306,17 +1320,9 @@ function generateRandomMonster() {
         } while(tables.indexOf(newtab) > -1);
         tables.push(newtab);
     } /* END FOR LOOP */
-    if(tables.indexOf(8) < 0) { /* Table 8 is always present */
-        tables.push(8);
-    }
-    if((tables.length < 2) && (tables[0] == 8)) { /* Roll once more if you got only Table 8 */
-        let newtab;
-        do {
-            newtab = d(8);
-        } while(newtab == 8);
-        tables.push(newtab);
-    }
+    tables.push(idForm); /* Form mable is always present */
     tables.sort();
+
     let after = "";
     for(let i=0; i<tables.length; i++) {
         const tab = sMonsterTable[tables[i]];
@@ -1331,14 +1337,15 @@ function generateRandomMonster() {
         else {
             monster += add + " ";
         }
-        if((tables[i] == 8) && (idx > 18)) { /* chimeric or shape-shifting */
+        /* Form table special cases */
+        if((tables[i] == idForm) && (idx > 18)) { /* chimeric or shape-shifting */
             const a = d(18);
             let b;
             do {
                 b = d(18);
             } while(b == a);
-            const entryA = sMonsterTable[8][a];
-            const entryB = sMonsterTable[8][b];
+            const entryA = sMonsterTable[idForm][a];
+            const entryB = sMonsterTable[idForm][b];
             let addA = "NONE";
             let addB = "NONE";
             if(entryA.constructor === Array) addA = entryA[d(entryA.length) - 1];
