@@ -42,20 +42,20 @@ main {
     justify-content: flex-start;
 }
 
-article {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-}
-
 article, footer, p, table {
-    min-width: 20rem;
+    min-width: 19rem;
     max-width: 40rem;
     width: 100%;
     margin: 0 auto;
 }
 
+article {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    min-width: 20rem;
+}
 
 h1, h2, h3, h4 {
     color: #111;
@@ -135,6 +135,16 @@ a:active {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.bottom {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom img {
+    width: 19rem;
 }
 
 input[type=button], select {
