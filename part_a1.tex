@@ -454,61 +454,73 @@ For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thic
 \section{Travel}
 \index{Travel}
 
-Travel for 8 hours/day before resting for the night.
+Travel for \textbf{8 hours/day} before resting for the night.
 
 \subparagraph{Grid} of \travelunit{1}-mile tiles simplifies distance calculations.
 
 \index{Terrain}
 \begin{dtable}[lLcc]
 \textbf{Terrain} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} \\
-Clear		& grassland, road, trail 			& \travelunit{5} & 5 \\
-Rugged		& desert, forest, hills, mud, snow, river ford, mountain pass	& \travelunit{4} & 4 \\
-Difficult 	& jungle, mountains, river, swamp	& \travelunit{3} & 3 \\
+Clear		& grassland, plains 		& \travelunit{4} & 4 \\
+Rugged		& desert, forest, hills		& \travelunit{3} & 3 \\
+Difficult 	& \mbox{jungle, mountains,} swamp	& \travelunit{2} & 2 \\
 \end{dtable}
 
-To speed up calculations, choose a dominant \mbox{terrain} for each day of travel and apply it to the whole day.
+To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a day) of travel and apply it to the whole duration.
 
-\vfill
+\index{Exhaustion}
+\subparagraph{Exhaustion Check:} make a \save{STR} or lose d4 STR (if mounted or on a vehicle --- for your mounts).
 
-\index{Large Groups}
+\index{Rest}
+\subparagraph{Rest} for a day for every 6 days travelled or make an Exhaustion Check for each extra day of travel.
+
+\index{Encumbrance}
 \index{Forced March}
+\index{Large Groups}
+\index{Roads}
+
 \begin{dtable}[Lcc]
 	\textbf{Speed Modifier} & \textbf{Miles} & \textbf{Grid} \\
-	
-	\textbf{Concurrent activities}
-	(exploring, sneaking, foraging, etc.) & --\travelunit{2} & --2 \\
-	
+
+	\textbf{Roads} & +\travelunit{1} & +1 \\
+
+	\mbox{\textbf{Forced march} for extra 2 hours,} \mbox{make an Exhaustion Check} & +\travelunit{1} & +1 \\
+
 	\textbf{Large groups} & --\travelunit{1} & --1 \\
 	
+	\mbox{\textbf{Encumbrance} over 50~lb on foot,} mount or vehicle overload & --\travelunit{1} & --1 \\
+
 	\textbf{Harsh weather} & --\travelunit{1} & --1 \\
 	
 	\textbf{Extreme weather} & --\travelunit{2} & --2 \\
 	
-	\multicolumn{3}{l}{\textbf{Mounts (except mules, donkeys, etc.):}} \\
-	\hspace{0.5em}\labelitemi~Clear terrain & +\travelunit{1} & +1 \\
+	\textbf{Concurrent activities}
+	(exploring, sneaking, foraging, etc.) & --\travelunit{2} & --2 \\
+
+	\hline
+
+	\multicolumn{3}{l}{\textbf{Mounted:}} \\
+
+	\hspace{0.5em}\labelitemi~Horses on clear terrain & +\travelunit{1} & +1 \\
+
 	\hspace{0.5em}\labelitemi~Camels in a desert & +\travelunit{1} & +1 \\
-	\hspace{0.5em}\parbox{\linewidth}{\vspace{0.2ex}
-	\labelitemi~Difficult terrain\\
-	(except for elephants in a jungle)} & --\travelunit{1} & --1 \\
+
+	\hspace{0.5em}\labelitemi~Elephants in a jungle & +\travelunit{1} & +1 \\
 	
-	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
-	\hspace{0.5em}\labelitemi~Clear terrain except roads & --\travelunit{1} & --1 \\
-	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{2} & --2 \\
-	\hspace{0.5em}\labelitemi~Difficult terrain & \multicolumn{2}{c}{impassable} \\
-	
+	\hspace{0.5em}\mbox{\labelitemi~Rugged or difficult terrain} \mbox{(except for donkeys and mules)} & --\travelunit{1} & --1 \\
+
 	\hline
 	
-	\multicolumn{3}{c}{\textbf{Multipliers} (applied last rounding up)} \\
+	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
 
-	\textbf{Encumbrance} over 50~lb on foot or vehicle overload & \multicolumn{2}{c}{$\times$\sfrac{1}{2}} \\
+	\hspace{0.5em}\labelitemi~Rugged terrain & --\travelunit{1} & --1 \\
 	
-	\textbf{Forced march} \mbox{for extra 4 hours,} \mbox{\save{STR} or lose d4 STR} \mbox{(if mounted --- for your mounts)} & \multicolumn{2}{c}{$\times$1\sfrac{1}{2}} \\
+	\hspace{0.5em}\labelitemi~Difficult terrain & --\travelunit{2} & --2 \\
 \end{dtable}
 
-\index{Rest}
-\subparagraph{Rest} for a day for every 6 days travelled or make Forced march \save{STR} against d4 STR Loss.
-
 \vfill
+
+\subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
 
 \index{Mounts}
 \index{Mule}
@@ -536,8 +548,6 @@ To speed up calculations, choose a dominant \mbox{terrain} for each day of trave
 	Wagon	& 4	& 2~t			& 16& 1g \\
 \end{dtable}
 
-\subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
-
 
 \break
 
@@ -564,7 +574,7 @@ To speed up calculations, choose a dominant \mbox{terrain} for each day of trave
 \index{Boats}
 \index{Ships}
 
-Travel for 12 hours/day. With a double crew, you can switch shifts to continue travelling at night.
+Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to continue travelling at night.
 
 \index{Vehicles!waterborne}
 \index{Rowboat}
@@ -717,7 +727,7 @@ Balloons and airships are affected by winds in the same manner as sailing ships.
 \index{Movement}
 \index{Exploration}
 \index{Turns}
-Each \textbf{combat turn (1 minute)} characters move their travel Grid value $\times$ 10 feet (generally \textbf{40 feet}; $\pm$10~feet for clear or difficult terrain; $\times$\sfrac{1}{2} if encumbered).
+Each \textbf{combat turn (1 minute)} characters move their travel Grid value $\times$ 10 feet (generally \textbf{30 feet}; $\pm$10~feet for clear or difficult terrain; $\times$\sfrac{1}{2} when encumbered; $\times$1\sfrac{1}{2} when forgoing any actions this turn).
 
 For time-tracking purposes, exploration activities take \textbf{10 minutes}: searching, lockpicking, resting, etc.
 
