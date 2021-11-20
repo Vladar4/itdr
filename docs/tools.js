@@ -263,7 +263,9 @@ const sSkillList = [
     "drinking",
     "quickness",
     "stealth",
-    "negotiation"]; /* 8 */
+    "navigation",
+    "negotiation",
+    "tracking"]; /* 10 */
 
 const sGiftList = [
     "NONE",
