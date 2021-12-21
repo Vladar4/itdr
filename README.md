@@ -98,6 +98,73 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v2.1
+
+#### Part 1
+* Beastmaster may choose to make a WIL Save instead of the pet
+* Thaumaturge starts with two Gifts instead of one
+* Improved starting equipment description
+
+#### Part 2
+* Taking your Turn: clarified sequence
+
+#### Part 3
+* Ruling a Domain: Unrest roll is changed from "equal or lower" to "lower"
+
+#### Part 4
+* Simultaneous Persistent Spells are limited to 2 x Mystic Level
+* Dispel:
+  * Superiority in Mystic Level grants Advantage
+  * Added rule for dispelling Persistent Spells
+##### Circle 1
+* Identify: improved description
+##### Circle 3
+* Invisibility Sphere: improved description
+##### Circle 5
+* Perfect Weapon: now Persistent; do not disappear when casting spells.
+
+#### Part 5
+* Combat Turn Sequence: expanded into Marching Order and Combat Turn Sequence
+
+#### Part 7
+* Random Encounters: A note on using larger dice
+
+#### Part 8
+* Monster Conversion: Improved Morale conversion table
+
+#### Appendix A
+* Characters:
+  * Added Balanced Characters rule
+  * Added Fortune Favours the Brave rule
+* Added Group Saves rule
+* Selling: Added chance of barter rule
+* Travel:
+  * Exhaustion Check
+  * Simplified Speed Modifiers
+  * Added units of measure in the horizon formula
+  * Added a note regarding weather duration
+  * Added Movement in Combat and Exploration section
+* Random Characters: fixed and improved
+* Random Magic Items:
+  * 'dust' entry changed to 'dust or powder'
+  * added colour table reference
+* Random Monsters: updated, added an instruction and a new table - Material
+* Random Non-Player Characters: 'red hair' entry changed to 'rare hair colour'
+
+#### Miscellaneous
+* Improved document style and layout
+* Improved booklet script and printing layout
+
+#### Home Page
+* Tools:
+  * Random Character
+  * Random Non-Player Character
+  * Random Monster
+  * Random Magic Item
+  * Random Weather
+* Improved layout, implemented responsive design
+
+
 ### v2.0
 
 #### Part 1
