@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2020/12/12]
+\ProvidesPackage{itdr}[2021/09/20]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -9,52 +9,56 @@
 \RequirePackage{multirow}
 \RequirePackage[super]{nth}
 \RequirePackage{setspace}
-\RequirePackage{xfrac} % for the \sfrac fractions
+\RequirePackage{xfrac}% for the \sfrac fractions
 \RequirePackage{xifthen}
 
-% travelunit
-\newcommand{\travelunit}[1]{\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
-
 % Reset footnote counter for each new page
-\RequirePackage{perpage} %the perpage package
-\MakePerPage{footnote} %the perpage package command
+\RequirePackage{perpage}% the perpage package
+\MakePerPage{footnote}% the perpage package command
 
-% Index
+%%%%%%%%%
+% INDEX %
+%%%%%%%%%
+
 \RequirePackage{imakeidx}
 \makeindex[name=spelllist, title={Spell List}, options=-s itdr]
 \makeindex[options=-s itdr]
 \RequirePackage[columns=3,columnsep=1em,font=small,indentunit=1em,rule=0px]{idxlayout}
 
-% Colors
+%%%%%%%%%%
+% COLORS %
+%%%%%%%%%%
+
 \RequirePackage[table,svgnames]{xcolor}
 \colorlet{dColor1}{white}
 \colorlet{dColor2}{LightGrey}
 
-% Fonts
-\RequirePackage{fourier} % special symbols
-\RequirePackage{humanist} % fancy title font
+%%%%%%%%%
+% FONTS %
+%%%%%%%%%
+
+\RequirePackage{fourier}% special symbols
+\RequirePackage{humanist}% fancy title font
 \RequirePackage[T1]{fontenc}
 \newcommand*{\fancyfont}{\hminfamily}
 
-\newcommand{\textBigTitle}[1]{
+\newcommand{\textBigTitle}[1]{% cover page title
 	{\fancyfont\fontsize{30}{24}\bfseries\selectfont #1}
-	\vspace{1em}
+	\vspace{1em}%
 }
 
-\newcommand{\textSubTitle}[1]{
+\newcommand{\textSubTitle}[1]{% cover page subtitle
 	{\fancyfont\fontsize{18}{16}\selectfont #1}
-	\vspace{1em}
+	\vspace{1em}%
 }
 
-% Lists
-\RequirePackage{enumitem}
-\renewcommand\labelitemi{\starredbullet}
-\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
-\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+%%%%%%%%%%%%%%
+% SECTIONING %
+%%%%%%%%%%%%%%
 
 % Titles
 \RequirePackage{titlesec}
-\setlength{\parskip}{0.2em} % distance between paragraphs
+\setlength{\parskip}{0.4ex}% distance between paragraphs
 
 \renewcommand\thesection{}
 \renewcommand\thesubsection{}
@@ -62,42 +66,42 @@
 % chapter
 \titleformat{\chapter}
 	{\normalfont\scshape\LARGE}{\thechapter.\ }{0em}{}
-\titlespacing*{\chapter}{0em}{0em}{0.5em}
+\titlespacing*{\chapter}{0em}{0ex}{1ex}
 \def\chapterautorefname{Chapter}
 
 % unnumbered chapter
-\newcommand{\chapterx}[1]{
+\newcommand{\chapterx}[1]{%
 	\chapter*{#1}
-	\addcontentsline{toc}{chapter}{#1}
-	\fancyhead[LE,RO]{\textsc{{\nouppercase #1}}}
+	\markboth{#1}{}
+	\addcontentsline{toc}{chapter}{#1}%
 }
 
 % section
 \titleformat{\section}
 	{\normalfont\scshape\Large}{\thesection}{0em}{}
 	[{\titleline{\color{black}\titlerule[1pt]}}]
-\titlespacing*{\section}{0em}{\parskip}{0.5em}
+\titlespacing*{\section}{0em}{\parskip}{1ex}
 
 % subsection
 \titleformat{\subsection}
 	{\normalfont\bfseries\scshape\large}{\thesubsection}{0em}{}
-\titlespacing*{\subsection}{0em}{\parskip}{0em}
+\titlespacing*{\subsection}{0em}{\parskip}{0ex}
 
 % subsubsection
 \titleformat{\subsubsection}
 	{\normalfont\bfseries\scshape\normalsize}{\thesubsubsection}{0em}{}[]
-\titlespacing*{\subsubsection}{0pt}{\parskip}{0em}
+\titlespacing*{\subsubsection}{0em}{\parskip}{0ex}
 
 % paragraph
 \titleformat{\paragraph}
 	{\normalfont\bfseries\normalsize}{\theparagraph}{0em}{}[]
-\titlespacing*{\paragraph}{0pt}{\parskip}{0em}
+\titlespacing*{\paragraph}{0em}{\parskip}{0ex}
 
 % paragraphsection
 \makeatletter
 \def\paragraphsection{\@ifstar\@paragraphsection\@@paragraphsection}
-\def\@paragraphsection#1{\vspace{0.2em}\paragraph*{{\scshape #1}}}
-\def\@@paragraphsection#1{\vspace{0.2em}\paragraph{{\scshape #1}}}
+\def\@paragraphsection#1{\vspace{0.4ex}\paragraph*{{\scshape #1}}}
+\def\@@paragraphsection#1{\vspace{0.4ex}\paragraph{{\scshape #1}}}
 \makeatother
 
 % subparagraph
@@ -105,71 +109,78 @@
 	{\normalfont\bfseries\normalsize}{\thesubparagraph}{0em}{}[]
 \titlespacing*{\subparagraph}{\parindent}{\parskip}{\wordsep}
 
-% TOC
+%%%%%%%
+% TOC %
+%%%%%%%
+
 \RequirePackage[toc]{multitoc}
-\newcommand{\toc}[1][1]{
+\newcommand{\toc}[1][1]{%
 	\fancyhead[LE,RO]{}
 	\begingroup
 	\let\cleardoublepage\relax
 	\let\clearpage\relax
+	\hyphenchar\font=-1% disable hyphenation
 	\setcounter{tocdepth}{#1}\tableofcontents
+	\hyphenchar\font=`\-% enable hyphenation
 	\endgroup
 	\clearpage
 }
 
-% Clear to left page
-\makeatletter
-\newcommand*{\cleartoleftpage}{
-	\clearpage
-	\if@twoside
-	\ifodd\c@page
-	\hbox{}\thispagestyle{empty}\newpage
-	\if@twocolumn
-	\hbox{}\thispagestyle{empty}\newpage
-	\fi
-	\fi
-	\fi
-}
-\makeatother
+%%%%%%%%%%%%
+% FANCYHDR %
+%%%%%%%%%%%%
 
-% Headers
-\RequirePackage[compatV3]{fancyhdr}
+\RequirePackage{fancyhdr}
 
 \renewcommand{\headrulewidth}{1pt}
 
-\def \bottomLineVspace {-1.85em}
+\def \bottomLineVspace {-3.8ex}
 
-% call after \toc and \chapterx (kinda hacky)
-\newcommand{\resetHeaders}{
-	\pagestyle{fancy}
-	\fancyhead{}
-	\fancyfoot{}
+% define fancy page style
+\fancypagestyle{fancy}{%
+	\fancyhf{}% clear headers and footers
 	
-	\fancyhead[LE,RO]{
-		{\textsc{{\nouppercase Chapter\ \thechapter:\ \leftmark}}}
+	\fancyhead[LE,RO]{%
+		{\textsc{\nouppercase{\leftmark}}}%
 	}
-	\fancyhead[LO,RE]{
-		{\scshape\title}
+	\fancyhead[LO,RE]{%
+		{\scshape\title}%
 	}
-	\fancyfoot[LE]{
+	\fancyfoot[LE]{%
 		\thepage
 		\vspace{\bottomLineVspace}
-		\includegraphics[width=\linewidth]{img/bottom_line_even.pdf}
+		\includegraphics[width=\linewidth]{img/bottom_line_even.pdf}%
 	}
-	\fancyfoot[RO]{
+	\fancyfoot[RO]{%
 		\thepage
 		\vspace{\bottomLineVspace}
-		\includegraphics[width=\linewidth]{img/bottom_line_odd.pdf}
+		\includegraphics[width=\linewidth]{img/bottom_line_odd.pdf}%
 	}
-	\fancypagestyle{plain}{}
 }
-\resetHeaders
 
-% Do not write the word "chapter"
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}} 
+\fancypagestyle{plain}{}% redefine plain page style
+\pagestyle{fancy}% set fancy page style
+
+% Change chaptermark
+\renewcommand{\chaptermark}[1]{%
+	\markboth{\chaptername\ \thechapter:\ #1}{}%
+}
+
+%%%%%%%%%
+% LISTS %
+%%%%%%%%%
+
+\RequirePackage{enumitem}
+\renewcommand\labelitemi{\starredbullet}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+%%%%%%%%%%
+% TABLES %
+%%%%%%%%%%
 
 % Table header
-\newcommand{\header}[1]{{
+\newcommand{\header}[1]{{%
 	\noindent
 	\normalfont\normalsize\bfseries
 	#1}\\}
@@ -183,43 +194,15 @@
 
 % Table environment
 \RequirePackage{tabularx}
-\newenvironment{dtable}[1][XX]{
-	\vspace{0.05em}
-	\noindent
-	\rowcolors{1}{dColor1}{dColor2} % Alternate colors
-	\tabularx{\linewidth}{#1}
-	}
-	{\endtabularx\vspace{0.25em}\noindent}
+\newenvironment{dtable}[1][XX]{%
+	\vspace{0.1ex}\noindent
+	\rowcolors{1}{dColor1}{dColor2}% Alternate colors
+	\tabularx{\linewidth}{#1}%
+}{\endtabularx\vspace{0.5ex}\noindent}
 
-
-%	Box environment
-
-\mdfsetup{
-	backgroundcolor=dColor2,
-	innerleftmargin=0.5em,
-	innerrightmargin=0.5em,
-	innertopmargin=0em,
-	leftmargin=1em,
-	linewidth=0pt,
-	skipabove=0em,
-	skipbelow=-0.7em,
-}
-\newenvironment{dbox}
-{	\noindent\begin{minipage}{\linewidth}
-	\noindent\vspace{-1.33em}\hspace{-0.024\linewidth}
-	\includegraphics[width=1.031\linewidth]{img/box_top.pdf}
-	\begin{mdframed}
-	\vspace{0.3em}
-}
-{	\vspace{-0.2em}
-	\end{mdframed}
-	\vspace{0.3em}
-	\noindent\hspace{-0.024\linewidth}
-	\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}
-	\end{minipage}
-	\vspace{-0.5em}
-}
-
+%%%%%%%%%%%%%
+% TEMPLATES %
+%%%%%%%%%%%%%
 
 % \save{ABILITY}
 \newcommand{\save}[1]{#1~Save}
@@ -229,125 +212,66 @@
 
 % \feat{name}{comment}
 % -	feature
-\newcommand{\feat}[1]{
+\newcommand{\feat}[1]{%
 	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Feature)}
+	\index{#1 (Feature)}%
 }
 % -	ancestry
-\newcommand{\feata}[1]{
+\newcommand{\feata}[1]{%
 	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Feature, ancestry)}
+	\index{#1 (Feature, ancestry)}%
 }
 % -	background
-\newcommand{\featb}[1]{
+\newcommand{\featb}[1]{%
 	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Background)}
+	\index{#1 (Background)}%
 }
 
 % \equip{name}{price}
-\newcommand{\equip}[2]{
+\newcommand{\equip}[2]{%
 	\subparagraph{#1} (#2)
 }
 
 % \weapon{name}{price}{damage}
-\newcommand{\weapon}[3]{
+\newcommand{\weapon}[3]{%
 	\subparagraph{#1} (#2): #3 Damage.
 }
 
 % \armour{name}{price}{value}
-\newcommand{\armour}[3]{
+\newcommand{\armour}[3]{%
 	\subparagraph{#1} (#2): Armour #3.
 }
 
 % \spell{name} description.
-\newcommand{\spell}[1]{
-	\textbf{#1:}\index[spelllist]{#1 (\spellcircle)}
+\newcommand{\spell}[1]{%
+	\textbf{#1:}\index[spelllist]{#1 (\spellcircle)}%
 }
 
 % \statpar{monster name}
-\newcommand{\statpar}[1]{
-	\vspace{0.4em}
-	\paragraphsection{#1}
+\newcommand{\statpar}[1]{%
+	\vspace{1ex}
+	\paragraphsection{#1}%
 }
 
 % \class{name}
-\newcommand{\class}[1]{
-	\subsection*{\decosix~#1~\decosix}
+\newcommand{\class}[1]{%
+	\subsection*{\decosix~#1~\decosix}%
 	%\addcontentsline{toc}{subsection}{#1}
 }
 
 % \creed{name}
-\newcommand{\creed}[1]{
-	\subsection*{\decosix~#1~\decosix}
+\newcommand{\creed}[1]{%
+	\subsection*{\decosix~#1~\decosix}%
 	%\addcontentsline{toc}{subsection}{#1}
 }
 
-% \placeholder{}
-\newcommand{\placeholder}[2][0.985\linewidth]{
-	\noindent\fbox{\rule{#1}{0pt}\rule[-0.5ex]{0pt}{#2}}
-	\vspace{-1em}
-}
-
-% \dimage{filename}
-\newcommand{\dimage}[2]{
-	\IfFileExists{./img/pic/#1.png}{
-		\noindent\includegraphics[width=1.0\linewidth]{img/pic/#1.png}
-	}
-	{ % else
-		\placeholder{#2}
-	}
-	\vspace{-1em}
-}
-
-% \dimagebottom{filename}
-% full-page image at the bottom of the page
-% place BEFORE anything on the page
-\RequirePackage{stfloats}
-\newcommand{\dimagebottom}[2]{
-	\noindent\begin{figure*}[bp]
-	\centering
-	\IfFileExists{./img/pic/#1.png}{
-		\includegraphics[width=\textwidth]{./img/pic/#1.png}
-	}
-	{ % else
-		\placeholder{#2}
-	}
-	\end{figure*}
-	\vspace{-1.9em}
-}
-
-% \dimageoverlay{filename}
-% full-page image over the text
-% place after the last text on this page
-\newcommand{\dimageoverlay}[1]{
-	\noindent\begin{picture}(0,375)
-	\IfFileExists{./img/pic/#1.png}{
-		 \put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
-	}
-	{ % else
-		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{542pt}}}
-	}
-	\end{picture}
-}
-
-% \dimagepage{filename}
-% full-page image on a separate page (\thispagestyle{empty}).
-\newcommand{\dimagepage}[1]{
-	\thispagestyle{empty}
-	\topskip0pt
-	\noindent\begin{picture}(0,617)
-	\IfFileExists{./img/pic/#1.png}{
-		\put(0,0){\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}}
-	}
-	{ % else
-		\put(0,0){\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}}
-	}
-	\end{picture}
-}
+% \travelunit
+\newcommand{\travelunit}[1]{%
+	\FPeval{\result}{trunc(#1 * 5 : 0)}\result}
 
 % fill the page with lines
-\newcommand{\dnotes}[1][2em]{%
-	\thispagestyle{empty}
+\newcommand{\dnotes}[1][4ex]{%
+	\thispagestyle{empty}%
 	\begingroup\offinterlineskip
 	\hrule height 0pt
 	\vskip-\topskip
@@ -356,13 +280,135 @@
 	\clearpage
 }
 
+%%%%%%%%%
+% BOXES %
+%%%%%%%%%
+
+\mdfsetup{
+	backgroundcolor=dColor2,
+	innerleftmargin=0.5em,
+	innerrightmargin=0.5em,
+	innertopmargin=0ex,
+	leftmargin=1em,
+	linewidth=0pt,
+	skipabove=0ex,
+	skipbelow=0ex,
+}
+
+\newenvironment{dbox}{%
+	\noindent\begin{minipage}{\linewidth}%
+		\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
+		\includegraphics[width=1.031\linewidth]{img/box_top.pdf}%
+		\begin{mdframed}\vspace{0.5ex}% spacing before the text
+		}{ % <- the space here is left intentionally
+			\vspace{-0.5ex}% spacing after the text
+		\end{mdframed}%
+		\vspace{-3pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
+		\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}%
+	\end{minipage}%
+}
+
+%%%%%%%%%%
+% IMAGES %
+%%%%%%%%%%
+
+% \placeholder{filename}{height}
+\newcommand{\placeholder}[3][\linewidth]{%
+	\noindent\begin{minipage}{#1}%
+		\begin{mdframed}[	align=center,
+							backgroundcolor=white,
+							linecolor=black,
+							linewidth=1pt,
+						]%
+			\parbox[t][#3-7.25pt][t]{#1}{\centering\vfill#2\vfill}%
+		\end{mdframed}%
+	\end{minipage}%
+}
+
+% \dimage{filename}{height}
+\newcommand{\dimage}[2]{%
+	\IfFileExists{./img/pic/#1.png}{%
+		\noindent\includegraphics[width=\linewidth]{img/pic/#1.png}%
+	}{\placeholder{#1}{#2}}% else
+}
+
+% \dimagebottom{filename}{height}
+% full-page image at the bottom of the page
+% place BEFORE anything on the page
+\RequirePackage{stfloats}
+\newcommand{\dimagebottom}[2]{{% <- second pair of brackets is intentional
+	\noindent\begin{figure*}[bp]
+	\centering\IfFileExists{./img/pic/#1.png}{%
+		\includegraphics[width=\textwidth]{./img/pic/#1.png}%
+	}{\placeholder{#1}{#2}}% else
+	\end{figure*}
+	\vspace{-29.5pt}% fix spacing at the top of the page
+	\break
+}}
+
+% \dimagepage{filename}
+% full-page image on a separate page (\thispagestyle{empty}).
+\newcommand{\dimagepage}[1]{{% <- second pair of brackets is intentional
+    \break
+    \thispagestyle{empty}%
+    \topskip0pt
+    \noindent\begin{picture}(0,617)
+	\IfFileExists{./img/pic/#1.png}{%
+		\put(0,0){%
+			\hbox{\includegraphics[width=\textwidth]{./img/pic/#1.png}}%
+		}
+	}
+	{% else
+		\put(0,315){%
+		%	\fbox{\rule{0.985\textwidth}{0pt}\rule[-0.5ex]{0pt}{626pt}}%
+			\placeholder[\textwidth]{#1}{636pt}%
+		}
+	}
+	\end{picture}%
+}}
+
+% Clear to left page
+\makeatletter
+\newcommand*{\cleartoleftpage}{%
+	\clearpage
+	\if@twoside
+	\ifodd\c@page
+	\hbox{}\thispagestyle{empty}\newpage
+	\if@twocolumn
+	\hbox{}\thispagestyle{empty}\newpage
+	\fi
+	\fi
+	\fi
+}
+\makeatother
+
+%%%%%%%%%%%%%%
+% HYPERLINKS %
+%%%%%%%%%%%%%%
+
 % Hyperref should be loaded last
 \RequirePackage{hyperref}
-\hypersetup{
-	pdfborderstyle={/S/U/W 1}
-	}
+\hypersetup{%
+	pdfborderstyle={/S/U/W 1}% underlined hyperlinks
+}
 
 % \customref{label}{text}
 \newcommand*{\customref}[2]{\hyperref[{#1}]{#2}}
 % \fullref{label}
 \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}: \nameref*{#1}}}
+
+% \safenameref{label}{fallback}
+% if label is undefined, fallback is used
+\makeatletter
+\newcommand{\safenameref}[2]{%
+	\@ifundefined{r@#1}{#2}{\nameref{#1}}}
+\makeatother
+
+% \safepageref{before}{label}{after}
+% output: before ?? after
+% where ?? is a page number of the label
+% if label is undefined, nothing is shown
+\makeatletter
+\newcommand{\safepageref}[3]{%
+	\@ifundefined{r@#2}{}{#1\pageref{#2}#3}}
+\makeatother

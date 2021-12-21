@@ -20,8 +20,9 @@ Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic L
 
 \index{Spells!persistent}
 \index{Persistent Spells|see {Spells, persistent}}
-\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again.
+\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again. You can sustain up to \textbf{2~$\times$~Mystic Level} simultaneously.
 
+\vfill
 \index{Spells!cantrips}
 \index{Cantrips|see {Spells, cantrips}}
 \paragraph{Cantrips}
@@ -32,13 +33,31 @@ These minor tricks are not true Spells, do not interrupt ongoing effects of the 
 \paragraph{Focus}
 Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an action, while performing the proper gestures and incantations.
 
-\index{Spells!dispel}
-\index{Dispel|see {Spells, dispel}}
-It can also be used to \textbf{dispel} the ongoing effect of another Mystic's Spell unless they pass a \save{WIL}.
-
 A Focus does not work when wearing armour.
 
+\index{Spells!dispel}
+\index{Dispel|see {Spells, dispel}}
+\paragraph{Dispel}
+The Focus can be used to \textbf{dispel} the ongoing effect of another Mystic's Spell unless they pass a \save{WIL}. If their Mystic Level is higher than yours, they get an Advantage.
+
+Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead. On fail the Spell stays, and you suffer WIL~Loss based on the Spell Circle: from d2 (Cantrip) to d12 (\nth{5} Circle). If your Mystic Level is higher than the Spell Circle, you have an Advantage.
+
 \vfill
+\begin{dbox}
+	Scrolls of new Spells found by Mystics are usually attached to the Tome for the convenience of usage.
+
+	See \textbf{\safenameref{sec:manufacture_of_magic_equipment}{Manufacture of Magic Equipment}} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on creation of Focuses and Scrolls.
+\end{dbox}
+
+\vfill
+\index{Scroll Activation}
+\begin{dbox}
+	\paragraph{Scroll Activation (optional)}
+	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\safenameref{sec:magic_mishaps}{Magic Mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
+\end{dbox}
+
+\break
+
 \index{Spells!prepared}
 \index{Prepared Spells|see {Spells, prepared}}
 \paragraph{Prepared Spells}
@@ -46,39 +65,25 @@ During the Rest you can use your Tome to prepare a number of Spells equal to you
 
 Casting a Prepared Spell causes Damage equal to its Spell Circle~$\times$~2 \textbf{to the caster} ignoring Armour. At 0hp, this Damage targets WIL instead of STR: pass a \save{WIL} or fall unconscious for a few minutes.
 \begin{dbox}
-Optionally, this will result in a \textbf{Magic Mishap} as well (see \textbf{\nameref{sec:magic_mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
+	Optionally, this will result in a \textbf{Magic Mishap} as well (see \textbf{\safenameref{sec:magic_mishaps}{Magic Mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
 \end{dbox}
 
 \vfill
-
 \index{Spells!signature}
 \index{Signature Spells|see {Spells, signature}}
 \paragraph{Signature Spells}
 Each time you take Mystic Feature, choose a new Signature Spell to cast without preparation and at half its cost (1hp per Spell Circle).
 
 \vfill
-\break
-
-\begin{dbox}
-	Scrolls of new Spells found by Mystics are usually attached to the Tome for the convenience of usage.
-	
-	See \textbf{\nameref{sec:manufacture_of_magic_equipment}} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on creation of Focuses and Scrolls.
-\end{dbox}
-
-\vfill
-\dimage{magic2}{418pt}
-
-\index{Scroll Activation}
-\begin{dbox}
-	\paragraph{Scroll Activation (optional)}
-	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\nameref{sec:magic_mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
-\end{dbox}
+\dimage{magic3}{384pt}
 
 \break
 
 \begin{dbox}
 	\index{Spells!distance}
 	\index{Spells!area}
+	\index{Spell Distances|see {Spells, distance}}
+	\index{Spell Areas|see {Spells, area}}
 	\subsection*{Distances/Areas}
 	\begin{itemize}
 		\item \textbf{Short or Close/Small} --- a couple of steps
@@ -223,7 +228,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Hideous Laughter} \save{WIL} or the target laughs and Impairs their attacks until passing the Save at the end of their turn.
 	\item \spell{Hold Portal} Holds a door shut.
 	\item \spell{Hypnotism} Fascinate d6 creatures that fail a \save{WIL}. In combat, their attacks on the next turn are Impaired.
-	\item \spell{Identify} Unveils properties of a magical item. Hidden properties, curses, etc. are not revealed.
+	\item \spell{Identify} Unveils basic properties of a magical item, such as how to activate it and its general effect. Details of workings, hidden properties, curses, etc. are not revealed.
 	\item \spell{Jump} A creature can jump twice as far and high.
 	\item \spell{Magic Missile} d4 Damage, goes around corners, ignores Armour.
 	\item \spell{Mount} Summons a riding horse. It disappears after taking any Damage.
@@ -327,7 +332,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Haste/Slow} One creature moves at double or half speed, gains +1 or --1~Armour, and Advantage/Disadvantage on \saves{DEX} respectively.
 	\item \spell{Hold Person} Stuns one humanoid until passing a \save{STR} at the end of their turn.
 	\item \spell{Illusory Script} Changes one page to hide its real content that only an intended reader can decipher. Persistent.
-	\item \spell{Invisibility Sphere} Makes everyone within a small sphere invisible until they attack.
+	\item \spell{Invisibility Sphere} The target and everyone within a small sphere nearby are unseen until they attack or step away too far from the target.
 	\item \spell{Keen Edge} The next attack with this melee weapon ignores HP and goes directly for the STR Score.
 	\item \spell{Lightning Bolt} d8 Electricity Damage to all in a line ignoring Armour.
 
@@ -428,7 +433,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Mystic's Private Sanctum} Creates an illusion that prevents anyone from viewing or scrying an area. Persistent.
 	\item \spell{Mystic's Saving Grace} When the target takes Damage, you can choose to take it instead, ending this Spell. At 0hp it acts like a Spell casting Damage, targeting your WIL. Persistent.
 	\item \spell{Passwall} Creates a passage through a wooden or stone wall while the Spell lasts.
-	\item \spell{Perfect Weapon} Summon a melee (d10/d12) or ranged (d10) weapon that ignores all supernatural resistances. It disappears after dealing maximal Damage or you casting any spell.
+	\item \spell{Perfect Weapon} Summon a melee (d10/d12) or ranged (d10) weapon that ignores all supernatural resistances. It disappears after rolling maximum Damage. Persistent.
 	\item \spell{Permutation} A willing target suffers \mbox{d4 to d12} Ability Score Loss, and another one restores as much of any Ability Score Loss. The die, \mbox{Abilities}, and targets are chosen by you.
 	\item \spell{Petrify} \save{STR} or the target is permanently transformed into a statue.
 	\item \spell{Planar Binding} Traps extraplanar creatures that fail a \save{WIL} until they perform a task.
