@@ -574,7 +574,7 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 \index{Boats}
 \index{Ships}
 
-Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to continue travelling at night.
+Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to continue travelling at night. With a half or less crew the speed is halved.
 
 \index{Vehicles!waterborne}
 \index{Rowboat}
@@ -619,17 +619,17 @@ Keep in mind that different climates might require adjusting the tables. For exa
 
 To decide for how many days the current weather persists, choose an appropriate die from d4 to d12, depending on the climate and weather type.
 
+\begin{comment}
 \vfill
-
 \begin{dtable}[cL]
 	\textbf{d6} & \textbf{Temperature} \\
 	1	& colder than usual \\
 	2--5& normal \\
 	6	& warmer than usual \\
 \end{dtable}
+\end{comment}
 
 \vfill
-
 \begin{dtable}[cL|cl]
 	\textbf{d20} & \textbf{Sky} & \textbf{d20} & \textbf{Sky} \\
 	1--4 & clear	& 13--14 & drizzle or fog \\
@@ -638,17 +638,15 @@ To decide for how many days the current weather persists, choose an appropriate 
 \end{dtable}
 
 \vfill
-
-\begin{dtable}[cL]
-	\textbf{d8} & \textbf{Wind Direction} \\
-	1--3& adverse \\
-	4--5& side \\
-	6--8& favourable \\
+\begin{dtable}[cl|cL]
+	\textbf{d6} & \textbf{Temperature} & \textbf{d8} & \textbf{Wind \mbox{Direction}} \\
+	1	& colder than usual&1--3& adverse \\
+	2--5& normal&4--5& side \\
+	6	& warmer than usual&6--8& favourable \\
 \end{dtable}
 When following prevailing wind's direction, roll 2d8 and take the higher result; when going against it --- take the lower one.
 
 \vfill
-
 \subparagraph{Wind Force} might affect your sailing speed.
 
 \begin{dtable}[cLcc]
@@ -662,7 +660,6 @@ When following prevailing wind's direction, roll 2d8 and take the higher result;
 \end{dtable}
 
 \vfill
-
 Ships exposed to gale in open sea roll for a gale damage each 6 hours.
 
 \begin{dtable}[cL]
@@ -729,7 +726,7 @@ Balloons and airships are affected by winds in the same manner as sailing ships.
 \index{Turns}
 Each \textbf{combat turn (1 minute)} characters move their travel Grid value $\times$ 10 feet (generally \textbf{30 feet}; $\pm$10~feet for clear or difficult terrain; $\times$\sfrac{1}{2} when encumbered; $\times$1\sfrac{1}{2} when forgoing any actions this turn).
 
-For time-tracking purposes, exploration activities take \textbf{10 minutes}: searching, lockpicking, resting, etc.
+For time-tracking purposes, \textbf{exploration turns} take \textbf{10 minutes}: casting spells outside of combat, searching, lockpicking, resting, etc.
 
 \vfill
 
@@ -758,9 +755,7 @@ For time-tracking purposes, exploration activities take \textbf{10 minutes}: sea
 	\begin{itemize}
 		\item \textbf{1 ton} is 2000 pounds
 		\item \textbf{1 pound} is 16 ounces
-		\item \textbf{1 pound} is 100 gold guilders
-		\item \textbf{1 pound} is 1000 silver shillings
-		\item \textbf{1 pound} is 1000 copper pennies
+		\item \mbox{\textbf{1 pound} is} 100 gold guilders, 1000 silver shillings, or 1000 copper pennies
 	\end{itemize}
 \end{dbox}
 
