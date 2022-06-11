@@ -22,19 +22,18 @@ Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic L
 \index{Persistent Spells|see {Spells, persistent}}
 \subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again. You can sustain up to \textbf{2~$\times$~Mystic Level} simultaneously.
 
-\vfill
 \index{Spells!cantrips}
 \index{Cantrips|see {Spells, cantrips}}
-\paragraph{Cantrips}
-These minor tricks are not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your Focus to cast them.
+\subparagraph{Cantrips} are minor tricks and not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your Focus to cast them.
 
 \vfill
 \index{Focus}
 \paragraph{Focus}
 Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an action, while performing the proper gestures and incantations.
 
-A Focus does not work when wearing armour.
+A Focus does not work when wearing armour, \mbox{except} for Cantrips.
 
+\vfill
 \index{Spells!dispel}
 \index{Dispel|see {Spells, dispel}}
 \paragraph{Dispel}
@@ -56,14 +55,16 @@ Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead
 	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\safenameref{sec:magic_mishaps}{Magic Mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
 \end{dbox}
 
-\break
+\vfill
 
 \index{Spells!prepared}
 \index{Prepared Spells|see {Spells, prepared}}
 \paragraph{Prepared Spells}
 During the Rest you can use your Tome to prepare a number of Spells equal to your Experience Level to cast using your Focus as an action.
 
-Casting a Prepared Spell causes Damage equal to its Spell Circle~$\times$~2 \textbf{to the caster} ignoring Armour. At 0hp, this Damage targets WIL instead of STR: pass a \save{WIL} or fall unconscious for a few minutes.
+\index{Spellburn}
+Casting a Prepared Spell causes \textbf{Spellburn} \mbox{Damage} equal to its Spell Circle~$\times$~2 \textbf{to the caster} ignoring Armour. At 0hp, Spellburn targets WIL \mbox{instead} of STR: pass a \save{WIL} to avoid Critical Spellburn or fall unconscious for a few minutes.
+
 \begin{dbox}
 	Optionally, this will result in a \textbf{Magic Mishap} as well (see \textbf{\safenameref{sec:magic_mishaps}{Magic Mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
 \end{dbox}
@@ -72,10 +73,10 @@ Casting a Prepared Spell causes Damage equal to its Spell Circle~$\times$~2 \tex
 \index{Spells!signature}
 \index{Signature Spells|see {Spells, signature}}
 \paragraph{Signature Spells}
-Each time you take Mystic Feature, choose a new Signature Spell to cast without preparation and at half its cost (1hp per Spell Circle).
+Each time you take Mystic Feature, choose an additional Signature Spell to cast without preparation and at half its cost (1hp per Spell Circle).
 
 \vfill
-\dimage{magic3}{384pt}
+\dimage{magic4}{370pt}
 
 \break
 
@@ -217,7 +218,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Detect Dead} Reveals corpses and undead beings in your vicinity.
 	\item \spell{Disguise Self} Change your facial appearance.
 	\item \spell{Endure Elements} Everyone adjacent to you can exist comfortably in hot or cold environments.
-	\item \spell{Enlarge/Reduce} A humanoid creature doubles or halves in size gaining Advantage/Disadvantage on \saves{STR} and increasing/decreasing their weapon Damage dice respectively (d4--d12 range). The target could choose to avoid effects with a \save{STR}.
+	\item \spell{Enlarge/Reduce} A humanoid creature that you touch doubles or halves in size increasing/decreasing their weapon Damage dice respectively (d4--d12 range). The target could choose to avoid effects with a \save{STR}.
 	\item \spell{Erase} Mundane or magical writing vanishes.
 	\item \spell{Expeditious Retreat} Run twice as fast.
 	\item \spell{Feather Fall} Objects or creatures fall slowly.
@@ -411,7 +412,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 \index{Spells!\nth{5} Circle}
 \def \spellcircle {5}
 \begin{enumerate}
-	\item \spell{Alter Fate} Target's next roll is changed by d12 but cannot exceed the original die roll range.
+	\item \spell{Alter Fate} Target's next roll is adjusted by $\pm$d12 but cannot exceed the original die roll range.
 	\item \spell{Baleful Polymorph} \save{STR} or transforms a creature into a harmless animal permanently.
 	\item \spell{Banish} \save{WIL} or a creature returns to its native plane. If a creature is native to the current plane, it disappears for a minute and then returns safely.
 	\item \spell{Blight} Drains life from d12 living targets for d12 Damage each. When targeting plants, roll d12 Damage twice and pick the biggest result.
