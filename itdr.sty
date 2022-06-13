@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2021/09/20]
+\ProvidesPackage{itdr}[2022/06/12]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -225,6 +225,19 @@
 \newcommand{\featb}[1]{%
 	\paragraphsection*{\decosix~#1~\decosix}
 	\index{#1 (Background)}%
+}
+% \featmt
+\newcommand{\featmt}{%
+	{\slshape Can be taken multiple times.}\\
+}
+% \feathp
+\newcommand{\feathp}{%
+	{\slshape Roll twice for HP and take the better result.}\\
+}
+% \featadv
+\newcommand{\featadv}[1]{% the next line is intentionally empty
+	
+	\textbf{Advancement:} #1
 }
 
 % \equip{name}{price}
