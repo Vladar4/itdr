@@ -40,6 +40,20 @@
         </nav>
         <div class="hr"></div>
 
+        <noscript><p class="centered" style="color:red">The download tabs need JavaScript to work properly.</p></noscript>
+
+        <div class="tab-menu">
+            <button class="tab-link active" onClick="openTab(event, '1')">Rulebook</button>
+            <!--
+            <button class="tab-link" onClick="openTab(event, '2')">Supplements</button>
+            <button class="tab-link" onClick="openTab(event, '3')">Adventures</button>
+            -->
+            <button class="tab-link" onClick="openTab(event, '4')">Miscellaneous</button>
+        </div>
+
+        <!-- TAB 1 -->
+        <div class="tab" id="1" style="display:block">
+
         <p class="centered">
             <h2>Rulebook</h2>
             <table>
@@ -72,6 +86,25 @@
                 </tr>
             </table>
 
+        </div> <!-- tab 1 -->
+
+        <!-- TAB 2 -->
+        <div class="tab" id="2">
+
+
+
+        </div> <!-- tab 2 -->
+
+        <!-- TAB 3 -->
+        <div class="tab" id="3">
+
+
+
+        </div> <!-- tab 3 -->
+
+        <!-- TAB 4 -->
+        <div class="tab" id="4">
+
             <h2>Character Sheets</h2>
             <table style="width: 50%;">
                 <tr>
@@ -102,6 +135,11 @@
             </table>
 
         </p>
+
+       </div> <!-- tab 4 -->
+
+        <script src="utils.js"></script>
+
         <p class="centered">
             Current release at
             <a href="https://github.com/Vladar4/itdr/releases/latest" target="_blank">
