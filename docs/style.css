@@ -141,6 +141,7 @@ img {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    margin-top: 1ex;
 }
 
 .bottom img {
