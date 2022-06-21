@@ -29,8 +29,6 @@
 	\makeindex[name=#1, title={#2}, options=-s itdr]
 }
 
-\newindex{spelllist}{Spell List}
-
 %%%%%%%%%%
 % COLORS %
 %%%%%%%%%%
@@ -270,7 +268,7 @@
 
 % \spell{name} description.
 \newcommand{\spell}[1]{%
-	\textbf{#1:}\index[spelllist]{#1 (\spellcircle)}%
+	\textbf{#1:}\index[spells]{#1 (\spellcircle)}%
 }
 
 % \statpar{monster name}
