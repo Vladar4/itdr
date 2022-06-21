@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/06/12]
+\ProvidesPackage{itdr}[2022/06/21]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -253,6 +253,13 @@
 % \armour{name}{price}{value}
 \newcommand{\armour}[3]{%
 	\subparagraph{#1} (#2): Armour #3.
+}
+
+% \iparagraph[index]{title}
+% (indexed paragraph)
+\newcommand{\iparagraph}[2][\jobname]{%
+	\index[#1]{#2}
+	\paragraph{#2}
 }
 
 % \spell{name} description.
