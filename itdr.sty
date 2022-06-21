@@ -21,9 +21,15 @@
 %%%%%%%%%
 
 \RequirePackage{imakeidx}
-\makeindex[name=spelllist, title={Spell List}, options=-s itdr]
 \makeindex[options=-s itdr]
 \RequirePackage[columns=3,columnsep=1em,font=small,indentunit=1em,rule=0px]{idxlayout}
+
+% \newindex{name}{title}
+\newcommand{\newindex}[2]{%
+	\makeindex[name=#1, title={#2}, options=-s itdr]
+}
+
+\newindex{spelllist}{Spell List}
 
 %%%%%%%%%%
 % COLORS %
