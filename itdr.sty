@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/06/21]
+\ProvidesPackage{itdr}[2022/06/22]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -214,21 +214,21 @@
 % \saves{ABILITY}
 \newcommand{\saves}[1]{#1~Saves}
 
-% \feat{name}{comment}
+% \feat[index]{name}{comment}
 % -	feature
-\newcommand{\feat}[1]{%
-	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Feature)}%
+\newcommand{\feat}[2][\jobname]{%
+	\paragraphsection*{\decosix~#2~\decosix}
+	\index[#1]{#2 (Feature)}%
 }
 % -	ancestry
-\newcommand{\feata}[1]{%
-	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Feature, ancestry)}%
+\newcommand{\feata}[2][\jobname]{%
+	\paragraphsection*{\decosix~#2~\decosix}
+	\index[#1]{#2 (Feature, ancestry)}%
 }
 % -	background
-\newcommand{\featb}[1]{%
-	\paragraphsection*{\decosix~#1~\decosix}
-	\index{#1 (Background)}%
+\newcommand{\featb}[2][\jobname]{%
+	\paragraphsection*{\decosix~#2~\decosix}
+	\index[#1]{#2 (Background)}%
 }
 % \featmt
 \newcommand{\featmt}{%
@@ -267,14 +267,33 @@
 }
 
 % \spell{name} description.
+%
+% Define:	\newindex{spells}{Spell List}
+% before the start of your document.
+%
+% Define:	\def \spellcircle {X}
+% (where X is C, 1, 2, 3, 4, or 5) before calling the \spell command
 \newcommand{\spell}[1]{%
 	\textbf{#1:}\index[spells]{#1 (\spellcircle)}%
+}
+
+% \sspell{name}{circle}
+% (standalone spell)
+\newcommand{\sspell}[2][\spellcircle]{%
+	\textbf{#2 (#1):}\index[spells]{#2 (#1)}%
 }
 
 % \statpar{monster name}
 \newcommand{\statpar}[1]{%
 	\vspace{1ex}
 	\paragraphsection{#1}%
+}
+
+% \istatpar[index]{monster name}
+% (indexed statpar)
+\newcommand{\istatpar}[2][\jobname]{%
+	\index[#1]{#2}
+	\statpar{#2}
 }
 
 % \class{name}
