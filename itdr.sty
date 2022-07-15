@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/06/22]
+\ProvidesPackage{itdr}[2022/07/15]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -249,14 +249,32 @@
 	\subparagraph{#1} (#2)
 }
 
+% \iequip[index]{name}{price}
+\newcommand{\iequip}[3][\jobname]{%
+	\index[#1]{#2}
+	\subparagraph{#2} (#3)
+}
+
 % \weapon{name}{price}{damage}
 \newcommand{\weapon}[3]{%
 	\subparagraph{#1} (#2): #3 Damage.
 }
 
+% \iweapon[index]{name}{price}{damage}
+\newcommand{\iweapon}[4][\jobname]{%
+	\index[#1]{#2}
+	\subparagraph{#2} (#3): #4 Damage.
+}
+
 % \armour{name}{price}{value}
 \newcommand{\armour}[3]{%
 	\subparagraph{#1} (#2): Armour #3.
+}
+
+% \iarmour[index]{name}{price}{value}
+\newcommand{\iarmour}[4][\jobname]{%
+	\index[#1]{#2}
+	\subparagraph{#2} (#3): Armour #4.
 }
 
 % \iparagraph[index]{title}
@@ -294,6 +312,11 @@
 \newcommand{\istatpar}[2][\jobname]{%
 	\index[#1]{#2}
 	\statpar{#2}
+}
+
+% \underpar{text}
+\newcommand{\underpar}[1]{%
+	\vspace{-\parskip}{\scshape #1}\\
 }
 
 % \class{name}
@@ -338,6 +361,7 @@
 	skipbelow=0ex,
 }
 
+% "default" box
 \newenvironment{dbox}{%
 	\noindent\begin{minipage}{\linewidth}%
 		\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
@@ -350,6 +374,22 @@
 		\includegraphics[width=1.031\linewidth]{img/box_bottom.pdf}%
 	\end{minipage}%
 }
+
+% "clear" box
+\newenvironment{cbox}{%
+	\noindent\vspace{-1.5ex}
+	\begin{mdframed}[	align=center,
+						backgroundcolor=white,
+						linecolor=black,
+						linewidth=1pt,
+					]%
+		\vspace{0.5ex}% spacing before the text
+	}{ % <- the space here is left intentionally
+		\vspace{-0.5ex}% spacing after the text
+	\end{mdframed}%
+	\vspace{0.5ex}
+}
+
 
 %%%%%%%%%%
 % IMAGES %
