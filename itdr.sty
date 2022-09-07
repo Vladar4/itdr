@@ -377,8 +377,28 @@
 	\end{minipage}%
 }
 
-% "clear" box
-\newenvironment{cbox}{%
+% "aloud" box
+\newenvironment{abox}{%
+	\noindent\begin{minipage}{\linewidth}%
+		\noindent\vspace{-11.38pt}\hspace{-0.0156\linewidth}% box_top position
+		\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
+		\begin{mdframed}[	align=center,
+							backgroundcolor=white,
+							hidealllines=false,
+							topline=false,
+							bottomline=false,
+						]%
+			\vspace{0.5ex}% spacing before the text
+		}{ % <- the space here is left intentionally
+			\vspace{-0.5ex}% spacing after the text
+		\end{mdframed}%
+		\vspace{-1pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
+		\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
+	\end{minipage}%
+}
+
+% "quote" box
+\newenvironment{qbox}{%
 	\noindent\begin{minipage}{\linewidth}%
 	\begin{mdframed}[	align=center,
 						backgroundcolor=white,
@@ -388,26 +408,6 @@
 	}{ % <- the space here is left intentionally
 		\vspace{-0.5ex}% spacing after the text
 	\end{mdframed}%
-\end{minipage}%
-}
-
-% "quote" box
-\newenvironment{qbox}{%
-	\noindent\begin{minipage}{\linewidth}%
-	\noindent\vspace{-11.38pt}\hspace{-0.0156\linewidth}% box_top position
-	\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
-	\begin{mdframed}[	align=center,
-						backgroundcolor=white,
-						hidealllines=false,
-						topline=false,
-						bottomline=false,
-		]%
-		\vspace{0.5ex}% spacing before the text
-	}{ % <- the space here is left intentionally
-		\vspace{-0.5ex}% spacing after the text
-	\end{mdframed}%
-	\vspace{-1pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
-	\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
 \end{minipage}%
 }
 
