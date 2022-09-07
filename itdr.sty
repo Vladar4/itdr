@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/07/23]
+\ProvidesPackage{itdr}[2022/09/22]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -356,7 +356,9 @@
 	innerrightmargin=0.5em,
 	innertopmargin=0ex,
 	leftmargin=1em,
-	linewidth=0pt,
+	linewidth=1pt,
+	linecolor=black,
+	hidealllines=true,
 	skipabove=0ex,
 	skipbelow=0ex,
 }
@@ -377,17 +379,36 @@
 
 % "clear" box
 \newenvironment{cbox}{%
-	\noindent\vspace{-1.5ex}
+	\noindent\begin{minipage}{\linewidth}%
 	\begin{mdframed}[	align=center,
 						backgroundcolor=white,
-						linecolor=black,
-						linewidth=1pt,
+						hidealllines=false,
 					]%
 		\vspace{0.5ex}% spacing before the text
 	}{ % <- the space here is left intentionally
 		\vspace{-0.5ex}% spacing after the text
 	\end{mdframed}%
-	\vspace{0.5ex}
+\end{minipage}%
+}
+
+% "quote" box
+\newenvironment{qbox}{%
+	\noindent\begin{minipage}{\linewidth}%
+	\noindent\vspace{-11.38pt}\hspace{-0.0156\linewidth}% box_top position
+	\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
+	\begin{mdframed}[	align=center,
+						backgroundcolor=white,
+						hidealllines=false,
+						topline=false,
+						bottomline=false,
+		]%
+		\vspace{0.5ex}% spacing before the text
+	}{ % <- the space here is left intentionally
+		\vspace{-0.5ex}% spacing after the text
+	\end{mdframed}%
+	\vspace{-1pt}\noindent\hspace{-0.0156\linewidth}% box_bottom position
+	\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
+\end{minipage}%
 }
 
 
