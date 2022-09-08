@@ -307,7 +307,7 @@
 	\textbf{#1:}\index[spells]{#1 (\spellcircle)}%
 }
 
-% \sspell{name}{circle}
+% \sspell[circle]{name}
 % (standalone spell)
 \newcommand{\sspell}[2][\spellcircle]{%
 	\textbf{#2 (#1):}\index[spells]{#2 (#1)}%
@@ -328,7 +328,7 @@
 
 % \underpar{text}
 \newcommand{\underpar}[1]{%
-	\vspace{-\parskip}{\scshape #1}\\
+	\vspace{-\parskip}{\small\scshape #1}\\
 }
 
 % \class{name}
@@ -363,14 +363,13 @@
 %%%%%%%%%
 
 \mdfsetup{
-	backgroundcolor=dColor2,
+	backgroundcolor=white,
 	innerleftmargin=0.5em,
 	innerrightmargin=0.5em,
 	innertopmargin=0ex,
 	leftmargin=1em,
 	linewidth=1pt,
 	linecolor=black,
-	hidealllines=true,
 	skipabove=0ex,
 	skipbelow=0ex,
 }
@@ -380,7 +379,10 @@
 	\noindent\begin{minipage}{\linewidth}%
 		\noindent\vspace{-13.38pt}\hspace{-0.0156\linewidth}% box_top position
 		\includegraphics[width=1.031\linewidth]{img/box_top.pdf}%
-		\begin{mdframed}\vspace{0.5ex}% spacing before the text
+		\begin{mdframed}[	backgroundcolor=dColor2,
+							hidealllines=true,
+						]%
+			\vspace{0.5ex}% spacing before the text
 		}{ % <- the space here is left intentionally
 			\vspace{-0.5ex}% spacing after the text
 		\end{mdframed}%
@@ -395,8 +397,6 @@
 		\noindent\vspace{-11.38pt}\hspace{-0.0156\linewidth}% box_top position
 		\includegraphics[width=1.031\linewidth]{img/box_quote.pdf}%
 		\begin{mdframed}[	align=center,
-							backgroundcolor=white,
-							hidealllines=false,
 							topline=false,
 							bottomline=false,
 						]%
@@ -413,8 +413,6 @@
 \newenvironment{qbox}{%
 	\noindent\begin{minipage}{\linewidth}%
 	\begin{mdframed}[	align=center,
-						backgroundcolor=white,
-						hidealllines=false,
 					]%
 		\vspace{0.5ex}% spacing before the text
 	}{ % <- the space here is left intentionally
@@ -432,9 +430,6 @@
 \newcommand{\placeholder}[3][\linewidth]{%
 	\noindent\begin{minipage}{#1}%
 		\begin{mdframed}[	align=center,
-							backgroundcolor=white,
-							linecolor=black,
-							linewidth=1pt,
 						]%
 			\parbox[t][#3-7.25pt][t]{#1}{\centering\vfill#2\vfill}%
 		\end{mdframed}%
