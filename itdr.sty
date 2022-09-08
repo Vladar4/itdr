@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/09/22]
+\ProvidesPackage{itdr}[2022/09/08]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -42,6 +42,7 @@
 %%%%%%%%%
 
 \RequirePackage{fourier}% special symbols
+\RequirePackage{adfbullets}% special symbols
 \RequirePackage{humanist}% fancy title font
 \RequirePackage[T1]{fontenc}
 \newcommand*{\fancyfont}{\hminfamily}
@@ -175,8 +176,19 @@
 %%%%%%%%%
 
 \RequirePackage{enumitem}
-\renewcommand\labelitemi{\starredbullet}
+
+% itemize
+\renewcommand{\labelitemi}{\starredbullet}
+\renewcommand{\labelitemii}{\adfbullet{48}}
+\renewcommand{\labelitemiii}{\adfbullet{43}}
+\renewcommand{\labelitemiv}{\adfbullet{44}}
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+% enumerate
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.}
 \setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 
 %%%%%%%%%%
