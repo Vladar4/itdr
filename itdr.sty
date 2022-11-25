@@ -1,4 +1,4 @@
-\ProvidesPackage{itdr}[2022/09/08]
+\ProvidesPackage{itdr}[2022/11/25]
 
 \RequirePackage{comment}
 \RequirePackage[inner=1in,outer=1in,top=1.36in,bottom=1.36in,footskip=0.3in]{geometry}
@@ -440,6 +440,13 @@
 \newcommand{\dimage}[2]{%
 	\IfFileExists{./img/pic/#1.png}{%
 		\noindent\includegraphics[width=\linewidth]{img/pic/#1.png}%
+	}{\placeholder{#1}{#2}}% else
+}
+
+% \dimageopt{filename}{height}{options}
+\newcommand{\dimageopt}[3]{%
+	\IfFileExists{./img/pic/#1.png}{%
+		\noindent\includegraphics[width=\linewidth,#3]{img/pic/#1.png}%
 	}{\placeholder{#1}{#2}}% else
 }
 
