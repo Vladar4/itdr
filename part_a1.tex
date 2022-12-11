@@ -563,11 +563,46 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 	4--6& \textbf{On course.} \\
 \end{dtable}
 
+\subparagraph{Horizon} is 3 miles away at the sea level, 6 miles at 25~ft elevation (roof, hill), 12 miles at 100~ft (ship's mast, treetop, tower). The landscape can obstruct the view. Tall objects can be seen behind the horizon.
 
+\dimageopt{waterborne}{75pt}{trim=0 0 0 5,clip}
+
+\vspace{-1ex}
+
+\begin{comment}
 \subparagraph{Horizon} is 3 miles away on a flat surface (for an Earth-sized planet), 12 miles at 100~ft height (ship's mast, tower), etc.: $dist.~(miles) \approx \sqrt{1.5 \times height~(ft)}$.
 
 \vfill
 \dimage{waterborne}{75pt}
+\end{comment}
+
+\begin{comment}
+\subparagraph{Horizon} is 3 miles away for a 6~ft tall observer (on an Earth-sized planet), 12 miles at 100~ft height (ship's mast, tower), etc.:
+
+\vspace{1ex}
+\begin{vwcol}[widths={0.275, 0.725}, rule=0pt]
+
+\vspace{-14pt}\noindent\hspace{0.25em}
+$d \approx \sqrt{1.5 \times h}$
+
+\vspace{6pt}\noindent
+$$x \approx \frac{(d-o)^2}{1.5}$$
+
+\columnbreak
+
+$d$ --- horizon distance, miles
+
+$h$ --- observer height, feet
+
+$x$ --- object height obscured, feet
+
+$o$ --- object distance, miles
+
+\end{vwcol}
+
+\vfill
+\end{comment}
+
 
 \subsection{Waterborne Travel}
 \index{Travel!waterborne}
@@ -584,7 +619,7 @@ Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to c
 \index{Sailing Ship}
 \index{Longship}
 \index{Galley}
-\begin{dtable}[lCCCCl]
+\begin{dtable}[lCCCCL]
 \textbf{Vehicle} & \textbf{Miles} & \textbf{Grid} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
 Raft (100~ft\textsuperscript{2})& \travelunit{2}&2 & 1& \sfrac{1}{4}~t & --- \\
 Rowboat		& \travelunit{3}	& 3	& 1		& 1~t	& 50s \\
