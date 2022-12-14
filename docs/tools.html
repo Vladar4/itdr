@@ -120,7 +120,91 @@
                 <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Rainy Climate" onclick="generateRandomWeather(2)" /></td>
             </tr></table>
             <p id="out_RandomWeather" style="display:none"></p>
-            <!--</p>-->
+        </p>
+
+        <p class="centered">
+            <h2>Horizon and Visibility</h2>
+            <div class="centered nowrap flex-container flex-nowrap" style="border: 1px solid black; justify-content: center">
+                <!-- COLUMN 1 -->
+                <div class="wrap flex-container" style="flex-direction: column; align-items: flex-end">
+                    <div class="flex-item">
+                        <label for="horizon_r">Planet radius (R)</label>
+                    </div>
+                    <div class="flex-item">
+                        <label for="horizon_h">Observer elevation (h)</label>
+                    </div>
+                    <div class="flex-item">
+                        <label for="horizon_o">Object distance (o)</label>
+                    </div>
+                    <div class="flex-item">
+                        <label>Horizon distance (d)</label>
+                    </div>
+                    <div class="flex-item">
+                        <label>Object height obstructed (x)</label>
+                    </div>
+                </div>
+                <!-- COLUMN 2 -->
+                <div class="flex-container" style="flex-direction: column; align-items: flex-start">
+                    <div class="flex-item">
+                        <input type="number" id="horizon_r" name="Planet radius" min="1" value="3960" style="width: 5em" onchange="calculateHorizon()"/>
+                        <label>miles</label>
+                    </div>
+                    <div class="flex-item">
+                        <input type="number" id="horizon_h" name="Observer elevation" value="6" style="width: 5em" onchange="calculateHorizon()"/>
+                        <label>feet</label>
+                    </div>
+                    <div class="flex-item">
+                        <input type="number" id="horizon_o" name="Object distance" value="10" style="width: 5em" onchange="calculateHorizon()"/>
+                        <label>miles</label>
+                    </div>
+                    <div class="flex-item">
+                        <input readonly type="number" id="horizon_d" name="Horizon distance" value="0" style="width: 5em; background-color: #f0dcc0"/>
+                        <label>miles</label>
+                    </div>
+                    <div class="flex-item">
+                        <input readonly type="number" id="horizon_x" name="Object height obstructed" value="0" style="width: 5em; background-color: #f0dcc0"/>
+                        <label>feet</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centered nowrap flex-container">
+                <div class="flex-item">
+                    <img src="horizon_formula1.svg" alt="d = sqrt(2 * h * R)" title="Formula: horizon distance"/>
+                </div>
+                <div class="flex-item">
+                    <img src="horizon_formula2.svg" alt="x = sqrt((o - d)^2 + R^2) - R" title="Formula: object height obstructed"/>
+                </div>
+                <div class="flex-item" style="flex-shrink: 0; text-align: left">
+                    <em>
+                        d &mdash; horizon distance<br/>
+                        h &mdash; observer elevation<br/>
+                        R &mdash; planet radius<br/>
+                        x &mdash; object height obstructed<br/>
+                        o &mdash; object distance<br/>
+                        1 mile = 5280 feet
+                    </em>
+                </div>
+            </div>
+
+            <h3>Simplified for Earth-sized planet<br/>(R = 3960 miles)</h3>
+            <div class="centered nowrap flex-container">
+                <div class="flex-item">
+                    <img src="horizon_formula3.svg" alt="d = sqrt(1.5 * h)" title="Simplified formula: horizon distance"/>
+                </div>
+                <div class="flex-item">
+                    <img src="horizon_formula4.svg" alt="x = (d - o)^2 / 1.5" title="Simplified formula: object height obstructed"/>
+                </div>
+                <div class="flex-item" style="flex-shrink: 0; text-align: left">
+                    <em>
+                        d &mdash; horizon distance, miles<br/>
+                        h &mdash; observer elevation, feet<br/>
+                        x &mdash; object height obstructed, feet<br/>
+                        o &mdash; object distance, feet<br/>
+                    </em>
+                </div>
+            </div>
+        </p>
 
         </div> <!-- tab 2 -->
 

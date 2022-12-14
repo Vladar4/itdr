@@ -100,6 +100,15 @@ div.hr {
     text-align: center;
 }
 
+.compact {
+    width:0.1%;
+    white-space: nowrap;
+}
+
+.wrap {
+    white-space: normal;
+}
+
 .nowrap {
     white-space: nowrap;
 }
@@ -184,6 +193,23 @@ ul {
 
 li {
     margin-bottom: 0.5rem;
+}
+
+/* CONTAINERS */
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-item {
+    margin: 8px;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
 }
 
 /* TABS */

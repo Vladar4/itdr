@@ -1954,3 +1954,35 @@ function generateRandomWeather(type) {
     docId('out_RandomWeather').style.display="";
 }
 
+/***********/
+/* HORIZON */
+/***********/
+
+function milesToFeet(miles) {
+    return miles * 5280;
+}
+
+function feetToMiles(feet) {
+    return feet / 5280;
+}
+
+function calculateHorizonDistance(h, r) {
+    return Math.sqrt(2 * h * r);
+}
+
+function calculateObjectHeightObscured(o, d, r) {
+    return Math.sqrt(Math.pow(o - d, 2) + Math.pow(r, 2)) - r;
+}
+
+function calculateHorizon() {
+    let h = feetToMiles(parseInt(docId('horizon_h').value));
+    let r = parseInt(docId('horizon_r').value);
+    let d = calculateHorizonDistance(h, r);
+    docId('horizon_d').value = d.toFixed(2);
+    let o = parseInt(docId('horizon_o').value);
+    let x = (d < o) ? milesToFeet(calculateObjectHeightObscured(o, d, r)) : 0;
+    docId('horizon_x').value = x.toFixed(1);
+}
+
+calculateHorizon();
+
