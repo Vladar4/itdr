@@ -217,6 +217,9 @@ li {
 .tab-menu {
     overflow: hidden;
     display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 0;
     justify-content: space-around;
     align-items: center;
     width: 100%;
@@ -231,10 +234,13 @@ li {
     font-variant: small-caps;
     font-weight: bold;
     border: none;
-    padding: 10px 6px 10px 6px; /* top right bottom left */
+    padding: 10px 20px 10px 20px; /* top right bottom left */
     margin: 2px;
     transition: 0.3s;
-    width: 100%;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-grow: 9999;
 }
 
 .tab-link:hover {
