@@ -98,6 +98,107 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v2.2
+
+#### Part 1
+* Berserker: the effect now lasts till the end of the next turn
+
+#### Part 2
+* Mounted Combat: added a note on using two-handed weapons when mounted
+* Added Restrained and Stunned Conditions
+
+#### Part 4
+* Added an exception for casting Cantrips in Armour
+* Added a Spellburn term for taking Damage from casting Prepared Spells; instead of falling unconscious, become Stunned for the next turn
+* Distances/Areas: added a default - if not specified, the Spell affects a single target that you can see in your vicinity
+* Improved specific wording of the Spells
+* Fixed alphabetical order of the Spells
+
+##### Cantrips
+* Detect Poison: touch range
+* Hide: touch range
+* Mending: touch range
+* Resistance: touch range
+
+##### Circle 1
+* Camouflage: targets the area adjacent to you
+* Cause Fear: lasts for the duration
+* Chill Touch: targets living creatures
+* Colour Spray: DEX Save instead of STR
+* Enlarge/Reduce: touch range; removed Advantage/Disadvantage on STR Saves
+* Erase: touch range
+* Feather Fall: small sphere area
+* Floating Disk: additional notes
+* Hideous Laughter: targets a humanoid
+* Identify: touch range
+* Obscuring Mist: targets a small area around you
+* Shield: targets you
+* Sleep: targets living creatures
+
+##### Circle 2
+* Arcane Lock: touch range
+* Continual Flame: touch range
+* Heroism: targets a creature
+* Invisibility: 'target' instead of a 'creature'
+* Magic Mouth: touch range
+* Magic Weapon: touch range
+* Protection from Arrows: touch range
+* Whispering Wind: targets a known recipient or a group
+
+##### Circle 3
+* Absorb Element: touch range
+* Explosive Runes: must be inscribed; explode when read or touched
+* Illusory Script: touch range
+* Sepia Snake Sigil: must be inscribed
+* Shrink Item: touch range
+* Suggestion: the target must understand you
+* Vampiric Touch: targets a living creature
+
+##### Circle 4
+* Cause Panic: lasts for the duration
+* Fire Trap: targets an object or a door
+* Remove Curse: touch range
+* Symbol of Pain: must be inscribed
+
+##### Circle 5
+* Alter Fate: improved wording
+* Break Enchantment: touch range
+* Cloudkill: added a STR Save
+* Contact Other Plane: d6 WIL Loss on a failed WIL Save
+* Feeblemind: touch range
+* Symbol of Sleep: must be inscribed
+
+#### Part 5
+* Changed Increasing/Decreasing Damage dice to Raising/Lowering Damage dice
+
+#### Part 6
+* Added a note on Magic Rings (one per hand)
+* Added a note on Drawbacks and Curses
+
+#### Part 8
+* Monster Conversion: Changed HD=HP/8 to HD=HP/5 (an average of d8)
+
+#### Appendix A
+* Manufacture of Magic Equipment: changed 1 day to d4 days
+* Construction: adjusted construction volumes and prices
+* Travel: redid the Horizon paragraph
+* Waterborne Travel: added a note on an insufficient crew impact on speed
+* Weather: added Swimming and Holding Breath rules
+* Random Magic Items: added new items into the Consumables table
+
+#### Appendix B
+* Snake Demon: 15hp instead of 18
+* Added extra description to some monsters
+
+#### Miscellaneous
+* Wording and layout improvements
+* Typo fixes
+
+#### Home Page
+* Tools: added the Horizon and Visibility calculator
+* Improved layout
+
+
 ### v2.1
 
 #### Part 1
