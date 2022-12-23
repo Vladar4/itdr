@@ -31,6 +31,10 @@ function docClass(classname) {
     return document.getElementsByClassName(classname);
 }
 
+function docTag(tagname) {
+    return document.getElementsByTagName(tagname);
+}
+
 function docCreate(nodename) {
     return document.createElement(nodename);
 }
@@ -63,6 +67,7 @@ function openTab(button, id) {
     /* update the address bar hash */
     window.location.hash = "#"+id;
     /* reset page scroll */
+    docTag('body')[0].scrollIntoView();
     window.scrollTo(0, 0);
 }
 
