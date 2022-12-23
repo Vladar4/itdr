@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 </head>
-<body>
+<body onload="onLoadTab('tools', 'creatures')">
 <main>
     <article>
         <h1>Into the Dungeon: Revived</h1>
@@ -43,12 +43,12 @@
         <noscript><p class="centered" style="color:red">The tools need JavaScript to work properly.</p></noscript>
 
         <div class="tab-menu">
-            <button class="tab-link active" onClick="openTab(event, '1')">Creatures</button>
-            <button class="tab-link" onClick="openTab(event, '2')">Miscellaneous</button>
+            <button class="tab-link active" id="btn-creatures" onClick="onOpenTab(event, 'creatures')">Creatures</button>
+            <button class="tab-link" id="btn-misc" onClick="onOpenTab(event, 'misc')">Miscellaneous</button>
         </div>
 
         <!-- TAB 1 -->
-        <div class="tab" id="1" style="display:block">
+        <div class="tab" id="creatures" style="display:block">
 
         <p class="centered">
             <h2>Random Character</h2>
@@ -99,7 +99,7 @@
         </div> <!-- tab 1 -->
 
         <!-- TAB 2 -->
-        <div class="tab" id="2">
+        <div class="tab" id="misc">
 
         <p class="centered">
             <h2>Random Magic Item</h2>

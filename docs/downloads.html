@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 </head>
-<body>
+<body onload="onLoadTab('downloads', 'main')">
 <main>
     <article>
         <h1>Into the Dungeon: Revived</h1>
@@ -43,16 +43,16 @@
         <noscript><p class="centered" style="color:red">The download tabs need JavaScript to work properly.</p></noscript>
 
         <div class="tab-menu">
-            <button class="tab-link active" onClick="openTab(event, '1')">Rulebook</button>
+            <button class="tab-link active" id="btn-main" onClick="onOpenTab(event, 'main')">Rulebook</button>
             <!--
-            <button class="tab-link" onClick="openTab(event, '2')">Supplements</button>
-            <button class="tab-link" onClick="openTab(event, '3')">Adventures</button>
+            <button class="tab-link" id="btn-sup" onClick="onOpenTab(event, 'sup')">Supplements</button>
+            <button class="tab-link" id="btn-adv" onClick="onOpenTab(event, 'adv')">Adventures</button>
             -->
-            <button class="tab-link" onClick="openTab(event, '4')">Miscellaneous</button>
+            <button class="tab-link" id="btn-misc" onClick="onOpenTab(event, 'misc')">Miscellaneous</button>
         </div>
 
         <!-- TAB 1 -->
-        <div class="tab" id="1" style="display:block">
+        <div class="tab" id="main" style="display:block">
 
         <p class="centered">
             <h2>Rulebook</h2>
@@ -107,21 +107,21 @@
         </div> <!-- tab 1 -->
 
         <!-- TAB 2 -->
-        <div class="tab" id="2">
+        <div class="tab" id="sup">
 
             <h2>Supplements</h2>
 
         </div> <!-- tab 2 -->
 
         <!-- TAB 3 -->
-        <div class="tab" id="3">
+        <div class="tab" id="adv">
 
             <h2>Adventures</h2>
 
         </div> <!-- tab 3 -->
 
         <!-- TAB 4 -->
-        <div class="tab" id="4">
+        <div class="tab" id="misc">
 
             <h2>Character Sheets</h2>
             <table style="width: 50%;">
