@@ -11,13 +11,13 @@
 </head>
 <body onload="onLoadTab('downloads', 'main')">
 <main>
-    <article>
+    <header>
         <h1>Into the Dungeon: Revived</h1>
 
         <div class="subtitle">Rules for fantastic adventure games<br/>
         playable with paper and pencil and polyhedral dice</div>
         <div class="hr"></div>
-        <nav class="nav">
+        <nav>
             <input type="checkbox" id="nav-check">
             <div class="nav-button"><label for="nav-check"><span></span><span></span><span></span></label></div>
             <div class="nav-left">
@@ -39,7 +39,9 @@
             </div>
         </nav>
         <div class="hr"></div>
+    </header>
 
+    <article>
         <noscript><p class="centered" style="color:red">The download tabs need JavaScript to work properly.</p></noscript>
 
         <div class="tab-menu">
@@ -85,24 +87,6 @@
                     <td><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal_booklet_r-v2.2.pdf" target="_blank">Minimal</a></td>
                 </tr>
             </table>
-
-        <p class="centered">
-            Current release at
-            <a href="https://github.com/Vladar4/itdr/releases/latest" target="_blank">
-                GitHub repository
-            </a>
-            or at
-            <a href="https://vladar.itch.io/into-the-dungeon-revived" target="_blank">
-                itch.io
-            </a>
-        </p>
-
-        <p class="centered">
-            <a href="https://github.com/Vladar4/itdr#changelog" target="_blank">
-                <em>Changelog</em>
-                <span class="bottom"><img src="bottom_downloads.png"/></span>
-            </a>
-        </p>
 
         </div> <!-- tab 1 -->
 
@@ -156,16 +140,33 @@
 
        </div> <!-- tab 4 -->
 
-        <script src="utils.js"></script>
+        <p class="centered">
+            Current release at
+            <a href="https://github.com/Vladar4/itdr/releases/latest" target="_blank">
+                GitHub repository
+            </a>
+            or at
+            <a href="https://vladar.itch.io/into-the-dungeon-revived" target="_blank">
+                itch.io
+            </a>
+        </p>
 
+        <p class="centered">
+            <a href="https://github.com/Vladar4/itdr#changelog" target="_blank">
+                <em>Changelog</em>
+                <span class="bottom"><img src="bottom_downloads.png"/></span>
+            </a>
+        </p>
+    </article>
+
+    <footer>
         <div class="hr"></div>
-
         <sup class="centered">
             <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution - NonCommercial - ShareAlike 3.0 Unported License</a>
         </sup>
+    </footer>
 
-    </article>
-
+    <script src="utils.js"></script>
 </main>
 </body>
 </html>

@@ -37,12 +37,13 @@ body {
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+    min-width: 20rem;
 }
 
-article, footer, p, table {
+article, header, footer, p, table {
     min-width: 19rem;
     max-width: 40rem;
     width: 100%;
@@ -54,7 +55,10 @@ article {
     flex-direction: column;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    min-width: 20rem;
+}
+
+footer {
+    text-align: center;
 }
 
 h1, h2, h3, h4 {
@@ -265,7 +269,7 @@ li {
 
 /* NAVIGATION */
 
-.nav {
+nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,7 +293,7 @@ li {
     padding-left: 4px;
 }
 
-.nav > .nav-button {
+nav > .nav-button {
     display: none;
 }
 
@@ -323,7 +327,7 @@ li {
     background-color: #ffecd0;
 }
 
-.nav > #nav-check {
+nav > #nav-check {
     display: none;
 }
 
@@ -344,7 +348,7 @@ li {
 
     /* NAVIGATION */
 
-    .nav > .nav-button {
+    nav > .nav-button {
         display: inline-block;
         position: absolute;
         left: 8px;
@@ -352,29 +356,29 @@ li {
         transition: 0.3s;
     }
 
-    .nav > .nav-button:hover {
+    nav > .nav-button:hover {
         background: #ffecd0;
     }
 
-    .nav > .nav-button:active {
+    nav > .nav-button:active {
         background: #fffce0;
     }
 
-    .nav > .nav-button > label {
+    nav > .nav-button > label {
         display: inline-block;
         width: 44px;
         height: 40px;
         padding: 10px;
     }
 
-    .nav > .nav-button > label > span {
+    nav > .nav-button > label > span {
         display: block;
         width: 24px;
         height: 11px;
         border-top: 2px solid #333;
     }
 
-    .nav > .nav-links {
+    nav > .nav-links {
         position: absolute;
         display: block;
         width: 8rem;
@@ -387,7 +391,7 @@ li {
         border-right: 2px solid #333;
     }
 
-    .nav > .nav-links > a {
+    nav > .nav-links > a {
         display: block;
         width: 100%;
     }
@@ -400,11 +404,11 @@ li {
         */
     }
 
-    .nav > #nav-check:not(:checked) ~ .nav-links {
+    nav > #nav-check:not(:checked) ~ .nav-links {
         height: 0px;
     }
 
-    .nav > #nav-check:checked ~ .nav-links {
+    nav > #nav-check:checked ~ .nav-links {
         height: calc(100vh - 40px);
         overflow-y: auto;
     }
