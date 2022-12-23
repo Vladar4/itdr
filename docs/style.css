@@ -125,6 +125,14 @@ div.hr {
     display: inline-block;
 }
 
+.highlight {
+    /* background-color: #ffecd0; */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1em;
+    border: 1px dotted #333;
+}
+
 a {
     text-decoration: none;
 }
