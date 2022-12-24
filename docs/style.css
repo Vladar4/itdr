@@ -200,7 +200,12 @@ td {
 
 ul {
     margin-bottom: 0rem;
-    list-style-image: url(starredbullet.svg) ;
+    list-style-image: url(starredbullet.svg);
+}
+
+.ul2 {
+    margin-bottom: 0rem;
+    list-style-image: url(adfbullet48.svg);
 }
 
 li {
