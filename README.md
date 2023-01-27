@@ -199,6 +199,8 @@ Changelog
 #### Home Page
 * Tools: added the Horizon and Visibility calculator
 * Improved layout
+
+---
 </details>
 
 
@@ -269,6 +271,8 @@ Changelog
   * Random Magic Item
   * Random Weather
 * Improved layout, implemented responsive design
+
+---
 </details>
 
 
@@ -427,6 +431,8 @@ Changelog
 * Index update
 * Removed Notes part
 * Timesheet
+
+---
 </details>
 
 
@@ -447,6 +453,8 @@ Changelog
 #### Other
 * Mule and Horse rebalance
 * Miscellaneous rules clarifications
+
+---
 </details>
 
 
@@ -567,6 +575,8 @@ Changelog
 * Mundane Beasts section with 10 beasts
 #### Spell List
 * Added spell circle info
+
+---
 </details>
 
 
@@ -595,6 +605,8 @@ Changelog
 * Improved and clarified phrasing
 * Index update
 * Box style update
+
+---
 </details>
 
 
