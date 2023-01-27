@@ -101,6 +101,7 @@ Changelog
 ### v2.2
 
 <details><summary>v2.2 changelog</summary>
+
 #### Part 1
 * Berserker: the effect now lasts till the end of the next turn
 
@@ -204,6 +205,7 @@ Changelog
 ### v2.1
 
 <details><summary>v2.1 changelog</summary>
+
 #### Part 1
 * Beastmaster may choose to make a WIL Save instead of the pet
 * Thaumaturge starts with two Gifts instead of one
@@ -273,6 +275,7 @@ Changelog
 ### v2.0
 
 <details><summary>v2.0 changelog</summary>
+
 #### Part 1
 * Berserker: "gain Advantage on Saves against Critical Damage" now reads "gain Advantage on **subsequent** Saves against Critical Damage"
 * new Feature: Beastmaster
@@ -430,6 +433,7 @@ Changelog
 ### v1.2.1
 
 <details><summary>v1.2.1 changelog</summary>
+
 * light and minimal editions of the book
 * character sheets
 * new building scripts
@@ -449,6 +453,7 @@ Changelog
 ### v1.2
 
 <details><summary>v1.2 changelog</summary>
+
 #### Part 1
 * Berserker: a bonus is limited to melee
 * Commander: a command does not count as action
@@ -568,6 +573,7 @@ Changelog
 ### v1.1
 
 <details><summary>v1.1 changelog</summary>
+
 * Mystic advancement: Spell Circle is limited by Mystic Level instead of Experience Level
 * Mystic's Tome is required when preparing spells
 * Damage from casting spells targets WIL instead of STR
