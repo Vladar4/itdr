@@ -1,5 +1,6 @@
 \documentclass[10pt,twoside,openany]{book}
 \usepackage{itdr}
+\usepackage[italian]{babel}% Italian syllbation
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{forloop}
@@ -53,14 +54,14 @@
 	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{1ex}
 \end{center}
 
-\noindent\hspace{0.4em}Time Sheet~\itemrulefill
+\noindent\hspace{0.4em}Scheda del Tempo~\itemrulefill
 
-\vspace{0.3ex}
+%\vspace{0.3ex}
 
 \noindent
 \begin{tabularx}{\tablewidth}{lRRRRRR}
 ~ & 10m & 20m & 30m & 40m & 50m & 60m\\
-\dup[24]{\itemrule{1em}h & \multicolumn{6}{l}{\hspace{-0.37em}\includegraphics[width=\tablewidth-2.38em]{img/timeline.pdf}}\\}
+\dup[24]{\itemrule{1em}o & \multicolumn{6}{l}{\hspace{-0.37em}\includegraphics[width=\tablewidth-2.38em]{img/timeline.pdf}}\\}
 \end{tabularx}
 
 \ifthenelse{\boolean{image}}{%

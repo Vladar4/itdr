@@ -56,7 +56,6 @@ Stampa
   * pz `*_booklet_r.pdf`: Fronte-retro - lato lungo (standard)
 * Adattamento della pagina: `nessuno`
 * Ruota automaticamente e centra: `sì`
-* Ritagliare gli opuscoli stampati a circa 13,7 x 20,3 cm
 
 Script
 -------
@@ -99,9 +98,9 @@ Cosa c'è di diverso rispetto a "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
-### v0.1
+### v2.2-it1
 
 #### Versione in italiano
 * Prima stesura da revisionare del regolamento completo (edizione default, light, minimal)
-* Contenuto non tradotto: strumenti online e schede
+* Contenuto non tradotto: strumenti online
 * Per il changelog del gioco originale, si rimanda alla pagina di quest'ultimo

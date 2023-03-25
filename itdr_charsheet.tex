@@ -1,5 +1,6 @@
 \documentclass[10pt,twoside,openany]{book}
 \usepackage{itdr}
+\usepackage[italian]{babel}% Italian syllbation
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{forloop}
@@ -27,6 +28,7 @@
 \else
 \setboolean{image}{true}
 \fi
+
 % to disable image overlay call pdflatex with
 % "\let\ifplain\iftrue\input{itdr_charsheet}"
 
@@ -57,33 +59,34 @@
 	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{1ex}
 \end{center}
 
-\noindent\hspace{0.4em}Character Sheet~\itemrulefill
+\noindent\hspace{0.4em}Scheda del Personaggio~\itemrulefill
 
-\vspace{1.1ex}
+%\vspace{1.1ex}
 
 \noindent
 \begin{tabularx}{\tablewidth}{llLrL}
-~ & \multicolumn{4}{l}{Adventures Survived~\itemrule{9.725em}} \\
-~ & STR & \slashspace & HP & \slashspace \\
-~ & DEX & \slashspace & Armour & \slashspace \\
+~ & \multicolumn{4}{l}{Avventure Superate~\itemrule{7.45em}} \\
+~ & FOR & \slashspace & PF & \slashspace \\
+~ & DES & \slashspace & Armatura & \slashspace \\
 \ifthenelse{\boolean{image}}{%
 \multirow{-4}{*}{\hspace{1.532in}}\hspace{-0.1em} &
-WIL & \slashspace & Money & \negspace\itemrulefill \\
+VOL & \slashspace & Denaro & \negspace\itemrulefill \\
 }{%
 \multirow{-4}{*}{\thinbox[1.44in]{1.44in}}\hspace{-0.1em} &
-	WIL & \slashspace & Money & \negspace\itemrulefill \\
+	VOL & \slashspace & Denaro & \negspace\itemrulefill \\
 }
 \end{tabularx}
 
 \vspace{-0.9ex}
-\centered{Background and Features}
+\centered{Background e Tratti}
+\vspace{1.3ex}
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
 \dup[3]{\itemrulefill & \itemrulefill \\}
 \end{tabularx}\vspace{-3.6ex}
 
-\centered{Equipment and Notes}
+\centered{Equipaggiamento e Appunti}
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
@@ -103,15 +106,15 @@ WIL & \slashspace & Money & \negspace\itemrulefill \\
 
 
 \thispagestyle{empty}
-\centered{Cantrips}
+\centered{Trucchetti}
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
 \dup[3]{\itemrulefill & \itemrulefill \\}
 \end{tabularx}\vspace{-4.2ex}
 
-\centered{Spells}
+\centered{Incantesimi}
 \vspace{-3ex}
-{\large\hfill Signature --- S\hspace{0.4em}~\\Circle\hfill Prepared --- P\hspace{0.4em}}
+{\large\hfill Distintivo --- D\hspace{0.4em}~\\Cerchio\hfill Preparato --- P\hspace{0.4em}}
 
 \noindent
 \begin{tabularx}{\tablewidth}{CC}
