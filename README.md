@@ -25,7 +25,7 @@ Questo regolamento è basato su ["Into the Dungeon: Playtest Edition"](https://d
 
 ### [itch.io](https://vladar.itch.io/into-the-dungeon-revived)
 
-### Galleria di illustrazione su [ArtStation](https://vladar.artstation.com/projects/zAmRZQ) e [DeviantArt](https://www.deviantart.com/vladar4/gallery/68893105/into-the-dungeon-revived)
+### Galleria di illustrazioni su [ArtStation](https://vladar.artstation.com/projects/zAmRZQ) e [DeviantArt](https://www.deviantart.com/vladar4/gallery/68893105/into-the-dungeon-revived)
 
 ![ItD:R cover](cover.jpg)
 <details>
@@ -85,7 +85,7 @@ Cosa c'è di diverso rispetto a "Into the Dungeon: Playtest Edition"?
 * Le meccaniche di gioco sono più vicine a "Into the Odd"
 * Tratti e background al posto delle classi
 * Sistema di magia aggiornato e rifinito
-* Tiri Conoscenze
+* Tiri Conoscenza
 * Regola per il consumo di bacchette e verghe
 * Esempi di oggetti magici
 * Esempi di incontri casuali e ostacoli
