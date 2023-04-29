@@ -98,11 +98,11 @@ Cosa c'è di diverso rispetto a "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 ### v2.2-it2
+
 * Correzione di refusi e rifinitura del testo in alcuni punti
 
 ### v2.2-it1
 
-#### Versione in italiano
-* Prima stesura da revisionare del regolamento completo (edizione default, light, minimal)
+* Prima stesura da revisionare del regolamento completo (edizione default, light, minimal) in italiano
 * Contenuto non tradotto: strumenti online
 * Per il changelog del gioco originale, si rimanda alla pagina di quest'ultimo
