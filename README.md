@@ -3,25 +3,25 @@ Into the Dungeon: Revived
 
 *Regole per avventure fantastiche da giocare con carta, matite e dadi poliedrici*
 
-ItD:R è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata. Raduna un po' di persone dal tuo giro di amicizie, prendete qualche dado e tuffatevi in un mondo di avventure sword & sorcery di vostra creazione!
+ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata. Raduna un po' di persone dal tuo giro di amicizie, prendete qualche dado e tuffatevi in un mondo di avventure sword & sorcery di vostra creazione!
 
 In questo manuale troverai:
-* Regole facili da imparare (quelle principali stanno su di una pagina)
+* Regole facili da imparare e quelle principali stanno su di una pagina
 * Creazione rapida dei personaggi e passaggi di livello basati su tratti
 * Combattimento veloce grazie all'assenza dei tiri per colpire
-* Procedura basilare per la gestione dei possedimenti ai livelli alti
+* Procedure basilari per la gestione dei possedimenti ai livelli alti
 * Un sistema di magia con effetti degli incantesimi facili da ricordare
 * Meccaniche di gioco semplici che consentono all'Arbitro di minimizzare la preparazione delle sessioni
 * Una guida per convertire i mostri da altri regolamenti
 * Una collezione di regole aggiuntive e alternative da mescolare e abbinare per un'esperienza di gioco ideale
-* Tabelle per trarre spunti a caso utilizzabili per la preparazione o anche nel corso delle sessioni
+* Tabelle per trarre spunti determinati in modo casuale e utilizzabili per la preparazione o anche nel corso delle sessioni
 * Un piccolo bestiario con diversi mostri e animali selvaggi
 
 Questo regolamento è basato su ["Into the Dungeon: Playtest Edition"](https://docs.google.com/file/d/0B6MR1KWIUR9UVVNjeUtvSDZTMUk) di [Chris McDowall](http://www.bastionland.com/).
 
 ### [Home Page](https://vladar4.github.io/itdr/)
 
-### [Ultima Release](https://github.com/Vladar4/itdr/releases/latest)
+### [Ultima Versione](https://github.com/Vladar4/itdr/releases/latest)
 
 ### [itch.io](https://vladar.itch.io/into-the-dungeon-revived)
 
@@ -39,7 +39,7 @@ Tutti i PDF si trovano nella directory "current".
 
 | File PDF | Descrizione |
 |---|---|
-| itdr.pdf   | attuale versione del manuale |
+| itdr.pdf   | versione attuale del manuale |
 | itdr_light\*.pdf | edizione light (ridotta, ventotto pagine): parts_1-4, part_a1, part_index |
 | itdr_minimal\*.pdf | edizione minimal (minimale, sedici pagine): solo parts_1-4 |
 | \*_booklet.pdf   | opuscoli da stampare   |
