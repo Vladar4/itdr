@@ -10,13 +10,13 @@
     <meta property="og:site_name" content="Into the Dungeon: Revived">
     <meta property="twitter:card" content="summary">
 
-    <meta name="title" content="Into the Dungeon: Revived | Tools">
-    <meta property="og:title" content="Into the Dungeon: Revived | Tools">
-    <meta property="twitter:title" content="Into the Dungeon: Revived | Tools">
+    <meta name="title" content="Into the Dungeon: Revived | Strumenti">
+    <meta property="og:title" content="Into the Dungeon: Revived | Strumenti">
+    <meta property="twitter:title" content="Into the Dungeon: Revived | Strumenti">
 
-    <meta name="description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
-    <meta property="og:description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
-    <meta property="twitter:description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
+    <meta name="description" content="ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata.">
+    <meta property="og:description" content="ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata.">
+    <meta property="twitter:description" content="ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata.">
 
     <meta property="og:image" content="https://vladar4.github.io/itdr/logo_itdr.png">
     <meta property="twitter:image" content="https://vladar4.github.io/itdr/logo_itdr.png">
@@ -29,27 +29,27 @@
     <header>
         <h1>Into the Dungeon: Revived</h1>
 
-        <div class="subtitle">Rules for fantastic adventure games<br/>
-        playable with paper and pencil and polyhedral dice</div>
+        <div class="subtitle">Regole per avventure fantastiche<br/>
+        da giocare con carta, matite e dadi poliedrici</div>
         <div class="hr"></div>
         <nav>
             <input type="checkbox" id="nav-check">
             <div class="nav-button"><label for="nav-check"><span></span><span></span><span></span></label></div>
             <div class="nav-left">
-                <a href="index.html"><img src="logo_itdr.svg" alt="ItDR" title="ItDR home page"/></a>
+                <a href="index.html"><img src="logo_itdr.svg" alt="ItDR" title="Home page di ItDR in italiano"/></a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="downloads.html">Downloads</a>
-                <a class="nav-current" href="#">Tools</a>
-                <a href="links.html">Links</a>
+                <a href="downloads.html">Download</a>
+                <a class="nav-current" href="#">Strumenti</a>
+                <a href="links.html">Link</a>
             </div>
             <div class="nav-right">
                 <a href="https://github.com/Vladar4/itdr" target="_blank">
-                    <img src="logo_github.svg" alt="GitHub" title="ItDR GitHub page" />
+                    <img src="logo_github.svg" alt="GitHub" title="Pagina di ItDR su GitHub" />
                 </a>
                 <a href="https://vladar.itch.io/into-the-dungeon-revived" target="_blank">
-                    <img src="logo_itchio.svg" alt="itch.io" title="ItDR itch.io page" />
+                    <img src="logo_itchio.svg" alt="itch.io" title="Pagina di ItDR su itch.io" />
                 </a>
                 <a href="https://vladar.bearblog.dev/" target="_blank">
                     <img src="logo_blog.svg" alt="Blog" title="Vladar's Blog" />
@@ -63,56 +63,56 @@
         <noscript><p class="centered" style="color:red">The tools need JavaScript to work properly.</p></noscript>
 
         <div class="tab-menu">
-            <button class="tab-link active" id="btn-creatures" onClick="onOpenTab(event, 'creatures')">Creatures</button>
-            <button class="tab-link" id="btn-misc" onClick="onOpenTab(event, 'misc')">Miscellaneous</button>
+            <button class="tab-link active" id="btn-creatures" onClick="onOpenTab(event, 'creatures')">Creature</button>
+            <button class="tab-link" id="btn-misc" onClick="onOpenTab(event, 'misc')">Miscellanea</button>
         </div>
 
         <!-- TAB 1 -->
         <div class="tab" id="creatures" style="display:block">
 
         <p class="centered">
-            <h2>Random Character</h2>
+            <h2>Personaggio Random</h2>
             <div style="display:none"> <!-- DEBUG TOOLS -->
                 <input type="button" id="btn_debugRNG_d6" value="Debug: RNG d6 (console)" style="width:100%" onclick="debugRNG(d6, 1, 6)" />
                 <input type="button" id="btn_debugRNG_stat" value="Debug: RNG stat (console)" style="width:100%" onclick="debugRNG(stat, 3, 18)" />
             </div>
-            <input type="button" id="btn_RandomCharacter" value="Generate" onclick="generateRandomStats()" />
+            <input type="button" id="btn_RandomCharacter" value="Genera" onclick="generateRandomStats()" />
             <p id="out_RandomStats" class="centered" style="display:none"></p>
             <table class="centered nowrap" id="swap_RandomCharacter" style="display:none; table-layout:fixed"><tr>
-                <td style="width:33%"><label for="select_feature">Feature:</label><br/><select name="feature" id="select_feature"></select></td>
-                <td style="width:33%"><br/><input type="button" id="btn_RandomCharacterKeep" value="Keep rolls" onclick="generateRandomCharacter(0)" /></td>
+                <td style="width:33%"><label for="select_feature">Tratto:</label><br/><select name="feature" id="select_feature"></select></td>
+                <td style="width:33%"><br/><input type="button" id="btn_RandomCharacterKeep" value="Conserva i tiri" onclick="generateRandomCharacter(0)" /></td>
                 <td style="width:33%"><label for="select_background">Background:</label><br/><select name="background" id="select_background"></select></td>
             </tr><tr>
-                <td><input type="button" id="btn_RandomCharacterSD" value="STR &#8644; DEX" onclick="generateRandomCharacter(12)" /></td>
-                <td><input type="button" id="btn_RandomCharacterSW" value="STR &#8644; WIL" onclick="generateRandomCharacter(13)" /></td>
-                <td><input type="button" id="btn_RandomCharacterSE" value="STR &#8644; Money" onclick="generateRandomCharacter(14)" /></td>
+                <td><input type="button" id="btn_RandomCharacterSD" value="FOR &#8644; DES" onclick="generateRandomCharacter(12)" /></td>
+                <td><input type="button" id="btn_RandomCharacterSW" value="FOR &#8644; VOL" onclick="generateRandomCharacter(13)" /></td>
+                <td><input type="button" id="btn_RandomCharacterSE" value="FOR &#8644; Denaro" onclick="generateRandomCharacter(14)" /></td>
             </tr><tr>
-                <td><input type="button" id="btn_RandomCharacterDW" value="DEX &#8644; WIL" onclick="generateRandomCharacter(23)" /></td>
-                <td><input type="button" id="btn_RandomCharacterDM" value="DEX &#8644; Money" onclick="generateRandomCharacter(24)" /></td>
-                <td><input type="button" id="btn_RandomCharacterWM" value="WIL &#8644; Money" onclick="generateRandomCharacter(34)" /></td>
+                <td><input type="button" id="btn_RandomCharacterDW" value="DES &#8644; VOL" onclick="generateRandomCharacter(23)" /></td>
+                <td><input type="button" id="btn_RandomCharacterDM" value="DES &#8644; Denaro" onclick="generateRandomCharacter(24)" /></td>
+                <td><input type="button" id="btn_RandomCharacterWM" value="VOL &#8644; Denaro" onclick="generateRandomCharacter(34)" /></td>
             </td></tr><tr><td colspan=3>
-                <input type="checkbox" id="checkbox_equipment" name="equipment" checked /><label for="checkbox_equipment">Buy random equipment</label>
+                <input type="checkbox" id="checkbox_equipment" name="equipment" checked /><label for="checkbox_equipment">Compra equipaggiamento casuale</label>
             </td></tr></table>
             <p id="out_RandomCharacter" style="display:none"></p>
         </p>
 
         <p class="centered">
-            <h2>Random Non-Player Character</h2>
-            <input type="button" id="btn_RandomNPC" value="Generate" onclick="generateRandomNPC()" />
+            <h2>Personaggio-Non-Giocante Random</h2>
+            <input type="button" id="btn_RandomNPC" value="Genera" onclick="generateRandomNPC()" />
             <p id="out_RandomNPC" style="display:none"></p>
         </p>
 
         <p class="centered">
-            <h2>Random Monster</h2>
+            <h2>Mostro Random</h2>
             <div style="margin-top:1em; margin-bottom:0.5em">
                 <div style="display:block; float:left">
-                    <input type="checkbox" id="checkbox_monster_abilities" name="monster_abilities" onclick="toggleMonsterAbilities()" /><label for="checkbox_monster_abilities">Generate Abilities</label>
+                    <input type="checkbox" id="checkbox_monster_abilities" name="monster_abilities" onclick="toggleMonsterAbilities()" /><label for="checkbox_monster_abilities">Genera Capacit&agrave;</label>
                 </div>
                 <div id="div_monster_danger" style="display:none; float:right">
-                    <label for="select_monster_danger">Danger: </label><select name="monster_danger" id="select_monster_danger" style="padding: 0px; width:6em"></select>
+                    <label for="select_monster_danger">Pericolosit&agrave;: </label><select name="monster_danger" id="select_monster_danger" style="padding: 0px; width:6em"></select>
                 </div>
             </div>
-            <input type="button" id="btn_RandomMonster" value="Generate" onclick="generateRandomMonster()" />
+            <input type="button" id="btn_RandomMonster" value="Genera" onclick="generateRandomMonster()" />
             <p id="out_RandomMonster" style="display:none"></p>
         </p>
 
@@ -122,28 +122,28 @@
         <div class="tab" id="misc">
 
         <p class="centered">
-            <h2>Random Magic Item</h2>
-            <input type="button" id="btn_RandomMagicItem" value="Generate" onclick="generateRandomMagicItem()" />
+            <h2>Oggetto Magico Random</h2>
+            <input type="button" id="btn_RandomMagicItem" value="Genera" onclick="generateRandomMagicItem()" />
             <p id="out_RandomMagicItem" style="display:none"></p>
         </p>
 
         <p class="centered">
-            <h2>Random Weather</h2>
+            <h2>Meteo Random</h2>
             <div>
-                <div class="inline-block"><input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked /><label for="radio_wind">default</label></div>
-                <div class="inline-block"><input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">following prevailing winds</label></div>
-                <div class="inline-block"><input type="radio" id="radio_wind_against" name="radio_wind" value="against"/><label for="radio_wind">against prevailing winds</label></div>
+                <div class="inline-block"><input type="radio" id="radio_wind_default" name="radio_wind" value="default" checked /><label for="radio_wind">predefinito</label></div>
+                <div class="inline-block"><input type="radio" id="radio_wind_follow" name="radio_wind" value="follow"/><label for="radio_wind">venti dominanti a favore</label></div>
+                <div class="inline-block"><input type="radio" id="radio_wind_against" name="radio_wind" value="against"/><label for="radio_wind">venti dominanti contrari</label></div>
             </div>
             <table class="centered nowrap" id="table_randomWeather" style="table-layout:fixed; border-spacing:0px"><tr>
-                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeather" value="Normal Climate" onclick="generateRandomWeather(0)" /></td>
-                <td style="width:33%"><input type="button" id="btn_RandomWeatherDry" value="Dry Climate" onclick="generateRandomWeather(1)" /></td>
-                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Rainy Climate" onclick="generateRandomWeather(2)" /></td>
+                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeather" value="Clima Ordinario" onclick="generateRandomWeather(0)" /></td>
+                <td style="width:33%"><input type="button" id="btn_RandomWeatherDry" value="Clima Secco" onclick="generateRandomWeather(1)" /></td>
+                <td style="width:33%; padding:0px"><input type="button" id="btn_RandomWeatherRainy" value="Clima Piovoso" onclick="generateRandomWeather(2)" /></td>
             </tr></table>
             <p id="out_RandomWeather" style="display:none"></p>
         </p>
 
         <p class="centered">
-            <h2>Horizon and Visibility</h2>
+            <h2>Orizzonte e Visibilit&agrave;</h2>
             <p>
                 <img    src="horizon.png"
                         alt="Horizon and Visibility"
@@ -154,42 +154,42 @@
                 <!-- COLUMN 1 -->
                 <div class="wrap flex-container" style="flex-direction: column; align-items: flex-end">
                     <div class="flex-item">
-                        <label for="horizon_r">Planet radius (R)</label>
+                        <label for="horizon_r">Raggio del pianeta (R)</label>
                     </div>
                     <div class="flex-item">
-                        <label for="horizon_h">Observer elevation (h)</label>
+                        <label for="horizon_h">Altitudine di chi osserva (h)</label>
                     </div>
                     <div class="flex-item">
-                        <label for="horizon_o">Object distance (o)</label>
+                        <label for="horizon_o">Distanza dell'oggetto (o)</label>
                     </div>
                     <div class="flex-item">
-                        <label>Horizon distance (d)</label>
+                        <label>Distanza dell'orizzonte(d)</label>
                     </div>
                     <div class="flex-item">
-                        <label>Object height obstructed (x)</label>
+                        <label>Altezza dell'oggetto ostruito (x)</label>
                     </div>
                 </div>
                 <!-- COLUMN 2 -->
                 <div class="flex-container" style="flex-direction: column; align-items: flex-start">
                     <div class="flex-item">
                         <input type="number" id="horizon_r" name="Planet radius" min="1" value="3960" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>miles</label>
+                        <label>miglia</label>
                     </div>
                     <div class="flex-item">
                         <input type="number" id="horizon_h" name="Observer elevation" value="6" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>feet</label>
+                        <label>piedi</label>
                     </div>
                     <div class="flex-item">
                         <input type="number" id="horizon_o" name="Object distance" value="10" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>miles</label>
+                        <label>miglia</label>
                     </div>
                     <div class="flex-item">
                         <input readonly type="number" id="horizon_d" name="Horizon distance" value="0" style="width: 5em; background-color: #f0dcc0"/>
-                        <label>miles</label>
+                        <label>miglia</label>
                     </div>
                     <div class="flex-item">
                         <input readonly type="number" id="horizon_x" name="Object height obstructed" value="0" style="width: 5em; background-color: #f0dcc0"/>
-                        <label>feet</label>
+                        <label>piedi</label>
                     </div>
                 </div>
             </div>
@@ -209,17 +209,17 @@
                 </div>
                 <div class="flex-item" style="flex-shrink: 0; text-align: left">
                     <em>
-                        d &mdash; horizon distance<br/>
-                        h &mdash; observer elevation<br/>
-                        R &mdash; planet radius<br/>
-                        x &mdash; object height obstructed<br/>
-                        o &mdash; object distance<br/>
-                        1 mile = 5280 feet
+                        d &mdash; distanza dell'orizzonte<br/>
+                        h &mdash; altitudine di chi osserva<br/>
+                        R &mdash; raggio del pianeta<br/>
+                        x &mdash; altezza dell'oggetto ostruito<br/>
+                        o &mdash; distanza dell'oggetto<br/>
+                        1 miglio = 5280 piedi
                     </em>
                 </div>
             </div>
 
-            <h3>Simplified for Earth-sized planet<br/>(R = 3960 miles)</h3>
+            <h3>Semplificato per un pianeta delle dimensioni della Terra<br/>(R = 3960 miglia)</h3>
             <div class="centered nowrap flex-container">
                 <div class="flex-item">
                     <img    src="horizon_formula3.svg"
@@ -235,10 +235,10 @@
                 </div>
                 <div class="flex-item" style="flex-shrink: 0; text-align: left">
                     <em>
-                        d &mdash; horizon distance, miles<br/>
-                        h &mdash; observer elevation, feet<br/>
-                        x &mdash; object height obstructed, feet<br/>
-                        o &mdash; object distance, feet<br/>
+                        d &mdash; distanza dell'orizzonte, miglia<br/>
+                        h &mdash; altitudine di chi osserva, piedi<br/>
+                        x &mdash; altezza dell'oggetto ostruito, piedi<br/>
+                        o &mdash; distanza dell'oggetto, piedi<br/>
                     </em>
                 </div>
             </div>
@@ -252,7 +252,7 @@
     <footer>
         <div class="hr"></div>
         <sup class="centered">
-            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution - NonCommercial - ShareAlike 3.0 Unported License</a>
+            <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.it" target="_blank">Licenza Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 3.0 Unported</a>
         </sup>
     </footer>
 

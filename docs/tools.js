@@ -33,30 +33,30 @@ function debugRNG(func, min, max, n=100000) {
 function randomSimpleMelee() {
     let result = "NONE";
     switch(d(4)) {
-        case 1: result = "pitchfork"; break;
-        case 2: result = "quarterstaff"; break;
-        case 3: result = "sledgehammer"; break;
-        case 4: result = "splitting maul"; break;
+        case 1: result = "bastone ferrato"; break;
+        case 2: result = "forcone"; break;
+        case 3: result = "maglio spaccalegna"; break;
+        case 4: result = "martello da fabbro"; break;
         default: return "NONE";
     }
-    result += " (d6, 2h)";
+    result += " (d6, 2-mani)";
     return result;
 }
 
 function randomMartialMelee() {
     let result = "NONE";
     switch(d(8)) {
-        case 1: result = "axe"; break;
-        case 2: result = "dagger"; break;
-        case 3: result = "halberd"; break;
-        case 4: result = "lance"; break;
-        case 5: result = "mace"; break;
-        case 6: result = "spear"; break;
-        case 7: result = "sword"; break;
-        case 8: result = "war hammer"; break;
+        case 1: result = "alabarda"; break;
+        case 2: result = "ascia"; break;
+        case 3: result = "lancia"; break;
+        case 4: result = "lancia lunga"; break;
+        case 5: result = "martello da guerra"; break;
+        case 6: result = "mazza"; break;
+        case 7: result = "pugnale"; break;
+        case 8: result = "spada"; break;
         default: return "NONE";
     }
-    if(result == "lance") result += " (d8, 2h if not mounted)";
+    if(result == "lancia lunga") result += " (d8, 2-mani se non sei in sella)";
     else result += " (d6/d8)";
     return result;
 }
@@ -64,12 +64,12 @@ function randomMartialMelee() {
 function randomSimpleRanged() {
     let result = "NONE";
     switch(d(6)) {
-        case 1: result = "boomerang"; break;
-        case 2: result = "darts"; break;
-        case 3: result = "hunting bow"; break;
-        case 4: result = "sling"; break;
-        case 5: result = "throwing daggers"; break;
-        case 6: result = "throwing stars"; break;
+        case 1: result = "arco da caccia"; break;
+        case 2: result = "boomerang"; break;
+        case 3: result = "fionda"; break;
+        case 4: result = "freccette"; break;
+        case 5: result = "pugnali da lancio"; break;
+        case 6: result = "shuriken"; break;
         default: return "NONE";
     }
     result += " (d4)";
@@ -79,33 +79,33 @@ function randomSimpleRanged() {
 function randomMartialRanged() {
     let result = "NONE";
     switch(d(4)) {
-        case 1: result = "crossbow"; break;
-        case 2: result = "longbow"; break;
-        case 3: result = "musket"; break;
-        case 4: result = "pistol"; break;
+        case 1: result = "arco lungo"; break;
+        case 2: result = "balestra"; break;
+        case 3: result = "moschetto"; break;
+        case 4: result = "rivoltella"; break;
         default: return "NONE";
     }
     result += " (d6)";
     return result;
 }
 
-const ropeItem = "10-ft rope";
+const ropeItem = "corda di 10 piedi";
 
 function randomGear() {
     let result = "NONE";
     switch(d(12)) {
         case 1: return ropeItem;
-        case 2: return "bottle";
-        case 3: return "caltrops";
-        case 4: return "candle";
-        case 5: return "chain";
-        case 6: return "chalk";
-        case 7: return randomBool() ? "dice" : "playing cards";
-        case 8: return "flint and steel";
-        case 9: return "parchment";
-        case 10: return "sack";
-        case 11: return "spike";
-        case 12: return "tent";
+        case 2: return "bottiglia";
+        case 3: return "candela";
+        case 4: return "cartapecora";
+        case 5: return randomBool() ? "carte da gioco" : "dadi";
+        case 6: return "catena";
+        case 7: return "esca e pietra focaia";
+        case 8: return "gessetto";
+        case 9: return "sacco";
+        case 10: return "spuntone";
+        case 11: return "tenda";
+        case 12: return "triboli";
         default: return "NONE";
     }
 }
@@ -113,26 +113,26 @@ function randomGear() {
 function randomTool() {
     let result = "NONE";
     switch(d(20)) {
-        case 1: return "animal trap";
-        case 2: return "collapsible pole";
-        case 3: return "chisel and mallet";
-        case 4: return "clamp";
-        case 5: return "crowbar";
-        case 6: return "drill";
-        case 7: return randomBool() ? "file" : "rasp";
-        case 8: return "fishing pole";
-        case 9: return "grappling hook";
-        case 10: return "hammer";
-        case 11: return "hatchet";
-        case 12: return "lockpicks";
-        case 13: return "padlock";
-        case 14: return "pickaxe";
-        case 15: return "pliers";
-        case 16: return "saw";
-        case 17: return "scissors";
-        case 18: return "shovel";
-        case 19: return "wrench";
-        case 20: return "writing set";
+        case 1: return "accetta";
+        case 2: return "canna da pesca";
+        case 3: return "chiave serratubi";
+        case 4: return "forbici";
+        case 5: return "grimaldelli";
+        case 6: return randomBool() ? "lima" : "raspa";
+        case 7: return "lucchetto";
+        case 8: return "martello";
+        case 9: return "mazzuola e scalpello";
+        case 10: return "pala";
+        case 11: return "pertica ripieghevole";
+        case 12: return "piccozza";
+        case 13: return "piedi di porco";
+        case 14: return "pinza";
+        case 15: return "rampino";
+        case 16: return "sega";
+        case 17: return "set da scrittura";
+        case 18: return "tenaglia";
+        case 19: return "rampino";
+        case 20: return "trappola per animali";
         default: return "NONE";
     }
 }
@@ -140,10 +140,10 @@ function randomTool() {
 function randomPet() {
     let result = "NONE";
     switch(d(4)) {
-        case 1: return "cat (STR 6, WIL 8, 2hp, d4 Claws)";
-        case 2: return "mutt (STR 8, WIL 6, 2hp, d4 Bite)";
-        case 3: return "owl (STR 6, WIL 6, 2hp, d4 Claws)";
-        case 4: return "parrot (STR 6, WIL 6, 2hp, d4 Claws)";
+        case 1: return "gatto (FOR 6, VOL 8, 2pf, d4 Artigli)";
+        case 2: return "gufo (FOR 6, VOL 6, 2pf, d4 Artigli)";
+        case 3: return "meticcio (FOR 8, VOL 6, 2pf, d4 Morso)";
+        case 4: return "pappagallo (FOR 6, VOL 6, 2pf, d4 Artigli)";
         default: return "NONE";
     }
 }
@@ -172,134 +172,134 @@ function randomGearOrTool(items) {
 
 const sFeatureList = [
     "NONE",
-    "Assassin",
-    "Beastmaster",
+    "Assassino",
+    "Belva",
     "Berserker",
-    "Brawler",
-    "Commander",
-    "Duellist",
-    "Healer",
-    "Ironclad",
-    "Mystic",
-    "Sharpshooter",
-    "Skilled",
-    "Swashbuckler",
-    "Tactician",
-    "Thaumaturge",
-    "Warrior"]; /* 15 */
+    "Blindato",
+    "Cecchino",
+    "Comandante",
+    "Combattente",
+    "Duellante",
+    "Guaritore",
+    "Mistico",
+    "Provetto",
+    "Rissaiolo",
+    "Spaccone",
+    "Tattico",
+    "Taumaturgo"]; /* 15 */
 
 const sCantripList = [
     "NONE",
-    "acid splash",
-    "arcane mark",
-    "daze",
-    "detect magic",
-    "detect poison",
-    "disrupt undead",
-    "flare",
-    "ghost sound",
-    "guided strike",
-    "jinx",
-    "hide",
-    "light/douse",
-    "magic hand",
-    "mending",
-    "mute",
-    "prestidigitation",
-    "provocation",
-    "ray of frost",
-    "resistance",
-    "spark"]; /* 20 */
+    "accendere/spegnere",
+    "colpo guidato",
+    "frastornare",
+    "iettatura",
+    "individuazione del magico",
+    "individuazione del veleno undead",
+    "mano magica",
+    "marchio arcano",
+    "occultare",
+    "ostacolare la non morte",
+    "prestidigitazione",
+    "provocazione",
+    "raggio di gelo",
+    "resistenza",
+    "riparare",
+    "rumore fantasma",
+    "scintilla",
+    "segnale luminoso",
+    "spruzzo acido",
+    "tacitare"]; /* 20 */
 
 const sSpellList = [
     "NONE",
-    "alarm",
-    "animate rope",
-    "burning hands",
-    "cause fear",
-    "charm person",
-    "chill touch",
-    "colour spray",
-    "comprehend languages",
-    "camouflage",
-    "courage",
-    "detect secret doors",
-    "detect dead",
-    "disguise self",
-    "endure elements",
-    "enlarge/reduce",
-    "erase",
-    "expeditious retreat",
-    "feather fall",
-    "floating disk",
-    "glue",
-    "grease",
-    "gust of wind",
-    "hideous laughter",
-    "hold portal",
-    "hypnotism",
-    "identify",
-    "jump",
-    "magic missile",
-    "mount",
-    "obscuring mist",
-    "protection",
-    "pyrotechnics",
-    "shield",
-    "shocking grasp",
-    "silent image",
-    "sleep",
-    "summon creature",
-    "swarm",
-    "true strike",
-    "unseen servant"]; /* 40 */
+    "allarme",
+    "animare corda",
+    "auto-mascheramento",
+    "blocca porta",
+    "caduta piume",
+    "camuffamento",
+    "cancella",
+    "charme",
+    "colla",
+    "comprensione dei linguaggi",
+    "convoca creatura",
+    "coraggio",
+    "dardo incantato",
+    "destriero",
+    "disco fluttuante",
+    "folata di vento",
+    "foschia coprente",
+    "grasso",
+    "identifica",
+    "immagine silenziosa",
+    "incuti paura",
+    "individuazione dei caduti",
+    "individuazione delle porte segrete",
+    "ingrandisci/rimpicciolisci",
+    "ipnotismo",
+    "mani brucianti",
+    "pirotecnica",
+    "protezione",
+    "risata orrida",
+    "ritirata rapida",
+    "salto",
+    "sciame",
+    "scudo",
+    "servit\u00F9 invisibile",
+    "sonno",
+    "sopportare elementi",
+    "spray colorato",
+    "stretta folgorante",
+    "tocco gelido",
+    "vero colpo"]; /* 40 */
 
 const sSkillList = [
     "NONE",
-    "animal handling",
-    "athletics",
-    "burgling",
-    "cheating",
-    "drinking",
-    "quickness",
-    "stealth",
-    "navigation",
-    "negotiation",
-    "tracking"]; /* 10 */
+    "accudimento degli animali",
+    "atletica",
+    "furtivit\u00E0",
+    "furto con scasso",
+    "navigazione",
+    "negoziazione",
+    "raggiro",
+    "rapidit\u00E0",
+    "seguire tracce",
+    "tolleranza degli alcolici"]; /* 10 */
 
 const sGiftList = [
     "NONE",
-    "aegis",
-    "awakening",
-    "bond",
-    "command",
-    "control",
-    "credence",
-    "harmony",
-    "omen",
-    "smite",
-    "turn"]; /* 10 */
+    "armonia",
+    "castigo",
+    "comando",
+    "controllo",
+    "credenza",
+    "egida",
+    "legame",
+    "presagio",
+    "risveglio",
+    "scacciata"]; /* 10 */
 
 const sBackgroundList = [
     "NONE",
-    "Criminal",
-    "Hunter",
-    "Labourer",
-    "Minstrel",
-    "Noble",
-    "Sailor",
-    "Scholar",
-    "Soldier" /* 8 */
+    "Cacciatore",
+    "Criminale",
+    "Marinaio",
+    "Menestrello",
+    "Nobile",
+    "Operaio",
+    "Soldato",
+    "Studioso" /* 8 */
     ];
 
 function generateRandomStats() {
     const out = docId('out_RandomStats');
     iStats = [stat(), stat(), stat(), stat()];
     out.innerHTML =
-        "STR " + iStats[0] +
-        ", DEX " + iStats[1] +
-        ", WIL " + iStats[2] +
-        ", Money " + iStats[3];
+        "FOR " + iStats[0] +
+        ", DES " + iStats[1] +
+        ", VOL " + iStats[2] +
+        ", Denaro " + iStats[3];
     docId('out_RandomStats').style.display="";
     docId('swap_RandomCharacter').style.display="";
     docId('out_RandomCharacter').innerHTML="";
@@ -312,22 +312,22 @@ function generateRandomCharacter(swap) {
 
     switch(swap) {
         case 0: break;
-        /* STR <-> DEX */
+        /* FOR <-> DES */
         case 12: swapStats(0, 1); break;
-        /* STR <-> WIL */
+        /* FOR <-> VOL */
         case 13: swapStats(0, 2); break;
-        /* STR <-> Money */
+        /* FOR <-> Money */
         case 14: swapStats(0, 3); break;
-        /* DEX <-> WIL */
+        /* DES <-> VOL */
         case 23: swapStats(1, 2); break;
-        /* DEX <-> Money */
+        /* DES <-> Money */
         case 24: swapStats(1, 3); break;
-        /* WIL <-> Money */
+        /* VOL <-> Money */
         case 34: swapStats(2, 3); break;
         default: break;
     }
 
-    log("STR " + iStats[0] + ", DEX " + iStats[1] + ", WIL " + iStats[2] + ", Money " + iStats[3]);
+    log("FOR " + iStats[0] + ", DES " + iStats[1] + ", VOL " + iStats[2] + ", Money " + iStats[3]);
 
     /* FEATURE */
     let iFeature = parseInt(docId('select_feature').value);
@@ -346,30 +346,29 @@ function generateRandomCharacter(swap) {
             break;
 
         case 2: /* Beastmaster */
-            sFeature += " 1 (max. 2 pets)";
+            sFeature += " 1 (max 2 compagni animali)";
             maxPets = 2;
             break;
 
-        case 4: /* Brawler */
-            sFeature += " 1 (bonus d4 unarmed Damage)";
-            bBrawler = true;
+        case 7: /* Warrior */
+            sFeature += " 1 (d4 bonus dal Danno dell'arma)"
             break;
 
-        case 7: /* Healer */
-            sFeatureItems.push("5s&nbsp;worth of healing supplies");
+        case 9: /* Healer */
+            sFeatureItems.push("5s&nbsp;in medicamenti");
             break;
 
-        case 9: /* Mystic */
+        case 10: /* Mystic */
             sFeature += " 1";
             bMystic = true;
-            sFeatureItems.push("mystic's focus", "mystic's tome");
+            sFeatureItems.push("Focus del Mistico", "Tomo del Mistico");
             let cantrips = shuffledIndex(sCantripList, 2).sort(
                 (function(a, b) {return a - b;}));
             let spells = shuffledIndex(sSpellList, 6).sort(
                 (function(a, b) {return a - b;}));
-            sTome = "Mystic's Tome Contents: Cantrips: " +
+            sTome = "Contenuto del Tomo del Mistico = Trucchetti: " +
                 sCantripList[cantrips[0]] + ", " +
-                sCantripList[cantrips[1]]+ ";<br/>1st Circle: " +
+                sCantripList[cantrips[1]]+ ";<br/>1\u00B0 Cerchio: " +
                 sSpellList[spells[0]] + ", " +
                 sSpellList[spells[1]] + ", " +
                 sSpellList[spells[2]] + ", " +
@@ -384,29 +383,30 @@ function generateRandomCharacter(swap) {
             sFeature += " (" + sSkillList[skills[0]] + ", " + sSkillList[skills[1]] + ")";
             break;
 
-        case 14: /* Thaumaturge */
-            let gifts = shuffledIndex(sGiftList, 2).sort(
-                (function(a, b) {return a - b;}));
-            sFeature += " 1 (d4 Gift die, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
+        case 12: /* Brawler */
+            sFeature += " 1 (d4 bonus per il Danno senz'armi)";
+            bBrawler = true;
             break;
 
-        case 15: /* Warrior */
-            sFeature += " 1 (bonus d4 weapon Damage)"
+        case 15: /* Thaumaturge */
+            let gifts = shuffledIndex(sGiftList, 2).sort(
+                (function(a, b) {return a - b;}));
+            sFeature += " 1 (Dado dono d4, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
             break;
 
         default: break;
     }
 
-    /* HP */
+    /* PF */
     let hp = 0;
     switch(iFeature) {
         case 3: /* Berserker */
-        case 4: /* Brawler */
-        case 6: /* Duellist */
-        case 8: /* Ironclad */
-        case 12: /* Swashbuckler */
-        case 13: /* Tactician */
-        case 15: /* Warrior */
+        case 4: /* Ironclad  */
+        case 7: /* Warrior */
+        case 8: /* Duellist */
+        case 12: /* Brawler */
+        case 13: /* Swashbuckler */
+        case 14: /* Tactician */
             hp = Math.max(d(6), d(6));
         default:
             hp = d(6);
@@ -425,205 +425,204 @@ function generateRandomCharacter(swap) {
     let sBackgroundItems = [];
     let iRope = 0;
     switch(iBackground) {
-        case 1: /* Criminal */
-            sBackgroundWeapons = "dagger (d6/d8)";
-            bBackgroundMelee = true;
-            switch(d(6)) {
-                case 1: sBackgroundItems.push("blackjack (sap)"); break;
-                case 2: sBackgroundItems.push("crowbar"); break;
-                case 3: sBackgroundItems.push("grappling hook"); break;
-                case 4: sBackgroundItems.push("loaded dice"); break;
-                case 5: sBackgroundItems.push("lockpicks"); break;
-                case 6: sBackgroundItems.push("marked cards"); break;
-            }
-            sBackground += " (with a contact in the criminal world)";
-            break;
-
-        case 2: /* Hunter */
-            sBackgroundWeapons = randomBool() ? "longbow (d6)" : "simple musket (d6)";
+        case 1: /* Hunter */
+            sBackgroundWeapons = randomBool() ? "arco lungo (d6)" : "moschetto semplice (d6)";
             bBackgroundRanged = true;
-            sBackgroundItems.push("animal trap");
-            sBackground += " (hunting and tracking expertise)";
+            sBackgroundItems.push("trappola per animali");
+            sBackground += " (dimostri bravura nella caccia e nel seguire tracce)";
             break;
 
-        case 3: /* Labourer */
+        case 2: /* Criminal */
+            sBackgroundWeapons = "pugnale (d6/d8)";
             bBackgroundMelee = true;
-            bTwohandedMelee = true;
             switch(d(6)) {
-                case 1:
-                    sBackground = "Farmer";
-                    sBackgroundWeapons = "pitchfork (d6, 2h)";
-                    sBackgroundItems.push("sickle", "sieve");
-                    break;
-                case 2:
-                    sBackground = "Gardener";
-                    sBackgroundWeapons = "scythe (d6, 2h)";
-                    sBackgroundItems.push("hatchet", "shovel");
-                    break;
-                case 3:
-                    sBackground = "Herder";
-                    sBackgroundWeapons = "quarterstaff (d6, 2h)";
-                    sBackgroundItems.push("scissors", "whip");
-                    break;
-                case 4:
-                    sBackground = "Lumberjack";
-                    sBackgroundWeapons = "splitting maul (d6, 2h)";
-                    sBackgroundItems.push("saw", "wedge");
-                    break;
-                case 5:
-                    sBackground = "Mason";
-                    sBackgroundWeapons = "sledgehammer (d6, 2h)";
-                    sBackgroundItems.push("bucket", "trowel");
-                    break;
-                case 6:
-                    sBackground = "Miner";
-                    sBackgroundWeapons = "mattock (d6, 2h)";
-                    sBackgroundItems.push("drill", "mallet");
-                    break;
-                default: break;
+                case 1: sBackgroundItems.push("carte segnate"); break;
+                case 2: sBackgroundItems.push("dadi truccati"); break;
+                case 3: sBackgroundItems.push("grimaldelli"); break;
+                case 4: sBackgroundItems.push("manganello (sfollagente)"); break;
+                case 5: sBackgroundItems.push("piede di porco"); break;
+                case 6: sBackgroundItems.push("rampino"); break;
             }
-            iRope = 20;
-            sBackground += " (common folk treat you as one of them)";
-            iStats[3] += nd(2, 4); /* extra 2d4s */
+            sBackground += " (con un contatto nel mondo del crimine)";
+            break;
+
+        case 3: /* Sailor */
+            iPets += 1;
+            sPets = randomBool() ?
+                "pappagallo parlante(FOR 6, VOL 6, 2pf, d4 Artigli)" :
+                "scimietta (FOR 7, VOL 7, 3pf, d4 Morso)";
+            sBackground += " (ti intendi di navigazione marittima)";
             break;
 
         case 4: /* Minstrel */
             switch(d(10)) { /* random instrument */
-                case 1: sBackgroundItems.push(randomBool() ? "bagpipe" : "bladder pipe"); break;
-                case 2: sBackgroundItems.push(randomBool() ? "drum" : "tambourine"); break;
-                case 3: sBackgroundItems.push(randomBool() ? "flute" : "ocarina"); break;
-                case 4: sBackgroundItems.push("jaw harp"); break;
-                case 5: sBackgroundItems.push(randomBool() ? "harp" : "lyre"); break;
-                case 6: sBackgroundItems.push(randomBool() ? "crumhorn" : "shawm"); break;
-                case 7: sBackgroundItems.push("hurdy-gurdy"); break;
-                case 8: sBackgroundItems.push(randomBool() ? "lute" : "mandolin"); break;
-                case 9:
+                case 1: sBackgroundItems.push(randomBool() ? "arpa" : "lira"); break;
+                case 2: sBackgroundItems.push(randomBool() ? "cetra" : "dulcimer"); break;
+                case 3: sBackgroundItems.push(randomBool() ? "ciaramella" : "cromorno"); break;
+                case 4: sBackgroundItems.push(randomBool() ? "cornamusa" : "zampogna"); break;
+                case 5: sBackgroundItems.push(randomBool() ? "flauto" : "ocarina"); break;
+                case 6: sBackgroundItems.push("ghironda"); break;
+                case 7: sBackgroundItems.push(randomBool() ? "liuto" : "mandolino"); break;
+                case 8:
                     switch(d(3)) {
-                        case 1: sBackgroundItems.push("viol"); break;
-                        case 2: sBackgroundItems.push("fiddle"); break;
-                        case 3: sBackgroundItems.push("rebec"); break;
+                        case 1: sBackgroundItems.push("ribeca"); break;
+                        case 2: sBackgroundItems.push("viola"); break;
+                        case 3: sBackgroundItems.push("violino"); break;
                         default: break;
                     }
                     break;
-                case 10: sBackgroundItems.push(randomBool() ? "zither" : "dulcimer"); break;
+                case 9: sBackgroundItems.push("scacciapensieri"); break;
+                case 10: sBackgroundItems.push(randomBool() ? "tamburello" : "tamburo"); break;
                 default: break;
             }
-            sBackground += " (legend lore 4-in-6)";
+            sBackground += " (4 su 6 possibilit\u00E0 di conoscere leggende e racconti)";
             break;
 
         case 5: /* Noble */
             iStats[3] *= 2; /* double money */
-            sBackground += " (your name still carries some weight)";
+            sBackground += " (il tuo nome ha ancora un certo peso)";
             break;
 
-        case 6: /* Sailor */
-            iPets += 1;
-            sPets = randomBool() ?
-                "talking parrot (STR 6, WIL 6, 2hp, d4 Claws)" :
-                "small monkey (STR 7, WIL 7, 3hp, d4 Bite)";
-            sBackground += " (seafaring knowledge)";
-            break;
-
-        case 7: /* Scholar */
-            let sStudyArea = "";
-            let sStudySpecialization = "";
-            switch(d(12)) {
+        case 6: /* Labourer */
+            bBackgroundMelee = true;
+            bTwohandedMelee = true;
+            switch(d(6)) {
                 case 1:
-                    sStudyArea = "History";
-                    sStudySpecialization = "archaeology";
+                    sBackground = "Contadino";
+                    sBackgroundWeapons = "forcone (d6, 2-mani)";
+                    sBackgroundItems.push("falcetto", "setaccio");
                     break;
                 case 2:
-                    sStudyArea = "History";
-                    sStudySpecialization = "culture and religion";
+                    sBackground = "Giardiniere";
+                    sBackgroundWeapons = "falce (d6, 2-mani)";
+                    sBackgroundItems.push("accetta", "pala");
                     break;
                 case 3:
-                    sStudyArea = "History";
-                    sStudySpecialization = "geography and politics";
+                    sBackground = "Minatore";
+                    sBackgroundWeapons = "zappa (d6, 2-mani)";
+                    sBackgroundItems.push("mazzuolo", "trapano");
                     break;
                 case 4:
-                    sStudyArea = "Life Science";
-                    sStudySpecialization = "herbalism";
+                    sBackground = "Muratore";
+                    sBackgroundWeapons = "martello da fabbro (d6, 2-mani)";
+                    sBackgroundItems.push("secchio", "spatola");
                     break;
                 case 5:
-                    sStudyArea = "Life Science";
-                    sStudySpecialization = "medicine";
+                    sBackground = "Pastore";
+                    sBackgroundWeapons = "bastone ferrato (d6, 2-mani)";
+                    sBackgroundItems.push("forbici", "frusta");
                     break;
                 case 6:
-                    sStudyArea = "Life Science";
-                    sStudySpecialization = "zoology";
-                    break;
-                case 7:
-                    sStudyArea = "Philology";
-                    sStudySpecialization = "dead languages";
-                    break;
-                case 8:
-                    sStudyArea = "Philology";
-                    sStudySpecialization = "folklore and literature";
-                    break;
-                case 9:
-                    sStudyArea = "Philology";
-                    sStudySpecialization = "foreign languages";
-                    break;
-                case 10:
-                    sStudyArea = "Physical Science";
-                    sStudySpecialization = "astronomy and physics";
-                    break;
-                case 11:
-                    sStudyArea = "Physical Science";
-                    sStudySpecialization = "chemistry";
-                    break;
-                case 12:
-                    sStudyArea = "Physical Science";
-                    sStudySpecialization = "geoscience";
+                    sBackground = "Taglialegna";
+                    sBackgroundWeapons = "maglio spaccalegna (d6, 2h)";
+                    sBackgroundItems.push("cuneo", "sega");
                     break;
                 default: break;
             }
-            sBackgroundItems.push("writing set", "a journal with your notes", "a book about " + sStudySpecialization);
-                sBackground += " of " + sStudyArea + " (" + sStudySpecialization + ")";
+            iRope = 20;
+            sBackground += " (la gente comune ti tratta come sua pari)";
+            iStats[3] += nd(2, 4); /* extra 2d4s */
             break;
 
-        case 8: /* Soldier */
+        case 7: /* Soldier */
             switch(d(6)) {
                 case 1:
-                    sBackground += " (archer)";
-                    sBackgroundWeapons = "longbow (d6)";
+                    sBackground += " (arciere)";
+                    sBackgroundWeapons = "arco lungo (d6)";
                     bBackgroundRanged = true;
                     break;
                 case 2:
-                    sBackground += " (cavalry)";
-                    sBackgroundWeapons = "lance (d8, 2h if not mounted)";
+                    sBackground += " (cavaliere)";
+                    sBackgroundWeapons = "lancia lunga (d8, 2-mani se non sei in sella)";
                     bBackgroundMelee = true;
                     bTwohandedMelee = true;
                     break;
                 case 3:
-                    sBackground += " (musketeer)";
-                    sBackgroundWeapons = "musket (d6)";
+                    sBackground += " (moschettiere)";
+                    sBackgroundWeapons = "moschetto (d6)";
                     bBackgroundRanged = true;
                     break;
                 case 4:
-                    sBackground += " (officer)";
-                    sBackgroundWeapons = "pistol (d6)";
-                    bBackgroundRanged = true;
-                    break;
-                case 5:
-                    sBackground += " (pikeman)";
-                    sBackgroundWeapons = "pike (d8, 2h)";
+                    sBackground += " (picchiere)";
+                    sBackgroundWeapons = "picca (d8, 2h)";
                     bBackgroundMelee = true;
                     bTwohandedMelee = true;
                     break;
-                case 6:
-                    sBackground += " (swordsman)";
+                case 5:
+                    sBackground += " (spadaccino)";
                     sBackgroundWeapons = "claymore (d8, 2h)";
                     bBackgroundMelee = true;
                     bTwohandedMelee = true;
                     break;
+                case 6:
+                    sBackground += " (ufficiale)";
+                    sBackgroundWeapons = "rivoltella (d6)";
+                    bBackgroundRanged = true;
+                    break;
                 default: break;
             }
             break;
 
+        case 8: /* Scholar */
+            let sStudyArea = "";
+            let sStudySpecialization = "";
+            switch(d(12)) {
+                case 1:
+                    sStudyArea = "Filologia";
+                    sStudySpecialization = "folclore e letteratura";
+                    break;
+                case 2:
+                    sStudyArea = "Filologia";
+                    sStudySpecialization = "lingue morte";
+                    break;
+                case 3:
+                    sStudyArea = "Filologia";
+                    sStudySpecialization = "lingue straniere";
+                    break;
+                case 4:
+                    sStudyArea = "Scienze Biologiche";
+                    sStudySpecialization = "erboristeria";
+                    break;
+                case 5:
+                    sStudyArea = "Scienze Biologiche";
+                    sStudySpecialization = "medicina";
+                    break;
+                case 6:
+                    sStudyArea = "Scienze Biologiche";
+                    sStudySpecialization = "zoologia";
+                    break;
+                case 7:
+                    sStudyArea = "Scienze Fisiche";
+                    sStudySpecialization = "astronomia e fisica";
+                    break;
+                case 8:
+                    sStudyArea = "Scienze Fisiche";
+                    sStudySpecialization = "chimica"
+                    break;
+                case 9:
+                    sStudyArea = "Scienze Fisiche";
+                    sStudySpecialization = "geoscienza";
+                    break;
+                case 10:
+                    sStudyArea = "Storia";
+                    sStudySpecialization = "archeologia";
+                    break;
+                case 11:
+                    sStudyArea = "Storia";
+                    sStudySpecialization = "cultura e religione";
+                    break;
+                case 12:
+                    sStudyArea = "Storia";
+                    sStudySpecialization = "geografia e politica";
+                    break;
+                default: break;
+            }
+            sBackgroundItems.push("set da scrittura", "un diario con i tuoi appunti", "un libro su " + sStudySpecialization);
+                sBackground += " di " + sStudyArea + " (" + sStudySpecialization + ")";
+            break;
+
         default: break;
     }
-
     /* ITEMS */
     let bMelee = bBackgroundMelee;
     let bRanged = bBackgroundRanged;
@@ -832,36 +831,36 @@ function generateRandomCharacter(swap) {
 
     sItemsList = sItemsList.sort();
     if(iRope > 0) {
-        sItemsList.push(iRope + "&#8209;ft&nbsp;rope");
+        sItemsList.push("corda (" + iRope + "&#8209;piedi)");
     }
 
     log("After filtering:");
     log(sItemsList);
 
-    sItemsList.push("simple clothes (wearing), basic camping equipment, 6&nbsp;torches, 3&nbsp;days' rations");
+    sItemsList.push("vestiti semplici (indossati), attrezzattura essenziale per accamparsi, 6&nbsp;torce, razioni per 3&nbsp;giorni");
 
     /* Armour */
     let sArmour = "";
-    if(bLightArmour && bShield) sArmour = "Armour&nbsp;2 (light+shield)";
-    else if(bLightArmour) sArmour = "Armour&nbsp;1 (light)";
-    else if(bShield) sArmour = "Armour&nbsp;1 (shield)";
-    if(bBrawler) { /* (brawler) */
-        sArmour = "Armour&nbsp;1 (when unarmoured)"
+    if(bLightArmour && bShield) sArmour = "Armatura&nbsp;2 (leggera+scudo)";
+    else if(bLightArmour) sArmour = "Armatura&nbsp;1 (leggera)";
+    else if(bShield) sArmour = "Armatura&nbsp;1 (scudo)";
+    if(bBrawler) { /* (Brawler) */
+        sArmour = "Armatura&nbsp;1 (quando non indossa armature)"
     }
 
     /* OUT */
     out.innerHTML =
-        "STR&nbsp;" + iStats[0] +
-        ", DEX&nbsp;" + iStats[1] +
-        ", WIL&nbsp;" + iStats[2] +
-        ", " + hp + "hp";
+        "FOR&nbsp;" + iStats[0] +
+        ", DES&nbsp;" + iStats[1] +
+        ", VOL&nbsp;" + iStats[2] +
+        ", " + hp + "pf";
     out.innerHTML = addItem(out.innerHTML, sArmour);
     out.innerHTML = addItem(out.innerHTML, sBackgroundWeapons);
     out.innerHTML = addItem(out.innerHTML, sWeapons);
     out.innerHTML = addItem(out.innerHTML, sPets);
     out.innerHTML = addItem(out.innerHTML, sBackground);
     out.innerHTML = addItem(out.innerHTML, sFeature) + ".";
-    out.innerHTML += "<br/><br/>Backpack: " + sItemsList.join(", ") + ", " + iStats[3] + "&nbsp;shilling" + (iStats[3] > 1 ? "s." : ".");
+    out.innerHTML += "<br/><br/>Zaino: " + sItemsList.join(", ") + ", " + iStats[3] + "s";
     if(sTome.length > 0) {
         out.innerHTML += "<br/><br/>" + sTome;
     }
@@ -906,61 +905,61 @@ function statNPC() {
 function randomNPCAge() {
     switch(d(8)) {
         case 1:
-        case 2: return "young";
+        case 2: return "giovane,";
         case 3:
         case 4:
         case 5:
-        case 6: return "middle-aged";
+        case 6: return "di mezza et\u00e0,";
         case 7:
-        case 8: return "old";
+        case 8: return "vecchio,";
         default: return "NONE";
     }
 }
 
 function randomNPCOccupation() {
     switch(stat()) { /* 3d6 */
-        case 3: return "scholar";
-        case 4: return "healer";
-        case 5: return "artist";
-        case 6: return "entertainer";
-        case 7: return "criminal";
-        case 8: return (randomBool() ? "vagabond" : "beggar");
-        case 9: return (randomBool() ? "hunter" : "fisherman");
-        case 10: return (randomBool() ? "farmer" : "peasant");
-        case 11: return "craftsman";
-        case 12: return "servant";
-        case 13: return "merchant";
-        case 14: return (randomBool() ? "soldier" : "guard");
-        case 15: return "sailor";
-        case 16: return (randomBool() ? "scribe" : "clerk");
-        case 17: return "priest";
-        case 18: return "noble";
+        case 3: return "studioso";
+        case 4: return "guaritore";
+        case 5: return "artista";
+        case 6: return "intrattenitore";
+        case 7: return "criminale";
+        case 8: return (randomBool() ? "mendicante" : "vagabondo");
+        case 9: return (randomBool() ? "cacciatore" : "pescatore");
+        case 10: return (randomBool() ? "contadino" : "paesano");
+        case 11: return "artigiano";
+        case 12: return "servitore";
+        case 13: return "mercante";
+        case 14: return (randomBool() ? "guardia" : "soldato");
+        case 15: return "marinaio";
+        case 16: return (randomBool() ? "scriba" : "segretario");
+        case 17: return "sacerdote";
+        case 18: return "nobile";
         default: return "NONE";
     }
 }
 
 function randomNPCPersonality() {
     switch(d(20)) {
-        case 1:  return "arrogant";
-        case 2:  return "curious";
-        case 3:  return "dimwitted";
-        case 4:  return "dishonest";
-        case 5:  return "friendly";
-        case 6:  return "generous";
-        case 7:  return "greedy";
-        case 8:  return "gullible";
-        case 9:  return "honest";
-        case 10: return "hot-tempered";
-        case 11: return "humble";
-        case 12: return "inattentive";
-        case 13: return "joyful";
-        case 14: return "melancholic";
-        case 15: return "polite";
-        case 16: return "rude";
-        case 17: return "smart";
-        case 18: return "tranquil";
-        case 19: return "unfriendly";
-        case 20: return "wary";
+        case 1:  return "amichevole";
+        case 2:  return "arrogante";
+        case 3:  return "avido";
+        case 4:  return "collerico";
+        case 5:  return "cortese";
+        case 6:  return "credulone";
+        case 7:  return "diffidente";
+        case 8:  return "disattento";
+        case 9:  return "disonesto";
+        case 10: return "ficcanaso";
+        case 11: return "generoso";
+        case 12: return "gioioso";
+        case 13: return "melanconico";
+        case 14: return "modesto";
+        case 15: return "onesto";
+        case 16: return "ostile";
+        case 17: return "rude";
+        case 18: return "sveglio";
+        case 19: return "tonto";
+        case 20: return "tranquillo";
         default: return "NONE";
     }
 }
@@ -969,28 +968,28 @@ const sNPCDetail = [
     "NONE", /* 0 */
     "NONE", /* 1 */
     "NONE", /* 2 */
-    "hunchback",
-    "one eye",
-    "scar",
-    "stutter",
-    "drunkard",
-    "grey hair",
-    "bald",
-    "short hair",
-    "bushy beard",
-    "thin",
-    "short",
-    "tall",
-    "overweight",
-    "moustache",
-    "long hair",
-    "sideburns",
-    "rare hair colour*",
-    "accent",
-    "birthmark",
-    "lazy eye",
-    "prosthetic leg",
-    "prosthetic arm"]; /* 22 */
+    "gobbo",
+    "con un occhio solo",
+    "cicatrice",
+    "balbuzie",
+    "alcolizzato",
+    "capelli grigi",
+    "calvo",
+    "capelli corti",
+    "barba folta",
+    "esile",
+    "basso",
+    "alto",
+    "sovrappeso",
+    "baffi",
+    "capelli lunghi",
+    "basettoni",
+    "colore raro dei capelli*",
+    "accento",
+    "voglia",
+    "occhio pigro",
+    "protesi a una gamba",
+    "protesi a un braccio"]; /* 22 */
 
 function randomNPCDetail() {
     return(nd(3, 8)); /* 3d8 */
@@ -1002,39 +1001,39 @@ function anyOf(a, b, arr) {
 
 function compatibleDetails(d1, d2) {
     if(d1 == d2) return false;
-    if(anyOf(d1, d2, [4, 22])) return false; /* one eye, lazy eye */
+    if(anyOf(d1, d2, [4, 22])) return false; /* con un occhio solo, occhio pigro */
     if(anyOf(d1, d2, [8, 9, 19])) return false;
-        /* grey hair, bald, rare hair colour* */
-    if(anyOf(d1, d2, [9, 10, 17])) return false; /* bald, short hair, long hair */
-    if(anyOf(d1, d2, [12, 15])) return false; /* thin, overweight */
-    if(anyOf(d1, d2, [13, 14])) return false; /* short, tall */
+        /* capelli grigi, calvo, capelli di un colore raro* */
+    if(anyOf(d1, d2, [9, 10, 17])) return false; /* calvo, capelli corti, capelli lunghi */
+    if(anyOf(d1, d2, [12, 15])) return false; /* esile, sovrappeso */
+    if(anyOf(d1, d2, [13, 14])) return false; /* basso, alto */
     return true;
 }
 
 function randomNPCDetailPrefix(n) {
     switch(n) {
-        case 3: return "who is a ";     /* "hunchback" */
-        case 4: return "with ";         /* "one eye" */
-        case 5: return "with a ";       /* "scar" */
-        case 6: return "who has a ";    /* "stutter" */
-        case 7: return "who is a ";     /* "drunkard" */
-        case 8: return "with ";         /* "grey hair" */
-        case 9: return "who is ";       /* "bald" */
-        case 10: return "with ";        /* "short hair" */
-        case 11: return "with a ";      /* "bushy beard" */
-        case 12: return "who is ";      /* "thin" */
-        case 13: return "who is ";      /* "short" */
-        case 14: return "who is ";      /* "tall" */
-        case 15: return "who is ";      /* "overweight" */
-        case 16: return "with a ";      /* "moustache" */
-        case 17: return "with ";        /* "long hair" */
-        case 18: return "with ";        /* "sideburns" */
-        case 19: return "with a ";     /* "rare hair colour*" */
-        case 20: return "with an ";     /* "accent" */
-        case 21: return "with a ";      /* "birthmark" */
-        case 22: return "with a ";       /* "lazy eye" */
-        case 23: return "with a ";      /* "prosthetic leg" */
-        case 24: return "with a ";      /* "prosthetic arm" */
+        case 3: return ", con la ";     /* "hunchback" */
+        case 4: return ", con un ";         /* "one eye" */
+        case 5: return ", con una ";       /* "scar" */
+        case 6: return ", ";    /* "stutter" */
+        case 7: return ", ";     /* "drunkard" */
+        case 8: return ", con i ";         /* "grey hair" */
+        case 9: return ", ";       /* "bald" */
+        case 10: return ", con i ";        /* "short hair" */
+        case 11: return ", con la ";      /* "bushy beard" */
+        case 12: return ", ";      /* "thin" */
+        case 13: return ", ";      /* "short" */
+        case 14: return ", ";      /* "tall" */
+        case 15: return ", ";      /* "overweight" */
+        case 16: return ", con i ";      /* "moustache" */
+        case 17: return ", con i ";        /* "long hair" */
+        case 18: return ", con i ";        /* "sideburns" */
+        case 19: return ", con un ";     /* "are hair colour*" */
+        case 20: return ", con un forte ";     /* "accent" */
+        case 21: return ", con una ";      /* "birthmark" */
+        case 22: return ", con un ";       /* "birthmark" */
+        case 23: return ", con una ";      /* "prosthetic leg" */
+        case 24: return ", con una ";      /* "prosthetic arm" */
         default: return "NONE";
     }
 }
@@ -1045,26 +1044,26 @@ function randomNPCDetails() {
         d1 = randomNPCDetail();
         do { /* REPEATS */
             d2 = randomNPCDetail();
-            if(d1 == d2 == 4) return "who is blind"; /* "one eye" */
-            if(d1 == d2 == 5) return "covered in scars"; /* "scar" */
-            if(d1 == d2 == 12) return "who looks haggard"; /* "thin" */
-            if(d1 == d2 == 13) return "of a very short stature"; /* "short" */
-            if(d1 == d2 == 14) return "of extremely tall stature"; /* "tall" */
-            if(d1 == d2 == 15) return "who looks obese"; /* "overweight" */
-            if(d1 == d2 == 23) return "with two prosthetic legs"; /* "prosthetic leg" */
-            if(d1 == d2 == 24) return "with two prosthetic arms"; /* "prosthetic arm" */
-            if(((d1 == 23) && d2 == 24) || ((d1 == 24) && (d2 == 23))) return "with a prosthetic arm and leg";
+            if(d1 == d2 == 4) return "cieco"; /* "one eye" */
+            if(d1 == d2 == 5) return "pieno di cicatrici"; /* "scar" */
+            if(d1 == d2 == 12) return "macilento"; /* "thin" */
+            if(d1 == d2 == 13) return "davvero di bassa statura"; /* "short" */
+            if(d1 == d2 == 14) return "di statura estremamente alta"; /* "tall" */
+            if(d1 == d2 == 15) return "obeso"; /* "overweight" */
+            if(d1 == d2 == 23) return "ha due protesi alle gambe"; /* "prosthetic leg" */
+            if(d1 == d2 == 24) return "ha due protesi alle braccia"; /* "prosthetic arm" */
+            if(((d1 == 23) && d2 == 24) || ((d1 == 24) && (d2 == 23))) return "ha una protesi a un braccio e a una gamba";
         } while(d1 == d2); /* END REPEATS */
     } while(!compatibleDetails(d1, d2)) /* END COMPATIBLE DETAILS */
 
     /* SPECIAL CASES */
-    if(d2 == 3)  {d2 = d1; d1 = 3;}  /* hunchback */
-    if(d2 == 7)  {d2 = d1; d1 = 7;}  /* drunkard */
-    if(d2 == 9)  {d2 = d1; d1 = 9;}  /* bald */
-    if(d2 == 12) {d2 = d1; d1 = 12;} /* thin */
-    if(d2 == 15) {d2 = d1; d1 = 15;} /* overweight */
+    if(d2 == 3)  {d2 = d1; d1 = 3;}  /* hunchback  */
+    if(d2 == 7)  {d2 = d1; d1 = 7;}  /* drunkard  */
+    if(d2 == 9)  {d2 = d1; d1 = 9;}  /* bald  */
+    if(d2 == 12) {d2 = d1; d1 = 12;} /* thin  */
+    if(d2 == 15) {d2 = d1; d1 = 15;} /* overweight  */
     if(d2 == 13) {d2 = d1; d1 = 13;} /* short */
-    if(d2 == 14) {d2 = d1; d1 = 14;} /* tall */
+    if(d2 == 14) {d2 = d1; d1 = 14;} /* tall  */
     let pre1 = randomNPCDetailPrefix(d1);
     let pre2 = randomNPCDetailPrefix(d2);
     if(anyOf(d1, d2, [6, 20])) {pre1 = "with an "; pre2 = "and a ";}
@@ -1088,47 +1087,47 @@ function randomNPCDetails() {
         else pre2 = "and ";
     }
 
-    if(anyOf(d1, d2, [8, 10]))  return "with short grey hair";
-    if(anyOf(d1, d2, [8, 11]))  return "with grey hair and a bushy beard";
-    if(anyOf(d1, d2, [8, 16]))  return "with grey hair and a moustache";
-    if(anyOf(d1, d2, [8, 17]))  return "with long grey hair";
-    if(anyOf(d1, d2, [8, 18]))  return "with grey hair and sideburns";
+    if(anyOf(d1, d2, [8, 10]))  return " con i capelli grigi corti";
+    if(anyOf(d1, d2, [8, 11]))  return " con i capelli grigi e la barba folta";
+    if(anyOf(d1, d2, [8, 16]))  return " con i capelli grigi e i baffi";
+    if(anyOf(d1, d2, [8, 17]))  return " con i capelli grigi lunghi";
+    if(anyOf(d1, d2, [8, 18]))  return " con i capelli grigi e i basettoni";
 
-    if(anyOf(d1, d2, [9, 11]))  return "who is bald and has a bushy beard";
-    if(anyOf(d1, d2, [9, 16]))  return "who is bald and has a moustache";
-    if(anyOf(d1, d2, [9, 18]))  return "who is bald and has sideburns";
+    if(anyOf(d1, d2, [9, 11]))  return " che \u00E8 calvo e ha la barba folta";
+    if(anyOf(d1, d2, [9, 16]))  return " che \u00E8 calvo e ha i baffi";
+    if(anyOf(d1, d2, [9, 18]))  return " che \u00E8 calvo e ha i basettoni";
 
-    if(anyOf(d1, d2, [11, 16])) return "who has a beard with a moustache";
-    if(anyOf(d1, d2, [11, 18])) return "who has sideburns with a goatee";
+    if(anyOf(d1, d2, [11, 16])) return " che ha barba e baffi";
+    if(anyOf(d1, d2, [11, 18])) return " che ha basettoni e pizzetto";
 
-    if(anyOf(d1, d2, [10, 11])) return "with short hair and a bushy beard";
-    if(anyOf(d1, d2, [10, 16])) return "with short hair and a moustache";
-    if(anyOf(d1, d2, [10, 18])) return "with short hair and sideburns";
-    if(anyOf(d1, d2, [10, 19])) return "with short hair of a rare colour*";
+    if(anyOf(d1, d2, [10, 11])) return " con i capelli corti e la barba folta";
+    if(anyOf(d1, d2, [10, 16])) return " con i capelli corti e i baffi";
+    if(anyOf(d1, d2, [10, 18])) return " con i capelli corti e i basettoni";
+    if(anyOf(d1, d2, [10, 19])) return " con i capelli corti di un colore raro*";
 
-    if(anyOf(d1, d2, [16, 18])) return "who has sideburns with a moustache";
+    if(anyOf(d1, d2, [16, 18])) return " che ha basettoni e baffi";
 
-    if(anyOf(d1, d2, [17, 11])) return "with long hair and a bushy beard";
-    if(anyOf(d1, d2, [17, 16])) return "with long hair and a moustache";
-    if(anyOf(d1, d2, [17, 18])) return "with long hair and sideburns";
-    if(anyOf(d1, d2, [17, 19])) return "with long hair of a rare colour*";
+    if(anyOf(d1, d2, [17, 11])) return " con i capelli lunghi e la barba folta";
+    if(anyOf(d1, d2, [17, 16])) return " con i capelli lunghi e i baffi";
+    if(anyOf(d1, d2, [17, 18])) return " con i capelli lunghi e i basettoni";
+    if(anyOf(d1, d2, [17, 19])) return " con i capelli lunghi id un colore raro*";
 
-    if(anyOf(d1, d2, [19, 11])) return "with a rare hair colour* and a bushy beard";
-    if(anyOf(d1, d2, [19, 16])) return "with a rare hair colour* and a moustache";
-    if(anyOf(d1, d2, [19, 18])) return "with a rare hair colour* and sideburns";
+    if(anyOf(d1, d2, [19, 11])) return " con i capelli di un colore raro* e la barba folta";
+    if(anyOf(d1, d2, [19, 16])) return " con i capelli di un colore raro* e i baffi";
+    if(anyOf(d1, d2, [19, 18])) return " con i capelli di un olore raro* e i basettoni";
     /* END SPECIAL CASES */
-    return pre1 + sNPCDetail[d1] + " " + pre2 + sNPCDetail[d2];
+    return pre1 + sNPCDetail[d1] + pre2 + sNPCDetail[d2];
 }
 
 function generateRandomNPC() {
     const out = docId('out_RandomNPC');
-    const stats = "STR " + statNPC() + ", DEX " + statNPC() + ", WIL " + statNPC();
-    const hp = d(6) + "hp";
-    let whois = randomNPCAge() + " " + randomNPCPersonality() + " " +
-                randomNPCOccupation() + " " + randomNPCDetails() + ".";
+    const stats = "FOR " + statNPC() + ", DES " + statNPC() + ", VOL " + statNPC();
+    const hp = d(6) + "pf";
+    let whois = randomNPCOccupation() + " " + randomNPCAge() + " " +
+                randomNPCPersonality() + randomNPCDetails() + ".";
 
-    if(whois.search("colour*") > -1) {
-        whois += "<br/><i>* Usually blonde or red, depends on a population.</i>";
+    if(whois.search("raro*") > -1) {
+        whois += "<br/><i>* Di solito biondo o rosso, in base alla popolazione generale.</i>";
     }
 
     out.innerHTML = "";
@@ -1146,168 +1145,168 @@ function generateRandomNPC() {
 const sMonsterTable = [
     ["NONE"],
     ["NONE", /* Table 1 */
-    "artificial@",
-    "colonial",
-    "divine",
-    "eldritch",
-    "ethereal@",
-    "fiendish",
-    "magical",
-    "mutated",
-    "natural",
-    "primitive",
-    "relict",
-    "undead"], /* 12 */
+    "Artificiale.@",
+    "Coloniale.",
+    "Derelitto.",
+    "Divino.",
+    "Etereo.@",
+    "Infernale.",
+    "Magico.",
+    "Mutato.",
+    "Nella norma.",
+    "Non morto.",
+    "Occulto.",
+    "Primitivo."], /* 12 */
     ["NONE", /* Table 2 */
-    "bald",
-    "barbed",
-    "bloated",
-    "camouflaged",
-    "diseased",
-    "furry",
-    "gaunt",
-    "graceful",
-    "invisible",
-    "luminous",
-    "multicoloured",
-    "muscular",
-    "rotting",
-    "rusty",
-    "shadowy",
-    "shimmering",
-    "slimy",
-    "spotted",
-    "stinking",
-    "striped"], /* 20 */
+    "Aggraziato.",
+    "Ammalato.",
+    "Con barbigli.",
+    "Limaccioso.",
+    "Luccicante.",
+    "Maculato.",
+    "Magro.",
+    "Maleodorante.",
+    "Mimetizzato.",
+    "Multicolore.",
+    "Muscoloso.",
+    "Non \u00E8 visibile.",
+    "Pelato.",
+    "Peloso.",
+    "Putrescente.",
+    "Radioso.",
+    "Rigato.",
+    "Rigonfio.",
+    "Rugginoso.",
+    "Tenebroso."], /* 20 */
     ["NONE", /* Table 3 */
-    "acidic",
-    "acoustic",
-    "adhesive",
-    "armed",
-    "armoured@",
-    "electric",
-    "fire",
-    "giant@",
-    "hypnotic",
-    "ice@",
-    "multiplying",
-    "parasite",
-    "poisonous",
-    "psychic",
-    "shelled@",
-    "shooting",
-    "spewing",
-    "swallowing",
-    "tiny",
-    "vampiric"], /* 20 */
+    "Acido.",
+    "Acustico.",
+    "Adesivo.",
+    "Armato.",
+    "Corazzato.@",
+    "Elettrico.",
+    "Fuoco.",
+    "Ghiaccio.@",
+    "Gigante.@",
+    "Ingoia.",
+    "Ipnotico.",
+    "Minuscolo.",
+    "Munito di guscio.@",
+    "Parassita.",
+    "Psichico.",
+    "Rigurgita.",
+    "Si moltiplica.",
+    "Spara proiettili.",
+    "Vampirico.",
+    "Velenoso."], /* 20 */
     ["NONE", /* Table 4 */
-    "ambushing",
-    "cunning",
-    "devouring",
-    "elusive",
-    "friendly",
-    "gibbering",
-    "grappling",
-    "greedy",
-    "insane",
-    "intelligent",
-    "musical",
-    "nocturnal",
-    "peaceful",
-    "raging",
-    "scavenging",
-    "screaming",
-    "silent",
-    "skittish",
-    "swarming",
-    "whispering"], /* 20 */
+    "Amichevole.",
+    "Astuto.",
+    "Avido.",
+    "Brulicante.",
+    "Divoratore.",
+    "Elusivo.",
+    "Farfugliante.",
+    "Folle.",
+    "Furente.",
+    "Imprevedibile.",
+    "Intelligente.",
+    "Musicale.",
+    "Notturno.",
+    "Pacifico.",
+    "Saprofago.",
+    "Si avvinghia.",
+    "Silenzioso.",
+    "Sussurrante.",
+    "Tende imboscate.",
+    "Urlante"], /* 20 */
     ["NONE", /* Table 5 */
-    "aquatic",
-    "burrowing",
-    "climbing",
-    "crawling",
-    "fast",
-    "floating",
-    "flowing",
-    "flying",
-    "gliding",
-    "immobile",
-    "jumping",
-    "rolling",
-    "running",
-    "shambling",
-    "slithering",
-    "slow",
-    "soaring",
-    "subterranean",
-    "teleporting",
-    "walking"], /* 20 */
+    "Acquatico.",
+    "Cammina.",
+    "Corre.",
+    "Dinoccolato.",
+    "Immobile.",
+    "Fluttua.",
+    "Lento.",
+    "Plana.",
+    "Rotola.",
+    "Salta.",
+    "Scava cunicoli.",
+    "Scorre.",
+    "Serpeggia.",
+    "Si arrampica.",
+    "Si impenna.",
+    "Si teletrasporta.",
+    "Sotterraneo.",
+    "Striscia.",
+    "Veloce.",
+    "Vola."], /* 20 */
     ["NONE", /* Table 6 */
-    "armless",
-    "asymmetrical",
-    "bodiless",
-    "four-armed",
-    "four-legged",
-    "legless",
-    "limbless",
-    "multi-armed",
-    "multi-legged",
-    "multi-limbed",
-    "one-armed",
-    "one-legged",
-    "radial",
-    "spherical",
-    "tailed",
-    "tentacled",
-    "two-armed",
-    "two-headed",
-    "two-legged",
-    "winged"], /* 20 */
+    "Alato.",
+    "Arti multipli.",
+    "Asimettrico.",
+    "Braccia multiple.",
+    "Dotato di coda.",
+    "Due braccia.",
+    "Due gambe.",
+    "Due teste.",
+    "Gambe multiple.",
+    "Munito di tentacoli.",
+    "Privo di un corpo.",
+    "Quattro braccia.",
+    "Quattro gambe.",
+    "Senza arti.",
+    "Senza braccia.",
+    "Senza gambe.",
+    "Sferico.",
+    "Struttura radiale.",
+    "Un braccio.",
+    "Una gamba."], /* 20 */
     ["NONE", /* Table 7 */
-    "blind",
-    "brainless",
-    "deaf",
-    "eyeless",
-    "headless",
-    "horned",
-    "multi-eyed",
-    "multi-headed",
-    "mute",
-    "one-eyed",
-    "two-headed",
-    ["with trunk", "with face tentacles"]], /* 12 */
+    "Bicefalo.",
+    "Cieco.",
+    "Con molteplici occhi.",
+    "Con molteplici teste.",
+    ["Con proboscide.", "Con tentacoli facciali."],
+    "Con un occhio solo.",
+    "Munito di corna.",
+    "Muto.",
+    "Senza cervello.",
+    "Senza occhi.",
+    "Senza testa.",
+    "Sordo."], /* 12 */
     ["NONE", /* Table 8 */
-    ["bone@", "chitinous@"],
-    ["clay", "mud", "sludge"],
-    ["cloth", "leather"],
-    ["crystalline@", "gem@"],
-    ["elemental", "gaseous"],
-    "fleshy",
-    "liquid",
-    "metallic@",
-    "stone@",
-    "wooden@"], /* 10 */
+    ["Argilla.", "Fango.", "Liquame."],
+    ["Chitinoso.@", "Osso.@"],
+    ["Cristallino.@", "Gemma.@"],
+    ["Cuoio.", "Tessuto."],
+    "Di carne.",
+    "Di legno.@",
+    ["Elementale.", "Gassoso."],
+    "Liquido.",
+    "Metallico.@",
+    "Pietra.@"], /* 10 */
     ["NONE", /* Table 9 */
-    "amorphous mass",
-    "amphibian",
-    "animated object",
-    "bat",
-    "bird",
-    "bear-like",
-    "cat-like",
-    ["crustacean@", "myriapod@"],
-    "dog-like",
-    "fish",
-    "fungi",
-    "hoofed",
-    "humanoid",
-    ["insect", "arachnid"],
-    ["mollusc", "worm"],
-    "plant",
-    ["reptile", "serpent"],
-    ["rodent", "rabbit", "hedgehog", "mole", "shrew"],
-    "chimera",
-    "shape-shifter"]]; /* 20 */
+    "Amorfo",
+    "Anfibio",
+    "Animato",
+    ["Aracnide", "Insetto"],
+    "Con zoccoli",
+    ["Crostaceo@", "Miriapode@"],
+    "Fungo",
+    ["Mollusco", "Verme"],
+    "Pesce",
+    "Pianta",
+    "Pipistrello",
+    ["Rettile", "Serpente"],
+    ["Roditore", "Coniglio", "Riccio", "Talpa", "Toporagno"],
+    "Simile a un cane",
+    "Simile a un gatto",
+    "Simile a un orso",
+    "Uccello",
+    "Umanoide",
+    "Chimerico",
+    "Mutaforma"]]; /* 20 */
 
 function generateRandomMonster() {
     const idForm = 9; /* Form table index */
@@ -1323,7 +1322,7 @@ function generateRandomMonster() {
         } while(tables.indexOf(newtab) > -1);
         tables.push(newtab);
     } /* END FOR LOOP */
-    tables.push(idForm); /* Form mable is always present */
+    tables.push(idForm); /* Form table is always present */
     tables.sort();
 
     let after = "";
@@ -1394,11 +1393,11 @@ function generateRandomMonster() {
             armour = 3;
         }
 
-    abilities = "STR " + stats[0] +
-                ", DEX " + stats[1] +
-                ", WIL " + stats[2] +
-                ", " + hp + "hp" +
-                ((armour > 0) ? (", Armour " + armour) : ("")) +
+    abilities = "FOR " + stats[0] +
+                ", DES " + stats[1] +
+                ", VOL " + stats[2] +
+                ", " + hp + "pf" +
+                ((armour > 0) ? (", Armatura " + armour) : ("")) +
                 ".<br/>";
     } /* END ABILITIES */
     else { /* remove armour tags */
@@ -1436,7 +1435,7 @@ opt.value = 0;
 sdanger.appendChild(opt);
 for(let i=1; i<=5; i++) {
     opt = docCreate('option');
-    opt.text = "" + i + "d6 HP";
+    opt.text = "" + i + "d6 PF";
     opt.value = i;
     sdanger.appendChild(opt);
 }
@@ -1456,295 +1455,272 @@ const sMagicItem = [
     ["NONE"],
     [   /* 1. CONTAINER */
         [-1, "NONE"],
-        [4, "backpack", "haversack"],
-        [2, "bottle"],
-        [2, "box", "casket"],
-        [2, "decanter"],
-        [2, "drinking horn"],
-        [2, "flask", "canteen"],
-        [2, "jug"],
-        [4, "pouch"],
-        [4, "quiver"],
-        [4, "sack", "bag"],
-        [2, "vial"],
-        [0, "waterskin"]
+        [2, "borraccia", "fiasca"],
+        [4, "borsa"],
+        [2, "bottiglia"],
+        [2, "brocca"],
+        [2, "caraffa"],
+        [2, "cofanetto", "scatola"],
+        [2, "corno potorio"],
+        [4, "faretra"],
+        [2, "fiala"],
+        [0, "otre"]
+        [4, "sacchetto", "sacco"],
+        [4, "tascapane", "zaino"],
     ],
     [   /* 2. CONSUMABLE */
         [-1, "NONE"],
-        [0, "balm", "oil", "ointment"],
-        [0, "bean", "root", "seed"],
-        [0, "candle", "torch"],
-        [0, "chalk", "pencil"],
-        [0, "dust", "powder"],
-        [0, "food (fruit, pastry, etc.)"],
-        [0, "herb", "flower", "leaf"],
-        [0, "ink", "paint"],
-        [0, "poison"],
-        [0, "potion", "elixir"]
+        [0, "balsamo", "olio", "unguento"],
+        [0, "candela", "torcia"],
+        [0, "cibo (frutto, impasto, ecc.)"],
+        [0, "cipria", "polvere"],
+        [0, "elisir", "pozione"],
+        [0, "erba", "fiore", "foglia"],
+        [0, "gessetto", "matita"],
+        [0, "inchiostro", "pittura"],
+        [0, "legume", "radice", "seme"],
+        [0, "veleno"]
     ],
     [   /* 3. GARMENT */
         [-1, "NONE"],
-        [4, "belt"],
-        [3, "boots"],
-        [4, "cloak"],
-        [4, "coat"],
-        [4, "doublet"],
-        [4, "dress"],
-        [4, "gloves"],
-        [4, "hat"],
-        [4, "hood"],
-        [4, "hose"],
-        [4, "jerkin"],
-        [4, "mantle"],
-        [4, "robe"],
-        [3, "sandals"],
-        [4, "shirt"],
-        [3, "shoes"],
-        [4, "skirt"],
-        [4, "trousers"],
-        [4, "tunic"],
-        [4, "vestments"]
+        [4, "abito"],
+        [4, "brache"],
+        [4, "camicia"],
+        [4, "cappello"],
+        [4, "cappotto"],
+        [4, "cappuccio"],
+        [4, "cintura"],
+        [4, "farsetto"],
+        [4, "giubba"],
+        [4, "gonnella"],
+        [4, "guanti"],
+        [4, "mantello"],
+        [4, "manto"],
+        [4, "pantaloni"],
+        [4, "paramenti"],
+        [3, "sandali"],
+        [3, "scarpe"],
+        [3, "stivali"],
+        [4, "tunica"],
+        [4, "veste"]
     ],
     [   /* 4. JEWELLERY */
         [-1, "NONE"],
-        [2, "anklet"],
-        [2, "belt buckle"],
-        [2, "bracelet"],
-        [2, "brooch"],
-        [2, "chain"],
-        [2, "cloak pin"],
-        [2, "crown", "coronet"],
-        [2, "diadem", "tiara"],
-        [2, "earring"],
-        [2, "eyepatch"],
-        [2, "gorget"],
-        [2, "hairpin"],
-        [2, "headband"],
-        [2, "locket"],
-        [2, "mask"],
-        [2, "medallion"],
-        [2, "necklace"],
-        [2, "pectoral"],
-        [2, "pendant"],
-        [2, "ring"]
-    ],
-    [   /* 5. MISC. */
-        [-1, "NONE"],
-        [2, "amulet", "talisman"],
-        [3, "book"],
-        [2, "bowl", "bucket"],
-        [2, "brazier"],
-        [3, "broom"],
-        [3, "brush"],
-        [2, "candelabrum"],
-        [3, "cards", "dice"],
-        [4, "carpet"],
-        [2, "censer"],
-        [2, "coin"],
-        [2, "comb"],
-        [2, "corkscrew"],
-        [2, "cup", "chalice", "goblet"],
-        [2, "fan"],
-        [2, "figurine", "idol"],
-        [3, "gem", "pearl"],
-        [2, "hammer"],
-        [4, "handkerchief"],
-        [2, "hook"],
-        [2, "horseshoe"],
-        [2, "lantern"],
-        [2, "lockpick"],
-        [2, "manacles"],
-        [2, "mirror"],
-        [3, "monocle", "lens"],
-        [2, "needle"],
-        [3, "orb", "crystal"],
-        [2, "pickaxe"],
-        [2, "pipe"],
-        [2, "plate", "tray"],
-        [2, "prosthesis"],
-        [2, "quill"],
-        [2, "rod", "sceptre"],
-        [4, "rope"],
-        [4, "saddle"],
-        [2, "sand timer"],
-        [2, "scissors"],
-        [2, "shovel"],
-        [2, "sickle"],
-        [2, "skull"],
-        [2, "spectacles"],
-        [2, "spike"],
-        [2, "spyglass"],
-        [2, "staff"],
-        [4, "tablecloth"],
-        [2, "tablet"],
-        [2, "umbrella"],
-        [2, "wand"],
-        [2, "whistle"]
+        [2, "ago"],
+        [2, "amuleto", "talismano"],
+        [2, "bacchetta"],
+        [2, "bastone"],
+        [2, "braciere"],
+        [2, "calice", "coppa", "coppetta"],
+        [2, "candelabro"],
+        [2, "cannocchiale"],
+        [3, "carte", "dadi"],
+        [2, "cavatappi"],
+        [2, "ciotola", "secchio"],
+        [2, "clessidra"],
+        [4, "corda"],
+        [3, "cristallo", "sfera"],
+        [2, "falcetto"],
+        [4, "fazzoletto"],
+        [2, "ferro di cavallo"],
+        [2, "fischietto"]
+        [2, "forbici"],
+        [2, "gancio"],
+        [3, "gemma", "perla"],
+        [2, "grimaldello"],
+        [2, "idolo", "statuetta"],
+        [2, "incensiere"],
+        [2, "lanterna"],
+        [3, "lente", "monocolo"],
+        [3, "libro"],
+        [2, "manette"],
+        [2, "martello"],
+        [2, "moneta"],
+        [2, "occhiali"],
+        [2, "ombrello"],
+        [2, "pala"],
+        [2, "penna d'oca"],
+        [2, "pettine"],
+        [2, "piatto", "vassoio"],
+        [2, "piccozza"],
+        [2, "pipa"],
+        [2, "protesi"],
+        [2, "scettro", "verga"],
+        [4, "sella"],
+        [3, "scopa"],
+        [3, "spazzola"],
+        [2, "specchio"],
+        [2, "spuntone"],
+        [4, "tappeto"],
+        [2, "tavoletta"],
+        [2, "teschio"],
+        [4, "tovaglia"],
+        [2, "ventaglio"],
     ],
     [   /* 6. MUSICAL INSTRUMENT */
         [-1, "NONE"],
-        [3, "bagpipe"],
-        [2, "bell"],
-        [3, "bladder pipe"],
-        [2, "crumhorn"],
-        [3, "drum"],
+        [2, "arpa"],
+        [2, "campana"],
+        [2, "cetra"],
+        [2, "ciaramella"],
+        [3, "cornamusa"],
+        [2, "cromorno"],
         [2, "dulcimer"],
-        [2, "fiddle"],
-        [2, "flute"],
-        [2, "harp"],
-        [2, "hurdy-gurdy"],
-        [2, "jaw harp"],
-        [2, "lute"],
-        [2, "lyre"],
-        [2, "mandolin"],
+        [2, "flauto"],
+        [2, "ghironda"],
+        [2, "lira"],
+        [2, "liuto"],
+        [2, "mandolino"],
         [2, "ocarina"],
-        [2, "rebec"],
-        [2, "shawm"],
-        [3, "tambourine"],
-        [2, "viol"],
-        [2, "zither"]
+        [2, "ribeca"],
+        [2, "scacciapensieri"],
+        [3, "tamburello"],
+        [3, "tamburo"],
+        [2, "viola"],
+        [2, "violino"]
+        [3, "zampogna"],
     ],
     [   /* 7. LIGHT ARMOUR */
         [-1, "NONE"],
-        [3, "bracers"],
-        [3, "gambeson"],
-        [3, "gloves"],
-        [3, "greaves"],
-        [2, "helmet"],
-        [3, "leather armour"]
+        [3, "armatura di cuoio"],
+        [3, "bracciali"],
+        [2, "elmo"],
+        [3, "gambesone"],
+        [3, "guanti"],
+        [3, "schinieri"]
     ],
     [   /* 8. FULL ARMOUR */
         [-1, "NONE"],
-        [3, "bracers"],
-        [3, "cuirass"],
-        [3, "gauntlets"],
-        [3, "greaves"],
-        [2, "helmet"],
-        [3, "mail armour"],
-        [3, "plate armour"],
-        [3, "sabatons"],
-        [3, "scale armour"],
-        [3, "segmented armour"]
+        [3, "armatura completa"],
+        [3, "armatura di maglia"],
+        [3, "armatura di piastre"],
+        [3, "armatura di scaglie"],
+        [3, "bracciali"],
+        [3, "corazza"],
+        [2, "elmo"],
+        [3, "gambali"],
+        [3, "manopole"],
+        [3, "schinieri"]
     ],
     [   /* 9. SHIELD */
         [-1, "NONE"],
-        [2, "buckler"],
-        [2, "heater shield"],
-        [2, "kite shield"],
-        [2, "pavise"],
-        [2, "round shield"],
-        [2, "square shield"]
+        [2, "brocchiero"],
+        [2, "palvese"],
+        [2, "scudo a mandorla"],
+        [2, "scudo quadrato"],
+        [2, "scudo rotondo"],
+        [2, "scudo scapezzato"]
     ],
     [   /* 10. WEAPON & AMMO */
         [-1, "NONE"],
-        [2, "arrow"],
-        [2, "axe"],
-        [2, "bolt"],
+        [2, "alabarda"],
+        [2, "arco da caccia"],
+        [2, "arco lungo"],
+        [2, "ascia"],
+        [2, "balestra"],
         [2, "boomerang"],
-        [2, "bullet"],
-        [2, "crossbow"],
-        [2, "dagger"],
-        [2, "dart"],
-        [2, "halberd"],
-        [2, "hunting bow"],
-        [2, "lance"],
-        [2, "longbow"],
-        [2, "pistol"],
-        [2, "mace"],
-        [2, "musket"],
-        [4, "sling"],
-        [2, "spear"],
-        [2, "sword"],
-        [2, "throwing star"],
-        [2, "war hammer"]
+        [4, "fionda"],
+        [2, "freccetta"],
+        [2, "freccia"],
+        [2, "lancia"],
+        [2, "lancia lunga"],
+        [2, "martello da guerra"],
+        [2, "mazza"],
+        [2, "moschetto"],
+        [2, "pallottola"],
+        [2, "pugnale"],
+        [2, "quadrello"],
+        [2, "rivoltella"],
+        [2, "shuriken"],
+        [2, "spada"]
     ]];
 
 const sItemAttribute = [
     "NONE",
-    "ancient",
-    "bejewelled",
-    "colourful",
-    "crude",
-    "dingy",
-    "exotic",
-    "grotesque",
-    "heavy",
-    "intricate",
-    ["light", "thin"],
-    "menacing",
-    "ornate",
-    "otherworldly",
-    "patterned",
-    "peculiar",
-    "refined",
-    "rugged",
-    "shiny",
-    "sleek",
-    "sophisticated"]; /* 20 */
+    "d\u0027aspetto ampolloso",
+    "d\u0027aspetto antico",
+    "d\u0027aspetto colorato",
+    "d\u0027aspetto complicato",
+    "d\u0027aspetto decorato",
+    "d\u0027aspetto elegante",
+    "d\u0027aspetto esotico",
+    "d\u0027aspetto grezzo",
+    "d\u0027aspetto grottesco",
+    "d\u0027aspetto ingioiellato",
+    ["d\u0027aspetto leggero", "d\u0027aspetto sottile"],
+    "d\u0027aspetto lucente",
+    "d\u0027aspetto minaccioso",
+    "d\u0027aspetto particolare",
+    "d\u0027aspetto pesante",
+    "d\u0027aspetto raffinato",
+    "d\u0027aspetto sofisticato",
+    "d\u0027aspetto solido",
+    "d\u0027aspetto squallido",
+    "d\u0027aspetto ultraterreno"]; /* 20 */
 
 const sItemColour = [
     "NONE",
-    "snow white",
-    "ash grey",
-    "jet black",
-    "crimson red",
-    "chestnut brown",
-    "pumpkin orange",
-    "lemon yellow",
-    "malachite green",
-    "sky blue",
-    "ultramarine blue",
-    "lavender violet",
-    "orchid magenta"]; /* 12 */
+    "bianco neve",
+    "grigio cenere",
+    "nero pece",
+    "rosso cremisi",
+    "marrone castagna",
+    "arancione zucca",
+    "giallo limone",
+    "verde malachite",
+    "blu cielo",
+    "blu oltremare",
+    "viola lavanda",
+    "magenta orchidea"]; /* 12 */
 
 const sItemFabric = [
     "NONE",
-    "cotton",
-    "felt",
-    "fur",
-    "hair",
-    "leather",
-    "linen",
-    "silk",
-    "wool"]; /* 8 */
+    "di cotone",
+    "di crine",
+    "di feltro",
+    "di lana",
+    "di lino",
+    "di pelle",
+    "di pelliccia",
+    "di seta"]; /* 8 */
 
 const sItemMaterial = [
     "NONE",
-    "amber",
-    ["bone", "chitin"],
-    "brass",
-    "bronze",
-    "ceramic",
-    "copper",
-    "coral",
-    "crystal",
-    "glass",
-    "gold",
-    "iron",
-    ["ivory", "horn"],
-    "jade",
-    "jet",
-    "obsidian",
-    "pewter",
-    "silver",
-    "steel",
-    "stone",
-    "wooden"]; /* 20 */
+    "in acciaio",
+    "in ambra",
+    "in argento",
+    ["in avorio", "in corno"],
+    "in bronzo",
+    "in ceramica",
+    ["in chitina", "in osso"],
+    "in corallo",
+    "in cristallo",
+    "in ferro",
+    "in gaietto",
+    "in giada",
+    "in legno",
+    "in oro",
+    "in ossidiana",
+    "in ottone",
+    "in peltro",
+    "in pietra",
+    "in rame",
+    "in di vetro"]; /* 20 */
 
 const sItemPeculiarity = [
     "NONE",
-    "that changes colour when no one is looking",
-    "that is cold to the touch",
-    "that emits barely audible buzzing",
-    "that faintly glows in the dark",
-    "that is heavier than it looks",
-    "that is lighter than it looks",
-    ["that is oily to the touch", "that is slimy to the touch"],
-    "that is semi-transparent",
-    "that smells weirdly but not unpleasantly",
-    "that sometimes appears to be slightly moving",
-    "that vibrates just a little bit from time to time",
-    "that is warm to the touch"]; /* 12 */
+    ". Quest'oggetto cambia colore quando non c\u0027\u00E8 chi l\u0027osserva",
+    ". Quest'oggetto, al tocco, trasmette una sensazione di freddo",
+    ". Quest'oggetto emette un ronzio appena udibile",
+    ". Quest'oggetto brilla leggermente al buio",
+    ". Quest'oggetto pesa pi\u00F9 di quanto sembri",
+    ". Quest'oggetto pesa meno di quanto sembri",
+    [". Quest'oggetto, al tocco, trasmette una sensazione di melma", ". Quest'oggetto, al tocco, trasmette una sensazione di olio"],
+    ". Quest'oggetto \u00E8 semitrasparente",
+    ". Quest'oggetto ha un odore bizzarro, ma non sgradevole",
+    ". Quest'oggetto a volte pare che si muova lievemente",
+    ". Quest'oggetto ogni tanto vibra un po\u0027",
+    ". Quest'oggetto, al tocco, trasmette una sensazione di calore"]; /* 12 */
 
 function randomMagicItemType() {
     const roll = d(100);
@@ -1778,10 +1754,10 @@ function generateRandomMagicItem() {
     let item = itemLine[1];
     if(itemLine.length > 2) item = randomArrayItem(itemLine);
     let itemAppearance = "";
-    let itemColour = "";
+//  let itemColour = "";
     switch(itemAppearanceCode) {
         case 0: /* colour */
-            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            itemColour = " di " + " colore " + randomArrayItem(sItemColour);
             break;
         case 1: /* attribute */
             itemAppearance = randomArrayItem(sItemAttribute) + " ";
@@ -1792,22 +1768,21 @@ function generateRandomMagicItem() {
             break;
         case 3: /* attribute + colour */
             itemAppearance = randomArrayItem(sItemAttribute) + " ";
-            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            itemColour = " di " + " colore " + randomArrayItem(sItemColour);
             break;
         case 4: /* attribute + colour + fabric */
             itemAppearance = randomArrayItem(sItemAttribute) + " " +
                  randomArrayItem(sItemFabric) + " ";
-            itemColour = " of " + randomArrayItem(sItemColour) + " colour";
+            itemColour = " di " + " colore " + randomArrayItem(sItemColour);
             break;
-        default: itemAppearance = "NONE "; itemColour = " of NONE colour";
+        default: itemAppearance = "NONE "; itemColour = " di colore NONE ";
     }
 
     let itemPeculiarity = "";
     if(d(6) == 1) {
         itemPeculiarity = " " + randomArrayItem(sItemPeculiarity);
     }
-
-    let itemString = itemAppearance + item + itemColour + itemPeculiarity + ".";
+    let itemString = item + " " + itemAppearance + itemColour + itemPeculiarity + ".";
     itemString = itemString.charAt(0).toUpperCase() + itemString.slice(1);
     out.innerHTML = "";
     out.innerHTML = addItem(out.innerHTML, itemString);
@@ -1820,8 +1795,8 @@ function generateRandomMagicItem() {
 
 function randomWeatherTemperature() {
     switch(d(6)) {
-        case 1: return "cold, ";
-        case 6: return "warm, ";
+        case 1: return "freddo, ";
+        case 6: return "caldo, ";
         default: return "";
     }
 }
@@ -1838,32 +1813,32 @@ function randomWeatherSky(type) {
         case 1:
         case 2:
         case 3:
-        case 4: return "clear";
+        case 4: return "sereno";
         case 5:
         case 6:
         case 7:
-        case 8: return "cloudy";
+        case 8: return "nuvoloso";
         case 9:
         case 10:
         case 11:
-        case 12: return "overcast";
+        case 12: return "coperto";
         case 13:
-        case 14: return "drizzle or fog";
+        case 14: return "pioviggine o nebbia";
         case 15:
         case 16:
         case 17:
-        case 18: return "rain or snow";
+        case 18: return "pioggia o neve";
         case 19:
-        case 20: return "storm or snowstorm";
+        case 20: return "tempesta o tormenta";
     }
 }
 
 const sWindForce = [
-    "calm",
-    "breeze",
-    "average wind",
-    "strong wind",
-    "gale"]; /* 5 */
+    "calmo",
+    "brezza",
+    "vento medio",
+    "vento forte",
+    "burrasca"]; /* 5 */
 
 function randomWeatherWindDirection(force) {
     let input;
@@ -1877,7 +1852,7 @@ function randomWeatherWindDirection(force) {
         case 1:
         case 2:
         case 3:
-            direction = "adverse";
+            direction = "con direzione avversa";
             switch(force) {
                 case 1: mul = "×⅓"; break;
                 case 2: mul = "×½"; break;
@@ -1887,7 +1862,7 @@ function randomWeatherWindDirection(force) {
             break;
         case 4:
         case 5:
-            direction = "side";
+            direction = "con direzione laterale";
             switch(force) {
                 case 1: mul = "×⅓"; break;
                 case 2: mul = "×½"; break;
@@ -1898,7 +1873,7 @@ function randomWeatherWindDirection(force) {
         case 6:
         case 7:
         case 8:
-            direction = "favourable";
+            direction = "con direzione favorevole";
             switch(force) {
                 case 1: mul = "×½"; break;
                 case 2: mul = "×1"; break;
@@ -1910,7 +1885,7 @@ function randomWeatherWindDirection(force) {
             direction = "NONE";
             mul = "NONE";
     }
-    return direction + " " + sWindForce[force] + " (" + mul + " sailing multiplier)";
+    return sWindForce[force] + " " + direction + " (" + mul + " come moltiplicatore di navigazione)";
 }
 
 function randomWeatherWind(type) {
@@ -1986,4 +1961,3 @@ function calculateHorizon() {
 }
 
 calculateHorizon();
-
