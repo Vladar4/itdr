@@ -3,7 +3,7 @@ Into the Dungeon: Revived
 
 *Regole per avventure fantastiche da giocare con carta, matite e dadi poliedrici*
 
-ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offire una modalità di gioco semplificata. Raduna un po' di persone dal tuo giro di amicizie, prendete qualche dado e tuffatevi in un mondo di avventure sword & sorcery di vostra creazione!
+ItDR è un regolamento leggero per il gioco di ruolo a tema fantasy pensato per offrire una modalità di gioco semplificata. Raduna un po' di persone dal tuo giro di amicizie, prendete qualche dado e tuffatevi in un mondo di avventure sword & sorcery di vostra creazione!
 
 In questo manuale troverai:
 * Regole facili da imparare e quelle principali stanno su di una pagina
