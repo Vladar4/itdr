@@ -109,6 +109,22 @@ div.hr {
     white-space: nowrap;
 }
 
+.lang {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    height: 20px;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.lang > a {
+    padding: 2px 4px 2px 4px;
+    margin: 0px 2px 0px 2px;
+}
+
 .wrap {
     white-space: normal;
 }
