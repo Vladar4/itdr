@@ -73,7 +73,7 @@ Dependencies
 [TeX Live](https://www.tug.org/texlive/)
 
 ### Arch
-`sudo pacman -S texlive-bin texlive-core texlive-fontsextra texlive-latexextra`
+`sudo pacman -S texlive-bin texlive-basic texlive-plaingeneric texlive-fontsrecommended texlive-fontsextra texlive-latex texlive-latexrecommended texlive-latexextra`
 
 ### Debian
 `sudo apt-get install texlive-latex-base texlive-fonts-extra texlive-latex-extra`
