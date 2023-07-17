@@ -4,6 +4,8 @@
 DIR="current"
 LIST="itdr itdr_light itdr_minimal"
 
+mkdir -p "$DIR"
+
 for FILE in $LIST
 do
     for i in $(seq 3)

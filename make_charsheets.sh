@@ -5,6 +5,8 @@ DIR="current/charsheet"
 NAME="itdr_charsheet"
 DOUBLE="${NAME}_double"
 
+mkdir -p "$DIR"
+
 # plain charsheets
 pdflatex -interaction=nonstopmode -jobname="$NAME" "\let\ifplain\iftrue\input{${NAME}}"
 cp "$NAME".pdf "${DIR}/${NAME}_plain.pdf"

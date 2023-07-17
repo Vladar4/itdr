@@ -5,6 +5,8 @@ DIR="current/timesheet"
 NAME="itdr_timesheet"
 DOUBLE="${NAME}_double"
 
+mkdir "$DIR"
+
 # plain timesheets
 pdflatex -interaction=nonstopmode -jobname="$NAME" "\let\ifplain\iftrue\input{${NAME}}"
 cp "$NAME".pdf "${DIR}/${NAME}_plain.pdf"
