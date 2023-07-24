@@ -1698,14 +1698,18 @@ const sItemColour = [
 
 const sItemFabric = [
     "NONE",
+    "brocade",
     "cotton",
     "felt",
+    "fish-skin",
     "fur",
     "hair",
+    "hemp",
     "leather",
     "linen",
     "silk",
-    "wool"]; /* 8 */
+    "velvet",
+    "wool"]; /* 12 */
 
 const sItemMaterial = [
     "NONE",
