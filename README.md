@@ -98,6 +98,9 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v2.3
+*CURRENTLY IN DEVELOPMENT*
+
 ### v2.2
 
 #### Part 1
