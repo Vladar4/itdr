@@ -80,8 +80,8 @@ function randomMartialRanged() {
     let result = "NONE";
     switch(d(4)) {
         case 1: result = "crossbow"; break;
-        case 2: result = "longbow"; break;
-        case 3: result = "musket"; break;
+        case 2: result = "javelins"; break;
+        case 3: result = "longbow"; break;
         case 4: result = "pistol"; break;
         default: return "NONE";
     }
@@ -440,7 +440,7 @@ function generateRandomCharacter(swap) {
             break;
 
         case 2: /* Hunter */
-            sBackgroundWeapons = randomBool() ? "longbow (d6)" : "simple musket (d6)";
+            sBackgroundWeapons = randomBool() ? "javelins (d6)" : "longbow (d6)";
             bBackgroundRanged = true;
             sBackgroundItems.push("animal trap");
             sBackground += " (hunting and tracking expertise)";
@@ -596,8 +596,8 @@ function generateRandomCharacter(swap) {
                     bTwohandedMelee = true;
                     break;
                 case 3:
-                    sBackground += " (musketeer)";
-                    sBackgroundWeapons = "musket (d6)";
+                    sBackground += " (javelineer)";
+                    sBackgroundWeapons = "javelins (d6)";
                     bBackgroundRanged = true;
                     break;
                 case 4:
@@ -613,7 +613,7 @@ function generateRandomCharacter(swap) {
                     break;
                 case 6:
                     sBackground += " (swordsman)";
-                    sBackgroundWeapons = "claymore (d8, 2h)";
+                    sBackgroundWeapons = "greatsword (d8, 2h)";
                     bBackgroundMelee = true;
                     bTwohandedMelee = true;
                     break;
