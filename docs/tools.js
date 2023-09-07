@@ -76,9 +76,9 @@ function randomSimpleRanged() {
     return result;
 }
 
-function randomMartialRanged() {
+function randomMartialRanged(lim=4) {
     let result = "NONE";
-    switch(d(4)) {
+    switch(d(lim)) {
         case 1: result = "crossbow"; break;
         case 2: result = "javelins"; break;
         case 3: result = "longbow"; break;
@@ -172,21 +172,22 @@ function randomGearOrTool(items) {
 
 const sFeatureList = [
     "NONE",
-    "Assassin",
-    "Beastmaster",
-    "Berserker",
-    "Brawler",
-    "Commander",
-    "Duellist",
-    "Healer",
-    "Ironclad",
-    "Mystic",
-    "Sharpshooter",
-    "Skilled",
-    "Swashbuckler",
-    "Tactician",
-    "Thaumaturge",
-    "Warrior"]; /* 15 */
+    "Assassin",     /* 1 */
+    "Beastmaster",  /* 2 */
+    "Berserker",    /* 3 */
+    "Brawler",      /* 4 */
+    "Commander",    /* 5 */
+    "Duellist",     /* 6 */
+    "Gunslinger",   /* 7 */
+    "Healer",       /* 8 */
+    "Ironclad",     /* 9 */
+    "Mystic",       /* 10 */
+    "Sharpshooter", /* 11 */
+    "Skilled",      /* 12 */
+    "Swashbuckler", /* 13 */
+    "Tactician",    /* 14 */
+    "Thaumaturge",  /* 15 */
+    "Warrior"];     /* 16 */
 
 const sCantripList = [
     "NONE",
@@ -335,6 +336,8 @@ function generateRandomCharacter(swap) {
     let sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
     let bBrawler = false; /* for unarmoured defense */
+    let bGunslinger = false; /* wants a pistol */
+    let bPistol = false;
     let bMystic = false; /* can't use armour */
     let iPets = 0;
     let maxPets = 1;
@@ -346,21 +349,24 @@ function generateRandomCharacter(swap) {
             break;
 
         case 2: /* Beastmaster */
-            sFeature += " 1 (max. 2 pets)";
+            sFeature += " (max. 2 pets)";
             maxPets = 2;
             break;
 
         case 4: /* Brawler */
-            sFeature += " 1 (bonus d4 unarmed Damage)";
+            sFeature += " (bonus d4 unarmed Damage)";
             bBrawler = true;
             break;
 
-        case 7: /* Healer */
+        case 7: /* Gunslinger */
+            bGunslinger = true;
+            break;
+
+        case 8: /* Healer */
             sFeatureItems.push("5s&nbsp;worth of healing supplies");
             break;
 
-        case 9: /* Mystic */
-            sFeature += " 1";
+        case 10: /* Mystic */
             bMystic = true;
             sFeatureItems.push("mystic's focus", "mystic's tome");
             let cantrips = shuffledIndex(sCantripList, 2).sort(
@@ -378,20 +384,20 @@ function generateRandomCharacter(swap) {
                 sSpellList[spells[5]] + ".";
             break;
 
-        case 11: /* Skilled */
+        case 12: /* Skilled */
             let skills = shuffledIndex(sSkillList, 2).sort(
                 (function(a, b) {return a - b;}));
             sFeature += " (" + sSkillList[skills[0]] + ", " + sSkillList[skills[1]] + ")";
             break;
 
-        case 14: /* Thaumaturge */
+        case 15: /* Thaumaturge */
             let gifts = shuffledIndex(sGiftList, 2).sort(
                 (function(a, b) {return a - b;}));
-            sFeature += " 1 (d4 Gift die, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
+            sFeature += " (d4 Gift die, " + sGiftList[gifts[0]] + ", " + sGiftList[gifts[1]] + ")";
             break;
 
-        case 15: /* Warrior */
-            sFeature += " 1 (bonus d4 weapon Damage)"
+        case 16: /* Warrior */
+            sFeature += " (bonus d4 weapon Damage)"
             break;
 
         default: break;
@@ -583,7 +589,7 @@ function generateRandomCharacter(swap) {
             break;
 
         case 8: /* Soldier */
-            switch(d(6)) {
+            switch(bGunslinger ? 4 : d(6)) {
                 case 1:
                     sBackground += " (archer)";
                     sBackgroundWeapons = "longbow (d6)";
@@ -604,6 +610,7 @@ function generateRandomCharacter(swap) {
                     sBackground += " (officer)";
                     sBackgroundWeapons = "pistol (d6)";
                     bBackgroundRanged = true;
+                    bPistol = true;
                     break;
                 case 5:
                     sBackground += " (pikeman)";
@@ -665,10 +672,11 @@ function generateRandomCharacter(swap) {
         }
 
         function buyMartialRanged() {
-            const item = randomMartialRanged();
+            const item = bGunslinger ? "pistol (d6)" : ( bPistol ? randomMartialRanged(3) : randomMartialRanged() );
             sWeapons = addItem(sWeapons, item);
             money -= 10;
             bRanged = true;
+            if (item.includes("pistol")) bPistol = true;
             log("Bought " + item);
         }
 
@@ -786,7 +794,8 @@ function generateRandomCharacter(swap) {
             }
             else {
                 if(!bMelee) {
-                    buyMartialMelee();
+                    if(bGunslinger && !bPistol) buyMartialRanged();
+                    else buyMartialMelee();
                 }
                 else {
                     if(bLightArmour || bBrawler || bMystic) {
