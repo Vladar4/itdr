@@ -29,7 +29,13 @@ Whenever someone has increased or decreased odds of succeeding on a Save, the Re
 \index{Turns}
 In a combat situation, the Referee decides which side acts first. When this is unclear, player characters must pass \saves{DEX} to be able to act before their opponents. After such initial turn, all player characters act together as usual.
 
+Each turn, characters can \textbf{move} (or \textbf{change items} they are holding instead) and perform one \textbf{action}.
+
+At the start of the turn, all characters declare their \mbox{intentions}, and \textbf{after that} the dice are rolled.
+
+\begin{comment}
 On their turn, characters can generally \textbf{move} (or \textbf{change items} they are holding instead) and \textbf{then} carry out one \textbf{action}. All characters declare their \mbox{intentions} and \textbf{after that} the dice are rolled.
+\end{comment}
 
 \vfill
 
@@ -40,16 +46,25 @@ On their turn, characters can generally \textbf{move} (or \textbf{change items} 
 \index{Bonus Damage|see {Damage, bonus}}
 Roll your weapon's Damage die, or for both weapons if wielding two, along with any bonus Damage dice you have. The highest single roll is identified, and the attack causes this much Damage.
 
-Ranged weapons cannot be used while engaged in melee combat.
+\textbf{Ranged weapons} cannot be used while engaged in melee combat.
 
 \vfill
 
 \paragraph{Ganging Up}
 \index{Ganging Up}
 \index{Bypassing HP}
+
+Each target can take a single die of Damage in a turn.
+
+When multiple attackers choose the same target, they roll together in a single attack, keeping the highest result, plus 1 point of Damage for each additional attacker, up to +5. Once the attack has been resolved, the target cannot be attacked again until their next turn.\looseness=-1
+
+Attacks that reduce Ability Scores are grouped together by the Ability Score and resolved the same way, separate from normal attacks.
+
+\begin{comment}
 When multiple attackers target an individual, they roll together and keep the highest result, plus 1 point of Damage for each additional attacker, up to +5. Once the attack has been resolved, the target cannot be attacked again until their next turn.
 
 When some of these attacks directly target Ability Scores, they are grouped together by Ability Score targeted and resolved by the same Ganging Up rule, separately from normal attacks.
+\end{comment}
 
 \vfill
 
@@ -95,7 +110,7 @@ Total Armour score for a creature cannot exceed 3.
 Mounted troops in melee gain +1 Armour and bonus weapon Damage die against unmounted opponents but generally cannot employ two-handed weapons.
 
 \vfill
-\paragraph{Damage}
+\paragraph{Damage and Critical Damage Saves}
 \index{Damage}
 \index{Hit Points}
 When taking Damage, lose that many Hit Points. If you have any HP left, then the attack was mostly avoided or only a minor wound was inflicted.
@@ -112,7 +127,7 @@ Blast attacks affect all targets in the appropriate area, rolling once for each 
 \paragraph{Critical Damage}
 \index{Damage!critical}
 \index{Critical Damage|see {Damage, critical}}
-Characters that take Critical Damage are unable to take further action until they are tended to by an ally and have a Rest. If they are left untended to for an hour, they \textbf{die}.
+On a failed \save{Critical Damage}, characters take Critical Damage and unable to take further action until they are tended to by an ally and have a Rest. If they are left untended to for an hour, they \textbf{die}.
 
 \vfill
 \paragraph{Ability Score Loss}
@@ -151,10 +166,10 @@ Ability Score Loss and other serious ailments require the aid of an Expert servi
 \index{Ability Scores}
 Any Ability Score not listed is treated as 10.
 
-\vfill
-\paragraph{Reaction}
-\index{Reaction}
-When a reaction to a character is \textbf{uncertain}, pass a \save{WIL} to avoid a negative reaction.
+%\vfill
+%\paragraph{Reaction}
+%\index{Reaction}
+%When a reaction to a character is \textbf{uncertain}, pass a \save{WIL} to avoid a negative reaction.
 
 \vfill
 \paragraph{Pets}
@@ -167,25 +182,22 @@ One per character, obeys simple commands.
 \index{Blinded|see {Conditions}}
 \subparagraph{Blinded} creatures may require a \save{DEX} to carry out actions that rely on sight, their attacks are Impaired, and \saves{DEX} from external threats are rolled at Disadvantage.
 
-\vfill
 \index{Hidden|see {Conditions}}
 \subparagraph{Hidden} creature's attacks are Enhanced, but any attack or other similar action unveils the attacker.
 
-\vfill
 \index{Invisible|see {Conditions}}
 \subparagraph{Invisible} creature's attacks are Enhanced, attacks targeted at Invisible creatures are Impaired.
 
-\vfill
+\subparagraph{Prone} creature spends its \textbf{move} raising back up.
+
 \index{Restrained|see {Conditions}}
 \subparagraph{Restrained} creatures have a Disadvantage on \saves{DEX}; attacks against them are Enhanced.
 
-\vfill
 \index{Stunned|see {Conditions}}
 \subparagraph{Stunned} creatures are Restrained and cannot act.
 
-\vfill
 \index{Unconscious|see {Conditions}}
-\subparagraph{Unconscious} creatures are reduced to 0hp.
+\subparagraph{Unconscious} creatures are Prone and have 0hp.
 
 \break
 
