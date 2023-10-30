@@ -6,7 +6,7 @@
 \label{ch:magic}
 \index{Magic}
 
-\paragraph{Spells}
+%\paragraph{Spells}
 \index{Runic}
 \index{Scrolls}
 \index{Spells}
@@ -16,7 +16,7 @@ Written in Runic and found in Tomes and Scrolls. Spells require a few minutes of
 Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic Level.
 
 \index{Spells!ongoing effects}
-\subparagraph{Ongoing Effects} of any Spell last until a new Spell is cast, but summoned extraplanar beings remain.
+\subparagraph{Ongoing Effects} of any Spell last while you are conscious, or until you cast a new Spell, but summoned extraplanar beings remain. When taking Damage, succeed on a \save{WIL} to maintain the Spell.
 
 \index{Spells!persistent}
 \index{Persistent Spells|see {Spells, persistent}}
@@ -26,14 +26,14 @@ Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic L
 \index{Cantrips|see {Spells, cantrips}}
 \subparagraph{Cantrips} are minor tricks and not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your \textbf{Focus} to cast them.
 
-\vfill
+%\vfill
 \index{Focus}
 \paragraph{Focus}
 Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an \textbf{action}, while performing the proper gestures and incantations.
 
 A Focus does not work when wearing \textbf{armour}, \mbox{except} for Cantrips.
 
-\vfill
+%\vfill
 \index{Spells!dispel}
 \index{Dispel|see {Spells, dispel}}
 \paragraph{Dispel}
@@ -48,14 +48,14 @@ Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead
 	See \textbf{\safenameref{sec:manufacture_of_magic_equipment}{Manufacture of Magic Equipment}} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on creation of Focuses and Scrolls.
 \end{dbox}
 
-\vfill
 \index{Scroll Activation}
 \begin{dbox}
 	\paragraph{Scroll Activation (optional)}
 	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\safenameref{sec:magic_mishaps}{Magic Mishaps}} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
 \end{dbox}
 
-\vfill
+\enlargethispage{0.5\baselineskip}
+\break
 
 \index{Spells!prepared}
 \index{Prepared Spells|see {Spells, prepared}}
@@ -210,7 +210,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Animate Rope} Makes a rope move at your command.
 	\item \spell{Burning Hands} d6 Fire Damage in a small cone.
 	\item \spell{Camouflage} Everyone adjacent to you is difficult to notice and track.
-	\item \spell{Cause Fear} \save{WIL} or the creature flees for the duration.
+	\item \spell{Cause Fear} \save{WIL} or the creature flees until passing a \save{WIL} at the end of their turn.
 	\item \spell{Charm Person} \save{WIL} or one humanoid becomes friendly until their next Rest.
 	\item \spell{Chill Touch} \save{STR} or a living creature suffers d4~STR~Loss.
 	\item \spell{Colour Spray} \save{DEX} or the target is Blinded on the next turn.
@@ -220,15 +220,19 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Detect Secret Doors} Reveals hidden doors in your vicinity.
 	\item \spell{Disguise Self} Change your facial appearance.
 	\item \spell{Endure Elements} Everyone adjacent to you can exist comfortably in hot or cold environments.
-	\item \spell{Enlarge/Reduce} A humanoid creature that you touch doubles or halves in size Raising or Lowering their weapon Damage dice respectively. The target could choose to avoid effects with a \save{STR}.
+	\item \spell{Enlarge/Reduce} A humanoid that you touch doubles or halves in size Raising or Lowering their weapon Damage dice respectively. The target could choose to avoid effects with a~\save{STR}.\looseness=-1
 	\item \spell{Erase} Mundane or magical writing vanishes when you touch it.
 	\item \spell{Expeditious Retreat} You run twice as fast.
 	\item \spell{Feather Fall} Objects or creatures in a small sphere fall slowly.
 	\item \spell{Floating Disk} Creates 3-ft-diameter horizontal disk that holds 100~lb, floats 3~ft off the ground, and slowly moves by your command.
 	\item \spell{Glue} One object gets stuck to another one. When cast on a creature, they need to succeed on a \save{STR} or cannot move.
+	
+	\vfill
+	\break
+	
 	\item \spell{Grease} Makes a small area or one object slippery. \save{DEX} to avoid slipping.
 	\item \spell{Gust of Wind} Blows away or knocks down stuff in a medium cone. A \save{STR} to resist.
-	\item \spell{Hideous Laughter} \save{WIL} or a humanoid laughs and Impairs their attacks until passing the Save at the end of their turn.
+	\item \spell{Hideous Laughter} \save{WIL} or a humanoid laughs, Impairing their attacks for the duration.
 	\item \spell{Hold Portal} Holds a door shut.
 	\item \spell{Hypnotism} Fascinate d6 creatures that fail a \save{WIL}. In combat, their attacks on the next turn are Impaired.
 	\item \spell{Identify} Unveils basic properties of a magical item you hold, such as how to activate it and its general effect. Details of workings, hidden properties, curses, etc. are not revealed.
