@@ -82,7 +82,7 @@ function randomMartialRanged(lim=4) {
         case 1: result = "crossbow"; break;
         case 2: result = "javelins"; break;
         case 3: result = "longbow"; break;
-        case 4: result = "pistol"; break;
+        case 4: result = randomBool() ? "pistol" : "simple musket"; break;
         default: return "NONE";
     }
     result += " (d6)";
@@ -336,8 +336,8 @@ function generateRandomCharacter(swap) {
     let sFeature = sFeatureList[iFeature];
     log("Feature " + iFeature + " (" + sFeature + ")");
     let bBrawler = false; /* for unarmoured defense */
-    let bGunslinger = false; /* wants a pistol */
-    let bPistol = false;
+    let bGunslinger = false; /* wants a gun */
+    let bGun = false;
     let bMystic = false; /* can't use armour */
     let iPets = 0;
     let maxPets = 1;
@@ -446,7 +446,12 @@ function generateRandomCharacter(swap) {
             break;
 
         case 2: /* Hunter */
-            sBackgroundWeapons = randomBool() ? "javelins (d6)" : "longbow (d6)";
+            switch(bGunslinger ? 4 : d(4)) {
+                case 1: sBackgroundWeapons = "crossbow (d6)"; break;
+                case 2: sBackgroundWeapons = "javelins (d6)"; break;
+                case 3: sBackgroundWeapons = "longbow (d6)"; break;
+                case 4: sBackgroundWeapons = "simple musket (d6)"; break;
+            }
             bBackgroundRanged = true;
             sBackgroundItems.push("animal trap");
             sBackground += " (hunting and tracking expertise)";
@@ -589,7 +594,7 @@ function generateRandomCharacter(swap) {
             break;
 
         case 8: /* Soldier */
-            switch(bGunslinger ? 4 : d(6)) {
+            switch(bGunslinger ? (randomBool() ? 5 : 6) : d(8)) {
                 case 1:
                     sBackground += " (archer)";
                     sBackgroundWeapons = "longbow (d6)";
@@ -607,18 +612,28 @@ function generateRandomCharacter(swap) {
                     bBackgroundRanged = true;
                     break;
                 case 4:
+                    sBackground += " (halberdier)";
+                    sBackgroundWeapons = "halberd (d8, 2h)";
+                    bBackgroundRanged = true;
+                    break;
+                case 5:
+                    sBackground += " (musketeer)";
+                    sBackgroundWeapons = "simple musket (d6, 2h)";
+                    bBackgroundRanged = true;
+                    break;
+                case 6:
                     sBackground += " (officer)";
                     sBackgroundWeapons = "pistol (d6)";
                     bBackgroundRanged = true;
-                    bPistol = true;
+                    bGun = true;
                     break;
-                case 5:
+                case 7:
                     sBackground += " (pikeman)";
                     sBackgroundWeapons = "pike (d8, 2h)";
                     bBackgroundMelee = true;
                     bTwohandedMelee = true;
                     break;
-                case 6:
+                case 8:
                     sBackground += " (swordsman)";
                     sBackgroundWeapons = "greatsword (d8, 2h)";
                     bBackgroundMelee = true;
@@ -672,11 +687,11 @@ function generateRandomCharacter(swap) {
         }
 
         function buyMartialRanged() {
-            const item = bGunslinger ? "pistol (d6)" : ( bPistol ? randomMartialRanged(3) : randomMartialRanged() );
+            const item = bGunslinger ? (randomBool() ? "pistol (d6)" : "simple musket (d6)") : ( bGun ? randomMartialRanged(3) : randomMartialRanged() );
             sWeapons = addItem(sWeapons, item);
             money -= 10;
             bRanged = true;
-            if (item.includes("pistol")) bPistol = true;
+            if (item.includes("pistol") || item.includes("musket")) bGun = true;
             log("Bought " + item);
         }
 
@@ -794,7 +809,7 @@ function generateRandomCharacter(swap) {
             }
             else {
                 if(!bMelee) {
-                    if(bGunslinger && !bPistol) buyMartialRanged();
+                    if(bGunslinger && !bGun) buyMartialRanged();
                     else buyMartialMelee();
                 }
                 else {
