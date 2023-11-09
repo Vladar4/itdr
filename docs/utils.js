@@ -111,3 +111,48 @@ function onLoadTab(page, main) {
     else openTab(docId('btn-'+main), main);                     /* not found */
 }
 
+/* COUNTDOWN */
+
+function formatDays(message, days) {
+    return message.replace('${days}', days === 1 ? `${days} day` : `${days} days`);
+}
+
+function updateCountdown(id, targetDate, msg1, msg2) {
+    const currentDate = new Date().getTime();
+    const delta = targetDate - currentDate;
+    const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+    var elem = docId(id);
+    if (days > 0) {
+        elem.innerHTML = formatDays(msg1, days);
+    } else {
+        elem.innerHTML = msg2;
+    }
+    if (delta < 0) {
+        elem.innerHTML = "";
+    }
+    return delta;
+}
+
+/*
+ *  startCountdown(date, timeZone, msg1, msg2, id);
+ *
+ *  * date - in format of "Dec 23, 2023 23:59:59"
+ *  * timeZone - in format of "America/New_York"
+ *  * msg1 - event countdown message, in format of "${days} left until ..."
+ *  * msg2 - event happening message, in format of "... is today!"
+ *  * id - countdown element id, default is "countdown"
+ *
+ *  "${days}" in the text of msg1 will be replaced by amount of days left ("1 day", "2 days", etc.)
+ */
+function startCountdown(date, timeZone, msg1, msg2, id='countdown') {
+    const targetDateUtc = new Date(date).toLocaleString("en-US", { timeZone });
+    const targetDate = new Date(targetDateUtc).getTime();
+
+    updateCountdown(id, targetDate, msg1, msg2);
+    const x = setInterval(function() {
+        if (updateCountdown(id, targetDate, msg1, msg2) < 0) {
+            clearInterval(x);
+        }
+    }, 60000);
+}
+
