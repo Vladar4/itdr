@@ -39,6 +39,24 @@ function docCreate(nodename) {
     return document.createElement(nodename);
 }
 
+/* SPOILERS */
+
+function spoiler(event, id) {
+    var elem = docId(id);
+    if(elem.classList.contains('spoiler-hidden')) {
+        elem.classList.replace('spoiler-hidden', 'spoiler-shown');
+    }
+    else if(elem.classList.contains('spoiler-shown')){
+        elem.classList.replace('spoiler-shown', 'spoiler-hidden');
+    }
+    if(event.target.classList.contains('spoiler')) {
+        event.target.classList.replace('spoiler', 'spoiler-clicked');
+    }
+    else if(event.target.classList.contains('spoiler-clicked')) {
+        event.target.classList.replace('spoiler-clicked', 'spoiler');
+    }
+}
+
 /* TABS */
 
 function openTab(button, id) {
@@ -81,7 +99,7 @@ function pageTabs(page) {
     /*
      *  Return an array of the `page`'s tabs.
      */
-    if(page === 'downloads')    return ['main', 'misc']; /* TODO "sup", "adv" */
+    if(page === 'downloads')    return ['main', 'sup', 'adv', 'misc'];
     else if(page === 'tools')   return ['creatures', 'misc'];
     else return [];
 }

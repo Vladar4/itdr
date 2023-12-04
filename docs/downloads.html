@@ -75,8 +75,8 @@
 
         <div class="tab-menu">
             <button class="tab-link active" id="btn-main" onClick="onOpenTab(event, 'main')">Rulebook</button>
-            <!--
             <button class="tab-link" id="btn-sup" onClick="onOpenTab(event, 'sup')">Supplements</button>
+            <!--
             <button class="tab-link" id="btn-adv" onClick="onOpenTab(event, 'adv')">Adventures</button>
             -->
             <button class="tab-link" id="btn-misc" onClick="onOpenTab(event, 'misc')">Miscellaneous</button>
@@ -88,17 +88,25 @@
         <p class="centered">
             <h2>Rulebook</h2>
 
+            <div class="spoiler" onclick="spoiler(event, 'itdr-cover')">Cover</div>
+            <div class="spoiler-hidden" id="itdr-cover">
+                <img    src="https://github.com/Vladar4/itdr/raw/master/cover.jpg"
+                        alt="ItDR cover"
+                        title="ItDR"
+                />
+            </div>
+
             <table>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr-v2.2.pdf" target="_blank">Complete edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr-v2.2.pdf" target="_blank">Complete edition</a></td>
                     <td>The entire book.</td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light-v2.2.pdf" target="_blank">Light edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light-v2.2.pdf" target="_blank">Light edition</a></td>
                     <td>All player-facing rules, including additional and alternative ones, plus index. 28 pages.</td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal-v2.2.pdf" target="_blank">Minimal edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal-v2.2.pdf" target="_blank">Minimal edition</a></td>
                     <td>The core player-facing rules only. 16 pages.</td>
             </table>
 
@@ -106,15 +114,15 @@
             <table>
                 <tr>
                     <td>Normal booklets for printing</td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_booklet-v2.2.pdf" target="_blank">Full</a></td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light_booklet-v2.2.pdf" target="_blank">Light</a></td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal_booklet-v2.2.pdf" target="_blank">Minimal</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_booklet-v2.2.pdf" target="_blank">Full</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light_booklet-v2.2.pdf" target="_blank">Light</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal_booklet-v2.2.pdf" target="_blank">Minimal</a></td>
                 </tr>
                 <tr>
                     <td>Booklets for printing with reversed odd pages</td>
-                    <td><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_booklet_r-v2.2.pdf" target="_blank">Full</a></td>
-                    <td><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light_booklet_r-v2.2.pdf" target="_blank">Light</a></td>
-                    <td><a class="strong" href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal_booklet_r-v2.2.pdf" target="_blank">Minimal</a></td>
+                    <td><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_booklet_r-v2.2.pdf" target="_blank">Full</a></td>
+                    <td><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_light_booklet_r-v2.2.pdf" target="_blank">Light</a></td>
+                    <td><a href="https://github.com/Vladar4/itdr/releases/download/v2.2/itdr_minimal_booklet_r-v2.2.pdf" target="_blank">Minimal</a></td>
                 </tr>
             </table>
 
@@ -133,20 +141,6 @@
                 </a>
             </p>
 
-            <div class="highlight">
-                <h3>Printing Instructions</h3>
-                <ul>
-                    <li>Page setup:</li>
-                    <ul class="ul2">
-                        <li>normal booklets: Two-sided - short edge (flip)</li>
-                        <li>reversed booklets: Two-sided - long edge (standard)</li>
-                    </ul>
-                    <li>Page scaling: none</li>
-                    <li>Auto rotate and center: yes</li>
-                    <li>Trim printed booklets to about 5.4in x 8in.</li>
-                </ul>
-            </div>
-
         <hr/>
 
         <p class="centered">
@@ -155,15 +149,15 @@
             <h2>Rulebook</h2>
             <table>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr-2.2-it2.pdf" target="_blank">Complete edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr-2.2-it2.pdf" target="_blank">Complete edition</a></td>
                     <td>The entire book.</td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light-2.2-it2.pdf" target="_blank">Light edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light-2.2-it2.pdf" target="_blank">Light edition</a></td>
                     <td>All player-facing rules, including additional and alternative ones, plus index. 28 pages.</td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal-2.2-it2.pdf" target="_blank">Minimal edition</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal-2.2-it2.pdf" target="_blank">Minimal edition</a></td>
                     <td>The core player-facing rules only. 16 pages.</td>
             </table>
 
@@ -171,15 +165,15 @@
             <table>
                 <tr>
                     <td>Normal booklets for printing</td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_booklet-2.2-it2.pdf" target="_blank">Full</a></td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light_booklet-2.2-it2.pdf" target="_blank">Light</a></td>
-                    <td style="width: 10%;"><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal_booklet-2.2-it2.pdf" target="_blank">Minimal</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_booklet-2.2-it2.pdf" target="_blank">Full</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light_booklet-2.2-it2.pdf" target="_blank">Light</a></td>
+                    <td style="width: 10%;"><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal_booklet-2.2-it2.pdf" target="_blank">Minimal</a></td>
                 </tr>
                 <tr>
                     <td>Booklets for printing with reversed odd pages</td>
-                    <td><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_booklet_r-2.2-it2.pdf" target="_blank">Full</a></td>
-                    <td><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light_booklet_r-2.2-it2.pdf" target="_blank">Light</a></td>
-                    <td><a class="strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal_booklet_r-2.2-it2.pdf" target="_blank">Minimal</a></td>
+                    <td><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_booklet_r-2.2-it2.pdf" target="_blank">Full</a></td>
+                    <td><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_light_booklet_r-2.2-it2.pdf" target="_blank">Light</a></td>
+                    <td><a href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_minimal_booklet_r-2.2-it2.pdf" target="_blank">Minimal</a></td>
                 </tr>
             </table>
 
@@ -193,51 +187,86 @@
         </div> <!-- tab 1 -->
 
         <!-- TAB 2 -->
+        <!-- SUPPLEMENTS -->
         <div class="tab" id="sup">
 
-            <h2>Supplements</h2>
+        <h2>Classic Appendix</h2>
+
+        <p>
+            Prior to version 2.0 of Into the Dungeon: Revived, it contained the “Appendix C: Class-ic Edition” &mdash; a remnant of the “Playtest Edition” predecessor that instead of the Features and Backgrounds of ItDR had three classes: Warrior, Mystic, and Disciple. Since version 2.0, Appendix C was removed.
+        </p>
+        <p>
+            This supplement is meant for those who want to include these classes in their ItDR games.
+        </p>
+
+        <div class="spoiler" onclick="spoiler(event, 'itdr-c-cover')">Cover</div>
+        <div class="spoiler-hidden" id="itdr-c-cover">
+            <img    src="https://github.com/Vladar4/itdr-classic/raw/master/cover.jpg"
+                    alt="Classic Appendix cover"
+                    title="Classic Appendix"
+            />
+        </div>
+
+        <table>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr-classic/releases/download/v1.0/itdr-classic-v1.0.pdf" target="_blank">Classic Appendix</a></td>
+                <td>Base document.</td>
+            </tr>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr-classic/releases/download/v1.0/itdr-classic_booklet-v1.0.pdf" target="_blank">Booklet</a></td>
+                <td>Booklet for printing.</td>
+            </tr>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr-classic/releases/download/v1.0/itdr-classic_booklet_r-v1.0.pdf" target="_blank">Reversed booklet</a></td>
+                <td>Booklet for printing with reversed odd pages.</td>
+            </tr>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr-classic" target="_blank">GitHub repository</a></td>
+                <td></td>
+            </tr>
+        </table>
 
         </div> <!-- tab 2 -->
 
         <!-- TAB 3 -->
+        <!-- ADVENTURES -->
         <div class="tab" id="adv">
 
-            <h2>Adventures</h2>
 
         </div> <!-- tab 3 -->
 
         <!-- TAB 4 -->
+        <!-- MISC -->
         <div class="tab" id="misc">
 
-            <h2>Character Sheets</h2>
-            <table style="width: 50%;">
-                <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_plain.pdf" target="_blank">Plain</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_plain_a4.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_plain_letter.pdf" target="_blank">Double (Letter)</a></td>
-                </tr>
-                <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_fancy.pdf" target="_blank">Fancy</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_fancy_a4.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_fancy_letter.pdf" target="_blank">Double (Letter)</a></td>
-                </tr>
-            </table>
+        <h2>Character Sheets</h2>
+        <table style="width: 50%;">
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_plain.pdf" target="_blank">Plain</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_plain_a4.pdf" target="_blank">Double (A4)</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_plain_letter.pdf" target="_blank">Double (Letter)</a></td>
+            </tr>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_fancy.pdf" target="_blank">Fancy</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_fancy_a4.pdf" target="_blank">Double (A4)</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_charsheet_double_fancy_letter.pdf" target="_blank">Double (Letter)</a></td>
+            </tr>
+        </table>
 
-            <h2>Time Sheets</h2>
-            <p class="centered"><i>Time-tracking template for the Referee</i></p>
-            <table style="width: 50%;">
-                <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_plain.pdf" target="_blank">Plain</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_plain_a4.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_plain_letter.pdf" target="_blank">Double (Letter)</a></td>
-                </tr>
-                <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_fancy.pdf" target="_blank">Fancy</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_fancy_a4.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_fancy_letter.pdf" target="_blank">Double (Letter)</a></td>
-                </tr>
-            </table>
-        </p>
+        <h2>Time Sheets</h2>
+        <p class="centered"><i>Time-tracking template for the Referee</i></p>
+        <table style="width: 50%;">
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_plain.pdf" target="_blank">Plain</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_plain_a4.pdf" target="_blank">Double (A4)</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_plain_letter.pdf" target="_blank">Double (Letter)</a></td>
+            </tr>
+            <tr>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_fancy.pdf" target="_blank">Fancy</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_fancy_a4.pdf" target="_blank">Double (A4)</a></td>
+                <td><a class="nowrap" href="https://github.com/Vladar4/itdr/releases/download/v2.1/itdr_timesheet_double_fancy_letter.pdf" target="_blank">Double (Letter)</a></td>
+            </tr>
+        </table>
 
         <hr/>
 
@@ -247,14 +276,14 @@
             <h2>Character Sheets</h2>
             <table style="width: 50%;">
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_plain-2.2-it2.pdf" target="_blank">Plain</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_plain_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_plain_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_plain-2.2-it2.pdf" target="_blank">Plain</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_plain_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_plain_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_fancy-2.2-it2.pdf" target="_blank">Fancy</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_fancy_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_fancy_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_fancy-2.2-it2.pdf" target="_blank">Fancy</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_fancy_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_charsheet_double_fancy_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
                 </tr>
             </table>
 
@@ -262,19 +291,48 @@
             <p class="centered"><i>Time-tracking template for the Referee</i></p>
             <table style="width: 50%;">
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_plain-2.2-it2.pdf" target="_blank">Plain</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_plain_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_plain_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_plain-2.2-it2.pdf" target="_blank">Plain</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_plain_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_plain_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
                 </tr>
                 <tr>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_fancy-2.2-it2.pdf" target="_blank">Fancy</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_fancy_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
-                    <td><a class="nowrap strong" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_fancy_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_fancy-2.2-it2.pdf" target="_blank">Fancy</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_fancy_a4-2.2-it2.pdf" target="_blank">Double (A4)</a></td>
+                    <td><a class="nowrap" href="https://github.com/Medusa/itdr/releases/download/v2.2-it2/itdr_timesheet_double_fancy_letter-2.2-it2.pdf" target="_blank">Double (Letter)</a></td>
                 </tr>
             </table>
-        </p>
+        </p><!-- Italian translation -->
+
+        <p class="centered">
+            <h1>ItDR Core</h1>
+            <p>
+                Core LaTeX packages for ItDR and compatible materials.
+            </p>
+            <ul>
+                <li><a class="nowrap centered" href="https://github.com/Vladar4/itdr-core" target="_blank">GitHub Repository</a>
+                <li><a class="nowrap centered" href="https://github.com/Vladar4/itdr-core/releases/download/2023-12-01/itdr-core-guide-2023-12-01.pdf" target="_blank">Guide</a>
+                <li><a class="nowrap centered" href="https://github.com/Vladar4/itdr-core/blob/master/MANUAL.md" target="_blank">Manual</a>
+            </ul>
+        </p><!-- ItDR Core -->
 
         </div> <!-- tab 4 -->
+
+        <hr/>
+
+        <div class="highlight">
+            <h3>Printing Instructions</h3>
+            <ul>
+                <li>Page setup:</li>
+                <ul class="ul2">
+                    <li>normal booklets: Two-sided - short edge (flip)</li>
+                    <li>reversed booklets: Two-sided - long edge (standard)</li>
+                </ul>
+                <li>Page scaling: none</li>
+                <li>Auto rotate and center: yes</li>
+                <li>Trim printed booklets to about 5.4in x 8in.</li>
+            </ul>
+        </div>
+
 
         <p class="centered">
                 <span class="bottom"><img src="bottom_downloads.png"/></span>
