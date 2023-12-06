@@ -1,22 +1,11 @@
 \documentclass[10pt,twoside,twocolumn,openany]{book}
-\usepackage{itdr}
 \usepackage[utf8]{inputenc}
 \usepackage{subfiles}
 \usepackage{booktabs}
+\usepackage{itdr/core}
+\usepackage{itdr/bestiary}
 
 \input{def} % variables
-
-% PDF properties
-\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
-\hypersetup{
-	pdfinfo={
-		Title={\title},
-		Author={\author},
-		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
-}}
-
-% Spell List Index
-\newindex{spells}{Spell List}
 
 \begin{document}
 \fontfamily{ppl}\selectfont % Set text font
@@ -40,7 +29,7 @@
 
 % FOOTNOTE
 \noindent\hspace{-0.75em}\begin{minipage}{0.15\textwidth}
-\centering\includegraphics[width=\linewidth]{img/itdr_logo.pdf}
+\centering\includegraphics[width=\linewidth]{itdr_logo.pdf}
 \end{minipage}\hspace{-0.45em}\begin{minipage}{0.7\textwidth}
 {\begin{center}\footnotesize
 \href{https://vladar4.github.io/itdr/}{``\title''} by \author{}\\
@@ -52,7 +41,7 @@ the \license.
 \small\version\\\year
 \end{center}
 }\end{minipage}\hfill\begin{minipage}{0.15\textwidth}
-\centering\includegraphics[width=\linewidth]{img/itdr_link.pdf}
+\centering\includegraphics[width=\linewidth]{itdr_link.pdf}
 \end{minipage}\hspace{0.5em}
 
 \vfill

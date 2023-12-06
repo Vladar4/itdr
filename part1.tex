@@ -1,4 +1,4 @@
-\documentclass[itdr]{subfiles}
+\documentclass[itdr/core]{subfiles}
 
 \begin{document}
 
@@ -168,7 +168,8 @@ The usual Feature benefit could be:
 	\item special trick.
 \end{itemize}
 
-Try to balance new Features with the existing ones.\hspace{-0.6em}
+Try to balance new Features with the existing ones.
+\vspace*{1ex-\baselineskip}
 \end{dbox}
 
 \vfill
@@ -233,7 +234,7 @@ Gain one martial weapon and a military rank.
 
 \vfill
 \begin{dbox}
-	\textbf{Appendix A: \safenameref{sec:random_characters}{Random Characters}} contains a set of random tables for quick character creation.
+	\textbf{Appendix A: \safenameref{sec:random_characters}[Random Characters]} contains a set of random tables for quick character creation.
 \end{dbox}
 
 \vfill
@@ -288,23 +289,23 @@ You could try to \textbf{sell} an item at half its price.
 
 \paragraphsection{Melee Weapons:}
 
-\weapon{Simple Melee Weapon}{1s}{d6}\\Two-handed only. Tools or weapons not built for frequent use in battle. Pitchfork, Quarterstaff, Sledgehammer, Splitting Maul, etc.
+\weapon*{Simple Melee Weapon}{1s}{d6}\\Two-handed only. Tools or weapons not built for frequent use in battle. Pitchfork, Quarterstaff, Sledgehammer, Splitting Maul, etc.
 
-\weapon{Martial Melee Weapon}{10s}{d6/d8} Basic, purpose-made weapons. Axe, Dagger, Halberd, Mace, Spear, Sword, etc.
+\weapon*{Martial Melee Weapon}{10s}{d6/d8} Basic, purpose-made weapons. Axe, Dagger, Halberd, Mace, Spear, Sword, etc.
 
-\weapon{Superior Melee Weapon}{1g}{d8/d10} Elaborate or masterwork weapons.
+\weapon*{Superior Melee Weapon}{1g}{d8/d10} Elaborate or masterwork weapons.
 
-\weapon{Lance}{10s}{d8} When mounted --- can be used with a shield; on foot --- two-handed only.
+\weapon*{Lance}{10s}{d8} When mounted --- can be used with a shield; on foot --- two-handed only.
 
 \vfill
 
 \paragraphsection{Ranged Weapons:}
 
-\weapon{Simple Ranged Weapon}{1s}{d4} Tools or weapons not built for frequent use in battle. Darts, Hunting Bow, Sling, Throwing Daggers, etc.
+\weapon*{Simple Ranged Weapon}{1s}{d4} Tools or weapons not built for frequent use in battle. Darts, Hunting Bow, Sling, Throwing Daggers, etc.
 
-\weapon{Martial Ranged Weapon}{10s}{d6} Basic, purpose-made weapons. Crossbow, Javelins, Longbow, Simple Musket or Pistol, etc.
+\weapon*{Martial Ranged Weapon}{10s}{d6} Basic, purpose-made weapons. Crossbow, Javelins, Longbow, Simple Musket or Pistol, etc.
 
-\weapon{Superior Ranged Weapon}{1g}{d8} Elaborate or heavy bows, crossbows, and muskets.
+\weapon*{Superior Ranged Weapon}{1g}{d8} Elaborate or heavy bows, crossbows, and muskets.
 
 \vfill\hrule
 \index{Firearms|see {Weapons, firearms}}
@@ -315,11 +316,10 @@ You could try to \textbf{sell} an item at half its price.
 
 \paragraphsection{Armour:}
 \index{Armour}
-\index{Shield}
 
-\armour{Light Armour}{10s}{1}
+\armour*{Light Armour}{10s}{1}
 
-\armour{Full Armour}{1g}{2} Makes running, swimming, hiding, etc. very difficult, imposing Disadvantage on appropriate Saves.
+\armour*{Full Armour}{1g}{2} Makes running, swimming, hiding, etc. very difficult, imposing Disadvantage on appropriate Saves.
 
 \equip{Shield}{5s} +1 Armour, requires one hand to use, has no effect when used with Full Armour.
 
@@ -328,26 +328,21 @@ You could try to \textbf{sell} an item at half its price.
 \index{Items}
 \paragraphsection{Other Items:}
 
-\index{Acid}
 \equip{Acid}{10s per vial} d4 Acid Damage to one target now and a d4 STR Loss (affected by Armour) at the end of the next turn unless washed off.
 
-\index{Fire Oil}
 \equip{Fire Oil}{10s per flask} Sets an area alight. Everyone inside takes d6 Fire Damage now and d6 at the end of their next turn unless extinguished.
 
-\index{Black Powder}
 \equip{Black Powder}{20s per pot} Ignited with fuse or direct flame. Everyone in the area takes d10 Blast Damage.
 
-\index{Adventuring Gear}
 \index{Gear|see {Adventuring Gear}}
 \index{Rations}
 \index{Food|see {Rations}}
 \index{Light}
 \equip{Adventuring Gear}{5p each} 10-ft Rope, Caltrops (slows pursuers), Chalk, Dice, Flint and Steel, Food Ration, Lamp Oil, Parchment, Spike, Tent, 6 Torches.
 
-\index{Tools}
 \equip{Tools}{1s each} Animal Trap, Collapsible Pole, Crowbar, Drill, Fishing Pole, Grappling Hook, Hatchet, Lockpicks, Pickaxe, Shovel, Writing Set.
 
-\equip{Fancy Items}{10s each} Board Game, Book, Elaborate Clothes, Lantern, Mirror, Sand Timer, Spyglass.
+\equip*{Fancy Items}{10s each} Board Game, Book, Elaborate Clothes, Lantern, Mirror, Sand Timer, Spyglass.
 
 \vfill
 
@@ -366,8 +361,6 @@ You could try to \textbf{sell} an item at half its price.
 \index{Taverns}
 \subparagraph{Taverns:} Meal, Drink, and Bed in an Awful Place (1p), Okay Place (1s), or Fancy Place (20s).
 
-\index{Healing}
-\index{Healing Service}
 \index{Ability Score Loss}
 \equip{Healing Service}{10s} Restore one Ability Score Loss or other ailment overnight.
 

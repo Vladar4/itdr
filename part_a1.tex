@@ -1,4 +1,4 @@
-\documentclass[itdr]{subfiles}
+\documentclass[itdr/core]{subfiles}
 
 \begin{document}
 
@@ -31,7 +31,7 @@ When creating the character or advancing to a new Experience Level, instead of c
 	\item Increase one Ability Score by 1 (up to 20).
 \end{itemize}
 
-\vfill
+
 
 \section{Contest}
 \index{Contest}
@@ -113,13 +113,13 @@ Mist, smoke, and such reduce the radius in half.
 \index{Living Expenses}
 \index{Lifestyle|see {Living Expenses}}
 
-\equip{Squalid}{d4s/month:}
+\equip*{Squalid}{d4s/month:}
 Suffer d4 Ability Score Loss for each Ability Score. Your reputation suffers.
 
-\equip{Adequate}{10$\times$d4s/month:}
+\equip*{Adequate}{10$\times$d4s/month:}
 Restore d4 Ability Score Loss for each Ability Score.
 
-\equip{Luxury}{d4g/month:}
+\equip*{Luxury}{d4g/month:}
 Heal any Ability Score Loss and non-magical ailments. Your reputation rises.
 
 If you own pets, add half as much for each one.
@@ -557,10 +557,10 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 
 \begin{dtable}[cL]
 	\textbf{Roll} & \textbf{Outcome} \\
-	1	& \textbf{Lost!} You wander off to an unknown place. \\
+	1	& \textbf{Lost!} Wander off to an unknown place. \\
 	2	& \textbf{Going in circles.} No travel progress today. \\
 	3	& \textbf{Meandering.} Halved travelled distance. \\
-	4--6& \textbf{On course.} \\
+	4+	& \textbf{On course.} \\
 \end{dtable}
 
 \subparagraph{Horizon} is 3 miles away at the sea level, 6 miles at 25~ft elevation (roof, hill), 12 miles at 100~ft (ship's mast, treetop, tower). The landscape can obstruct the view. Tall objects can be seen behind the horizon.

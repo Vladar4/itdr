@@ -1,0 +1,3 @@
+[submodule "itdr"]
+	path = itdr
+	url = https://github.com/Vladar4/itdr-core
