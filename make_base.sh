@@ -12,6 +12,17 @@ do
     do
         pdflatex -synctex=1 -interaction=nonstopmode -jobname="$FILE" "$FILE"
     done
+
+    # compress
+    gs -sDEVICE=pdfwrite \
+        -dPrinted=false \
+        -dCompatibilityLevel=1.4 \
+        -dNOPAUSE -dQUIET -dBATCH \
+        -sOutputFile="${FILE}-compressed.pdf" \
+        "${FILE}.pdf"
+
+    mv "${FILE}-compressed.pdf" "${FILE}.pdf"
+
     cp "${FILE}.pdf" "$DIR"
 done
 
