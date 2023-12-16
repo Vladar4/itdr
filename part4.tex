@@ -15,47 +15,9 @@ Written in Runic and found in Tomes and Scrolls, Spells require a few minutes of
 
 Mystics can cast any Spell of a Circle \textbf{equal or lower} to their Mystic Level.
 
-\index{Spells!ongoing effects}
-\subparagraph{Ongoing Effects} of any Spell last while you are conscious, or until you cast a new Spell, but summoned extraplanar beings remain. When taking Damage, succeed on a \save{WIL} to maintain the Spell.
-
-\index{Spells!persistent}
-\index{Persistent Spells|see {Spells, persistent}}
-\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again. You can sustain up to \textbf{2~$\times$~Mystic Level} simultaneously.
-
-\index{Spells!cantrips}
-\index{Cantrips|see {Spells, cantrips}}
-\subparagraph{Cantrips} are minor tricks and not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your \textbf{Focus} to cast them.
-
-%\vfill
 \index{Focus}
 \paragraph{Focus}
-Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an \textbf{action} while performing the proper gestures and incantations.
-
-A Focus does not work when wearing \textbf{armour}, \mbox{except} for Cantrips.
-
-%\vfill
-\index{Spells!dispel}
-\index{Dispel|see {Spells, dispel}}
-\paragraph{Dispel}
-The Focus can be used to \textbf{dispel} the ongoing effect of another Mystic's Spell unless they pass a \save{WIL}. If their Mystic Level is higher than yours, they get an Advantage.
-
-Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead. On fail the Spell stays, and you suffer WIL~Loss based on the Spell Circle: from d2 (Cantrip) to d12 (\nth{5} Circle). If your Mystic Level is higher than the Spell Circle, you have an Advantage.
-
-\vfill
-\begin{dbox}
-	Scrolls of new Spells found by Mystics are usually attached to the Tome for the convenience of usage.
-
-	See \textbf{\safenameref{sec:manufacture_of_magic_equipment}[Manufacture of Magic Equipment]} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on the creation of Focuses and Scrolls.
-\end{dbox}
-
-\index{Scroll Activation}
-\begin{dbox}
-	\paragraph{Scroll Activation (optional)}
-	Any character can activate a Scroll as an action. The Spell is cast as Signature, destroying the Scroll. Succeed on a \save{WIL} or suffer a \textbf{Magic Mishap} (see \textbf{\safenameref{sec:magic_mishaps}[Magic Mishaps]} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
-\end{dbox}
-
-\enlargethispage{0.5\baselineskip}
-\break
+Every Mystic carries a Focus, typically an orb, wand, or staff that allows to instantly cast a Prepared Spell or any Cantrip you know as an \textbf{action} while performing the proper gestures and incantations. It does not work when wearing \textbf{armour}, \mbox{except} for Cantrips.
 
 \index{Spells!prepared}
 \index{Prepared Spells|see {Spells, prepared}}
@@ -63,20 +25,58 @@ Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead
 \paragraph{Prepared Spells and Spellburn}
 During the Rest, you can use your Tome to prepare a~number of Spells equal to your Experience Level to cast using your Focus as an action.
 
-Casting a Prepared Spell as an action causes \mbox{\textbf{Spellburn}} \mbox{Damage} \textbf{to the caster} equal to\textbf{ 2hp per Spell Circle ignoring Armour}. At 0hp, Spellburn targets WIL \mbox{instead} of STR: pass a \save{WIL} to avoid Critical Spellburn or be Stunned for the next turn.
+Casting a Prepared Spell as an action causes \mbox{\textbf{Spellburn}} \mbox{Damage} \textbf{to the caster} equal to \textbf{2hp per Spell Circle ignoring Armour}. At 0hp, Spellburn targets WIL \mbox{instead} of STR: pass a \save{WIL} to avoid Critical Spellburn or be Stunned for the next turn.
 
+\vspace{-0.5ex}
 \begin{dbox}
-	Optionally, this will result in a \textbf{Magic Mishap} as well (see \textbf{\safenameref{sec:magic_mishaps}[Magic Mishaps]} in \textbf{\customref{ch:appendix_a}{Appendix A}}).
+	Optionally, this also causes a \textbf{Magic Mishap}\footnotemark[1].
 \end{dbox}
+\vspace{-0.5ex}
 
-\vfill
+\footnotetext[1]{See \textbf{\safenameref{sec:magic_mishaps}[Magic Mishaps]} in \textbf{\customref{ch:appendix_a}{Appendix A}}.}
+
 \index{Spells!signature}
 \index{Signature Spells|see {Spells, signature}}
 \paragraph{Signature Spells}
-Each time you take Mystic Feature, choose an additional Signature Spell to cast without preparation and at half its cost (1hp per Spell Circle).
+Each time you take Mystic Feature, choose an additional Spell to cast without preparation and at half its cost (\textbf{1hp per Spell Circle ignoring Armour}).
 
-\vfill
+\index{Scroll Activation}
+\paragraph{Scroll Activation}
+If needed, Mystics can activate a Scroll as an action. The Spell is cast as \textbf{Signature}, destroying the Scroll.
+
+\vspace{-0.5ex}
+\begin{dbox}
+	\paragraph{Amateur Scroll Activation (optional)}
+	Non-mystics can attempt Scroll Activation as well. Succeed on a \save{WIL} to cast the Spell as \mbox{\textbf{Prepared}}, or botch it, suffering a \textbf{Magic Mishap}\footnotemark[1] \mbox{instead.} The Scroll is destroyed in either case.
+\end{dbox}
+\vspace{-0.5ex}
+
+\index{Spells!ongoing effects}
+\subparagraph{Ongoing Effects} of any Spell last while you are conscious, or until you cast a new Spell, but summoned extraplanar beings remain. When taking Damage, succeed on a \save{WIL} to maintain the Spell.
+
+\index{Spells!persistent}
+\index{Persistent Spells|see {Spells, persistent}}
+\subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again. You can sustain up to \textbf{2~$\times$~Mystic Level} simultaneously.
+
+%\enlargethispage{0.65\baselineskip}
+
+\index{Spells!cantrips}
+\index{Cantrips|see {Spells, cantrips}}
+\subparagraph{Cantrips} are minor tricks and not true Spells, do not interrupt ongoing effects of the previous Spell, and require you to use your \textbf{Focus} to cast them.
+
+\index{Spells!dispel}
+\index{Dispel|see {Spells, dispel}}
+\paragraph{Dispel}
+The Focus can be used to \textbf{dispel} the ongoing effect of another Mystic's Spell unless they pass a \save{WIL}. If their Mystic Level is higher than yours, they get an Advantage.
+
+Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead. On fail the Spell stays, and you suffer WIL~Loss based on the Spell Circle: from d2 (Cantrip) to d12 (\nth{5} Circle). If your Mystic Level is higher than the Spell Circle, you have an Advantage.
+
+\vspace{-0.5ex}
 \dimage{magic4}{370pt}
+
+\begin{dbox}
+	See \textbf{\safenameref{sec:manufacture_of_magic_equipment}[Manufacture of Magic Equipment]} in \mbox{\textbf{\customref{ch:appendix_a}{Appendix A}}} for the additional information on the creation of Focuses and Scrolls.
+\end{dbox}
 
 \break
 
