@@ -3,7 +3,7 @@ Into the Dungeon: Revived
 
 *Rules for fantastic adventure games playable with paper and pencil and polyhedral dice*
 
-ItD:R is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay. Gather your friends, grab some dice, and dive into the world of sword and sorcery adventures of your own creation!
+ItD:R is a lightweight fantasy-themed role-playing ruleset designed for streamlined gameplay. Gather your friends, grab some dice, and dive into the world of sword and sorcery adventures of your own creation!
 
 In this book you will find:
 * Easy to learn rules, core ones fit on a one-page spread
@@ -99,7 +99,72 @@ Changelog
 ---------
 
 ### v2.3
-*CURRENTLY IN DEVELOPMENT*
+
+#### Part 1
+* Changed Berserker's melee weapon Damage dice to melee Damage dice
+* Added Gunslinger Feature
+* Updated Elf Ancestry Feature wording
+* A note about Random Characters tables in Appendix A
+* Adjusted stats for pets
+* Pistols have a shorter range but can be wielded in one hand
+
+#### Part 2
+* Specified turn duration and movement distance
+* Forgoing a turn's action doubles the move distance
+* Updated wording of Turns, Ganging Up, and Critical Damage rules
+* Added mounted movement rule
+* Reaction rule moved to **Part 7** and expanded
+* Added Prone Condition
+
+#### Part 3
+* Added Funding Domain Focus
+* Conscription Domain Focus decreases SIZ
+* Unrest decreases SIZ
+
+#### Part 4
+* Updated Scroll Activation rule
+* Clarified the Ongoing Effects rule; they can be interrupted by Damage to the caster (WIL Save to maintain)
+* Reorganized magic rules for clarity
+
+##### Circle 2
+* False Life: clarified duration
+
+##### Circle 5
+* Banish: clarified duration
+
+#### Part 5
+* A note on weapons ignoring Armour
+* A note on damage from ongoing effects
+
+#### Part 6
+* A note of mind-control regarding undead-affecting magic
+
+#### Part 7
+* A note on random encounter checks while travelling through the wilderness
+* Added Random Reaction rule
+
+#### Part 8
+* Improved HP-HD conversion method
+
+#### Appendix A
+* Load Capacity: a note on speed impediment
+* Encumbrance: a note on wearing full armour without Ironclad Feature
+* Rations: a note on Resting and Healing
+* Resources: added the price of ammo (1p per piece)
+* Selling: shifted price ranges one step to the right
+* Movement in Combat and Exploration: forgoing an action doubles the move distance
+* Random Characters: expanded Soldier and Random Martial Ranged Weapon tables
+* Random Magic Items: added four new entries to the Fabric table.
+
+#### Appendix B
+* Mummy: immune to mind-altering Spells
+* Troll: now has Armour 1
+* Skeleton: immune to mind-altering Spells
+* Snake Demon: non-magical attacks are Impaired
+* Added mundane beasts:
+    * Leech Swarm
+    * Shark
+
 
 ### v2.2
 
