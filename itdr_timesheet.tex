@@ -1,21 +1,14 @@
 \documentclass[10pt,twoside,openany]{book}
-\usepackage{itdr}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{forloop}
-\usepackage{tikz}
+\usepackage{itdr/core}
 
-\def \title {Into the Dungeon: Revived} % TITLE variable
+\def \game {Into the Dungeon: Revived}
+
+\def \title {{\game} - Time Sheet} % TITLE variable
 \def \author {Vladimir Arabadzhi} % AUTHOR variable
-
-% PDF properties
-\pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
-\hypersetup{
-	pdfinfo={
-		Title={{\title} - Time Sheet},
-		Author={\author},
-		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
-}}
+\def \keywords {\game;Into the Dungeon;Into the Odd;RPG} % KEYWORDS variable
 
 \ifcsname ifplain\endcsname\else
 \expandafter\let\csname ifplain\expandafter\endcsname
@@ -48,7 +41,7 @@
 \def\arraystretch{1.5}
 
 \begin{center}
-	\hspace{0.3em}\textBigTitle{\title}\\
+	\hspace{0.3em}\textBigTitle{\game}\\
 	\vspace{-1ex}
 	\hspace{0.375em}\hrulefill\hspace{-0.025em}\vspace{1ex}
 \end{center}
@@ -60,12 +53,12 @@
 \noindent
 \begin{tabularx}{\tablewidth}{lRRRRRR}
 ~ & 10m & 20m & 30m & 40m & 50m & 60m\\
-\dup[24]{\itemrule{1em}h & \multicolumn{6}{l}{\hspace{-0.37em}\includegraphics[width=\tablewidth-2.38em]{img/timeline.pdf}}\\}
+\dup[24]{\itemrule{1em}h & \multicolumn{6}{l}{\hspace{-0.37em}\includegraphics[width=\tablewidth-2.38em]{timeline.pdf}}\\}
 \end{tabularx}
 
 \ifthenelse{\boolean{image}}{%
 	\begin{tikzpicture}[remember picture,overlay]
-	\node[xshift=-0.35em,yshift=0.45em,anchor=north west] at (current page.north west){\includegraphics{./img/pic/timesheet.png}};
+	\node[xshift=-0.35em,yshift=0.45em,anchor=north west] at (current page.north west){\includegraphics{timesheet.png}};
 	\end{tikzpicture}
 }{}
 

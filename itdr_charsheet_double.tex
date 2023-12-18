@@ -5,17 +5,20 @@
 \usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{hyperref}
-	
-\def \title {Into the Dungeon: Revived} % TITLE variable
+
+\def \game {Into the Dungeon: Revived}
+
+\def \title {{\game} - Character Sheet} % TITLE variable
 \def \author {Vladimir Arabadzhi} % AUTHOR variable
+\def \keywords {\game;Into the Dungeon;Into the Odd;RPG} % KEYWORDS variable
 
 % PDF properties
 \pdfminorversion=4 % force PDF 1.4 for the Acrobat compatibility
 \hypersetup{
 	pdfinfo={
-		Title={{\title} - Character Sheet},
+		Title={\title},
 		Author={\author},
-		Keywords={\title;Into the Dungeon;Into the Odd;RPG}
+		Keywords={\keywords}
 }}
 
 \begin{document}
