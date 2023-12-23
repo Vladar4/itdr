@@ -100,6 +100,8 @@ Changelog
 
 ### v2.3
 
+<details><summary>v2.3 changelog</summary>
+
 #### Part 1
 * Changed Berserker's melee weapon Damage dice to melee Damage dice
 * Added Gunslinger Feature
@@ -165,6 +167,9 @@ Changelog
 * Added mundane beasts:
     * Leech Swarm
     * Shark
+
+---
+</details>
 
 
 ### v2.2
