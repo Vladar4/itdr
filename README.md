@@ -149,6 +149,7 @@ Changelog
 #### Appendix A
 * Load Capacity: a note on speed impediment
 * Encumbrance: a note on wearing full armour without Ironclad Feature
+* Manufacture of Magic Equipment: a note on Tome nature and creation
 * Rations: a note on Resting and Healing
 * Resources: added the price of ammo (1p per piece)
 * Selling: shifted price ranges one step to the right
