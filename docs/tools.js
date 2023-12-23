@@ -1166,6 +1166,7 @@ function generateRandomNPC() {
 /* RANDOM MONSTER */
 /******************/
 
+/* @ - armour tag */
 const sMonsterTable = [
     ["NONE"],
     ["NONE", /* Table 1 */
@@ -1318,7 +1319,7 @@ const sMonsterTable = [
     "bird",
     "bear-like",
     "cat-like",
-    ["crustacean", "myriapod"],
+    ["crustacean@", "myriapod@"],
     "dog-like",
     "fish",
     "fungi",

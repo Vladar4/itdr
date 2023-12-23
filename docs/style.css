@@ -13,6 +13,7 @@ html {
 
 *, *:before, *:after {
     box-sizing: inherit;
+    font-family: inherit;
 }
 
 body {
@@ -23,15 +24,27 @@ body {
     color: #333;
     background-color: #f0dcc0;
     font-size: 16px;
+    font-style: normal;
     font-family:
-        "Cambria",
-        "Hoefler Text",
-        "Utopia",
-        "Liberation Serif",
-        "Nimbus Roman No9 L Regular",
-        "Times",
-        "Times New Roman",
+        "Palatino Linotype",
+        Palatino,
+        Palladio,
+        "URW Palladio L",
+        "Book Antiqua",
+        Baskerville,
+        "Bookman Old Style",
+        "Bitstream Charter",
+        "Nimbus Roman No9 L",
+        Garamond,
+        "Apple Garamond",
+        "ITC Garamond Narrow",
+        "New Century Schoolbook",
+        "Century Schoolbook",
+        "Century Schoolbook L",
+        Georgia,
         serif;
+
+    font-weight: normal;
     overflow-y: scroll;
 }
 
@@ -80,7 +93,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .subtitle {
@@ -109,6 +122,22 @@ div.hr {
     white-space: nowrap;
 }
 
+.lang {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    height: 20px;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.lang > a {
+    padding: 2px 4px 2px 4px;
+    margin: 0px 2px 0px 2px;
+}
+
 .wrap {
     white-space: normal;
 }
@@ -135,6 +164,7 @@ div.hr {
 
 a {
     text-decoration: none;
+    font-weight: bolder;
 }
 
 a:link {
@@ -170,8 +200,10 @@ img {
 }
 
 input[type=button], select {
+    color: #333;
     background-color: #f0dcc0;
     border: 1px solid black;
+    font-size: 1rem;
     padding: 10px 6px 10px 6px; /* top right bottom left */
     transition: 0.3s;
     width: 100%;
@@ -227,6 +259,45 @@ li {
 
 .flex-nowrap {
     flex-wrap: nowrap;
+}
+
+/* SPOILERS */
+
+.spoiler, .spoiler-clicked {
+    cursor: pointer;
+    color: darkslateblue;
+    font-weight: bolder;
+    padding: 5px 10px 5px 10px; /* top right bottom left */
+}
+
+.spoiler::before {
+    content: "\25b8\00a0";/* BLACK RIGHT-POINTING SMALL TRIANGLE */
+}
+
+.spoiler-clicked::before {
+    content: "\25be\00a0";/* BLACK DOWN-POINTING SMALL TRIANGLE */
+}
+
+.spoiler:hover, .spoiler-clicked:hover {
+    color: slateblue;
+    background-color: #ffecd0;
+}
+
+.spoiler:active, .spoiler-clicked:active {
+    color: mediumpurple;
+    background-color: #fffce0;
+}
+
+.spoiler-hidden, .spoiler-shown {
+    transition: 1s;
+}
+
+.spoiler-hidden {
+    display: none;
+}
+
+.spoiler-shown {
+    display: block;
 }
 
 /* TABS */

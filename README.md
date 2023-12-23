@@ -169,6 +169,8 @@ Changelog
 
 ### v2.2
 
+<details><summary>v2.2 changelog</summary>
+
 #### Part 1
 * Berserker: the effect now lasts till the end of the next turn
 
@@ -267,8 +269,13 @@ Changelog
 * Tools: added the Horizon and Visibility calculator
 * Improved layout
 
+---
+</details>
+
 
 ### v2.1
+
+<details><summary>v2.1 changelog</summary>
 
 #### Part 1
 * Beastmaster may choose to make a WIL Save instead of the pet
@@ -334,8 +341,13 @@ Changelog
   * Random Weather
 * Improved layout, implemented responsive design
 
+---
+</details>
+
 
 ### v2.0
+
+<details><summary>v2.0 changelog</summary>
 
 #### Part 1
 * Berserker: "gain Advantage on Saves against Critical Damage" now reads "gain Advantage on **subsequent** Saves against Critical Damage"
@@ -489,8 +501,14 @@ Changelog
 * Removed Notes part
 * Timesheet
 
+---
+</details>
+
 
 ### v1.2.1
+
+<details><summary>v1.2.1 changelog</summary>
+
 * light and minimal editions of the book
 * character sheets
 * new building scripts
@@ -505,8 +523,14 @@ Changelog
 * Mule and Horse rebalance
 * Miscellaneous rules clarifications
 
+---
+</details>
+
 
 ### v1.2
+
+<details><summary>v1.2 changelog</summary>
+
 #### Part 1
 * Berserker: a bonus is limited to melee
 * Commander: a command does not count as action
@@ -621,8 +645,14 @@ Changelog
 #### Spell List
 * Added spell circle info
 
+---
+</details>
+
 
 ### v1.1
+
+<details><summary>v1.1 changelog</summary>
+
 * Mystic advancement: Spell Circle is limited by Mystic Level instead of Experience Level
 * Mystic's Tome is required when preparing spells
 * Damage from casting spells targets WIL instead of STR
@@ -644,6 +674,9 @@ Changelog
 * Improved and clarified phrasing
 * Index update
 * Box style update
+
+---
+</details>
 
 
 ### v1.0.1

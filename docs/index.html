@@ -4,10 +4,29 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Into the Dungeon: Revived">
+    <meta property="twitter:card" content="summary">
+
+    <meta name="title" content="Into the Dungeon: Revived">
+    <meta property="og:title" content="Into the Dungeon: Revived">
+    <meta property="twitter:title" content="Into the Dungeon: Revived">
+
+    <meta name="description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
+    <meta property="og:description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
+    <meta property="twitter:description" content="ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay.">
+
+    <meta property="og:image" content="https://vladar4.github.io/itdr/logo_itdr.png">
+    <meta property="twitter:image" content="https://vladar4.github.io/itdr/logo_itdr.png">
+
     <title>Into the Dungeon: Revived</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <link rel="manifest" href="manifest.webmanifest"/>
+    <link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon"/>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 </head>
 <body>
 <main>
@@ -36,14 +55,30 @@
                 <a href="https://vladar.itch.io/into-the-dungeon-revived" target="_blank">
                     <img src="logo_itchio.svg" alt="itch.io" title="ItDR itch.io page" />
                 </a>
+                <a href="https://vladar.bearblog.dev/" target="_blank">
+                    <img src="logo_blog.svg" alt="Blog" title="Vladar's Blog" />
+                </a>
             </div>
         </nav>
         <div class="hr"></div>
+        <div class="lang">
+            ·
+            <a class="nav-current" href="#">EN</a>
+            ·
+            <a href="https://medusa.github.io/itdr-it/index.html">IT</a>
+            ·
+        </div>
     </header>
 
     <article>
+        <!--
+        <p><div id="countdown" style="text-align: center;font-size: 1.5rem;"></div></p>
+        <script src="utils.js"></script>
+        <script>startCountdown("Dec 23, 2023 23:59:59", "America/New_York", "${days} left until ItDR v2.3 release.", "Releasing ItDR v2.3 today!", "countdown");</script>
+        -->
+
         <p>
-            ItDR is a lightweight fantasy-themed role-playing ruleset designed for a streamlined gameplay. Gather your friends, grab some dice, and dive into the world of sword and sorcery adventures of your own creation!
+            ItDR is a lightweight fantasy-themed role-playing ruleset designed for streamlined gameplay. Gather your friends, grab some dice, and dive into the world of sword and sorcery adventures of your own creation!
         </p>
         <p>
             In this book you will find:
@@ -62,9 +97,10 @@
         </p>
 
         <h4 class="centered">
+            <a href="downloads.html" target="_self">Download the latest release</a> and check out <a href="https://vladar.bearblog.dev/blog/?q=itdr" target="_blank">the news</a>
+
             <a href="downloads.html" target="_self">
-                Download latest release
-                <img    src="cover.png"
+                <img    src="cover.jpg"
                         alt="Cover page"
                         title="Download latest release"
                 />
