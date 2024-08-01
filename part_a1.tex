@@ -4,7 +4,18 @@
 
 \addtocontents{toc}{\protect\newpage}
 \chapterx*{Appendix A: Additional and Alternative Rules}
-\addcontentsline{toc}{chapter}{\scalebox{0.966}{Appendix A: Additional and Alternative Rules}}
+
+% Fitting this TOC entry into a single line
+\addtocontents{toc}{%
+	\begingroup%
+	\protect\fontsize{0.966\docFontSize}{\baselineskip}%
+	\protect\selectfont}
+\addcontentsline{toc}{chapter}{Appendix A: Additional and Alternative Rules}
+\addtocontents{toc}{%
+	\protect\fontsize{0.966\docFontSize}{\baselineskip}%
+	\protect\selectfont%
+	\endgroup}
+
 \label{ch:appendix_a}
 
 ``\title'' is intended as a rules-light game. Keep this in mind when deciding to use any of the rules presented in this appendix.
