@@ -47,7 +47,7 @@ If needed, Mystics can activate a Scroll as an action. The Spell is cast as \tex
 \vspace{-0.5ex}
 \begin{dbox}
 	\paragraph{Amateur Scroll Activation (optional)}
-	Non-mystics can attempt Scroll Activation as well. Succeed on a \save{WIL} to cast the Spell as \mbox{\textbf{Prepared}}, or botch it, suffering a \textbf{Magic Mishap}\footnotemark[1] \mbox{instead.} The Scroll is destroyed in either case.
+	If the Circle is \textbf{lower} than their Level, non-mystics can succeed on a \save{WIL} to cast the Spell as \mbox{\textbf{Prepared}}, or botch it, suffering a \textbf{Magic Mishap}\footnotemark[1] \mbox{instead.} The Scroll is destroyed in either case.
 \end{dbox}
 \vspace{-0.5ex}
 
@@ -57,6 +57,9 @@ If needed, Mystics can activate a Scroll as an action. The Spell is cast as \tex
 \index{Spells!persistent}
 \index{Persistent Spells|see {Spells, persistent}}
 \subparagraph{Persistent Spells} have their effects last as long as you wish or until you cast the same Spell again. You can sustain up to \textbf{2~$\times$~Mystic Level} simultaneously.
+
+\enlargethispage{1ex}
+\break
 
 \index{Spells!cantrips}
 \index{Cantrips|see {Spells, cantrips}}
@@ -84,20 +87,30 @@ Dispelling a Persistent Spell requires \textbf{you} to make a \save{WIL} instead
 \enlargethispage{1ex}
 \break
 
-\begin{dbox}
-	\index{Spells!distance}
-	\index{Spells!area}
-	\subsection*{Distances/Areas}
+%\begin{dbox}
+\index{Spells!distance}
+\index{Spells!area}
+\subsection*{Distances/Areas}
+\begin{itemize}
+	\item \textbf{Short or Close/Small} --- a couple of steps;
+	\item \textbf{Medium} --- about 30~ft (one turn movement);
+	\item \textbf{Far/Large or Your Vicinity} --- about 60~ft.
+\end{itemize}
+%\vspace{1ex}
+%\hrule
+%\vspace{1ex}
+If not specified, the Spell affects a single target that you can see in your vicinity.
+%\end{dbox}
+
+\subsection*{Targets}
+\begin{itemize}
+	\item \textbf{Creatures} --- all living or animated beings:
 	\begin{itemize}
-		\item \textbf{Short or Close/Small} --- a couple of steps
-		\item \textbf{Medium} --- about 30~ft (one turn movement)
-		\item \textbf{Far/Large or Your Vicinity} --- about 60~ft
+		\item \textbf{Humanoids} --- humans and human-like in appearance and biology living creatures;
+		\item \textbf{Undead} --- reanimated dead creatures;
 	\end{itemize}
-	\vspace{1ex}
-	\hrule
-	\vspace{1ex}
-	If not specified, the Spell affects a single target that you can see in your vicinity.
-\end{dbox}
+	\item \textbf{Items and Objects} --- inanimate things.
+\end{itemize}
 
 \vfill
 
@@ -117,7 +130,7 @@ d3~$\times$10~+~d10 (treat 10 as 0)
 \end{comment}
 
 \skipline
-\header{Random 36 Spells}
+\header{Random 36 Spells}\vspace*{1ex}
 \begin{dtable}[cC|cC|cC]
 	\textbf{d6,d6} & \textbf{Spell} & \textbf{d6,d6} & \textbf{Spell} & \textbf{d6,d6} & \textbf{Spell} \\
 
@@ -137,13 +150,13 @@ d3~$\times$10~+~d10 (treat 10 as 0)
 \end{dtable}
 
 \skipline
-\header{Random 40 Spells}
+\header{Random 40 Spells}\vspace*{1ex}
 \begin{dtable}[L]
 d4~$\times$10~+~d10 (treat 10 as 0)
 \end{dtable}
 
 \skipline
-\header{Random 48 Spells}
+\header{Random 48 Spells}\vspace*{1ex}
 \begin{dtable}[cC|cC|cC]
 	\textbf{d6,d8} & \textbf{Spell} & \textbf{d6,d8} & \textbf{Spell} & \textbf{d6,d8} & \textbf{Spell} \\
 
@@ -326,7 +339,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Blink} Each turn you have a 50\% chance to vanish and reappear on your next turn, avoiding the next attack against you.
 	\item \spell{Clairaudience/Clairvoyance} Hear or see at a distance or through a wall as if you were there.
 	\item \spell{Daylight} A large area of bright light strong enough to overwhelm even magical darkness.
-	\item \spell{Deep Slumber} Puts d6 creatures that fail their \save{WIL} to sleep until the Spell is broken or creatures take Damage.
+	\item \spell{Deep Slumber} Puts d6 living creatures that fail their \save{WIL} to sleep until the Spell is broken or creatures take Damage.
 	\item \spell{Displacement} Gain Advantage on Critical Damage Saves. Persistent.
 	\item \spell{Dream} Sends a message to anyone sleeping.
 	\item \spell{Explosive Runes} Inscribe Runes that deal d10 Blast Damage when read or touched, disappearing afterwards. Persistent.
@@ -379,7 +392,7 @@ The Referee may provide Mystics with a list of Spells for their Tome or use the 
 	\item \spell{Chain Lightning} Strikes d10 targets for d10 Electricity Damage each ignoring Armour.
 	\item \spell{Charm Creature} \save{WIL} or a creature treats you as an ally.
 	\item \spell{Confusion} Creatures in a medium area who failed a \save{WIL} behave oddly. In combat, roll a d4 on their turn, 1: attack their allies, 2--3: do nothing, 4: attack their enemies.
-	\item \spell{Contagion} Infects a creature with a \mbox{horrible} disease, reducing one Ability Score by d6 immediately and each subsequent day until Healed.
+	\item \spell{Contagion} Infects a living creature with a horrible disease, reducing one Ability Score by d6 immediately and every morning until Healed.
 	\item \spell{Create Water} A spring starts spilling water from the ground or wall.
 	\item \spell{Crushing Despair} Everyone in a large area makes a \save{WIL} or their attacks are Impaired.
 	\item \spell{Detect Scrying} Alerts you of the magical eavesdropping.

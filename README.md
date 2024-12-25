@@ -98,6 +98,49 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v2.4
+
+<details><summary>v2.4 changelog</summary>
+
+#### Part 1
+* Clarified conditions for the Assassin feature
+* A note on ranged weapons requiring both hands by default
+
+#### Part 2
+* Specified the Rest rule regarding the HP restoration prohibition
+
+#### Part 3
+* Clarified Critical Damage to Units
+
+#### Part 4
+* Amateur Scroll Activation level limits
+* A note on Spell target types
+
+##### Circle 3
+* Deep Slumber: affects only the living creatures
+
+#### Circle 4
+* Contagion: affects only the living creatures
+
+#### Part 5
+* Clarified Bonus Weapon Damage Dice usage for dual-wielding
+
+#### Part 8
+* Simplified morale conversion table to the closest values
+
+#### Appendix A
+* Living Expenses: added downtime length during level-up
+* Travel: expanded Mounts table
+
+#### Miscellaneous
+* Index improvements
+* Minor wording and layout improvements
+* Typo fixes
+
+---
+</details>
+
+
 ### v2.3
 
 <details><summary>v2.3 changelog</summary>

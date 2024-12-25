@@ -4,7 +4,18 @@
 
 \addtocontents{toc}{\protect\newpage}
 \chapterx*{Appendix A: Additional and Alternative Rules}
-\addcontentsline{toc}{chapter}{\scalebox{0.966}{Appendix A: Additional and Alternative Rules}}
+
+% Fitting this TOC entry into a single line
+\addtocontents{toc}{%
+	\begingroup%
+	\protect\fontsize{0.966\docFontSize}{\baselineskip}%
+	\protect\selectfont}
+\addcontentsline{toc}{chapter}{Appendix A: Additional and Alternative Rules}
+\addtocontents{toc}{%
+	\protect\fontsize{0.966\docFontSize}{\baselineskip}%
+	\protect\selectfont%
+	\endgroup}
+
 \label{ch:appendix_a}
 
 ``\title'' is intended as a rules-light game. Keep this in mind when deciding to use any of the rules presented in this appendix.
@@ -114,20 +125,22 @@ Mist, smoke, and such reduce the radius in half.
 \index{Living Expenses}
 \index{Lifestyle|see {Living Expenses}}
 
-\equip*{Squalid}{d4s/month:}
+\equip*{Squalid}{d4s/month}
 Suffer d4 Ability Score Loss for each Ability Score. Your reputation suffers.
 
-\equip*{Adequate}{10$\times$d4s/month:}
+\equip*{Adequate}{10$\times$d4s/month}
 Restore d4 Ability Score Loss for each Ability Score.
 
-\equip*{Luxury}{d4g/month:}
+\equip*{Luxury}{d4g/month}
 Heal any Ability Score Loss and non-magical ailments. Your reputation rises.
 
 If you own pets, add half as much for each one.
 
 Halve the expense if you live in your own house.
 
-\vfill
+Advancing to a new Experience Level usually takes \textbf{d4 weeks $\times$ new Level value} of downtime.
+
+%\vfill
 
 \section{Load Capacity}
 \index{Load Capacity}
@@ -158,13 +171,16 @@ You can \textbf{lift} a maximum load equal to your STR squared (in pounds), walk
 	20	&	200		&	400		&	800		\\
 \end{dtable}
 
-1~lb equals 100 gold guilders, 1000 silver shillings, or 1000 copper pennies in weight.
+1~lb equals 100g, 1000s, or 1000p in weight.
+%1~lb equals 100 gold guilders, 1000 silver shillings, or 1000 copper pennies in weight.
 
 \subsection{Encumbrance}
 \index{Encumbrance}
+\index{Bulky Items|see {Items, bulky}}
+\index{Items!bulky}
 Heavy load \textbf{halves the speed} and \textbf{reduces HP to 0}. The same happens when carrying \textbf{more than three} bulky items. Items are considered bulky if they require both hands to carry or are otherwise unwieldy, for example, two-handed weapons, a set of armour, a Mystic's Tome, a pot of black powder, wearing full armour without Ironclad Feature, etc.\tight
 
-
+\enlargethispage{2ex}
 
 \break
 
@@ -194,6 +210,8 @@ When the Madness Level exceeds the character's Experience Level, the character g
 	20 & \textbf{Faint}. Need to be tended to by an ally and have a Rest to regain consciousness. \\
 \end{dtable}
 
+\skipline[0.5\baselineskip]
+
 \begin{dtable}[cL]
 	\textbf{d20} & \textbf{Prolonged Effect} \\
 	1--4 & \textbf{Nightmares.} \\
@@ -205,6 +223,8 @@ When the Madness Level exceeds the character's Experience Level, the character g
 	18--19 & \textbf{Weakness.} Disadvantage on \saves{STR}. \\
 	20 & \textbf{Stupor.} Cannot take any actions. \\
 \end{dtable}
+
+\skipline[0.5\baselineskip]
 
 \paragraph{Vestigial Effects}
 Some especially shocking experiences might leave a permanent mark on the character's psyche, usually in a light form of some Prolonged Effect, obsession, compulsive behaviour, etc.
@@ -253,11 +273,11 @@ When Mystics fail their Critical Spellburn Save, they suffer a Mishap. Other dan
 	85--86	&	Your canines grow long and sharp.	\\
 	87--88	&	You grow a tail.	\\
 	89--90	&	You grow horns.	\\
+	91	&	You grow gills.	\\
+	92	&	Your feet turn into hooves.	\\
 \end{dtable}
 \begin{dtable}[cL]
 \textbf{d100} & \textbf{Mishap} \\
-	91	&	You grow gills.	\\
-	92	&	Your feet turn into hooves.	\\
 	93	&	Your nails grow into sharp talons (bonus d6 unarmed Damage die).	\\
 	94	&	Your skin becomes very tough. Gain Armour~1 when not wearing any armour.	\\
 	95	&	One of your Ability Scores increases by one (up to 20). (d6) 1--2:~STR, 3--4:~DEX, 5--6:~WIL.	\\
@@ -345,6 +365,7 @@ Lack of rations prohibits Resting and Healing. A day without enough water or a w
 \section{Resources}
 \index{Resources}
 
+\vspace*{-0.5ex}
 \begin{dtable}[clcL]
 	\textbf{Amount} & \textbf{Description} & \textbf{Average} & \textbf{Price} \\
 	1 & running out	& 1		& $\times$~1 \\
@@ -379,8 +400,9 @@ After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{
 
 \subparagraph{Selling Magic Items} will have a higher chance of barter, while search roll and \save{WIL} are rolled at Disadvantage. Price for Scrolls is d10s~$\times$~Circle, consumables: d10$\times$10s~$\times$~Circle, wands and rods: d10g~$\times$~Circle, other items --- on a case-by-case \mbox{basis.}
 
-\vfill
+
 \break
+
 
 \section{Structures and Sieges}
 \label{sec:structures_and_sieges}
@@ -451,7 +473,6 @@ Large and bigger objects usually ignore Damage from anything but siege engines a
 For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thickness).
 
 
-\vfill
 \break
 
 
@@ -473,11 +494,17 @@ Difficult 	& \mbox{jungle, mountains,} swamp	& \travelunit{2} & 2 \\
 
 To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a day) of travel and apply it to the whole duration.
 
+\vfill
+
 \index{Exhaustion}
 \subparagraph{Exhaustion Check:} make a \save{STR} or lose d4 STR (if mounted or on a vehicle --- for your mounts).
 
+\vfill
+
 \index{Rest}
 \subparagraph{Rest} for a day for every 6 days travelled or make an Exhaustion Check for each extra day of travel.
+
+\vfill
 
 \index{Encumbrance}
 \index{Forced March}
@@ -527,6 +554,8 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 
 \subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
 
+\vfill
+
 \index{Mounts}
 \index{Mule}
 \index{Donkey}
@@ -535,9 +564,11 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 \index{Elephant}
 \begin{dtable}[Lccl]
 	\textbf{Mount}  & \textbf{Cargo} & \textbf{Riders} & \textbf{Cost} \\
-	Mule, Donkey	& \sfrac{1}{5}~t (400~lb)	& 1	& 20s \\
-	Horse, Camel	& \sfrac{1}{4}~t (500~lb)	& 2 & 1g \\
-	Elephant		& 2~t (4000~lb)	& 8	& 5g \\
+	Donkey	& \sfrac{1}{10}~t (200~lb)	& 1	& 20s \\
+	Mule	& \sfrac{1}{8}~t (250~lb)	& 1 & 20s \\
+	Horse	& \sfrac{1}{5}~t (400~lb)	& 2 & 1g \\
+	Camel	& \sfrac{1}{4}~t (500~lb)	& 2 & 1g \\
+	Elephant& 2~t (4000~lb)	& 8	& 5g \\
 \end{dtable}
 
 \vfill
@@ -554,6 +585,7 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 \end{dtable}
 
 
+\vfill
 \break
 
 
@@ -648,7 +680,6 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 \index{Siege Engines}
 \subparagraph{Siege Engines} could be mounted on keelboats (1), sailing ships (2), and galleys (3).
 
-
 \break
 
 
@@ -674,6 +705,7 @@ To decide for how many days the current weather persists, choose an appropriate 
 	2--5& normal&4--5& side \\
 	6	& warmer than usual&6--8& favourable \\
 \end{dtable}
+
 When following the prevailing wind's direction, roll 2d8 and take the higher result; when going against it --- take the lower one.
 
 \vfill
@@ -770,7 +802,7 @@ For time-tracking purposes, \textbf{exploration activities} take \textbf{10 minu
 	\index{Distance|see {Units of Measure}}
 	\index{Volume|see {Units of Measure}}
 	\index{Weight|see {Units of Measure}}
-	\subsection*{Units of Measure}
+	\section{Units of Measure}
 
 \bgroup
 \tabcolsep=1em
@@ -786,7 +818,8 @@ For time-tracking purposes, \textbf{exploration activities} take \textbf{10 minu
 	\textbf{Volume} & \parbox{\linewidth}{%
 			\textbf{1 gallon} is 4 quarts or 8 pints\\
 			\textbf{1 quart} is 2 pints or 32 ounces\\
-			\textbf{1 pint} is 16 ounces} \\
+			\textbf{1 pint} is 16 ounces \\
+			\textbf{1 pint} of water weighs 1 pound} \\
 	\midrule
 	\rowcolor{dColor2}
 	\textbf{Weight} & \parbox{\linewidth}{%
