@@ -413,6 +413,7 @@ After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{
 \index{Construction}
 \index{Property}
 \index{Walls}
+\index{Roads}
 
 \begin{dtable}[lLll]
 	\multicolumn{2}{L}{\textbf{Structure}} & \textbf{Wood} & \textbf{Stone} \\
@@ -477,84 +478,72 @@ For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thic
 
 
 \cleartoleftpage
+
+\newcommand{\tvspace}{\vspace{-0.38ex}}
+
 \section{Travel}
 \index{Travel}
+Travel for \textbf{8~hours/day} before resting for the night.
+The daily travel is divided into \textbf{24} time segments (TS), 20 minutes each.
+TS cost of every \textbf{\travelunit{1}-mile} leg of the journey (or \travelunit{1}-mile hexagon) depends on the terrain and certain factors listed below.
 
-Travel for \textbf{8 hours/day} before resting for the night.
+\index{Forced March}
+Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. Lacking more, you can perform \textbf{Forced March:} every \textbf{2 extra hours} of travel adds \textbf{6~TS} but requires an Exhaustion Check.
 
-\subparagraph{Grid} of \travelunit{1}-mile tiles simplifies distance calculations.
-
-\index{Terrain}
-\begin{dtable}[lLcc]
-\textbf{Terrain} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} \\
-Clear		& grassland, plains 		& \travelunit{4} & 4 \\
-Rugged		& desert, forest, hills		& \travelunit{3} & 3 \\
-Difficult 	& \mbox{jungle, mountains,} swamp	& \travelunit{2} & 2 \\
-\end{dtable}
-
-To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a day) of travel and apply it to the whole duration.
-
-\vfill
+\tvspace
 
 \index{Exhaustion}
-\subparagraph{Exhaustion Check:} make a \save{STR} or lose d4 STR (if mounted or on a vehicle --- for your mounts).
+\subparagraph{Exhaustion Check:} you or your mount must make a \save{STR} or lose \textbf{d4~STR} and stop for today, becoming \textbf{exhausted} (major hindrance) until a day of rest.\tight
 
-\vfill
+\tvspace
 
 \index{Rest}
-\subparagraph{Rest} for a day for every 5 days travelled or make an Exhaustion Check for each extra day of travel.
+\subparagraph{Rest} for a day every \textbf{5 days} of travel, or make an Exhaustion Check for every extra day of travel. Each day of rest restores d4~STR Loss from exhaustion.\tight
 
-\vfill
+\tvspace
 
-\index{Encumbrance}
-\index{Forced March}
-\index{Large Groups}
+\textbf{Overload} (over 50~lb on foot or Cargo capacity) \textbf{doubles} the travel cost.
+
+\index{Terrain}
 \index{Roads}
+\index{Encumbrance}
+\index{Large Groups}
 
-\begin{dtable}[Lcc]
-	\textbf{Speed Modifier} & \textbf{Miles} & \textbf{Grid} \\
-
-	\textbf{Roads} & +\travelunit{1} & +1 \\
-
-	\mbox{\textbf{Forced March} for extra 2 hours,} \mbox{make an Exhaustion Check} & +\travelunit{1} & +1 \\
-
-	\textbf{Large Groups} & $-$\travelunit{1} & $-$1 \\
-	
-	\mbox{\textbf{Encumbrance} over 50~lb on foot,} mount or vehicle overload & $-$\travelunit{1} & $-$1 \\
-
-	\textbf{Harsh Weather} & $-$\travelunit{1} & $-$1 \\
-	
-	\textbf{Extreme Weather} & $-$\travelunit{2} & $-$2 \\
-	
-	\textbf{Concurrent Activities}
-	(exploring, sneaking, foraging, etc.) & $-$\travelunit{2} & $-$2 \\
-
-	\hline
-
-	\multicolumn{3}{l}{\textbf{Mounted:}} \\
-
-	\hspace{0.5em}\labelitemi~Horses on clear terrain & +\travelunit{1} & +1 \\
-
-	\hspace{0.5em}\labelitemi~Camels in a desert & +\travelunit{1} & +1 \\
-
-	\hspace{0.5em}\labelitemi~Elephants in a jungle & +\travelunit{1} & +1 \\
-	
-	\hspace{0.5em}\mbox{\labelitemi~Rugged or difficult terrain} \mbox{(except for donkeys and mules)} & $-$\travelunit{1} & $-$1 \\
-
-	\hline
-	
-	\multicolumn{3}{l}{\textbf{Vehicles:}} \\
-
-	\hspace{0.5em}\labelitemi~Rugged terrain & $-$\travelunit{1} & $-$1 \\
-	
-	\hspace{0.5em}\labelitemi~Difficult terrain & $-$\travelunit{2} & $-$2 \\
+\begin{dtable}[l>{\centering\arraybackslash}p{3em}CC]
+\textbf{Terrain} & \textbf{Clear} & \textbf{Rugged} & \textbf{Difficult} \\
+Off-road (on foot)	& \textbf{6}	& \textbf{8} & \textbf{12} \\
+Road (on foot)		& \textbf{5}	& \textbf{6} & \textbf{9} \\
+\hline
+%\multicolumn{4}{l}{\textbf{Modifiers:}} \\
+%Road	& $-$1 & $-$2 & $-$3 \\
+Minor hindrance	& +1 & +2 & +3 \\
+Major hindrance	& +2 & +4 & +6 \\
+%\multicolumn{4}{l}{\textbf{Transport:}} \\
+\hline
+Donkeys, mules	& +0	& +0	& +0 \\
+Horses			& $-$1	& +2	& +3 \\
+Camels			& +0	& +2 or $-$2 \mbox{in desert}	& +3 \\
+Elephants		& +0	& +2	& +3 or $-$3 \mbox{in jungle} \\
+Vehicles		& +0	& +2	& +6 \\
 \end{dtable}
 
-\vfill
+\tvspace
+
+\textbf{Clear:} grassland, plains; \textbf{Rugged:} desert, forest, hills; \textbf{Difficult:} jungle, mountains, swamp.
+
+\tvspace
+
+\subparagraph{Minor Hindrances:} fording a river, harsh weather, large groups (caravans, army units, etc.).
+
+\tvspace
+
+\subparagraph{Major Hindrances:} concurrent activities (exploring, sneaking, foraging, etc.), exhaustion, extreme weather, wading across a river.\tight
+
+\tvspace
 
 \subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
 
-\vfill
+\tvspace
 
 \index{Mounts}
 \index{Mule}
@@ -562,7 +551,7 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 \index{Horse}
 \index{Camel}
 \index{Elephant}
-\begin{dtable}[Lccl]
+\begin{dtable}[LcCl]
 	\textbf{Mount}  & \textbf{Cargo} & \textbf{Riders} & \textbf{Cost} \\
 	Donkey	& \sfrac{1}{10}~t (200~lb)	& 1	& 20s \\
 	Mule	& \sfrac{1}{8}~t (250~lb)	& 1 & 20s \\
@@ -571,7 +560,7 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 	Elephant& 2~t (4000~lb)	& 8	& 5g \\
 \end{dtable}
 
-\vfill
+\tvspace
 
 \index{Vehicles}
 \index{Cart}
@@ -584,19 +573,16 @@ To speed up calculations, choose a dominant \mbox{terrain} for a day (or half a 
 	Wagon	& 4	& 2~t			& 16& 1g \\
 \end{dtable}
 
-
-\vfill
 \break
 
-
-\subparagraph{Going Astray} is a possibility when traversing unfamiliar or heavily obscured terrain, in dense fog or heavy rain, etc. If you have some additional advantage in navigation, roll a \textbf{d6}; otherwise, roll a \textbf{d4}:
+\subparagraph{Going Astray} is possible when traversing obscured or unfamiliar terrain, in dense fog or heavy rain, etc. If you have some advantage in navigation, roll a \textbf{d8}; otherwise, roll a \textbf{d6} for every such \travelunit{1}-mile leg/hex:
 
 \begin{dtable}[cL]
 	\textbf{Roll} & \textbf{Outcome} \\
-	1	& \textbf{Lost!} Wander off to an unknown place. \\
-	2	& \textbf{Going in circles.} No travel progress today. \\
-	3	& \textbf{Meandering.} Halved travelled distance. \\
-	4+	& \textbf{On course.} \\
+	1	& Veer off up to 120\textdegree (1--2 hexes left or right). \\
+	2	& Veer off up to 60\textdegree (1 hex left or right). \\
+	3	& Double the travel cost for this leg/hex. \\
+	4+	& On course. \\
 \end{dtable}
 
 \subparagraph{Horizon} is 3 miles away at sea level, 6 miles at 25~ft elevation (roof, hill), 12 miles at 100~ft (ship's mast, treetop, tower). The landscape can obstruct the view. Tall objects can be seen behind the horizon.
@@ -646,7 +632,7 @@ $o$ --- object distance, miles
 \index{Boats}
 \index{Ships}
 
-Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to continue travelling at night. With a half crew or less, the speed is halved.
+Travel for \textbf{12~hours/day}. With a double crew, you can switch shifts to continue travelling at night. With a half crew or less, the speed is halved.
 
 \index{Vehicles!waterborne}
 \index{Rowboat}
@@ -655,8 +641,8 @@ Travel for \textbf{12 hours/day}. With a double crew, you can switch shifts to c
 \index{Sailing Ship}
 \index{Longship}
 \index{Galley}
-\begin{dtable}[lCCCCL]
-\textbf{Vehicle} & \textbf{Miles} & \textbf{Grid} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
+\begin{dtable}[l>{\centering\arraybackslash}p{2.2em}>{\centering\arraybackslash}p{2.2em}C>{\centering\arraybackslash}p{2.2em}L]
+\textbf{Vehicle} & \textbf{Miles} & \textbf{Hexes} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
 Raft (100~ft\textsuperscript{2})& \travelunit{2}&2 & 1& \sfrac{1}{4}~t & --- \\
 Rowboat		& \travelunit{3}	& 3	& 1		& 1~t	& 50s \\
 Sailboat	& \travelunit{12}	& 12& 1		& 5~t	& 15g \\
@@ -680,6 +666,7 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 \index{Siege Engines}
 \subparagraph{Siege Engines} could be mounted on keelboats (1), sailing ships (2), and galleys (3).
 
+
 \break
 
 
@@ -688,7 +675,7 @@ Keelboats, longships and galleys have both sails and oars but cannot go against 
 
 Keep in mind that different climates might require adjusting the tables. For example, you might want to use the Sky table with a d8 or d12 roll for dry climates or d12~+~8 for rainy ones.
 
-To decide for how many days the current weather persists, choose an appropriate die from d4 to d12, depending on the climate and weather type.
+To decide for how many hours or days the current weather persists, choose an appropriate die from d4 to d12, depending on the climate and weather type.
 
 \vfill
 \begin{dtable}[cL|cl]
@@ -745,7 +732,7 @@ Ships exposed to gale in open sea roll for Gale Damage every 6 hours.
 
 \index{Holding Breath}
 \index{Breathing|see {Holding Breath}}
-\subparagraph{Holding Breath} is possible for STR/5 turns (round up). Turns spent on strenuous tasks count for two. Afterwards, take d6~Damage per turn not breathing.
+\subparagraph{Holding Breath} is possible for STR/5 turns (round up). Turns spent on strenuous tasks count for two. Take d6~Damage ignoring Armour for each extra turn not breathing.
 
 \break
 
@@ -753,33 +740,35 @@ Ships exposed to gale in open sea roll for Gale Damage every 6 hours.
 \index{Travel!aerial}
 \index{Aerial Travel|see {Travel, aerial}}
 
-Flying creatures travel for 8 hours/day before resting for the night. Flying magic items have the energy to function for the same daily amount of time.
+Flying creatures travel for \textbf{8~hours/day} before resting for the night. Flying magic items have the energy to function for the same daily amount of time.
 
 \index{Mounts}
 \begin{dtable}[llCCC]
-	\textbf{Mount} & \textbf{Example} & \textbf{Miles} & \textbf{Grid} & \textbf{Riders} \\
-	Small				& pixie		& \travelunit{8}  & 8  &---\\
-	Medium 				& harpy		& \travelunit{8}  & 8  & 1 \\
-	Large				& griffon	& \travelunit{16} & 16 & 2 \\
-	Large, fast			& pegasus	& \travelunit{24} & 24 & 2 \\
-	Huge				& dragon	& \travelunit{16} & 16 & 8 \\
-	Magic device	& broom		& \travelunit{16} & 16 & 2 \\
-	Magic vehicle& carpet	& \travelunit{8}  & 8  & 8 \\
+	\textbf{Mount} & \textbf{Example} & \textbf{Miles} & \textbf{Hexes} & \textbf{Riders} \\
+	Small				& pixie		& \travelunit{6}  & 6  &---\\
+	Medium 				& harpy		& \travelunit{6}  & 6  & 1 \\
+	Large				& griffon	& \travelunit{12} & 12 & 2 \\
+	Large, fast			& pegasus	& \travelunit{18} & 18 & 2 \\
+	Huge				& dragon	& \travelunit{12} & 12 & 8 \\
+	Magic device		& broom		& \travelunit{12} & 12 & 2 \\
+	Magic vehicle		& carpet	& \travelunit{6}  & 6  & 8 \\
 \end{dtable}
 
 Full speed is only possible with \sfrac{1}{2}~of riders or less. Otherwise, the speed is halved.
 
+\vspace{-0.2ex}
+
 \index{Vehicles!aerial}
-\subparagraph{Aerial Vehicles} travel for 12 hours/day. Double crew allows to continue travelling at night.
+\subparagraph{Aerial Vehicles} travel for \textbf{12~hours/day}. Double crew allows to continue travelling at night.
 
 \textbf{Airships} use the \textbf{Wind Force} rule, while \textbf{balloons} always follow the wind. Every 2 hours you may change altitude, rolling for a new wind direction.
 
 \index{Balloon}
 \index{Airship}
 \begin{dtable}[lccccl]
-	\textbf{Vehicle} & \textbf{Miles} & \textbf{Grid} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
-	Balloon	& 40 & 8 & 1 & 1~t & 25g \\
-	Airship	& 40 & 8 & 10& 10~t& 200g \\
+	\textbf{Vehicle} & \textbf{Miles} & \textbf{Hexes} & \textbf{Crew} & \textbf{Cargo} & \textbf{Cost} \\
+	Balloon	& \travelunit{6} & 6 & 1 & 1~t & 25g \\
+	Airship	& \travelunit{6} & 6 & 10& 10~t& 200g \\
 \end{dtable}
 
 %\subparagraph{Balloons} always follow the wind direction. Every 2 hours of travel you may change altitude to catch a~preferable wind (roll for a new wind direction).
@@ -794,7 +783,14 @@ Full speed is only possible with \sfrac{1}{2}~of riders or less. Otherwise, the 
 \index{Jumping}
 \index{Exploration}
 \index{Turns}
-Each \textbf{combat turn (1 minute)} characters move their travel Grid value $\times$ 10 feet (generally \textbf{30 feet}; $\pm$10~feet for clear or difficult terrain; \textbf{$\times$\sfrac{1}{2}} when encumbered; \textbf{$\times$2} when forgoing any actions this turn).
+Each \textbf{combat turn (half-minute)}, characters can move up to \textbf{\basemove~feet}, adjusted for the following:
+\vspace{-0.2ex}
+\begin{itemize}
+	\item \textbf{$\pm$10~feet} for clear or difficult terrain;
+	\item \textbf{$\pm$10~feet} for each point of cost modifiers;
+	\item \textbf{$\times$2} when forgoing any actions this turn;
+	\item \textbf{$\times$\sfrac{1}{2}} when encumbered.
+\end{itemize}
 
 \textbf{Jumping} over \sfrac{1}{2} of the base move (over \sfrac{1}{4} from a standing position) requires a \save{STR}. Jump distance is subtracted from this turn's move.
 
