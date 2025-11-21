@@ -125,14 +125,17 @@ Mist, smoke, and such reduce the radius in half.
 \index{Living Expenses}
 \index{Lifestyle|see {Living Expenses}}
 
-\equip*{Squalid}{d4s/month}
-Suffer d4 Ability Score Loss for each Ability Score. Your reputation suffers.
+\equip*{Squalid}{<1s/week}
+Suffer d4 Ability Score Loss for a random Ability Score. Your reputation suffers.
 
-\equip*{Adequate}{10$\times$d4s/month}
-Restore d4 Ability Score Loss for each Ability Score.
+\equip*{Modest}{1s/week}
+Your reputation suffers.
 
-\equip*{Luxury}{d4g/month}
-Heal any Ability Score Loss and non-magical ailments. Your reputation rises.
+\equip*{Adequate}{10s/week}
+Restore d4 Ability Score Loss for a single Ability Score.
+
+\equip*{Luxurious}{1g/week}
+Heal one Ability Score Loss or a~non-magical ailment. Your reputation improves.
 
 If you own pets, add half as much for each one.
 
@@ -418,24 +421,27 @@ After finding a buyer, make a WIL Save. On a failed save, you sell for a \sfrac{
 \index{Roads}
 
 \vspace*{-0.5ex}
-\begin{dtable}[lLll]
-	\multicolumn{2}{L}{\textbf{Structure}} & \textbf{Wood} & \textbf{Stone} \\
-	\multicolumn{2}{L}{Bridge, 100ft}					& 1g	& 5g \\
-	\multicolumn{2}{L}{Building, 1 floor, P=100~ft}		& 1g	& 5g \\
-	\multicolumn{2}{L}{Gatehouse, P=200~ft}				& 10g	& 50g \\
-	\multicolumn{2}{L}{Keep, small, P=200~ft}			& 20g	& 100g \\
-	\multicolumn{2}{L}{Keep, big, P=400~ft}				& ---	& 300g \\
-	\multicolumn{2}{L}{Tower, small, P=100~ft}			& 5g	& 25g \\
-	\multicolumn{2}{L}{Tower, big, P=200~ft}			& 10g	& 50g \\
-	\multicolumn{2}{L}{Wall, 100~ft}					& 1g	& 5g \\
+\begin{dtable}[lLrr]
+	\multicolumn{2}{l}{~} & \multicolumn{2}{c}{\textbf{Base Cost, g}} \\
+	\multicolumn{2}{l}{\textbf{Structure}} & \textbf{Wood} & \textbf{Stone} \\
+	\multicolumn{2}{l}{Bridge, 100ft}					& 10	& 250 \\
+	\multicolumn{2}{l}{Building, 1 floor, P=100~ft}		& 5 	& 50 \\
+	\multicolumn{2}{l}{Gatehouse, P=200~ft}				& 10	& 100 \\
+	\multicolumn{2}{l}{Keep, small, P=200~ft}			& 20	& 250 \\
+	\multicolumn{2}{l}{Keep, big, P=400~ft}				& ---	& 1,000 \\
+	\multicolumn{2}{l}{Tower, small, P=100~ft}			& 10	& 150 \\
+	\multicolumn{2}{l}{Tower, big, P=200~ft}			& 20	& 300 \\
+	\multicolumn{2}{l}{Wall, 100~ft}					& 10	& 100 \\
 	\hline
-	Dungeon, 10~ft cube & \multicolumn{3}{L}{20s (earth), 1g (rock)} \\
-	Moat, 100~ft	& \multicolumn{3}{L}{1g (earth), 5g (rock)} \\
-	Road, 1~mile	& \multicolumn{3}{L}{5g on Clear terrain, 10g on Rugged, 20g on Difficult} \\
+	\multicolumn{2}{l}{Dungeon, 10~ft cube}				& 1 (earth) & 20 (rock) \\
+	\multicolumn{2}{l}{Moat, 100~ft}					& 5 (earth) & 100 (rock) \\
+	Road, 1~mile	& \multicolumn{3}{L}{10, 20, 50 on Clear, Rugged, \mbox{or Difficult terrain accordingly}} \\
 \end{dtable}
 {\em (P --- external perimeter of the building.)}
 
-\subparagraph{Construction Crew} (four dozen people led by a master, paid 50s per week) build 5g of structure cost weekly, 1g for stone construction. Up to 5 crews can work on a single structure simultaneously. Speed and cost might be impacted by external factors.
+\subparagraph{Construction Crew} of four dozen people, led by a~master, builds 5g of the base cost weekly. Up to 5 crews can work on a single structure simultaneously, increasing the cost by half of the base per extra crew.
+
+Additional factors can also impact speed and cost.
 
 \subparagraph{Siege Engines} could be installed on gatehouses (1), big towers (1), small keeps (2), and big keeps (4).
 
@@ -482,7 +488,7 @@ For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thic
 
 \cleartoleftpage
 
-\newcommand{\tvspace}{\vspace{-0.38ex}}
+\newcommand{\tvspace}{\vspace{-0.25ex}}%\vspace{-0.38ex}}
 
 \section{Travel}
 \index{Travel}
@@ -501,7 +507,7 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 \tvspace
 
 \index{Rest}
-\subparagraph{Rest} for a day every \textbf{5~days} of travel, or make an Exhaustion Check for every extra day of travel. Each day of rest restores d4~STR lost to exhaustion.\tight
+\subparagraph{Rest} for a day every \textbf{5~days} of travel, or make an Exhaustion Check for every extra day of travel.% Each day of rest restores d4~STR lost to exhaustion.\tight
 
 \tvspace
 
@@ -559,7 +565,8 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 
 \subparagraph{Major Hindrances:} concurrent activities (exploring, sneaking, foraging, etc.), exhaustion, extreme weather, wading across a river.\tight
 
-\tvspace
+%\tvspace
+\vfill
 
 \subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
 
