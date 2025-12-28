@@ -98,6 +98,49 @@ What is different from "Into the Dungeon: Playtest Edition"?
 Changelog
 ---------
 
+### v2.5 *(WIP)*
+
+<details><summary>v2.5 changelog</summary>
+
+#### Part 1
+* Brawler: increase unarmoured Armour score by one every other Brawler level
+* Commander: the number of commands per Rest now equal to the Experience level
+* Swashbuckler: now includes unarmed attacks
+* Thaumaturge: failing a roll affects only a single Gift
+* Clarified descriptions for Gunslinger, Criminal, and Hunter
+* Equimpent: clarified, reformatted, and rearranged the section
+* Property: expanded the list and adjusted the prices
+
+#### Part 2
+* Alternative Experience Progression: training costs x2 increase
+
+#### Part 4
+
+##### Circle 2
+* Flaming Sphere: now deals d4 Fire damage to all adjacent without Save
+* Touch of Idiocy: WIL Loss increased to d6
+
+#### Part 6
+* Changed 1s from a weekly wage to the daily one
+
+#### Appendix A
+* Living Expenses: reworked the rule, changed from monthly to a weekly basis
+* Resources: Added expertise effect on scavenging rolls
+* Structures: reworked the rule to simplify calculations
+* Travel: major redesign of the rule
+* Movement in combat: combat turns are half-minute now, adjusted for the new travel rules
+* Holding Breath: adjusted for the new combat turn duration
+* Added Jumping rule
+* Coin weight correction (50/500 per pound)
+
+#### Miscellaneous
+* Minor formatting and layout improvements
+
+
+---
+</details>
+
+
 ### v2.4
 
 <details><summary>v2.4 changelog</summary>
