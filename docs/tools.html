@@ -163,95 +163,197 @@
                         title="Horizon and Visibility"
                 />
             </p>
-            <div class="centered nowrap flex-container flex-nowrap" style="border: 1px solid black; justify-content: center">
-                <!-- COLUMN 1 -->
-                <div class="wrap flex-container" style="flex-direction: column; align-items: flex-end">
-                    <div class="flex-item">
-                        <label for="horizon_r">Planet radius (R)</label>
+            <div class="centered nowrap flex-container flex-nowrap" style="flex-direction: column">
+                <!-- INPUTS -->
+                <div class="centered nowrap flex-container flex-nowrap" style="border: 1px solid black; width: 100%; justify-content: center">
+                    <!-- COLUMN 1 -->
+                    <div class="wrap flex-container" style="flex-direction: column; align-items: flex-end">
+                        <div class="flex-item">
+                            <label for="horizon_r">Planet radius (R)</label>
+                        </div>
+                        <div class="flex-item">
+                            <label for="horizon_k">Effective radius factor (k)</label>
+                        </div>
+                        <div class="flex-item">
+                            <label for="horizon_h">Observer elevation (h)</label>
+                        </div>
+                        <div class="flex-item">
+                            <label for="horizon_o">Object distance (o)</label>
+                        </div>
+                        <div class="flex-item">
+                            <label>Horizon distance (d)</label>
+                        </div>
+                        <div class="flex-item">
+                            <label>Object height obstructed (x)</label>
+                        </div>
                     </div>
-                    <div class="flex-item">
-                        <label for="horizon_h">Observer elevation (h)</label>
-                    </div>
-                    <div class="flex-item">
-                        <label for="horizon_o">Object distance (o)</label>
-                    </div>
-                    <div class="flex-item">
-                        <label>Horizon distance (d)</label>
-                    </div>
-                    <div class="flex-item">
-                        <label>Object height obstructed (x)</label>
+                    <!-- COLUMN 2 -->
+                    <div class="flex-container" style="flex-direction: column; align-items: flex-start">
+                        <div class="flex-item">
+                            <input type="number" id="horizon_r" name="Planet radius" min="1" value="3960" style="width: 5em" onchange="calculateHorizon()"/>
+                            <label>miles</label>
+                        </div>
+                        <div class="flex-item">
+                            <input type="number" id="horizon_k" name="Effective radius factor" value="1.23" step="0.01" min="0" style="width: 5em" onchange="calculateHorizon()"/>
+                            <label>*</label>
+                        </div>
+                        <div class="flex-item">
+                            <input type="number" id="horizon_h" name="Observer elevation" value="6" style="width: 5em" onchange="calculateHorizon()"/>
+                            <label>feet</label>
+                        </div>
+                        <div class="flex-item">
+                            <input type="number" id="horizon_o" name="Object distance" value="10" style="width: 5em" onchange="calculateHorizon()"/>
+                            <label>miles</label>
+                        </div>
+                        <div class="flex-item">
+                            <input readonly type="number" id="horizon_d" name="Horizon distance" value="0" style="width: 5em; background-color: #f0dcc0"/>
+                            <label>miles</label>
+                        </div>
+                        <div class="flex-item">
+                            <input readonly type="number" id="horizon_x" name="Object height obstructed" value="0" style="width: 5em; background-color: #f0dcc0"/>
+                            <label>feet</label>
+                        </div>
                     </div>
                 </div>
-                <!-- COLUMN 2 -->
-                <div class="flex-container" style="flex-direction: column; align-items: flex-start">
-                    <div class="flex-item">
-                        <input type="number" id="horizon_r" name="Planet radius" min="1" value="3960" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>miles</label>
-                    </div>
-                    <div class="flex-item">
-                        <input type="number" id="horizon_h" name="Observer elevation" value="6" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>feet</label>
-                    </div>
-                    <div class="flex-item">
-                        <input type="number" id="horizon_o" name="Object distance" value="10" style="width: 5em" onchange="calculateHorizon()"/>
-                        <label>miles</label>
-                    </div>
-                    <div class="flex-item">
-                        <input readonly type="number" id="horizon_d" name="Horizon distance" value="0" style="width: 5em; background-color: #f0dcc0"/>
-                        <label>miles</label>
-                    </div>
-                    <div class="flex-item">
-                        <input readonly type="number" id="horizon_x" name="Object height obstructed" value="0" style="width: 5em; background-color: #f0dcc0"/>
-                        <label>feet</label>
-                    </div>
+
+                <!-- K-FACTOR TABLE -->
+                <div class="spoiler wrap" onclick="spoiler(event, 'k-factor-table')">* Effective radius factor (k) due to refraction (approximate value)</div>
+                <div class="flex-container spoiler-hidden" id="k-factor-table" style="flex-direction: column; align-items: flex-start; padding: 8px">
+                    <table class="k-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 2em">&#176;C</th>
+                            <th style="width: 2em">&#176;F</th>
+                            <th style="width: 3em">Arid</th>
+                            <th style="width: 3em">Normal</th>
+                            <th style="width: 3em">Humid</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>&minus;40</td><td>&minus;40</td>
+                        <td><input type="button" class="narrow" id="btn_K11" value="1.28" onclick="docId('horizon_k').value='1.28'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K12" value="1.32" onclick="docId('horizon_k').value='1.32'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K13" value="1.32" onclick="docId('horizon_k').value='1.32'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>&minus;30</td><td>&minus;22</td>
+                        <td><input type="button" class="narrow" id="btn_K21" value="1.26" onclick="docId('horizon_k').value='1.26'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K22" value="1.30" onclick="docId('horizon_k').value='1.30'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K23" value="1.30" onclick="docId('horizon_k').value='1.30'; calculateHorizon()" /></td>
+                        </tr>
+                        <tr>
+                        <td>&minus;20</td><td>&minus;4</td>
+                        <td><input type="button" class="narrow" id="btn_K31" value="1.24" onclick="docId('horizon_k').value='1.24'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K32" value="1.28" onclick="docId('horizon_k').value='1.28'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K33" value="1.28" onclick="docId('horizon_k').value='1.28'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>&minus;10</td><td>14</td>
+                        <td><input type="button" class="narrow" id="btn_K41" value="1.22" onclick="docId('horizon_k').value='1.22'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K42" value="1.26" onclick="docId('horizon_k').value='1.26'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K43" value="1.26" onclick="docId('horizon_k').value='1.26'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>0</td><td>32</td>
+                        <td><input type="button" class="narrow" id="btn_K51" value="1.20" onclick="docId('horizon_k').value='1.20'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K52" value="1.24" onclick="docId('horizon_k').value='1.24'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K53" value="1.25" onclick="docId('horizon_k').value='1.25'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>10</td><td>50</td>
+                        <td><input type="button" class="narrow" id="btn_K61" value="1.18" onclick="docId('horizon_k').value='1.18'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K62" value="1.23" onclick="docId('horizon_k').value='1.23'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K63" value="1.24" onclick="docId('horizon_k').value='1.24'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>20</td><td>68</td>
+                        <td><input type="button" class="narrow" id="btn_K71" value="1.17" onclick="docId('horizon_k').value='1.17'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K72" value="1.23" onclick="docId('horizon_k').value='1.23'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K73" value="1.25" onclick="docId('horizon_k').value='1.25'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>30</td><td>86</td>
+                        <td><input type="button" class="narrow" id="btn_K81" value="1.17" onclick="docId('horizon_k').value='1.17'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K82" value="1.23" onclick="docId('horizon_k').value='1.23'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K83" value="1.27" onclick="docId('horizon_k').value='1.27'; calculateHorizon()" /></td>
+                        </tr>
+
+                        <tr>
+                        <td>40</td><td>104</td>
+                        <td><input type="button" class="narrow" id="btn_K91" value="1.16" onclick="docId('horizon_k').value='1.16'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K92" value="1.25" onclick="docId('horizon_k').value='1.25'; calculateHorizon()" /></td>
+                        <td><input type="button" class="narrow" id="btn_K93" value="1.31" onclick="docId('horizon_k').value='1.31'; calculateHorizon()" /></td>
+                        </tr>
+                    </tbody>
+                    </table>
                 </div>
             </div>
 
-            <div class="centered nowrap flex-container">
-                <div class="flex-item">
-                    <img    src="horizon_formula1.svg"
-                            alt="d = sqrt(2 * h * R)"
-                            title="Formula: horizon distance"
-                    />
-                </div>
-                <div class="flex-item">
-                    <img    src="horizon_formula2.svg"
-                            alt="x = sqrt((o - d)^2 + R^2) - R"
-                            title="Formula: object height obstructed"
-                    />
+            <div class="centered nowrap flex-container" style="align-items: flex-start;">
+                <div class="flex-container" style="flex-direction: column; gap: 1ex; width: 60%">
+                    <div class="flex-item formula">
+                        <img    src="horizon_formula0.svg"
+                                alt="R' = R * k"
+                                title="Formula: effective radius"
+                        />
+                    </div>
+                    <div class="flex-item formula">
+                        <img    src="horizon_formula1.svg"
+                                alt="d = sqrt(2 * h * R')"
+                                title="Formula: horizon distance"
+                        />
+                    </div>
+                    <div class="flex-item formula">
+                        <img    src="horizon_formula2.svg"
+                                alt="x = sqrt((o - d)^2 + R'^2) - R'"
+                                title="Formula: object height obstructed"
+                        />
+                    </div>
                 </div>
                 <div class="flex-item" style="flex-shrink: 0; text-align: left">
                     <em>
+                        R&prime; &mdash; effective radius<br/>
+                        R &mdash; planet radius<br/>
+                        k &mdash; effective radius factor<br/>
                         d &mdash; horizon distance<br/>
                         h &mdash; observer elevation<br/>
-                        R &mdash; planet radius<br/>
                         x &mdash; object height obstructed<br/>
                         o &mdash; object distance<br/>
-                        1 mile = 5280 feet
+                        (1 mile = 5280 feet)
                     </em>
                 </div>
             </div>
 
-            <h3>Simplified for Earth-sized planet<br/>(R = 3960 miles)</h3>
-            <div class="centered nowrap flex-container">
-                <div class="flex-item">
-                    <img    src="horizon_formula3.svg"
-                            alt="d = sqrt(1.5 * h)"
-                            title="Simplified formula: horizon distance"
-                    />
-                </div>
-                <div class="flex-item">
-                    <img    src="horizon_formula4.svg"
-                            alt="x = (d - o)^2 / 1.5"
-                            title="Simplified formula: object height obstructed"
-                    />
+            <h3>Simplified for Earth-sized planet (R&nbsp;=&nbsp;3960 miles)</h3>
+            <div class="centered nowrap flex-container" style="align-items: flex-start;">
+                <div class="flex-container" style="flex-direction: column; gap: 1ex; width: auto">
+                    <div class="flex-item">
+                        <img    src="horizon_formula3.svg"
+                                alt="d = sqrt(1.5 * h * k)"
+                                title="Simplified formula: horizon distance"
+                        />
+                    </div>
+                    <div class="flex-item">
+                        <img    src="horizon_formula4.svg"
+                                alt="x = (d - o)^2 / 1.5 * k"
+                                title="Simplified formula: object height obstructed"
+                        />
+                    </div>
                 </div>
                 <div class="flex-item" style="flex-shrink: 0; text-align: left">
                     <em>
                         d &mdash; horizon distance, miles<br/>
+                        k &mdash; effective radius factor<br/>
                         h &mdash; observer elevation, feet<br/>
                         x &mdash; object height obstructed, feet<br/>
-                        o &mdash; object distance, feet<br/>
+                        o &mdash; object distance, miles<br/>
                     </em>
                 </div>
             </div>

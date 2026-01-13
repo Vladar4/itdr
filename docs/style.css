@@ -215,6 +215,11 @@ input[type=button], select {
     width: 100%;
 }
 
+input.narrow[type=button] {
+    margin: 0px;
+    padding: 0px;
+}
+
 input[type=button]:hover {
     background-color: #ffecd0;
 }
@@ -230,6 +235,24 @@ p {
 
 table {
     border-spacing: 5px;
+}
+
+.k-table {
+    table-layout: auto;
+    width: auto;
+}
+
+.k-table th,
+.k-table td {
+    border: 0px;
+    padding: 0px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.k-table td input[type=button] {
+    padding-top: 4px;
+    padding-bottom: 0px;
 }
 
 td {
@@ -260,8 +283,8 @@ li {
 .flex-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .flex-item {
@@ -270,6 +293,10 @@ li {
 
 .flex-nowrap {
     flex-wrap: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
 }
 
 /* SPOILERS */

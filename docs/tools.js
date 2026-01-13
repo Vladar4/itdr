@@ -589,7 +589,7 @@ function generateRandomCharacter(swap) {
                     break;
                 default: break;
             }
-            sBackgroundItems.push("writing set", "a journal with your notes", "a book about " + sStudySpecialization);
+            sBackgroundItems.push("writing set", "a journal with scholarly notes", "a book about " + sStudySpecialization);
                 sBackground += " of " + sStudyArea + " (" + sStudySpecialization + ")";
             break;
 
@@ -1995,21 +1995,23 @@ function feetToMiles(feet) {
     return feet / 5280;
 }
 
-function calculateHorizonDistance(h, r) {
-    return Math.sqrt(2 * h * r);
+function calculateHorizonDistance(h, r, k) {
+    return Math.sqrt(2 * h * r * k);
 }
 
-function calculateObjectHeightObscured(o, d, r) {
-    return Math.sqrt(Math.pow(o - d, 2) + Math.pow(r, 2)) - r;
+function calculateObjectHeightObscured(o, d, r, k) {
+    return Math.sqrt(Math.pow(o - d, 2) + Math.pow(r * k, 2)) - (r * k);
 }
 
 function calculateHorizon() {
-    let h = feetToMiles(parseInt(docId('horizon_h').value));
-    let r = parseInt(docId('horizon_r').value);
-    let d = calculateHorizonDistance(h, r);
+    const h = feetToMiles(parseInt(docId('horizon_h').value));
+    const r = parseInt(docId('horizon_r').value);
+    const k = parseFloat(docId('horizon_k').value);
+    docId('horizon_k').value = k.toFixed(2);
+    const d = calculateHorizonDistance(h, r, k);
     docId('horizon_d').value = d.toFixed(2);
-    let o = parseInt(docId('horizon_o').value);
-    let x = (d < o) ? milesToFeet(calculateObjectHeightObscured(o, d, r)) : 0;
+    const o = parseInt(docId('horizon_o').value);
+    const x = (d < o) ? milesToFeet(calculateObjectHeightObscured(o, d, r, k)) : 0;
     docId('horizon_x').value = x.toFixed(1);
 }
 
