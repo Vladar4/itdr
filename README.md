@@ -108,7 +108,7 @@ Changelog
 * Swashbuckler: now includes unarmed attacks
 * Thaumaturge: failing a roll affects only a single Gift
 * Clarified descriptions for Gunslinger, Criminal, and Hunter
-* Equimpent: clarified, reformatted, and rearranged the section
+* Equipment: clarified, reformatted, and rearranged the section
 * Property: expanded the list and adjusted the prices
 
 #### Part 2
@@ -122,6 +122,7 @@ Changelog
 
 #### Part 6
 * Changed 1s from a weekly wage to the daily one
+* Added treasure conversion guidelines
 
 #### Appendix A
 * Living Expenses: reworked the rule, changed from monthly to a weekly basis
