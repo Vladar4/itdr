@@ -126,6 +126,7 @@ Changelog
 
 #### Appendix A
 * Living Expenses: reworked the rule, changed from monthly to a weekly basis
+* Load Capacity: Encumbrance renamed to Overload
 * Resources: Added expertise effect on scavenging rolls
 * Structures: reworked the rule to simplify calculations
 * Travel: major redesign of the rule
