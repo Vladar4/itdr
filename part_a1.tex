@@ -499,12 +499,12 @@ For example, a small wooden ship will have 8hp and Armour~5 (wood of medium thic
 
 \section{Travel}
 \index{Travel}
-Travel for \textbf{8~hours/day} before resting for the night.
-The daily travel is divided into \textbf{24} time segments (TS), 20 minutes each.
+Travel for \textbf{10~hours/day} before resting for the night.
+The daily travel is divided into \textbf{20} time segments (TS), 30 minutes each.
 TS cost of every \textbf{\travelunit{1}-mile} leg of the journey (or \travelunit{1}-mile hexagon) depends on the terrain and certain factors listed below.
 
 \index{Forced March}
-Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. Lacking more, you can perform a \textbf{Forced March:} every \textbf{2 extra hours} of travel adds \textbf{6~TS}, but requires an Exhaustion Check right after.
+Lacking \textbf{1~TS} to finish the last leg, you can complete it regardless. Lacking more, you can perform a \textbf{Forced March:} every \textbf{2 extra hours} of travel adds \textbf{4~TS}, but requires an Exhaustion Check right after.
 
 \tvspace
 
@@ -514,11 +514,7 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 \tvspace
 
 \index{Rest}
-\subparagraph{Rest} for a day every \textbf{5~days} of travel, or make an Exhaustion Check for every extra day of travel.% Each day of rest restores d4~STR lost to exhaustion.\tight
-
-\tvspace
-
-\textbf{Overload} (over 50~lb on foot or Cargo capacity) \textbf{doubles} the base travel cost (before any modifiers).
+\subparagraph{Rest} for a day every \textbf{5~days} of travel, or make an Exhaustion Check for every extra day of travel.
 
 \index{Terrain}
 \index{Roads}
@@ -539,25 +535,29 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 %\rotatebox{90}{\textbf{Terrain}}
 
 \bgroup
-\tabcolsep=2.5pt
-\begin{dtable}[Lccc]
-	\textbf{Travel\hfill Terrain:} & \textbf{Clear} & \textbf{Rugged} & \textbf{Difficult} \\
-	Road					& \textbf{5}	& \textbf{6} & \textbf{9} \\
-	Off-road on foot		& \textbf{6}	& \textbf{8} & \textbf{12} \\
-	Off-road mount/vehicle,
-	except donkeys \& mules	& \textbf{7} & \textbf{10} & \textbf{15} \\
+\tabcolsep=4.5pt%2.5pt
+\begin{dtable}[cLccc]
+	\multicolumn{2}{l}{\textbf{Travel\hfill Terrain:}}
+	& \textbf{Clear} & \textbf{Rugged} & \textbf{Difficult} \\
+	\multicolumn{2}{l}{On foot}			& \textbf{5} & \textbf{6} & \textbf{8} \\
+	\multicolumn{2}{l}{Donkey or mule}	& \textbf{5} & \textbf{6} & \textbf{7} \\
+	\multicolumn{2}{l}{Horse}			& \textbf{4} & \textbf{6} & \textbf{9} \\
+	\multicolumn{2}{l}{Camel\note[1]}	& \textbf{4} & \textbf{6} & \textbf{12} \\
+	\multicolumn{2}{l}{Elephant\note[2]}& \textbf{8} & \textbf{9} & \textbf{12} \\
+	\multicolumn{2}{l}{Vehicles}		& \textbf{6} & \textbf{9} & \textbf{12} \\
 	\hline
-	Minor hindrance	& +1 & +2 & +3 \\
-	Major hindrance	& +2 & +4 & +6 \\
+	\cellcolor{dColor1}	& Road			& $-$1	& $-$2	& $-$3 \\
+					& Minor hindrance	& +1	& +2	& +3 \\
+	\multirow{-3}{*}{\cellcolor{dColor1}\rotatebox{90}{\textbf{Mod.}}}
+					& Major hindrance	& +2	& +4	& +6 \\
 \end{dtable}
 \egroup
 
 \tvspace
 
 \begin{itemize}
-	\item \textbf{Horses:} $-$1~TS on any clear terrain;
-	\item \textbf{Camels:} $-$2~TS off-road in a desert;
-	\item \textbf{Elephants:} $-$3~TS off-road in a jungle.
+	\item[{\note[1]}] \textbf{Camel:} $-$2~TS off-road in a desert;
+	\item[{\note[2]}] \textbf{Elephant:} $-$3~TS off-road in a jungle.
 \end{itemize}
 
 \tvspace
@@ -570,12 +570,12 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 
 \tvspace
 
-\subparagraph{Major Hindrances:} concurrent activities (exploring, sneaking, foraging, etc.), exhaustion, extreme weather, large armies, wading across a river.\tight
+\subparagraph{Major Hindrances:} concurrent activities (exploring, sneaking, foraging, etc.), exhaustion, extreme weather, overload, wading across a river.
 
 %\tvspace
 \vfill
 
-\subparagraph{Passengers} occupy \sfrac{1}{8}~t of cargo space. Cargo and Riders/Passengers values are mutually exclusive.
+\subparagraph{Passengers} take 250~lb of cargo space. Cargo and Riders/Passengers values are mutually exclusive.\tight
 
 \tvspace
 
@@ -585,13 +585,13 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 \index{Horse}
 \index{Camel}
 \index{Elephant}
-\begin{dtable}[LcCl]
+\begin{dtable}[LrCl]
 	\textbf{Mount}  & \textbf{Cargo} & \textbf{Riders} & \textbf{Cost} \\
-	Donkey	& \sfrac{1}{10}~t (200~lb)	& 1	& 20s \\
-	Mule	& \sfrac{1}{8}~t (250~lb)	& 1 & 20s \\
-	Horse	& \sfrac{1}{5}~t (400~lb)	& 2 & 1g \\
-	Camel	& \sfrac{1}{4}~t (500~lb)	& 2 & 1g \\
-	Elephant& 2~t (4000~lb)	& 8	& 5g \\
+	Donkey	& 150~lb	& 1 & 20s \\
+	Mule	& 250~lb	& 1 & 50s \\
+	Horse	& 300~lb	& 1 & 1g \\
+	Camel	& 500~lb	& 2 & 1g \\
+	Elephant& 1000~lb	& 4 & 5g \\
 \end{dtable}
 
 \tvspace
@@ -600,11 +600,11 @@ Lacking \textbf{up to 5~TS} to finish the leg, you can complete it regardless. L
 \index{Cart}
 \index{Carriage}
 \index{Wagon}
-\begin{dtable}[Lcccl]
+\begin{dtable}[Lcrcl]
 	\textbf{Vehicle} & \textbf{Horses} & \textbf{Cargo} & \textbf{Passengers} & \textbf{Cost} \\
-	Cart	& 1	& \sfrac{1}{2}~t& 4	& 30s \\
-	Carriage& 2 & 1~t			& 8	& 60s \\
-	Wagon	& 4	& 2~t			& 16& 1g \\
+	Cart	& 1	& 1000~lb	& 4	& 30s \\
+	Carriage& 2	& 2000~lb	& 8	& 60s \\
+	Wagon	& 4	& 4000~lb	& 16& 1g \\
 \end{dtable}
 
 \break
