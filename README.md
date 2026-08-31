@@ -106,7 +106,11 @@ Changelog
 * Brawler: increase unarmoured Armour score by one every other Brawler level
 * Commander: the number of commands per Rest now equal to the Experience level
 * Swashbuckler: now includes unarmed attacks
-* Thaumaturge: failing a roll affects only a single Gift
+* Thaumaturge:
+  * failing a roll affects only a single Gift
+  * Credednce: changed P/2 questions to P questions
+  * Harmony: clarified wording
+  * Omen: changed P/2 actions to P actions until the next Rest
 * Clarified descriptions for Gunslinger, Criminal, and Hunter
 * Equipment: clarified, reformatted, and rearranged the section
 * Property: expanded the list and adjusted the prices
@@ -116,6 +120,10 @@ Changelog
 
 #### Part 4
 
+##### Cantrips
+* Guided Strike: clarified wording - affects this turn's attack
+* Jinx: clarified wording - affects next turn's attack
+
 ##### Circle 2
 * Flaming Sphere: now deals d4 Fire damage to all adjacent without Save
 * Touch of Idiocy: WIL Loss increased to d6
@@ -123,6 +131,9 @@ Changelog
 #### Part 6
 * Changed 1s from a weekly wage to the daily one
 * Added treasure conversion guidelines
+
+#### Part 9
+* Updated play example mechanics
 
 #### Appendix A
 * Living Expenses: reworked the rule, changed from monthly to a weekly basis
